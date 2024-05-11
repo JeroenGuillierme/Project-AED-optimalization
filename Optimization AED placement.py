@@ -1,3 +1,4 @@
+
 import pandas as pd
 from pandas.compat import pyarrow
 
@@ -111,3 +112,4 @@ print(aed1)
 
 # Sla de dataset op met de toegevoegde coördinaten
 #aed.to_csv('updated_dataset.csv', index=False)
+
