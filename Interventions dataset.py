@@ -16,7 +16,7 @@ aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
 pd.set_option('display.max_columns', None)
 
 
-interventions1["T0"] = pd.to_datetime(interventions1["T0"], format='%d%b%y:%H:%M:%S') # Convert the first time format to datetime
+interventions1["T0"] = pd.to_datetime(interventions1["T0"], format='%d%b%y:%H:%M:%S')# Convert the first time format to datetime
 interventions1["T3"] = pd.to_datetime(interventions1["T3"], format='%Y-%m-%d %H:%M:%S.%f') # Convert the column back to datetime with the new format
 
 interventions2["T0"] = pd.to_datetime(interventions2["T0"], format='%d%b%y:%H:%M:%S') # Convert the first time format to datetime
@@ -54,3 +54,13 @@ print(len(CAD9_expanded))
 #interventions_total2 = pd.concat([interventions_total, CAD9_expanded], axis=0)
 #print(interventions_total2)
 #interventions_total2 = interventions_total2["Lattitude intervention", "Longitude intervention", "CAD9", "EventLevel Firstcall", "T0-T3"]
+
+
+interventions4["T0"] = pd.to_datetime(interventions4["T0"], format='%Y-%m-%d %H:%M:%S.%f %z')# Convert the first time format to datetime
+interventions4["T3"] = pd.to_datetime(interventions4["T3"], format='%Y-%m-%d %H:%M:%S.%f %z') # Convert the column back to datetime with the new format
+#2022-09-06 13:59:12.0373052 +02:00
+
+
+interventions5["T0"] = pd.to_datetime(interventions5["T0"], format='#%d%b%y:%H:%M:%S')# Convert the first time format to datetime
+interventions5["T3"] = pd.to_datetime(interventions5["T3"], format='#%d%b%y:%H:%M:%S') # Convert the column back to datetime with the new format
+#01JUN22:00:46:24
