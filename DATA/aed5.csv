@@ -1,0 +1,1238 @@
+id,type,address,number,postal_code,municipality,province,location,public,available,hours,latitude,longitude
+15230.0,Appareil fixe-Vast apparaat,Polenplein,15.0,8850.0,ARDOOIE,West-Vlaanderen,Inkom,Oui-Ja,Oui-Ja,,50.979508762704,3.196985359861
+15231.0,Appareil fixe-Vast apparaat,Robert Schumanplein,,1040.0,ETTERBEEK,Bruxelles-Brussel,6e verdieping inkom,Oui-Ja,Oui-Ja,,50.842691166592,4.383872117253
+15232.0,Appareil fixe-Vast apparaat,Victor Rousseaulaan,208.0,1190.0,VORST,Bruxelles-Brussel,PC Lokaal,Oui-Ja,Oui-Ja,,50.809991099318,4.32601154052
+15233.0,Appareil fixe-Vast apparaat,Smalle Heerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,Volvo SML Office 8,Oui-Ja,Oui-Ja,,51.087525720283,3.785079803218
+15234.0,Appareil fixe-Vast apparaat,BELHUTTEBAAN,,8680.0,KOEKELARE,West-Vlaanderen,"Gelijkvloers, gang aan de rechterkant van de muur in de groene AED kast",Oui-Ja,Non-Nee,altijd tijdens de schooluren beschikbaar en  s avonds en tijdens weekend beschikbaar voor gebruikers zaal,51.082293390092,2.985608937239
+15803.0,Appareil fixe-Vast apparaat,Rode Kruislaan,34.0,3960.0,Bree,Limburg,"Buitenkant gebouw, zijde bezoekersparking.",Oui-Ja,Oui-Ja,,51.136297081195,5.598734303191
+15804.0,Appareil fixe-Vast apparaat,Rue du Fortin,24.0,600.0,Bastogne,Luxembourg,,Oui-Ja,Non-Nee,,49.987900450346,5.701848723045
+15805.0,Appareil fixe-Vast apparaat,Rue De La Papetrie,0.0,6760.0,Virton,Luxembourg,,Oui-Ja,Non-Nee,,49.554577694931,5.508262183872
+15806.0,Appareil fixe-Vast apparaat,Rue De La Papetrie,0.0,6760.0,Virton,Luxembourg,,Oui-Ja,Non-Nee,,49.554577694931,5.508262183872
+15807.0,Appareil fixe-Vast apparaat,Rue De La Papetrie,0.0,6760.0,Virton,Luxembourg,,Oui-Ja,Non-Nee,,49.554577694931,5.508262183872
+15808.0,Appareil fixe-Vast apparaat,Mercatorstrasse,16.0,4780.0,Saint Vith,Liège,,Oui-Ja,Non-Nee,,50.288354251668,6.090236364906
+15709.0,Appareil fixe-Vast apparaat,Am Herrenbruhl,35.0,4780.0,Saint Vith,Liège,,Oui-Ja,Non-Nee,,50.277208122554,6.116217247265
+15809.0,Appareil fixe-Vast apparaat,Industrieweg ,1098.0,3540.0,Herk-de-Stad,Limburg,Ingang (links van poort) terreinen werkplaatsen Stad Herk-de-Stad,Oui-Ja,Oui-Ja,,50.944434437409,5.172034243668
+12505.0,Appareil fixe-Vast apparaat,Worriken,9.0,4750.0,Bütgenbach,Liège,"entre mi-juin et mi-septembre: à la plage
+entre mi-septembre et mi-juin: à la réception.",Non-Nee,Non-Nee,mi-juin et mi-septembre: 10h00-19h00; mi-septembre et mi-juin: 9h00 à 16h30,50.425064894569,6.222250166453
+15810.0,Appareil fixe-Vast apparaat,Eikenlaan,6.0,3950.0,Bocholt,Limburg,Hulpdienstlokaal Rode Kruis afdeling Bocholt Kaulille,Non-Nee,Oui-Ja,,51.166612371414,5.570340773822
+10713.0,Appareil fixe-Vast apparaat,Sint-Laurentiusplein ,1.0,8950.0,Heuvelland,West-Vlaanderen,hangt aan het bezoekerscentrum te Kemmel,Oui-Ja,Oui-Ja,,50.783836795382,2.826270713856
+8163.0,Appareil fixe-Vast apparaat,Vierstraat,31.0,8950.0,Heuvelland,West-Vlaanderen,aan de sporthal te Wijtschate,Oui-Ja,Oui-Ja,,50.789410928632,2.877016515879
+15811.0,Appareil fixe-Vast apparaat,Hospicestraat,1.0,8950.0,Heuvelland,West-Vlaanderen,aan de serviceflats,Oui-Ja,Oui-Ja,,50.788958908598,2.886624158815
+15812.0,Appareil fixe-Vast apparaat,Dikkebusstraat,236.0,8950.0,Heuvelland,West-Vlaanderen,aan OC De Klakeye,Oui-Ja,Oui-Ja,,50.767293097809,2.78156574945
+15813.0,Appareil fixe-Vast apparaat,Dikkebusstraat,158.0,8950.0,Heuvelland,West-Vlaanderen,aan de overkant van straat van de bank Fortis,Oui-Ja,Oui-Ja,,50.782453529901,2.771470585266
+15814.0,Appareil fixe-Vast apparaat,Dikkebusstraat,39.0,8950.0,Heuvelland,West-Vlaanderen,aan de Kerk van De Klijte,Oui-Ja,Oui-Ja,,50.799926403351,2.799974169023
+15815.0,Appareil fixe-Vast apparaat, du chapitre ,3.0,7080.0,Frameries,Hainaut,Bureau d acceuil,Oui-Ja,Non-Nee,selon l horaire d ouverture du centre sportif,50.414715567734,3.895047041177
+15816.0,Appareil fixe-Vast apparaat,chapitre,3.0,7080.0,frameries,Hainaut,Dojo,Oui-Ja,Non-Nee,suivant l horaire d ouverture du centre sportif,50.414715567734,3.895047041177
+15817.0,Appareil fixe-Vast apparaat,des dames,79.0,7080.0,Frameries,Hainaut,Buvette RSB football,Oui-Ja,Non-Nee,selon l horaire d ouverture du club,50.413844292245,3.890282494896
+7149.0,Appareil fixe-Vast apparaat,des dames,79.0,7080.0,frameries,Hainaut,Buvette du club house,Oui-Ja,Non-Nee,selon l ouverture du club,50.413844292245,3.890282494896
+13963.0,Appareil fixe-Vast apparaat,des dames,79.0,7080.0,frameries,Hainaut,hall de tennis,Oui-Ja,Non-Nee,selon l ouverture du club,50.413844292245,3.890282494896
+15819.0,Appareil fixe-Vast apparaat,Place du marché ,1.0,6870.0,Saint Hubert,Luxembourg,Hall d entrée ,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15820.0,Appareil fixe-Vast apparaat,Place du marché,1.0,6870.0,Saint Hubert ,Luxembourg,Halle d entrée ,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15821.0,Appareil fixe-Vast apparaat,Palce du marché,1.0,6870.0,sAINT HUBERT,Luxembourg,dANS LA CLASSE PRËT DE LA CUISINE,Oui-Ja,Oui-Ja,,50.025063292135,5.373906262859
+15822.0,Appareil fixe-Vast apparaat,Place du marché,1.0,6870.0,Saint hubert,Luxembourg,Hall d entrée au dessus de l imprimante,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15823.0,Appareil fixe-Vast apparaat,Place du marche,1.0,6870.0,Saint hubert,Luxembourg,Hall d entrée,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15824.0,Appareil fixe-Vast apparaat,Place du marché,1.0,6870.0,Saint hubert,Luxembourg,Hall d entrée,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15825.0,Appareil fixe-Vast apparaat,Place du marché ,1.0,6870.0,Saint hubert,Luxembourg,Entrepôt service travaux,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15826.0,Appareil fixe-Vast apparaat,Place du marché,1.0,6870.0,Saint hubert,Luxembourg,,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15827.0,Appareil fixe-Vast apparaat,Place du marché,1.0,6870.0,Saint hubert,Luxembourg,,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15828.0,Appareil fixe-Vast apparaat,Place du marché,1.0,6870.0,Saint Hubert,Luxembourg,,Oui-Ja,Non-Nee,,50.025063292135,5.373906262859
+15818.0,Appareil fixe-Vast apparaat,Place du marché ,1.0,6870.0,Saint hubert,Luxembourg,,Non-Nee,Oui-Ja,,50.025063292135,5.373906262859
+15829.0,Appareil fixe-Vast apparaat,Rue sohet,21.0,4000.0,Liége,Liège,Couloir rez de chaussée ,Oui-Ja,Non-Nee,,50.627434295894,5.567465445757
+15830.0,Appareil fixe-Vast apparaat,Potiérue,5.0,4000.0,Liège,Liège,Acceuil,Oui-Ja,Non-Nee,,50.645745946395,5.579289545109
+15831.0,Appareil fixe-Vast apparaat,potiérue,5.0,4000.0,liege,Liège,Rez de chaussée - Local de soins ,Oui-Ja,Non-Nee,,50.645745946395,5.579289545109
+15832.0,Appareil fixe-Vast apparaat,Potiérue,5.0,4000.0,Liége,Liège,3 eme / Local de soins,Oui-Ja,Non-Nee,,50.645745946395,5.579289545109
+15833.0,Appareil fixe-Vast apparaat,Potiérue,5.0,4000.0,Liége,Liège,6ème étage/ Local de soins,Oui-Ja,Non-Nee,,50.645745946395,5.579289545109
+15834.0,Appareil fixe-Vast apparaat,Place de l Université,16.0,1348.0,Louvain-la-Neuve,Brabant Wallon,"3ième étage, sur le palier.
+Accès durant les horaires de bureau (jours ouvrables de 9h à 18h).
+L ouverture de la porte d entrée du bâtiment via le bouton central sur le panneau de sonnettes.",Oui-Ja,Non-Nee,9h à 18h les jours ouvrables,50.670173634094,4.614988849483
+9190.0,Appareil fixe-Vast apparaat,Rue Prunieau,5.0,6000.0,Charleroi,Hainaut,REz-de-chaussée,Oui-Ja,Non-Nee,8h-16h,50.407492988933,4.445403620808
+8085.0,Appareil fixe-Vast apparaat,Karmelietenstraat,57.0,9500.0,Geraardsbergen,Oost-Vlaanderen,Gelijkvloers in gang aan speelplaats,Oui-Ja,Non-Nee,"Maandag, dinsdag, donderdag en vrijdag 08.00 uur tot 16.30 uur  Woensdag 08.00 uur tot 12.00 uur",50.775587577734,3.878743799347
+15835.0,Appareil fixe-Vast apparaat,KAPELANIELAAN,12.0,9140.0,TEMSE,Oost-Vlaanderen,GELIJKVLOERS   INGANG PERSONEEL ,Non-Nee,Oui-Ja,,51.141483509513,4.181150879795
+8086.0,Appareil fixe-Vast apparaat,Kleine Karmelietenstraat,3.0,9500.0,Geraardsbergen,Oost-Vlaanderen,Gang ingang aan secretariaat,Oui-Ja,Non-Nee,"Maandag, dinsdag, donderdag en vrijdag 08.00 uur tot 16.30 uur Woensdag 08.00 uur tot 12.00 uur",50.774792973313,3.877439072299
+15836.0,Appareil fixe-Vast apparaat,Kerkdreef,4.0,3210.0,Linden,Vlaams-Brabant,binnen in het gebouw,Oui-Ja,Non-Nee,Enkel tijdens voetbalwedstrijden of trainingen,50.895281448446,4.764574926703
+15837.0,Appareil fixe-Vast apparaat,Martelarenplaats ,1.0,3210.0,Linden,Vlaams-Brabant,Gebouw-Sporthal,Oui-Ja,Non-Nee,tijdens training en sportwedstrijden,50.894851833999,4.767596183702
+15838.0,Appareil fixe-Vast apparaat,Kerkplein ,2.0,3212.0,Pellenberg,Vlaams-Brabant,gebouw- Sporthal,Oui-Ja,Non-Nee,tijdens training en sportwedstrijden,50.871165581453,4.793569522348
+15839.0,Appareil fixe-Vast apparaat,Plein,51.0,3212.0,Pellenberg,Vlaams-Brabant,gebouw - Voetbal kantine,Oui-Ja,Non-Nee,tijdens training en voetbalwedstrijden,50.88297974825,4.795830708368
+15840.0,Appareil fixe-Vast apparaat,kerkplein,2.0,3212.0,Pellenberg,Vlaams-Brabant,gebouw - sporthal,Oui-Ja,Non-Nee,tijdens training en sportwedstijden,50.871165581453,4.793569522348
+15841.0,Appareil fixe-Vast apparaat,Meenselstraat,118.0,3211.0,Binkom,Vlaams-Brabant,gebouw - voetbal kantine,Oui-Ja,Non-Nee,tijdens training en voetbalwedstrijden,50.880695847273,4.90052922857
+15842.0,Appareil fixe-Vast apparaat,Gellenberg ,14.0,3210.0,Lubbeek,Vlaams-Brabant,gebouw - sporthal,Oui-Ja,Non-Nee,tijdens training en sportwedstrijden,50.883045504281,4.840606583674
+15843.0,Appareil fixe-Vast apparaat,Staatsbaan,124.0,3210.0,Lubbeek,Vlaams-Brabant,gebouw - dienstencentrum,Oui-Ja,Non-Nee,maandag  tot vrijdag van 9u-17u,50.895785536103,4.820299663032
+15844.0,Appareil fixe-Vast apparaat,Dorpstraat ,18.0,3210.0,Lubbeek,Vlaams-Brabant,gebouw - school,Oui-Ja,Non-Nee,tijdens de schooluren,50.879174406118,4.844328567779
+15845.0,Appareil fixe-Vast apparaat,Sint-Jorisstraat,4520.0,3800.0,Sint-Truiden,Limburg,"Het toestel is aangebracht in het grote magazijn van de verzending (Warehouse) tegen de
+wand van de kantoren op het gelijkvloers.",Non-Nee,Oui-Ja,,50.82365045828,5.205796633477
+15846.0,Appareil fixe-Vast apparaat,Bollenberg,86.0,3210.0,Lubbeek,Vlaams-Brabant,gebouw - gemeentelijke Loods,Oui-Ja,Non-Nee,"Van maandag tot donderdag van 8u tot 16u30, vrijdag van 8u tot 12u",50.879346989505,4.82386465409
+15847.0,Appareil fixe-Vast apparaat,Schoolstraat,4.0,3211.0,Binkom,Vlaams-Brabant,Gebouw - school,Oui-Ja,Non-Nee,schooluren,50.872314447012,4.883816803286
+15848.0,Appareil fixe-Vast apparaat,Rue du chéne,22.0,1000.0,Bruxelles,Bruxelles-Brussel,,Oui-Ja,Non-Nee,,50.844239262326,4.351352129295
+15849.0,Appareil fixe-Vast apparaat,rue bara,160.0,1070.0,Bruxelles,Bruxelles-Brussel,,Oui-Ja,Non-Nee,,50.834150049293,4.329662613724
+15850.0,Appareil fixe-Vast apparaat,Rue des prés de la Mercire,18.0,6880.0,Bertirx,Luxembourg,,Oui-Ja,Non-Nee,,49.862453632572,5.282914633631
+15452.0,Appareil fixe-Vast apparaat,Meistraat ,5.0,2000.0,Antwerpen,Antwerpen,Gelijkvloers - onthaal campus,Non-Nee,Non-Nee,Elke werkdag tussen 8u en 20u,51.216210271798,4.410772111458
+15851.0,Appareil fixe-Vast apparaat,Mutsaardstraat ,31.0,2000.0,Antwerpen,Antwerpen,Gelijkvloers - onthaal,Non-Nee,Non-Nee,Elke werkdag tussen 8u en 20u,51.222992656391,4.406751983057
+15852.0,Appareil fixe-Vast apparaat,Krekelberg ,1.0,9040.0,Sint-Amandsberg,Oost-Vlaanderen,gelijkvloers - aan bureau directie,Non-Nee,Oui-Ja,,51.05318271604,3.749626448261
+15853.0,Appareil fixe-Vast apparaat,Frederic Sheidlaan,1.0,2620.0,Hemiksem,Antwerpen,"1. Aan de achterkant van het hoofdgebouw
+2. Binnen aan de ingang van het expeditiegebouw",Non-Nee,Oui-Ja,,51.136793394637,4.34146823098
+15854.0,Appareil fixe-Vast apparaat,Kardinaal Cardijnlaan ,,2830.0,Willebroek,Antwerpen,Straatkant school St.-Jan Tisselt,Oui-Ja,Oui-Ja,,51.034494596987,4.351276346941
+15855.0,Appareil fixe-Vast apparaat,Elfnovemberstraat,23.0,9030.0,Gent,Oost-Vlaanderen,buitengevel,Oui-Ja,Oui-Ja,,51.072488166891,3.678792744725
+15856.0,Appareil fixe-Vast apparaat,Zandstraat,26.0,8434.0,Westende,West-Vlaanderen,Ingang Voetbal,Oui-Ja,Oui-Ja,,51.157135184227,2.777324574697
+15857.0,Appareil fixe-Vast apparaat,Vaartdijk-Zuid,17.0,8432.0,Leffinge,West-Vlaanderen,"voetbalveld Leffinge, links aan de tribune",Oui-Ja,Oui-Ja,,51.171691804739,2.887738478783
+15858.0,Appareil fixe-Vast apparaat,Slijpesteenweg,28.0,8432.0,Leffinge,West-Vlaanderen,ingang sporthal De Barloke,Oui-Ja,Oui-Ja,,51.170735303858,2.876433051599
+15859.0,Appareil fixe-Vast apparaat,Naalstraat,,2570.0,Duffel ,Antwerpen,Voordeur tennisclub,Oui-Ja,Oui-Ja,,51.084037352565,4.509957665216
+15860.0,Appareil fixe-Vast apparaat,Rue Pietro Ferrero,5.0,6700.0,Arlon,Luxembourg,,Oui-Ja,Non-Nee,,49.673616839421,5.820472438736
+15861.0,Appareil fixe-Vast apparaat,Rue Pietro Ferrero,5.0,6700.0,Arlon,Luxembourg,,Oui-Ja,Non-Nee,,49.673616839421,5.820472438736
+15862.0,Appareil fixe-Vast apparaat,Boulevard de Merckem,60.0,5000.0,Namur,Namur,3eme etage ,Oui-Ja,Non-Nee,,50.469792406293,4.858106069666
+15863.0,Appareil fixe-Vast apparaat,Boulevard de Merckem,60.0,500.0,namur,Namur,2eme etage,Oui-Ja,Non-Nee,,50.469792406293,4.858106069666
+15864.0,Appareil fixe-Vast apparaat,Boulevard de Merckem,60.0,5000.0,NAmur,Namur,reception,Oui-Ja,Non-Nee,,50.469792406293,4.858106069666
+15865.0,Appareil fixe-Vast apparaat,Boulevard de Merckem,60.0,5000.0,Namur,Namur,1er étage ,Oui-Ja,Non-Nee,,50.469792406293,4.858106069666
+15867.0,Appareil fixe-Vast apparaat,Rue Santos-Dimont,1.0,6040.0,Gosselie ,Hainaut,,Oui-Ja,Non-Nee,,50.464965141864,4.459102218187
+15868.0,Appareil fixe-Vast apparaat,Avenue Albert Einstein,2.0,1320.0,Ottignie louvain le neuve ,Brabant Wallon,,Oui-Ja,Non-Nee,,50.667032006177,4.625591589362
+15869.0,Appareil fixe-Vast apparaat,Rue des artisans,12.0,5150.0,Floreffe,Namur,,Oui-Ja,Non-Nee,,50.44545503411,4.771263922566
+15870.0,Appareil fixe-Vast apparaat,Ilgatlaan,23.0,3500.0,Hasselt ,West-Vlaanderen,,Oui-Ja,Non-Nee,,50.921202819292,5.353651896749
+15871.0,Appareil fixe-Vast apparaat,Bouleard Simon Bolivar,36.0,1000.0,Bruxelles,Bruxelles-Brussel,8 étage,Oui-Ja,Non-Nee,,50.861010025656,4.354792146177
+15872.0,Appareil fixe-Vast apparaat,Bouleard Simon Bolivar,36.0,1000.0,Bruxelles ,Bruxelles-Brussel,Reception,Oui-Ja,Oui-Ja,,50.861010025656,4.354792146177
+15873.0,Appareil fixe-Vast apparaat,Bouleard Simon Bolivar,36.0,1000.0,bruxelles,Bruxelles-Brussel,Locale médical ,Oui-Ja,Non-Nee,,50.861010025656,4.354792146177
+15874.0,Appareil fixe-Vast apparaat,Bouleard Simon Bolivar,36.0,1000.0,Bruxelles,Bruxelles-Brussel,6 étage,Oui-Ja,Non-Nee,,50.861010025656,4.354792146177
+15875.0,Appareil fixe-Vast apparaat,Bouleard Simon Bolivar,36.0,1000.0,Bruxelles ,Bruxelles-Brussel,1 étage,Oui-Ja,Non-Nee,,50.861010025656,4.354792146177
+15876.0,Appareil fixe-Vast apparaat,Bouleard Simon Bolivar,36.0,1000.0,Bruxelles,Bruxelles-Brussel,4 étage,Oui-Ja,Non-Nee,,50.861010025656,4.354792146177
+15877.0,Appareil fixe-Vast apparaat,Vaartkant Rechts,,2960.0,Brecht,Antwerpen,Binnenkomst via zwarte poort -> ga naar de laatste sectionale poort van het magazijn aan de rechterzijde -> AED onder de trap,Non-Nee,Non-Nee,,51.337243530034,4.71291899062
+15878.0,Appareil fixe-Vast apparaat,Lindestraat,30.0,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Bevestiging op de voorgevel van GBS De Kouter,Oui-Ja,Oui-Ja,,50.836703638004,3.556242950054
+15879.0,Appareil fixe-Vast apparaat,Lindestaat ,16.0,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Aan de zijgevel van schoolgebouw VBS  t Hinkelpad,Oui-Ja,Oui-Ja,,50.84835061,3.527601284
+15880.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,3 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15881.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,anvers ,Antwerpen,10 étage ,Oui-Ja,Oui-Ja,,51.21115543936,4.422743061754
+15882.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,9 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15883.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,8 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15884.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers ,Antwerpen,7 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15885.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,6 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15877.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,reception ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15886.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,anvers,Antwerpen,5 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15878.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers ,Antwerpen,4 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15879.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,2 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15880.0,Appareil fixe-Vast apparaat,Van Immerseelstraat,66.0,2000.0,Anvers,Antwerpen,1 étage ,Oui-Ja,Non-Nee,,51.21115543936,4.422743061754
+15881.0,Appareil fixe-Vast apparaat,Rozenhof ,126.0,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Bevestiging op de voorgevel van OC Rozenhof,Oui-Ja,Oui-Ja,,50.834078761206,3.560237010736
+15882.0,Appareil fixe-Vast apparaat,Moregemplein,28.0,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Bevestiging aan de zijgevel van Schoolke Moregem.,Oui-Ja,Oui-Ja,,50.849395851069,3.55992419811
+15883.0,Appareil fixe-Vast apparaat,Waregemseweg ,35.0,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Aan de buitengevel ter hoogte van het openbaar toilet,Oui-Ja,Oui-Ja,,50.854434338796,3.50539413444
+1501.0,Appareil fixe-Vast apparaat,Chaussée de Lille,,7501.0,Orcq,Hainaut,Accueil ,Oui-Ja,Non-Nee,,50.603659502523,3.346205233996
+15884.0,Appareil fixe-Vast apparaat,Ooikeplein ,10.0,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Op de voorgevel van het gebouw,Oui-Ja,Oui-Ja,,50.87061099283,3.551193104848
+15885.0,Appareil fixe-Vast apparaat,Esplanade Oscar Van De Voorde,1.0,9000.0,Gant ,Vlaams-Brabant,2 étage ,Oui-Ja,Non-Nee,,51.037409776373,3.70684211315
+15886.0,Appareil fixe-Vast apparaat,Gotstraat ,,9790.0,Wortegem-Petegem,Oost-Vlaanderen,Op de zijgevel van het lijkhuisje (kerkhof Wortegem),Oui-Ja,Oui-Ja,,50.850317522888,3.500171219292
+15887.0,Appareil fixe-Vast apparaat,Esplanade Oscar Van De Voorde,1.0,9000.0,Gand ,Vlaams-Brabant,3 étage ,Oui-Ja,Non-Nee,,51.037409776373,3.70684211315
+15888.0,Appareil fixe-Vast apparaat,Esplanade Oscar Van De Voorde,1.0,9000.0,Gand,Vlaams-Brabant,1 étage ,Oui-Ja,Non-Nee,,51.037409776373,3.70684211315
+15889.0,Appareil fixe-Vast apparaat,Schoolstraat,,9950.0,Livegem,Vlaams-Brabant, ,Oui-Ja,Non-Nee,,51.15279043161,3.603369835501
+15890.0,Appareil fixe-Vast apparaat,Grokt Markt,1.0,3290.0,Diest ,Vlaams-Brabant, ,Oui-Ja,Non-Nee,,51.001839577687,4.988038728474
+15891.0,Appareil fixe-Vast apparaat,Thor park,8300.0,3600.0,Genk,Limburg,JLG 1e verdiep,Non-Nee,Oui-Ja,,50.994026931466,5.538179076062
+15893.0,Appareil fixe-Vast apparaat,Rue d Abhooz,3.0,4040.0,herstal,Liège,,Oui-Ja,Non-Nee,,50.693970920123,5.6200083008
+15894.0,Appareil fixe-Vast apparaat,rue du fort,131.0,4632.0,Cerexhe-Heuseux,Liège, ,Oui-Ja,Non-Nee,,50.646173147259,5.715634817549
+15895.0,Appareil fixe-Vast apparaat,Cour lemaire,20.0,4651.0,Battice,Liège,,Oui-Ja,Non-Nee,,50.651599259188,5.793301949473
+15896.0,Appareil fixe-Vast apparaat,Rue des Fauldeurs,6.0,6530.0,Thuin,Hainaut,"Rez de chaussé, juste à l entrée",Oui-Ja,Oui-Ja,,50.35753038999,4.28696492836
+15898.0,Appareil fixe-Vast apparaat,Wandelingstraat,74.0,2570.0,Duffel,Antwerpen,"aan café Den Blauwe Hoek, hangt in een groene kast met logo AED erboven",Oui-Ja,Oui-Ja,,51.098393276845,4.564292703087
+15105.0,Appareil fixe-Vast apparaat,Maloulaan,2.0,8900.0,Ieper,West-Vlaanderen,Aan de buitenmuur naast de hoofdingang van het Lyceum,Oui-Ja,Oui-Ja,,50.849663862423,2.877885719239
+15899.0,Appareil fixe-Vast apparaat,Oudenburgsesteenweg,101.0,8400.0,Oostende,West-Vlaanderen,Inkomhal,Non-Nee,Non-Nee,,51.215804503865,2.975874274492
+15308.0,Appareil fixe-Vast apparaat,L. Hendrickxlei ,,2150.0,Borsbeek,Antwerpen,muur aan leerlingeningang van Sint-Jozefsinstituut te Borsbeek,Oui-Ja,Oui-Ja,,51.191054964231,4.48697233307
+15900.0,Appareil fixe-Vast apparaat,Koning Albertlaan,264.0,3620.0,Lanaken,Limburg,Direct bij de hoofdingang van het Eurotel ,Oui-Ja,Non-Nee,08:00-00:00,50.895899990991,5.671405068446
+15901.0,Appareil fixe-Vast apparaat,Egide Walschaertsstraat,7.0,2800.0,Mechelen,Antwerpen,Productievloer naast het EHBO lokaal (vervangt tostel X12H564213 met registratie nr. 3311),Non-Nee,Oui-Ja,,51.004741769752,4.465158341669
+15902.0,Appareil fixe-Vast apparaat,Sparhoekdreef,63.0,9880.0,Aalter,Oost-Vlaanderen,aan de ingang van de kantine,Oui-Ja,Oui-Ja,,51.090349122458,3.371588868728
+15903.0,Appareil fixe-Vast apparaat,Prinsengoeddreef,33.0,9910.0,Aalter,Oost-Vlaanderen,ingang voetbalkantine,Oui-Ja,Oui-Ja,,51.145490771693,3.403299787735
+15905.0,Appareil fixe-Vast apparaat,Breestraat ,1.0,9880.0,Aalter,Oost-Vlaanderen,aan de muur van de kleedkamer scheidsrechters  - spelerstoegang eerste terrein,Oui-Ja,Oui-Ja,,51.047555106248,3.45571886909
+15906.0,Appareil fixe-Vast apparaat,Joseph Gérardstraat ,16.0,9040.0,Sint-Amandsberg,Oost-Vlaanderen,gelijkvloers aan de buitenmuur van blok C naast de oprit richting de sportterreinen en de speeltuin van de lagere school,Non-Nee,Oui-Ja,,51.061518099653,3.747473304974
+15907.0,Appareil fixe-Vast apparaat,Begijnhof ,,3090.0,Overijse,Vlaams-Brabant,Gevel inkom business seats,Oui-Ja,Oui-Ja,,50.769828189145,4.535659491657
+15908.0,Appareil fixe-Vast apparaat,Waversesteenweg ,2.0,3090.0,Overijse,Vlaams-Brabant,Gevel bezoekerscentrum Druif,Oui-Ja,Oui-Ja,,50.772499936061,4.537303393957
+15909.0,Appareil fixe-Vast apparaat,Avenue des Villas,3.0,4180.0,Hamoir,Liège,Usine de production ,Oui-Ja,Non-Nee,,50.429889141989,5.534688598459
+15910.0,Appareil fixe-Vast apparaat,Avenue des Villas,3.0,4180.0,Hamoir,Liège,Usine de production ,Oui-Ja,Non-Nee,,50.429889141989,5.534688598459
+15911.0,Appareil fixe-Vast apparaat,Rue Arthur Maes,100.0,1130.0,Bruxelles (Haren),Bruxelles-Brussel,au rez-de-chaussée du magasin BigMat Haren,Oui-Ja,Non-Nee,ETE : du lundi au vendredi de 06h30 à 18h00 et le samedi de 07h00 à 15h00 - HIVER : du lundi au vendredi de 06h30 à 17h00 et le samedi de 07h00 à 15h00,50.885110134671,4.425568517496
+15912.0,Appareil fixe-Vast apparaat,Europalaan,32.0,2480.0,Dessel,Antwerpen,Hoofdingang van het gebouw,Non-Nee,Non-Nee,8-17h (tijdens diensturen van de fabriek),51.221887718096,5.077405746468
+15913.0,Appareil fixe-Vast apparaat,Posthofbrug,,2600.0,Berchem,Antwerpen,Verdiep 2; receptie Cegeka,Non-Nee,Non-Nee,08:30 - 17:00,51.195364099382,4.433893934281
+10902.0,Appareil fixe-Vast apparaat,Sluisweg,2.0,9000.0,Gent,Oost-Vlaanderen,Verdiep 4; receptie Cegeka,Non-Nee,Non-Nee,08:30 - 17:00,51.013335106435,3.736394608271
+15866.0,Appareil fixe-Vast apparaat,Boulevard de Merckem,60.0,5000.0,Namur,Namur,4éme étage,Oui-Ja,Non-Nee,,50.469792406293,4.858106069666
+15867.0,Appareil fixe-Vast apparaat,Industrielaan,70.0,2900.0,Schoten,Antwerpen,Gelijkvloers. Ingang hal naar receptie. Vlak achter buitendeur rechts bij het binnenkomen tegen de muur.,Non-Nee,Non-Nee,Van zondagmiddag 12h00 tot en met zaterdag 06h00,51.238753526117,4.476976992785
+4195.0,Appareil fixe-Vast apparaat,Borsbeeksebrug,26.0,2600.0,Berchem,Antwerpen,Eerste verdieping aan onthaal,Non-Nee,Non-Nee,Maandag tem donderdag: 08u30-16u00 en vrijdag: 08u30-12u00,51.199418386072,4.435071835497
+13303.0,Appareil fixe-Vast apparaat,Noorderlaan,500.0,2030.0,ANTWERPEN,Antwerpen,Inkom politie cellen poort 49,Oui-Ja,Oui-Ja,,51.262248126446,4.421901183399
+6114.0,Appareil fixe-Vast apparaat,Universiteitslaan,9.0,3500.0,Hasselt,Limburg,Onthaal C-gebouw (scheve blok),Non-Nee,Non-Nee,08:30 - 17:00,50.929716402166,5.367065204944
+10878.0,Appareil fixe-Vast apparaat,Bredabaan,399.0,2170.0,MERKSEM,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.243404769918,4.443401519416
+10879.0,Appareil fixe-Vast apparaat,Halewijnlaan,84.0,2050.0,ANTWERPEN,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.224419130583,4.377694020224
+10880.0,Appareil fixe-Vast apparaat,Sint- bernardsesteenweg,111.0,2020.0,ANTWERPEN,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.191001278903,4.379771391107
+10881.0,Appareil fixe-Vast apparaat,Kioskplaats,29.0,2660.0,HOBOKEN,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.174893440294,4.350178159936
+10882.0,Appareil fixe-Vast apparaat,Doorstraald,2.0,2610.0,WILRIJK,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.16734,4.39513
+10883.0,Appareil fixe-Vast apparaat,Unolaan,2.0,2100.0,DEURNE,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.21826874149,4.45806314445
+10885.0,Appareil fixe-Vast apparaat,Borsbeeksebrug,28.0,2600.0,BERCHEM,Antwerpen,1 e verdieping,Oui-Ja,Oui-Ja,,51.199096353352,4.434902688691
+10884.0,Appareil fixe-Vast apparaat,Borsbeeksebrug,38.0,2600.0,BERCHEM,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.200745911897,4.434724824706
+10886.0,Appareil fixe-Vast apparaat,Handelstaal,101.0,2060.0,ANTWERPEN,Antwerpen,INKOM,Oui-Ja,,,51.260721048,4.369583724
+6115.0,Appareil fixe-Vast apparaat,Universiteitslaan,9.0,3500.0,Hasselt,Limburg,Refter - Gebouw A,Non-Nee,Non-Nee,08:30 - 17:00,50.929716402166,5.367065204944
+10887.0,Appareil fixe-Vast apparaat,Turnhoutsebaan,350.0,2140.0,BORGERHOUT,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.214213367186,4.442844793407
+10888.0,Appareil fixe-Vast apparaat,Antwerpsebaan,142.0,2040.0,ANTWERPEN,Antwerpen,INKOM,Oui-Ja,,,51.344276490316,4.321449270622
+10889.0,Appareil fixe-Vast apparaat,Havanastraat,500.0,2030.0,ANTWERPEN,Antwerpen,/,Oui-Ja,Oui-Ja,,51.260767407978,4.421212331965
+10890.0,Appareil fixe-Vast apparaat,Kristus-Koningsplein,15.0,2180.0,EKEREN,Antwerpen,INKOM,Oui-Ja,Oui-Ja,,51.278220806866,4.419654833348
+6116.0,Appareil fixe-Vast apparaat,Universiteitslaan,9.0,3500.0,Hasselt,Limburg,Onthaal - Gebouw C,Non-Nee,Non-Nee,08:30 - 17:00,50.929716402166,5.367065204944
+7716.0,Appareil fixe-Vast apparaat,Beenhouwerstraat ,3.0,2870.0,Puurs-Sint-Amands ,Antwerpen,Gemeenschapscentrum Paepenheide - Linkerkant ingang ,Oui-Ja,Oui-Ja,,51.043138220461,4.324986349943
+2086.0,Appareil fixe-Vast apparaat,Harmoniepad ,0.0,2870.0,Puurs-Sint-Amands ,Antwerpen,Harmoniepad - tussen ingang Sport- en Evenementenhal Binder (Forum 4) en CC Binder (Forum 9) ,Oui-Ja,Oui-Ja,,51.075168156172,4.27459427284
+2085.0,Appareil fixe-Vast apparaat,Vrijhalsweg ,15.0,2870.0,Puurs-Sint-Amands ,Antwerpen,buitenkast ingang Sporthal,Oui-Ja,Oui-Ja,,51.048169960756,4.327236136574
+4888.0,Appareil fixe-Vast apparaat,Kalfortdorp,,2870.0,Puurs-Sint-Amands,Antwerpen,nabij kerk Kalfort,Oui-Ja,Oui-Ja,,51.073350447566,4.29584961243
+3328.0,Appareil fixe-Vast apparaat,Turkenhofdreef,8.0,2870.0,Puurs-Sint-Amands,Antwerpen,sporthal De Wandeling,Oui-Ja,Oui-Ja,,51.060439390624,4.278716819491
+15869.0,Appareil fixe-Vast apparaat,Achterhoefweg ,37.0,2870.0,Puurs-Sint-Amands,Antwerpen,Flegado ,Oui-Ja,Oui-Ja,,51.081614592616,4.328718979065
+15870.0,Appareil fixe-Vast apparaat,Hoogstraat ,29.0,2870.0,Puurs-Sint-Amands,Antwerpen,Ingang Gemeentehuis,Oui-Ja,Oui-Ja,,51.076378082426,4.278270818423
+3327.0,Appareil fixe-Vast apparaat,Kerkstraat,34.0,2870.0,Puurs-Sint-Amands,Antwerpen,Links van hoofdingang - aan gevel fietsenstalling,Oui-Ja,Oui-Ja,,51.085955412633,4.327493041906
+15871.0,Appareil fixe-Vast apparaat,kaai ,31.0,2870.0,Puurs-Sint-Amands,Antwerpen,infopunt - glazen huis,Oui-Ja,Oui-Ja,,51.05590100915,4.201316313912
+8483.0,Appareil fixe-Vast apparaat,Buisstraat ,,2870.0,Puurs-Sint-Amands,Antwerpen,rechts van hoofdinkom Gemeenschapscentrum De Nestel,Oui-Ja,Oui-Ja,,51.052968248891,4.215656618598
+15872.0,Appareil fixe-Vast apparaat,Sportlaan,7.0,2870.0,Puurs-Sint-Amands,Antwerpen,ter hoogte van inkom sporthal,Oui-Ja,Oui-Ja,,51.049572085519,4.201610099618
+7884.0,Appareil fixe-Vast apparaat,Lippelodorp,,2870.0,Puurs-Sint-Amands,Antwerpen,voorgevel - zichtbaar vanaf parking ,Oui-Ja,Oui-Ja,,51.043411454694,4.261218485367
+7885.0,Appareil fixe-Vast apparaat,Meirstraat,27.0,2870.0,Puurs-Sint-Amands,Antwerpen,voetbalgebouw,Oui-Ja,Oui-Ja,,51.067238958118,4.244821660335
+15873.0,Appareil fixe-Vast apparaat,Fortbaan,10.0,2870.0,Puurs-Sint-Amands ,Antwerpen,infoluifel nabij parking (links van Broox-restaurant),Oui-Ja,Oui-Ja,,51.067692963946,4.285094108191
+12047.0,Appareil fixe-Vast apparaat,Lichterstraat,58.0,2870.0,Puurs-Sint-Amands,Antwerpen,infoluifel centraal - zichtbaar vanaf parking (rechts van Move Passion en vlak voor de Tennishal Stepp),Oui-Ja,Oui-Ja,,51.061593746329,4.31115562297
+15874.0,Appareil fixe-Vast apparaat,Noorderplaats,7.0,2000.0,Anvers ,Antwerpen, ,Oui-Ja,Non-Nee,,51.230269824728,4.412593834294
+15875.0,Appareil fixe-Vast apparaat,Rue d Esquernes,5.0,7603.0,Bon Secours,Hainaut,Couloir direction ,Oui-Ja,Non-Nee,,50.498907366069,3.607115402635
+15875.0,Appareil fixe-Vast apparaat,Digue de Cuesmes,31.0,7000.0,Mons,Hainaut,Bureau Acceuil,Oui-Ja,Non-Nee,,50.444974997881,3.945226145596
+15876.0,Appareil fixe-Vast apparaat,Coolhemstraat,64.0,2870.0,Puurs-Sint-Amands,Antwerpen,Hof van Coolhm/Coolhembos - poortgebouw nabij brasserie ,Oui-Ja,Oui-Ja,,51.074078884476,4.307568922782
+15877.0,Appareil fixe-Vast apparaat,Smalle Heerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,"Gebouw BTJ, in de inkom.",Oui-Ja,Oui-Ja,,51.087525720283,3.785079803218
+15878.0,Appareil fixe-Vast apparaat,Smalleheerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,"Volvo SML: Office 1, in de centrale gang",Oui-Ja,,,51.087525720283,3.785079803218
+15879.0,Appareil fixe-Vast apparaat,Smalleheerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,"Volvo SML,Office 11",Oui-Ja,,,51.087525720283,3.785079803218
+15880.0,Appareil fixe-Vast apparaat,Smalleheerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,"Gebouw BTA,Medische dienst, in de centrale gang.",Oui-Ja,,,51.087525720283,3.785079803218
+15881.0,Appareil fixe-Vast apparaat,Smalleheerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,MOBIEL TOESTEL - IN DE BRANDWEERWAGEN,Oui-Ja,,,51.087525720283,3.785079803218
+15882.0,Appareil fixe-Vast apparaat,Smalleheerweg,31.0,9041.0,OOSTAKKER,Oost-Vlaanderen,"Gebouw BTQ, CABTRIM",Oui-Ja,,,51.087525720283,3.785079803218
+15883.0,Appareil fixe-Vast apparaat,Bunderbeeklaan,29.0,2950.0,KAPELLEN,Antwerpen, In de keuken.  (Vooraf Inge bellen 03/6646302),Oui-Ja,Oui-Ja,,51.309862281806,4.44268612398
+15884.0,Appareil fixe-Vast apparaat,Bergen,18.0,2270.0,HERENTHOUT,Antwerpen,Inkom Tennishal . (Open vanaf 13u),Oui-Ja,,,51.150418534479,4.787242442736
+15885.0,Appareil fixe-Vast apparaat,Lodewijk De Konincklaan ,,2320.0,HOOGSTRATEN,Antwerpen,Inkom,Oui-Ja,,,51.39228637572,4.755403472631
+15886.0,Appareil fixe-Vast apparaat,Lichterstraat,64.0,2870.0,Puurs-Sinr-Amands ,Antwerpen,buitenzijde ticketlokaal voetbalgebouw ,Oui-Ja,Oui-Ja,,51.061417391087,4.306855455184
+15887.0,Appareil fixe-Vast apparaat,Uilenbaan,200.0,2160.0,WOMMELGEM,Antwerpen,WERKPLAATS,Oui-Ja,,,51.213360885723,4.525842566288
+15889.0,Appareil fixe-Vast apparaat,Wijgmaalsesteenweg,32.0,3020.0,HERENT,Vlaams-Brabant,Inkom magazijn,Oui-Ja,,,50.911560990341,4.676742304432
+15890.0,Appareil fixe-Vast apparaat,Beekstraat,25.0,3070.0,KORTENBERG,Vlaams-Brabant,Buitenkast inkom,Oui-Ja,,,50.884804027567,4.542478967711
+15891.0,Appareil fixe-Vast apparaat,Kwikstraat,33.0,3078.0,EVERBERG,Vlaams-Brabant,Inkom voetbalplein,Oui-Ja,,,50.878268867209,4.577240815655
+15892.0,Appareil fixe-Vast apparaat,Molenstraat,2.0,9988.0,WATERVLIET,Oost-Vlaanderen,"Buitengevel Bistro.  Open vanaf 11u,Wo/Do gesloten ",Oui-Ja,,,51.276570619678,3.627450067376
+15893.0,Appareil fixe-Vast apparaat,Triphon De Smetstraat,5.0,9140.0,TEMSE,Oost-Vlaanderen,INKOM,Oui-Ja,,,51.127685010958,4.233362425227
+15894.0,Appareil fixe-Vast apparaat,Italienlei ,,2000.0,ANTWERPEN,Antwerpen,Inkom Er is prive parking,Oui-Ja,,,51.221904629393,4.416475019589
+15895.0,Appareil fixe-Vast apparaat,Interleuvenlaan,74.0,3000.0,LEUVEN,Vlaams-Brabant,Inkom,Oui-Ja,,,50.851033884497,4.732046855954
+15896.0,Appareil fixe-Vast apparaat,Interleuvenlaan,74.0,3000.0,LEUVEN,Vlaams-Brabant,Achterkant Gebouw Inkom,Oui-Ja,,,50.851033884497,4.732046855954
+15897.0,Appareil fixe-Vast apparaat,Heikensstraat,,9240.0,ZELE,Oost-Vlaanderen,Gebouw BPC2 in de loods.,Oui-Ja,,,51.070273825698,4.053841668503
+15898.0,Appareil fixe-Vast apparaat,Vasco Da Gamalaan,1.0,9042.0,DESTELDONK,Oost-Vlaanderen,Ingang Logistiek,Oui-Ja,,,51.151058283239,3.774965695932
+15899.0,Appareil fixe-Vast apparaat,Stijn Streuvelslaan,63.0,8501.0,HEULE,West-Vlaanderen,/,Oui-Ja,,,50.840985030327,3.236797304469
+15900.0,Appareil fixe-Vast apparaat,Izegemsestraat,131.0,8501.0,HEULE,West-Vlaanderen,"Buitengevel,naast inkom.",Oui-Ja,,,50.839817808401,3.256902975616
+15901.0,Appareil fixe-Vast apparaat,Lotelingstraat,,2812.0,MUIZEN,Antwerpen,Inkom Kleedkamers,Oui-Ja,,,51.006499768474,4.507513393793
+13442.0,Appareil fixe-Vast apparaat,Westvaartdijk,83.0,1850.0,GRIMBERGEN,Vlaams-Brabant,/,Oui-Ja,,,50.938806408522,4.413314929424
+15902.0,Appareil fixe-Vast apparaat,Doornzeledries,57.0,9940.0,EVERGEM,Oost-Vlaanderen,"Buitengevel,inkom",Oui-Ja,,,51.142782662596,3.76300304372
+15903.0,Appareil fixe-Vast apparaat,Kanaalstraat ,,9940.0,EVERGEM,Oost-Vlaanderen,"Buitengevel,naast inkom kerk.",Oui-Ja,,,51.17418378728,3.782747709162
+15904.0,Appareil fixe-Vast apparaat,Nieuwpoortsesteenweg,70.0,8400.0,OOSTENDE,West-Vlaanderen,/,Oui-Ja,,,51.223232756007,2.90576133081
+11659.0,Appareil fixe-Vast apparaat,Rijselstraat,1.0,8000.0,BRUGGE,West-Vlaanderen,"Gebouw BST1, onthaal.",Oui-Ja,,,51.194921061739,3.214648958731
+15905.0,Appareil fixe-Vast apparaat,Moerenlei,121.0,2610.0,WILRIJK,Antwerpen,Inkom bar,Oui-Ja,,,51.161362450179,4.372487936342
+15906.0,Appareil fixe-Vast apparaat,Clos Des Chausseurs,2.0,1150.0,SINT-PIETERS-WOLUWE,Bruxelles-Brussel,Inkom Receptie,Oui-Ja,,,50.824912395712,4.455956436906
+15907.0,Appareil fixe-Vast apparaat,Birminghamstraat,62.0,1080.0,SINT-JANS-MOLENBEEK,Bruxelles-Brussel,Inkom Magazijn,Oui-Ja,,,50.847299159899,4.326006176102
+15908.0,Appareil fixe-Vast apparaat,Avenue de la Reine,1.0,1310.0,LA HULPE,Brabant Wallon,EHBO LOKAAL,Oui-Ja,,,50.74473773164,4.491027157982
+15909.0,Appareil fixe-Vast apparaat,Antwerpsesteenweg,415.0,2500.0,LIER,Antwerpen,INKOM,Oui-Ja,,,51.144417217534,4.543565178543
+15910.0,Appareil fixe-Vast apparaat,Edingsesteenweg,262.0,1755.0,KESTER,Vlaams-Brabant,/,Oui-Ja,,,50.773687903198,4.117713954355
+11660.0,Appareil fixe-Vast apparaat,marksesteenweg,58.0,8500.0,KORTRIJK,West-Vlaanderen,inkom gebouw c,Oui-Ja,,,50.821939795661,3.250505907112
+15911.0,Appareil fixe-Vast apparaat,Vinkenstraat,50.0,1850.0,GRIMBERGEN,Vlaams-Brabant,/,Oui-Ja,,,50.927516865045,4.397693408838
+15912.0,Appareil fixe-Vast apparaat,Sint-Jorisstraat,,8730.0,BEERNEM,West-Vlaanderen,Buitenzuil op de parking.,Oui-Ja,,,51.12660549776,3.343881876767
+15913.0,Appareil fixe-Vast apparaat,Clemence Dosschestraat,5.0,9800.0,ASTENE,Oost-Vlaanderen,magazijn ( werkplaats,Oui-Ja,,,50.987673951773,3.515450909508
+15914.0,Appareil fixe-Vast apparaat,Avenue Mélina Mercouri,7.0,7000.0,Mons,Hainaut,"Dans le lobby de l hôtel, à côté de l hydrant. ",Oui-Ja,Oui-Ja,,50.456178016242,3.940642477917
+15915.0,Appareil fixe-Vast apparaat,Chaussée de bruxelles ,134.0,1410.0,Waterloo ,Brabant Wallon,,Oui-Ja,Non-Nee,,50.723568103613,4.397805055789
+15916.0,Appareil fixe-Vast apparaat,Rozenstraat,,9810.0,EKE,Oost-Vlaanderen,Tankstation Lubolux,Oui-Ja,,,50.975506528456,3.654348772311
+15917.0,Appareil fixe-Vast apparaat,Victor Braeckmanlaan,180.0,9000.0,GENT,Oost-Vlaanderen,vervangt site 1,Oui-Ja,,,51.059633093448,3.760401049517
+11959.0,Appareil fixe-Vast apparaat,Opaaigem,26.0,9420.0,AAIGEM,Oost-Vlaanderen,Inkom Winkel,Oui-Ja,Oui-Ja,,50.892929193048,3.936092361778
+15918.0,Appareil fixe-Vast apparaat,Elenestraat,75.0,9620.0,ZOTTEGEM,Oost-Vlaanderen,Buitenkast Inkom,Oui-Ja,,,50.879769940339,3.809060512022
+15919.0,Appareil fixe-Vast apparaat,Oude vest,114.0,9200.0,APPELS,Oost-Vlaanderen,Inkom,Oui-Ja,,,51.030100379619,4.103601427797
+15920.0,Appareil fixe-Vast apparaat,De Castrodreef,1.0,9100.0,SINT-NIKLAAS,Oost-Vlaanderen,Inkom logistiek raadzaal,Oui-Ja,,,51.162477662397,4.138884043386
+15921.0,Appareil fixe-Vast apparaat,Sint-Truidersteenweg,301.0,3840.0,Hoepertingen (Borgloon),Limburg,Gelijkvloers - voorkant productielijn 3,Non-Nee,Non-Nee,Maandag tot vrijdag,50.805814926284,5.300700723295
+15922.0,Appareil fixe-Vast apparaat,Steenweg op vilvoorde,40.0,1745.0,MAZENZELE,Vlaams-Brabant,Buitenkast inkom voetbal cantine,Oui-Ja,Oui-Ja,,50.960267936327,4.200072355662
+15923.0,Appareil fixe-Vast apparaat,boulevard Louis Schmidt,29.0,1040.0,ETTERBEEK,Bruxelles-Brussel,Binnen in kantoren van UBER ,Oui-Ja,,,50.827017510695,4.399407424219
+15924.0,Appareil fixe-Vast apparaat,Sint-Truidersteenweg ,301.0,3840.0,Hoepertingen (Borgloon),Limburg,Gelijkvloers - oude receptie,Non-Nee,Non-Nee,Maandag - vrijdag,50.805814926284,5.300700723295
+15925.0,Appareil fixe-Vast apparaat,Industrielaan,32.0,8930.0,MENEN,West-Vlaanderen,in de gang Burelen V1,Oui-Ja,,,50.788903949218,3.099854776217
+15926.0,Appareil fixe-Vast apparaat,Industrielaan,32.0,8930.0,MENEN,West-Vlaanderen,in de gang van de burelen V5,Oui-Ja,,,50.788903949218,3.099854776217
+15927.0,Appareil fixe-Vast apparaat,industrielaan,,8930.0,MENEN,West-Vlaanderen,bureel naast weegbrug,Oui-Ja,,,50.78899201574,3.099516942954
+15928.0,Appareil fixe-Vast apparaat,RUE SAINTE LOUISE,82.0,7301.0,HORNU,Hainaut,ACCUEIL GRAND-HORNU,Oui-Ja,Non-Nee,10H00 - 18H00 SAUF LUNDIS,50.434646289998,3.837842207326
+15929.0,Appareil fixe-Vast apparaat,industrielaan,85.0,8930.0,MENEN,West-Vlaanderen,Werkplaats naast bureel ,Oui-Ja,,,50.788917444082,3.09844167116
+15930.0,Appareil fixe-Vast apparaat,Industrielaan,3.0,8930.0,MENEN,West-Vlaanderen,aan het onthaal,Oui-Ja,,,50.791702708598,3.10416642721
+15931.0,Appareil fixe-Vast apparaat,Wolvenstraat,23.0,8500.0,KORTRIJK,West-Vlaanderen,aan de receptie,Oui-Ja,,,50.816615987949,3.266286851497
+15932.0,Appareil fixe-Vast apparaat,Rue des sablières,13.0,7522.0,Blandain,Hainaut,Salle de sport,Oui-Ja,Non-Nee,,50.62349150156,3.32569592157
+15933.0,Appareil fixe-Vast apparaat,Gullegemstraat,59.0,8560.0,GULLEGEM,West-Vlaanderen,inkom atelier,Oui-Ja,,,50.814117929346,3.186019399756
+15934.0,Appareil fixe-Vast apparaat,Esplanade Rene Magritte,7.0,6010.0,CHARLEROI,Hainaut,INKOM,Oui-Ja,,,50.393452518503,4.459533976785
+15935.0,Appareil fixe-Vast apparaat,Roterijstraat,20.0,8540.0,DEERLIJK,West-Vlaanderen,ONTHAAL,Oui-Ja,,,50.849294681498,3.347556024486
+15936.0,Appareil fixe-Vast apparaat,Rue des Spinettes,20.0,4140.0,Sprimont,Liège,Local dispatch,Non-Nee,Non-Nee,semaine : 6h-17h,50.515423907437,5.687910370787
+15937.0,Appareil fixe-Vast apparaat,Rue du Traquet,5.0,4460.0,Bierset,Liège,Local doseur,Non-Nee,Non-Nee,semaine 6h -16h,50.637897828416,5.411906027019
+15938.0,Appareil fixe-Vast apparaat,Rue des Spinettes ,13.0,4140.0,Sprimont,Liège,Magasin ELOY TRAVAUX,Non-Nee,Non-Nee,6h-15h,50.513475071878,5.683026325741
+15941.0,Appareil fixe-Vast apparaat,rue des Spinettes ,13.0,4140.0,Sprimont,Liège,Accueil principal EBA,Non-Nee,Non-Nee,8h-17h,50.513475071878,5.683026325741
+15942.0,Appareil fixe-Vast apparaat,Rue de la charrette,27.0,1200.0,Bruxelles,Bruxelles-Brussel,,Oui-Ja,Non-Nee,,50.850744834566,4.422024145919
+15943.0,Appareil fixe-Vast apparaat,Van Maerlantstraat,1.0,8370.0,BLANKENBERGE,West-Vlaanderen,Hoofdingang School,Oui-Ja,,,51.310821171529,3.125961470942
+879.0,Appareil fixe-Vast apparaat,Humbeeksesteenweg,245.0,1850.0,Grimbergen,Vlaams-Brabant,Gemeentelijke loods thv ingangsdeur ,Non-Nee,Non-Nee,8u - 16u,50.945891673186,4.39539919812
+15944.0,Appareil fixe-Vast apparaat,Rue du bas sart,74.0,6280.0,Gougnies,Hainaut, ,Oui-Ja,Non-Nee,,50.373156013201,4.592198796875
+15945.0,Appareil fixe-Vast apparaat,André Geryllaan,5.0,8670.0,Koksijde,West-Vlaanderen,Lijkenhuisje Kerkhof,Oui-Ja,Oui-Ja,,51.121188072078,2.695667251337
+15946.0,Appareil fixe-Vast apparaat,Dorp ,86.0,9320.0,Erembodegem,Oost-Vlaanderen,Eerste verdieping kantoren BDB europe,Non-Nee,Non-Nee,07u30 - 18u,50.91905,4.05041
+15947.0,Appareil fixe-Vast apparaat,Steenweg,39.0,1730.0,Asse,Vlaams-Brabant,Naast kantoor van Meliopus (nummer 39) in de nis naast de elektriciteitscabine,Oui-Ja,Oui-Ja,,50.911407517694,4.196758989336
+13706.0,Appareil fixe-Vast apparaat,Voskenslaan,22.0,9100.0,Sint-Niklaas,Oost-Vlaanderen,buiten aan de ingang,Oui-Ja,Oui-Ja,,51.155176018903,4.160323359147
+13707.0,Appareil fixe-Vast apparaat,Dalstraat,26.0,9100.0,Sint-Niklaas,Oost-Vlaanderen,"Binnen, aan de inkom van de publieksingang ",Oui-Ja,Oui-Ja,,51.165141221678,4.135648544941
+13708.0,Appareil fixe-Vast apparaat,Vleeshouwersstraat,,9112.0,Sinaai,Oost-Vlaanderen,"Buiten, aan de inkomhal",Oui-Ja,Oui-Ja,,51.155307410946,4.049392131495
+9085.0,Appareil fixe-Vast apparaat,Paul Snoeckstraat,1.0,9100.0,Sint-Niklaas,Oost-Vlaanderen,"Binnen, in de inkomhal",Non-Nee,Non-Nee,Zie de openingsuren van de Stadsschouwburg,51.166795306451,4.139048663964
+15949.0,Appareil fixe-Vast apparaat,Jagershoek,14.0,8570.0,VICHTE,West-Vlaanderen,in de inkom,Oui-Ja,,,50.840185103398,3.386295504582
+15950.0,Appareil fixe-Vast apparaat,Jagershoek,13.0,8570.0,VICHTE,West-Vlaanderen,ingang Magazijn,Oui-Ja,,,50.840310077574,3.387262608571
+15951.0,Appareil fixe-Vast apparaat,Flanders Fieldweg,37.0,8790.0,WAREGEM,West-Vlaanderen,naast EHBO lokaal,Oui-Ja,Oui-Ja,,50.869740532185,3.450379261491
+15952.0,Appareil fixe-Vast apparaat,Eugene Bekaertlaan,14.0,8790.0,WAREGEM,West-Vlaanderen,in de gang naar de refter,Oui-Ja,,,50.867741071092,3.442566489541
+15953.0,Appareil fixe-Vast apparaat,Zuiderlaan,26.0,8790.0,WAREGEM,West-Vlaanderen,in het Foyer,Oui-Ja,,,50.880978862234,3.426829466329
+15954.0,Appareil fixe-Vast apparaat,Kazerneweg,19.0,9770.0,KRUISHOUTEM,Oost-Vlaanderen,In de inkomhal,Oui-Ja,,,50.918356995526,3.527645321343
+15955.0,Appareil fixe-Vast apparaat,Industriezone,,9770.0,KRUISHOUTEM,Oost-Vlaanderen,buitengevel aan laadstation,Oui-Ja,,,50.905329443252,3.476749857271
+15956.0,Appareil fixe-Vast apparaat,Mannebeekstraat,21.0,8790.0,WAREGEM,Oost-Vlaanderen,bij personeelsingang,Oui-Ja,,,50.859452626137,3.426428392262
+15957.0,Appareil fixe-Vast apparaat,Bedrijvenlaan,3.0,8630.0,VEURNE,West-Vlaanderen,Naast de burelen,Oui-Ja,Oui-Ja,,51.071767365128,2.693203977632
+15958.0,Appareil fixe-Vast apparaat,Nijverheidstraat,2.0,8630.0,VEURNE,West-Vlaanderen,Inkom bureel ,Oui-Ja,,,51.065352694628,2.678060225527
+15959.0,Appareil fixe-Vast apparaat,Werkplaatsstraat ,4.0,8630.0,VEURNE,West-Vlaanderen,in de refter,Oui-Ja,,,51.06581994382,2.672338319324
+15960.0,Appareil fixe-Vast apparaat,Koksijdestraat,24.0,8630.0,VEURNE,West-Vlaanderen,/,Oui-Ja,,,51.083915173581,2.642216692978
+15961.0,Appareil fixe-Vast apparaat,Albert I laan,17.0,8630.0,VEURNE,West-Vlaanderen,/,Oui-Ja,,,51.061673416319,2.673774977528
+15962.0,Appareil fixe-Vast apparaat,Noordzeedreef,,8670.0,OOSTDUINKERKE,West-Vlaanderen,Inkom,Oui-Ja,,,51.135925271054,2.704730893465
+15963.0,Appareil fixe-Vast apparaat,Kleine dries,2.0,8600.0,DIKSMUIDE,West-Vlaanderen,/,Oui-Ja,,,51.018479792875,2.853478036287
+15964.0,Appareil fixe-Vast apparaat,Vaartstraat,,8630.0,VEURNE,West-Vlaanderen,werkplaats,Oui-Ja,,,51.037398602244,2.700989495563
+15965.0,Appareil fixe-Vast apparaat,Bedrijvenlaan,7.0,8630.0,VEURNE,West-Vlaanderen,Loods 1 refter,Oui-Ja,,,51.072285241015,2.691369095208
+15966.0,Appareil fixe-Vast apparaat,Avenue Leon Grosjean,2.0,1140.0,EVERE,Bruxelles-Brussel,In de inkomhal,Oui-Ja,,,50.857866979604,4.411962760804
+15967.0,Appareil fixe-Vast apparaat,Churchillaan,14.0,8790.0,WAREGEM,West-Vlaanderen,onthaal,Oui-Ja,,,50.889844736499,3.438968641422
+15968.0,Appareil fixe-Vast apparaat,Astridlaan,72.0,9500.0,GERAARDSBERGEN,Oost-Vlaanderen,inkom delhaize,Oui-Ja,,,50.774862836476,3.868820380358
+15969.0,Appareil fixe-Vast apparaat,Vantegemstraat,1.0,9230.0,WETTEREN,Oost-Vlaanderen," 3de verdieping, cafetaria achter betonnen paal",Oui-Ja,,,50.976038654789,3.839915722534
+7042.0,Appareil fixe-Vast apparaat,Vantegemstraat,1.0,9230.0,WETTEREN,Oost-Vlaanderen,1e verdiep EHBO lokaal,Oui-Ja,,,50.976038654789,3.839915722534
+15970.0,Appareil fixe-Vast apparaat,Haven 111 steenlandlaan,3.0,9130.0,DOEL,Oost-Vlaanderen,hoofdgebouw inkom gang,Oui-Ja,,,51.259249458676,4.261227978515
+15971.0,Appareil fixe-Vast apparaat,Steenovenstraat,38.0,8790.0,WAREGEM,West-Vlaanderen,werkplaats,Oui-Ja,Oui-Ja,,50.868211924503,3.449058692646
+15972.0,Appareil fixe-Vast apparaat,Industrielaan,21.0,8790.0,WAREGEM,West-Vlaanderen,inkom,Oui-Ja,,,50.864504231543,3.426454711438
+15973.0,Appareil fixe-Vast apparaat,Lindestraat,97.0,8790.0,WAREGEM,West-Vlaanderen,inkom,Oui-Ja,,,50.896952674211,3.406392961464
+15974.0,Appareil fixe-Vast apparaat,Wielsbekestraat,96.0,8780.0,OOSTROZEBEKE,West-Vlaanderen,inkom,Oui-Ja,,,50.919535155836,3.345766404339
+15975.0,Appareil fixe-Vast apparaat,Dentergemstraat,164.0,8780.0,OOSTROZEBEKE,West-Vlaanderen,inkom,Oui-Ja,,,50.937305712578,3.366012723821
+15976.0,Appareil fixe-Vast apparaat,Markt,1.0,8760.0,MEULEBEKE,West-Vlaanderen,Inkom buitenkast,Oui-Ja,,,50.948939207452,3.288161523309
+15977.0,Appareil fixe-Vast apparaat,Jan Baljuwvermeulenstraat,1.0,8760.0,MEULEBEKE,West-Vlaanderen,Frenesco Sporthal,Oui-Ja,Oui-Ja,,50.951094571944,3.289548393008
+15978.0,Appareil fixe-Vast apparaat,Bremheidelaan,10.0,2300.0,TURNHOUT,Antwerpen,naast EHBO lokaal,Oui-Ja,,,51.292887041947,4.921025496405
+15979.0,Appareil fixe-Vast apparaat,Jaagpad,2.0,8900.0,IEPER,West-Vlaanderen,Inkom werkplaats ,Oui-Ja,,,50.869292142274,2.879231014698
+15980.0,Appareil fixe-Vast apparaat,Energieweg,,2390.0,MALLE,Antwerpen,in de productieruimte,Oui-Ja,,,51.293590417457,4.715718772461
+15981.0,Appareil fixe-Vast apparaat,Mariastraat,10.0,2160.0,WOMMELGEM,Antwerpen,"Inkom, onmiddellijk links , cafetaria rechts naast houten trap",Oui-Ja,,,51.205458092133,4.484882971498
+15982.0,Appareil fixe-Vast apparaat,Sportstraat,7.0,9820.0,MERELBEKE,Oost-Vlaanderen,Inkom Tennis,Oui-Ja,,,50.996233509386,3.742158088713
+15983.0,Appareil fixe-Vast apparaat,Bruggestraat,271.0,8730.0,BEERNEM,West-Vlaanderen,INKOM,Oui-Ja,,,51.187241660053,3.288634430286
+15984.0,Appareil fixe-Vast apparaat,Zuidervaartje,3.0,8310.0,ASSEBROEK,West-Vlaanderen,in kelder deur steeds open,Oui-Ja,,,51.220934521975,3.23899772169
+15985.0,Appareil fixe-Vast apparaat,Emiel Clausstraat,41.0,8790.0,WAREGEM,West-Vlaanderen,/,Oui-Ja,,,50.909908372401,3.409898021915
+15986.0,Appareil fixe-Vast apparaat,Langestraat,53.0,9620.0,ZOTTEGEM,Oost-Vlaanderen,Bij de uitgang,Oui-Ja,,,50.861694240413,3.840027537122
+15987.0,Appareil fixe-Vast apparaat,Filliersdreef,32.0,9800.0,ASTENE,Oost-Vlaanderen,ingang magazijn,Oui-Ja,,,50.993142639281,3.539099998135
+15988.0,Appareil fixe-Vast apparaat,E3 Laan,37.0,9800.0,DEINZE,Oost-Vlaanderen,In het bureel,Oui-Ja,,,51.017735401,3.53158014
+15989.0,Appareil fixe-Vast apparaat,G. Deprezstraat,2.0,8530.0,HARELBEKE,West-Vlaanderen,in de refter,Oui-Ja,,,50.835977346094,3.306537756373
+15990.0,Appareil fixe-Vast apparaat,Nijverheidslaan,3.0,8880.0,LEDEGEM,West-Vlaanderen,in de keuken,Oui-Ja,,,50.864404822171,3.114157655795
+15991.0,Appareil fixe-Vast apparaat,Nijverheidslaan,4.0,8880.0,LEDEGEM,West-Vlaanderen,REFTER,Oui-Ja,,,50.864256967333,3.114430105751
+15992.0,Appareil fixe-Vast apparaat,Engelse Wandeling,,8500.0,KORTRIJK,West-Vlaanderen,in bureel ruimte,Oui-Ja,,,50.814874413546,3.245374195182
+15993.0,Appareil fixe-Vast apparaat,Brugsesteenweg,30.0,8520.0,KUURNE,West-Vlaanderen,in de werkplaats garage van mossel,Oui-Ja,,,50.846137595757,3.269546070727
+15994.0,Appareil fixe-Vast apparaat,generaal deprezstraat,2.0,8530.0,HARELBEKE,West-Vlaanderen,brandweerlokaal,Oui-Ja,,,50.835977346094,3.306537756373
+15995.0,Appareil fixe-Vast apparaat,Route de monti,8.0,6800.0,Bougnimont,Luxembourg,Mur de l église,Oui-Ja,Oui-Ja,,49.943992895979,5.465257272807
+15996.0,Appareil fixe-Vast apparaat,Schoonboekstraat,14.0,9600.0,RONSE,Oost-Vlaanderen,In het atelier,Oui-Ja,,,50.750636789366,3.658708028336
+15997.0,Appareil fixe-Vast apparaat,Steenweg ,,9810.0,EKE,Oost-Vlaanderen,inkom,Oui-Ja,,,50.968507853163,3.661225433206
+15998.0,Appareil fixe-Vast apparaat,Goed ter Motestraat,1.0,8570.0,ANZEGEM,West-Vlaanderen,In restaurant,Oui-Ja,,,50.823228303726,3.431040869761
+15999.0,Appareil fixe-Vast apparaat,Hoogstraat,36.0,9000.0,GENT,Oost-Vlaanderen,inkom receptie,Oui-Ja,,,51.054728464715,3.714742056893
+16000.0,Appareil fixe-Vast apparaat,Armentierstraat,150.0,7782.0,PLOEGSTEERT,Hainaut,inkom winkel aan de verste kassa,Oui-Ja,,,50.714509194118,2.88487337664
+16001.0,Appareil fixe-Vast apparaat,Hasseltkouter,53.0,9500.0,GERAARDSBERGEN,Oost-Vlaanderen,in de inkomhal,Oui-Ja,,,50.81898701881,3.872553260938
+16002.0,Appareil fixe-Vast apparaat,Rue Camille Joset,1.0,6730.0,TINTIGNY,Luxembourg,Facade centre culturel côté parking,Oui-Ja,Oui-Ja,,49.716916661578,5.486050511471
+16003.0,Appareil fixe-Vast apparaat,Rue du boulet,27.0,1000.0,BRUSSEL,Bruxelles-Brussel,Garagepoort thv trap/inkom,Oui-Ja,Oui-Ja,,50.849482268491,4.343578165557
+16004.0,Appareil fixe-Vast apparaat,Geslecht 3 haven ,1931.0,9130.0,KALLO,Oost-Vlaanderen,ingang dispatching,Oui-Ja,,,51.288362149215,4.279074674798
+11678.0,Appareil fixe-Vast apparaat,Tarwestraat,9.0,2200.0,HERENTALS,Antwerpen,Buitenkast inkom ,Oui-Ja,,,51.127684382316,4.830368759497
+16005.0,Appareil fixe-Vast apparaat,Ballingsweg,10.0,9620.0,ZOTTEGEM,Oost-Vlaanderen,EHBO lokaal,Oui-Ja,,,50.87900802534,3.83752159953
+16006.0,Appareil fixe-Vast apparaat,Rue Fleurie,2.0,6800.0,BRAS,Luxembourg,2e verdieping inkom,Oui-Ja,,,49.925467842224,5.366516274105
+16007.0,Appareil fixe-Vast apparaat,Zonnekestraat,13.0,8501.0,BISSEGEM,West-Vlaanderen,Trappenhal Personeel,Oui-Ja,,,50.82566056439,3.221277121092
+16008.0,Appareil fixe-Vast apparaat,Rue De La Bassee,1.0,7700.0,Luingne,Hainaut,Inkom productie,Oui-Ja,,,50.745578344192,3.258402268199
+16009.0,Appareil fixe-Vast apparaat,Zwaarveld,48.0,9220.0,HAMME,Oost-Vlaanderen,Refter,Oui-Ja,,,51.071771765627,4.126574883296
+16010.0,Appareil fixe-Vast apparaat,Sint-Andriesstraat,2.0,2000.0,ANTWERPEN,Antwerpen,Inkom rechts ehbo lokaal,Oui-Ja,,,51.21599192322,4.397172892651
+16011.0,Appareil fixe-Vast apparaat,Blokhuisstraat ,,2800.0,MECHELEN,Antwerpen,Inkom,Oui-Ja,,,51.050339636549,4.460716811583
+16012.0,Appareil fixe-Vast apparaat,Rue D Erbisoeul,5.0,7011.0,GHLIN,Hainaut,Naast de keuken,Oui-Ja,,,50.494540059238,3.909764049533
+16013.0,Appareil fixe-Vast apparaat,Rue De Coquelet,134.0,5000.0,NAMUR,Namur,In de inkom/onthaal,Oui-Ja,,,50.470538730952,4.877365252412
+16014.0,Appareil fixe-Vast apparaat,Rue de la Pichelotte,,5340.0,GESVES,Namur,In de centrale gang,Oui-Ja,,,50.411322226841,5.059629062222
+16015.0,Appareil fixe-Vast apparaat,Rue de Montigny,29.0,6000.0,CHARLEROI,Hainaut,In de inkomhall,Oui-Ja,,,50.408282019388,4.444817725776
+16016.0,Appareil fixe-Vast apparaat,Place Delcour,16.0,4020.0,LUIK,Liège,Aan het onthaal,Oui-Ja,,,50.638222685381,5.581429025895
+16017.0,Appareil fixe-Vast apparaat,Rue Saint Exupéry,,4460.0,Grace-Hollogne,Liège,In de gang.,Oui-Ja,,,50.646714579508,5.442748570962
+16018.0,Appareil fixe-Vast apparaat,Koninginnelaan,100.0,8670.0,KOKSIJDE,West-Vlaanderen,Inkom/Balie,Oui-Ja,,,51.110960515733,2.616455248844
+16019.0,Appareil fixe-Vast apparaat,Albert 1 Laan,,8670.0,OOSTDUINKERKE,West-Vlaanderen,Aan het onthaal.,Oui-Ja,,,51.133662728236,2.678407932064
+16020.0,Appareil fixe-Vast apparaat,Kuringersteenweg,293.0,3500.0,HASSELT,Limburg,inkom rechts achter,Oui-Ja,,,50.938189458539,5.313960986824
+16021.0,Appareil fixe-Vast apparaat,Industrieweg Zuid,2051.0,3660.0,OPGLABBEEK,Limburg,Inkom,Oui-Ja,,,51.034194562134,5.561868094635
+16022.0,Appareil fixe-Vast apparaat,Schoorstraat,67.0,2275.0,GIERLE,Antwerpen,Inkom,Oui-Ja,,,51.278145746923,4.864992389858
+16023.0,Appareil fixe-Vast apparaat,Hertogstraat,178.0,3001.0,HEVERLEE,Vlaams-Brabant,Toestel hangt buiten ,Oui-Ja,,,50.856114826564,4.702501317813
+16024.0,Appareil fixe-Vast apparaat,Emile van Becelaerelaan,2.0,1170.0,WATERMAAL-BOSVOORDE,Bruxelles-Brussel,"Gelijkvloers,bij de goederenlift.",Oui-Ja,,,50.796008324621,4.407476766225
+16025.0,Appareil fixe-Vast apparaat,Hippokrateslaan,14.0,1930.0,NOSSEGEM,Vlaams-Brabant,Aan de receptie,Oui-Ja,,,50.854579890545,4.448167637199
+16026.0,Appareil fixe-Vast apparaat,Roeselaarsestraat,525.0,8870.0,IZEGEM,West-Vlaanderen,Inkom burelen,Oui-Ja,,,50.929055950106,3.179293090095
+16027.0,Appareil fixe-Vast apparaat,Avenue de la Liberation,50.0,5660.0,COUVIN,Namur,In de gang naar de burelen.,Oui-Ja,,,50.05529497287,4.48770138644
+16028.0,Appareil fixe-Vast apparaat,Torhoutsesteenweg,224.0,8210.0,ZEDELGEM,West-Vlaanderen,Achter de toonbank.,Oui-Ja,,,51.12197655771,3.149196190363
+16029.0,Appareil fixe-Vast apparaat,Oostrozebeekstraat ,148.0,8710.0,WIELSBEKE,West-Vlaanderen,Inkom naast wc,Oui-Ja,,,50.904221963558,3.332312863009
+16030.0,Appareil fixe-Vast apparaat,Oostrozebeekstraat,148.0,8710.0,WIELSBEKE,West-Vlaanderen,2e verdieping naastwc,Oui-Ja,,,50.904221963558,3.332312863009
+16031.0,Appareil fixe-Vast apparaat,Oostrozebeekstraat,148.0,8710.0,WIELSBEKE,West-Vlaanderen,Diepvries 4 receptie,Oui-Ja,,,50.904221963558,3.332312863009
+16032.0,Appareil fixe-Vast apparaat,Oostrozebeekstraat,148.0,8710.0,WIELSBEKE,West-Vlaanderen,Fabriek 1,Oui-Ja,Oui-Ja,,50.904221963558,3.332312863009
+11960.0,Appareil fixe-Vast apparaat,Markt,1.0,8710.0,WIELSBEKE,West-Vlaanderen,Inkom kerk buitenkast,Oui-Ja,Oui-Ja,,50.908948015845,3.370410289322
+16033.0,Appareil fixe-Vast apparaat,Bavikhoofsestraat,9.0,8710.0,OOIGEM,West-Vlaanderen,Buitenkast t vlinderken kinderopvang,Oui-Ja,,,50.892682890823,3.335664450813
+16034.0,Appareil fixe-Vast apparaat,Avenue louise,222.0,1000.0,BRUSSEL,Bruxelles-Brussel,6e verdieping Inkom,Oui-Ja,,,50.826464933728,4.365287546239
+16035.0,Appareil fixe-Vast apparaat,Oudeleeuwenrui,19.0,2000.0,ANTWERPEN,Antwerpen,/,Oui-Ja,,,51.227185410088,4.406660536493
+16036.0,Appareil fixe-Vast apparaat,T hofveld,6.0,1702.0,GROOT-BIJGAARDEN,Vlaams-Brabant,Buitenkast,Oui-Ja,,,50.871393910668,4.274827506865
+16037.0,Appareil fixe-Vast apparaat,Radiatorenstraat,11.0,1800.0,PEUTIE,Vlaams-Brabant,Bij de Planbalie.,Oui-Ja,,,50.936484076519,4.422301838371
+16038.0,Appareil fixe-Vast apparaat,Hoogveld,90.0,9200.0,DENDERMONDE,Oost-Vlaanderen,1 verdiep gang,Oui-Ja,,,51.023216615907,4.143970098414
+16039.0,Appareil fixe-Vast apparaat,Hoogveld,90.0,9200.0,DENDERMONDE,Oost-Vlaanderen,inkom productie,Oui-Ja,,,51.023216615907,4.143970098414
+16040.0,Appareil fixe-Vast apparaat,Hoogveld,90.0,9200.0,DENDERMONDE,Oost-Vlaanderen,LABO,Oui-Ja,,,51.023216615907,4.143970098414
+13083.0,Appareil fixe-Vast apparaat,Industriezone,32.0,9770.0,KRUISHOUTEM,Oost-Vlaanderen,in de werkplaats,Oui-Ja,,,50.9037231565,3.472818119206
+16041.0,Appareil fixe-Vast apparaat,Pitantiestraat,127.0,8792.0,DESSELGEM,West-Vlaanderen,Bureau maintenance,Oui-Ja,,,50.897345575922,3.369228273336
+16042.0,Appareil fixe-Vast apparaat,Staatsbaan,289.0,9870.0,ZULTE,Oost-Vlaanderen,Inkom burelen,Oui-Ja,,,50.911318837158,3.428087087082
+16043.0,Appareil fixe-Vast apparaat,Gentstraat,39.0,8780.0,OOSTROZEBEKE,West-Vlaanderen,/,Oui-Ja,,,50.957620763666,3.36240381159
+16044.0,Appareil fixe-Vast apparaat,Oude Zwevezeelsestraat,9.0,8851.0,KOOLSKAMP,West-Vlaanderen,INKOM,Oui-Ja,,,51.020908030225,3.200014747307
+16045.0,Appareil fixe-Vast apparaat,lodewijk de raetlaan,59.0,8870.0,EMELGEM,West-Vlaanderen,Hangt in de winkel tov de wc,Oui-Ja,,,50.931775793867,3.185999031731
+16046.0,Appareil fixe-Vast apparaat,Ropswalle,10.0,8930.0,LAUWE,West-Vlaanderen,Sas tss kleedkamer en refter,Oui-Ja,,,50.788981900918,3.102215706884
+16047.0,Appareil fixe-Vast apparaat,Elleboogstraat,7.0,8500.0,KORTRIJK,West-Vlaanderen,Inkom rechts door poort,Oui-Ja,,,50.796277467532,3.284458398486
+16048.0,Appareil fixe-Vast apparaat,Chemin de la clusure,30.0,6927.0,TELLIN,Luxembourg,sanitaire blok nt1,Oui-Ja,,,50.096381134398,5.285379870462
+16049.0,Appareil fixe-Vast apparaat,Chemin de la Clusure,30.0,6927.0,TELLIN,Luxembourg,sanitaire blok 3,Oui-Ja,,,50.096381134398,5.285379870462
+16050.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivar,30.0,1000.0,BRUSSEL,Bruxelles-Brussel,2 verdiep onthaal Financien,Oui-Ja,,,50.860724663763,4.35612419823
+16051.0,Appareil fixe-Vast apparaat,Spinnerijstraat,99.0,8500.0,KORTRIJK,West-Vlaanderen,Cotton Park Sport Club,Oui-Ja,,,50.828612125865,3.302220573324
+15215.0,Appareil fixe-Vast apparaat,Industrielaan,55.0,8930.0,LAUWE,West-Vlaanderen,"Aanmelden onthaal, AED staat in de gang van het magazijn",Oui-Ja,,,50.789270741301,3.099651850341
+16052.0,Appareil fixe-Vast apparaat,Raverschootstraat,67.0,9900.0,EEKLO,Oost-Vlaanderen,Inkom,Oui-Ja,Oui-Ja,,51.18618315141,3.555332926826
+16053.0,Appareil fixe-Vast apparaat,handelsstraat,6.0,8020.0,HERTSBERGE,West-Vlaanderen,inkom productie,Oui-Ja,,,51.126225889254,3.252668186674
+16054.0,Appareil fixe-Vast apparaat,beerveldse baan,4.0,9120.0,LOCHRISTI,Oost-Vlaanderen,1 verdiep gang,Oui-Ja,,,51.102888784885,3.868871677606
+16055.0,Appareil fixe-Vast apparaat,Oud-Strijderslaan,14.0,8000.0,BRUGGE,West-Vlaanderen,inkom,Oui-Ja,,,51.196278357504,3.169482910619
+16056.0,Appareil fixe-Vast apparaat,Parochiaansstraat ,,1000.0,BRUSSEL,Bruxelles-Brussel,"Back Office, achter receptie",Oui-Ja,,,50.846958785934,4.359254479278
+16057.0,Appareil fixe-Vast apparaat,Waterstraat,51.0,8790.0,WAREGEM,West-Vlaanderen,/,Oui-Ja,,,50.88665630244,3.40806925828
+11893.0,Appareil fixe-Vast apparaat,Steverlyncklaan,12.0,8900.0,IEPER,West-Vlaanderen,/,Oui-Ja,,,50.84868938236,2.900487353513
+16058.0,Appareil fixe-Vast apparaat,Esenstraat,86.0,8610.0,KORTEMARK,West-Vlaanderen,/,Oui-Ja,,,51.01770539228,2.949242259662
+16059.0,Appareil fixe-Vast apparaat,Melkerijstraat,38.0,2900.0,SCHOTEN,Antwerpen,INKOM,Oui-Ja,,,51.23821222281,4.475237915514
+16060.0,Appareil fixe-Vast apparaat,Halewijnlaan,82.0,2050.0,ANTWERPEN,Antwerpen,Brandweerwagen ( Ladderwagen/hoogtewerker) ,Oui-Ja,,,51.224789107789,4.377746155661
+16061.0,Appareil fixe-Vast apparaat,Kruisweg,22.0,2040.0,ANTWERPEN,Antwerpen,MOBIEL TOESTEL,Oui-Ja,,,51.317540084617,4.346269275876
+16062.0,Appareil fixe-Vast apparaat,Jules Moretuslei,150.0,2610.0,WILRIJK,Antwerpen,In brandweerwagen (1ste hulp) ,Oui-Ja,,,51.171628060365,4.381362611605
+16063.0,Appareil fixe-Vast apparaat,Sint-jacobsmarkt,58.0,2000.0,ANTWERPEN,Antwerpen,Brandweerwagen ( 1ste hulp) ,Oui-Ja,,,51.219985564807,4.41295777653
+16064.0,Appareil fixe-Vast apparaat,Scheldelaan,151.0,2040.0,ANTWERPEN,Antwerpen,Brandweerwagen ( 1ste hulp ) ,Oui-Ja,,,51.297423160308,4.311805974837
+16065.0,Appareil fixe-Vast apparaat,Waterbaan,58.0,2100.0,DEURNE,Antwerpen,Brandweerwagen ( Ladderwagen ) ,Oui-Ja,,,51.20629204959,4.463429574139
+16066.0,Appareil fixe-Vast apparaat,Waterbaan,58.0,2100.0,DEURNE,Antwerpen,Brandweerwagen (1ste hulp ) ,Non-Nee,,,51.20629204959,4.463429574139
+16067.0,Appareil fixe-Vast apparaat,Noorderlaan,69.0,2000.0,ANTWERPEN,Antwerpen,Brandweerwagen  (Ladderwagen) ,Non-Nee,,,51.250564130605,4.418432165132
+16068.0,Appareil fixe-Vast apparaat,Noorderlaan,9.0,2030.0,ANTWERPEN,Antwerpen,Brandweerwagen (1ste hulp) ,Non-Nee,,,51.260286719194,4.402359698155
+16069.0,Appareil fixe-Vast apparaat,Noorderlaan,69.0,2030.0,ANTWERPEN,Antwerpen,Brandweerwagen (snelle interventiewagen ) ,Non-Nee,,,51.250564130605,4.418432165132
+16070.0,Appareil fixe-Vast apparaat,Paleisstraat,124.0,2018.0,ANTWERPEN,Antwerpen,Brandweerwagen (Snelle interventiewagen ) ,Non-Nee,,,51.205408948241,4.396923943935
+16071.0,Appareil fixe-Vast apparaat,Noorderlaan,69.0,2030.0,ANTWERPEN,Antwerpen,Brandweerwagen (duikwagen) ,Non-Nee,,,51.250564130605,4.418432165132
+16074.0,Appareil fixe-Vast apparaat,Kruisweg,22.0,2040.0,ANTWERPEN,Antwerpen,Brandweerwagen (1ste hulp ) ,Non-Nee,,,51.317540084617,4.346269275876
+16075.0,Appareil fixe-Vast apparaat,Paleisstraat,124.0,2018.0,ANTWERPEN,Antwerpen,Brandweerwagen (ladderwagen),Non-Nee,,,51.205408948241,4.396923943935
+16076.0,Appareil fixe-Vast apparaat,Jules Moretuslei,150.0,2610.0,WILRIJK,Antwerpen,Brandweerwagen ( Ladderwagen) ,Non-Nee,,,51.171628060365,4.381362611605
+16077.0,Appareil fixe-Vast apparaat,Noorderlaan,69.0,2030.0,ANTWERPEN,Antwerpen,Reserve toestel 2,Non-Nee,,,51.250564130605,4.418432165132
+16078.0,Appareil fixe-Vast apparaat,Halewijnlaan,82.0,2050.0,ANTWERPEN,Antwerpen,Brandweerwagen (1ste hulp ) ,Non-Nee,,,51.224789107789,4.377746155661
+16079.0,Appareil fixe-Vast apparaat,Scheldelaan,151.0,2040.0,ANTWERPEN,Antwerpen,Brandweerwagen (Ladderwagen/ hoogtewerker) ,Non-Nee,,,51.297423160308,4.311805974837
+16080.0,Appareil fixe-Vast apparaat,Noorderlaan,69.0,2030.0,ANTWERPEN,Antwerpen,Reserve toestel 1,Non-Nee,,,51.250564130605,4.418432165132
+16081.0,Appareil fixe-Vast apparaat,Sint-jacobsmarkt,58.0,2000.0,ANTWERPEN,Antwerpen,Brandweerwagen (ladderwagen) ,Non-Nee,,,51.219985564807,4.41295777653
+16082.0,Appareil fixe-Vast apparaat,Noorderlaan,69.0,2030.0,ANTWERPEN,Antwerpen,Brandweerwagen (2de hulp ) pompwagen ATP2,Non-Nee,,,51.250564130605,4.418432165132
+16083.0,Appareil fixe-Vast apparaat,Paleisstraat,124.0,2018.0,ANTWERPEN,Antwerpen,Brandweerwagen (1ste hulp ) ,Non-Nee,,,51.205408948241,4.396923943935
+16084.0,Appareil fixe-Vast apparaat,Bargelaan,12.0,8730.0,BEERNEM,West-Vlaanderen,Buitenkast inkom,Oui-Ja,,,51.137311584846,3.338279353147
+16085.0,Appareil fixe-Vast apparaat,Tinhoutstraat,91.0,8730.0,BEERNEM,West-Vlaanderen,Buitenkast jeugdlokaal oostveld,Oui-Ja,,,51.160168825258,3.386884417099
+16086.0,Appareil fixe-Vast apparaat,Noordkaai,11.0,8870.0,IZEGEM,West-Vlaanderen,Buitenkast Achterkant los kaai,Oui-Ja,Oui-Ja,,50.927348975524,3.199124086275
+16087.0,Appareil fixe-Vast apparaat,Knijffelingstraat,15.0,8851.0,KOOLSKAMP,West-Vlaanderen,Buitenkast inkom,Oui-Ja,,,50.998895434197,3.200652861595
+16088.0,Appareil fixe-Vast apparaat,Speiestraat,90.0,8940.0,WERVIK,West-Vlaanderen,MOBIEL TOESTEL,Non-Nee,,,50.780003373874,3.048541686986
+16089.0,Appareil fixe-Vast apparaat,Leuvenselaan,93.0,3300.0,TIENEN,Vlaams-Brabant,INKOM,Oui-Ja,,,50.810889052605,4.92650566852
+16090.0,Appareil fixe-Vast apparaat,Jacobsveldweg,12.0,2160.0,WOMMELGEM,Antwerpen,In de inkomhal,Oui-Ja,,,51.212966600998,4.533895479764
+16091.0,Appareil fixe-Vast apparaat,De Robianostraat,94.0,2150.0,BORSBEEK,Antwerpen,In de produktieruimte paaseitjes ,Oui-Ja,,,51.19530220106,4.483521331327
+16092.0,Appareil fixe-Vast apparaat,Esserstraat,18.0,8550.0,ZWEVEGEM,West-Vlaanderen,MOBIEL TOESTEL,Non-Nee,,,50.823950404685,3.351038202341
+16093.0,Appareil fixe-Vast apparaat,Esserstraat,18.0,8550.0,ZWEVEGEM,West-Vlaanderen,In de toonzaal,Oui-Ja,,,50.823950404685,3.351038202341
+16094.0,Appareil fixe-Vast apparaat,Oude gaversesteenweg,24.0,9820.0,MERELBEKE,Oost-Vlaanderen,ST JOZEF ZAAL EERST BELLEN,Non-Nee,,,51.005949266723,3.749072404461
+6570.0,Appareil fixe-Vast apparaat,Ringlaan,,8500.0,KORTRIJK,West-Vlaanderen,toonzaal recepie,Oui-Ja,,,50.853270045781,3.242567177753
+6574.0,Appareil fixe-Vast apparaat,Franklin Rosseveltlaan,165.0,8790.0,WAREGEM,West-Vlaanderen,In de werkplaats mechanique.,Oui-Ja,,,50.874003777687,3.442898748183
+16095.0,Appareil fixe-Vast apparaat,          Bovekerkestraat,,8680.0,BOVEKERKE,West-Vlaanderen,Naast de voordeur,Oui-Ja,,,51.059202444879,2.963390893214
+16096.0,Appareil fixe-Vast apparaat,Lekestraat,42.0,8680.0,MOKKER,West-Vlaanderen,Voorgevel straatkant,Oui-Ja,,,51.086158338509,2.942837925136
+16097.0,Appareil fixe-Vast apparaat,Sint Andriesstraat,8.0,8680.0,ZANDE,West-Vlaanderen,Voorgevel straatkant,Oui-Ja,,,51.119860923439,2.922751448547
+16098.0,Appareil fixe-Vast apparaat,Bermstraat,10.0,9100.0,Sint-Niklaas,Oost-Vlaanderen,"Buiten, naast de ingang.",Oui-Ja,Oui-Ja,,51.141406689371,4.08744413596
+9344.0,Appareil fixe-Vast apparaat,Mechelseweg,,1880.0,KAPELLE-OP-DEN-BOS,Vlaams-Brabant,buitengevel ingang pastorie,Oui-Ja,,,51.012741000652,4.374956295268
+9347.0,Appareil fixe-Vast apparaat,MECHELSEWEG ,347.0,1880.0,KAPELLE-OP-DEN-BOS,Vlaams-Brabant,buitengevel naast schoolpoort,Oui-Ja,,,51.012382084044,4.368841305547
+16099.0,Appareil fixe-Vast apparaat,MARKTPLEIN,27.0,1880.0,KAPELLE-OP-DEN-BOS,Vlaams-Brabant,buitengevel aan inkom,Oui-Ja,,,51.013624407823,4.360314311627
+16100.0,Appareil fixe-Vast apparaat,MOLENSTRAAT,52.0,1880.0,KAPELLE-OP-DEN-BOS,Vlaams-Brabant,Voorgevel naast inkom,Oui-Ja,,,50.984742884051,4.352437166661
+15888.0,Appareil fixe-Vast apparaat,VELDSTRAAT,11.0,1880.0,KAPELLE-OP-DEN-BOS,Vlaams-Brabant,Buitenkast Inkom,Oui-Ja,,,51.006439901426,4.355370078401
+16101.0,Appareil fixe-Vast apparaat,EVERT LAROCKSTRAAT,22.0,1880.0,KAPELLE-OP-DEN-BOS,Vlaams-Brabant,"buitengevel,parkingzijde",Oui-Ja,,,51.013412513311,4.368126413025
+16102.0,Appareil fixe-Vast apparaat,BORMSTRAAT,219.0,1880.0,RAMSDONK,Vlaams-Brabant,Voorgevel parkingzijde,Oui-Ja,,,51.015077159281,4.336357742705
+16103.0,Appareil fixe-Vast apparaat,Schoolstraat,3.0,2400.0,Mol,Antwerpen,Aan de buitenkant van het gebouw.,Oui-Ja,Oui-Ja,,51.178146037822,5.087784549728
+16104.0,Appareil fixe-Vast apparaat,Guido Gezellestraat ,29.0,2400.0,Mol,Antwerpen,Buiten het gebouw,Oui-Ja,Oui-Ja,,51.190883596982,5.120035430938
+16105.0,Appareil fixe-Vast apparaat,Kapellestraat,90.0,2400.0,Mol,Antwerpen,Buiten gebouw,Oui-Ja,Oui-Ja,,51.197453081234,5.12704898842
+16106.0,Appareil fixe-Vast apparaat,Axpoelmolenstraat,10.0,8700.0,TIELT,West-Vlaanderen,MOBIEL TOESTEL,Non-Nee,Non-Nee,,51.01785089868,3.381590909968
+16107.0,Appareil fixe-Vast apparaat,Steenweg naar Halle ,6.0,1652.0,ALSEMBERG,Vlaams-Brabant,/,Oui-Ja,,,50.74037293938,4.337513188057
+16108.0,Appareil fixe-Vast apparaat,Hofdreef,2.0,2970.0,SCHILDE,Antwerpen,In de fitnessruimte,Oui-Ja,,,51.243219990862,4.540659424169
+16109.0,Appareil fixe-Vast apparaat,Oude Heirbaan,,9800.0,GOTTEM,Oost-Vlaanderen,/,Oui-Ja,,,50.959297277779,3.455908129112
+6571.0,Appareil fixe-Vast apparaat,Ronseweg,114.0,9700.0,OUDENAARDE,Oost-Vlaanderen,/,Oui-Ja,,,50.824191971134,3.604559173623
+16110.0,Appareil fixe-Vast apparaat,Armoedestraat,71.0,8800.0,ROESELARE,West-Vlaanderen,Magazijn,Oui-Ja,,,50.92665248128,3.172933069604
+16111.0,Appareil fixe-Vast apparaat,Bergelen,32.0,8560.0,WEVELGEM,West-Vlaanderen,In bureel,Oui-Ja,,,50.83734464405,3.192369445782
+16112.0,Appareil fixe-Vast apparaat,Luxemburgstraat ,,1050.0,ELSENE,Bruxelles-Brussel,Inkom naast de lift. Inkomdeur bij huisnummers 47 & 51,Oui-Ja,,,50.839515314342,4.371078414233
+16113.0,Appareil fixe-Vast apparaat,Kreupelenstraat,2.0,1000.0,BRUSSEL,Bruxelles-Brussel,Inkom receptie,Oui-Ja,,,50.850997087942,4.356245065274
+16114.0,Appareil fixe-Vast apparaat,Martelaarsplein,7.0,1000.0,BRUSSEL,Bruxelles-Brussel,Inkom receptie,Oui-Ja,,,50.851278426522,4.355929151343
+16115.0,Appareil fixe-Vast apparaat,Martelaarsplein,19.0,1000.0,BRUSSEL,Bruxelles-Brussel,Inkom receptie,Oui-Ja,,,50.852131159442,4.35674663836
+16116.0,Appareil fixe-Vast apparaat,Lattenklieversstraat,46.0,8730.0,BEERNEM,West-Vlaanderen,Buitenkant inkom,Oui-Ja,,,51.127325385403,3.368706332226
+16117.0,Appareil fixe-Vast apparaat,Martelaarslaan,13.0,9000.0,GENT,Oost-Vlaanderen,Buitenkast tussen de 2 gebouwen ( gevel CVO),Oui-Ja,,,51.046128841604,3.712039228395
+16118.0,Appareil fixe-Vast apparaat,Erasmuslaan,50.0,1804.0,CARGOVIL,Vlaams-Brabant,Inkom,Oui-Ja,,,50.950092976424,4.42313382608
+16119.0,Appareil fixe-Vast apparaat,Nauwstraat,126.0,9111.0,BELSELE,Oost-Vlaanderen,/,Oui-Ja,,,51.17537171169,4.108558317697
+16120.0,Appareil fixe-Vast apparaat,Stationstraat,111.0,9080.0,LOCHRISTI,Oost-Vlaanderen,Ingang,Oui-Ja,,,51.083137374876,3.836411081178
+16121.0,Appareil fixe-Vast apparaat,Lichtelarestraat,87.0,9080.0,LOCHRISTI,Oost-Vlaanderen,/,Oui-Ja,,,51.079254290592,3.819790689191
+16122.0,Appareil fixe-Vast apparaat,land van rodelaan,20.0,9050.0,GENTBRUGGE,Oost-Vlaanderen,/,Oui-Ja,,,51.036789473629,3.759434448443
+16123.0,Appareil fixe-Vast apparaat,Ondernemingsstraat,,8630.0,AVEKAPELLE,West-Vlaanderen,/,Oui-Ja,,,51.06173171311,2.680213865419
+16124.0,Appareil fixe-Vast apparaat,Papestraat,10.0,9450.0,HAALTERT,Oost-Vlaanderen,Naast de toog. Vooraf bellen 0497/639384 0494/570281,Non-Nee,,,50.903109182093,4.006272193047
+16125.0,Appareil fixe-Vast apparaat,Veldekensstraat,64.0,9070.0,DESTELBERGEN,Oost-Vlaanderen,Naast de toog. Vooraf bellen Georgette0468/141758 ,Non-Nee,,,51.075224564911,3.814574463207
+16126.0,Appareil fixe-Vast apparaat,Poelkapellestraat,,8650.0,HOUTHULST,West-Vlaanderen,Inkom links ,Oui-Ja,,,50.964250694415,2.946802324731
+16127.0,Appareil fixe-Vast apparaat,Gentstraat,39.0,8780.0,OOSTROZEBEKE,West-Vlaanderen,/,Oui-Ja,,,50.957620763666,3.36240381159
+16128.0,Appareil fixe-Vast apparaat,Kapellestraat,113.0,8020.0,OOSTKAMP,West-Vlaanderen,/,Oui-Ja,,,51.143901688579,3.25105056318
+16129.0,Appareil fixe-Vast apparaat,Leuvensesteenweg,532.0,1930.0,NOSSEGEM,Vlaams-Brabant,"Gebouw Asco 8 , in de refter",Oui-Ja,,,50.873289220442,4.488835625578
+16130.0,Appareil fixe-Vast apparaat,Avenue du Parc industriel,,4041.0,Milmort,Liège,"Rez-de-chaussée,  corps de garde ",Non-Nee,Oui-Ja,,50.697800712295,5.589664344616
+16131.0,Appareil fixe-Vast apparaat,Rue de l ancienne Potence,12.0,7501.0,ORCQ,Hainaut,Inkom,Oui-Ja,,,50.613142396609,3.344160599329
+16132.0,Appareil fixe-Vast apparaat,Avenue des Amériques,1.0,7080.0,Framcries,Hainaut,/,Oui-Ja,,,50.409399773201,3.917651409542
+16133.0,Appareil fixe-Vast apparaat,Industrielaan,125.0,1070.0,ANDERLECHT,Bruxelles-Brussel,Achter de receptie.,Oui-Ja,,,50.818638415457,4.307758353794
+16134.0,Appareil fixe-Vast apparaat,sint baafskerkstraat,1.0,8200.0,SINT-ANDRIES,West-Vlaanderen,inkom,Oui-Ja,,,51.202374767141,3.205056713524
+16135.0,Appareil fixe-Vast apparaat,industriezone,17.0,9770.0,KRUISHOUTEM,Oost-Vlaanderen,/,Oui-Ja,,,50.90401497246,3.476707154641
+16136.0,Appareil fixe-Vast apparaat,stationstraat,111.0,9080.0,BEERVELDE,Oost-Vlaanderen,in de refter ,Oui-Ja,,,51.083137374876,3.836411081178
+16137.0,Appareil fixe-Vast apparaat,Avenue jean-etienne lenoir,1.0,1348.0,Louvain-La-Neuve,Brabant Wallon,INKOM,Oui-Ja,,,50.662874214296,4.627171451309
+16138.0,Appareil fixe-Vast apparaat,Kapiteinstraat,122.0,9000.0,GENT,Oost-Vlaanderen,In de bureelruimte,Oui-Ja,,,51.089174859733,3.720875430722
+16139.0,Appareil fixe-Vast apparaat,Diestsepoort,6.0,3000.0,LEUVEN,Vlaams-Brabant,Koffie bar,Oui-Ja,,,50.883531612756,4.714649629181
+16140.0,Appareil fixe-Vast apparaat,Rue Emile Francqui,7.0,1435.0,Mont-Saint-Hubert,Hainaut,3e verdieping Inkom Receptie,Oui-Ja,,,50.65429,3.40067
+16141.0,Appareil fixe-Vast apparaat,Kontichsesteenweg,42.0,2630.0,AARTSELAAR,Antwerpen,1 verdieping rechts inkom,Oui-Ja,,,51.143326564293,4.388284051972
+16142.0,Appareil fixe-Vast apparaat,Chaamseweg,13.0,2387.0,BAARLE-HERTOG,Antwerpen,Inkom,Oui-Ja,,,51.444991594853,4.923459852544
+16143.0,Appareil fixe-Vast apparaat,August Van Landeghemstraat,117.0,2830.0,WILLEBROEK,Antwerpen,Inkom Sportzaal,Oui-Ja,,,51.064485377196,4.361547541042
+16144.0,Appareil fixe-Vast apparaat,Breendonkstraat,160.0,2830.0,WILLEBROEK,Antwerpen,Inkom Sportzaal,Oui-Ja,,,51.05102638763,4.346175046799
+16145.0,Appareil fixe-Vast apparaat,Binnenvaartstraat,30.0,3530.0,HELCHTEREN,Limburg,De Plas Cafetaria,Oui-Ja,Oui-Ja,,51.027438161442,5.41244357145
+16146.0,Appareil fixe-Vast apparaat,Acaciastraat,21.0,2440.0,GEEL,Antwerpen,Inkom receptie,Oui-Ja,,,51.116616372539,5.02324364382
+16147.0,Appareil fixe-Vast apparaat,Nijverheidsstraat,2.0,8850.0,ARDOOIE,West-Vlaanderen,toestel hangt tussen refter en bureau inkoop.,Oui-Ja,,,50.978291020681,3.241051559723
+16148.0,Appareil fixe-Vast apparaat,Rue Maria Therese,11.0,1000.0,BRUSSEL,Bruxelles-Brussel,Inkom,Oui-Ja,,,50.846541184395,4.372023830364
+16149.0,Appareil fixe-Vast apparaat,Moerhofstraat,,9180.0,Moerbeke-Waas,Oost-Vlaanderen,Buiten aan hoofdingang,Oui-Ja,Oui-Ja,,51.177037896095,3.94863964862
+16150.0,Appareil fixe-Vast apparaat,Ossegemstraat,24.0,1860.0,MEISE,Vlaams-Brabant,Inkom Toonzaal,Oui-Ja,,,50.958809485174,4.316415015755
+16151.0,Appareil fixe-Vast apparaat,Gemeenschappenlaan,110.0,1200.0,SINT-LAMBRECHTS-WOLUWE,Bruxelles-Brussel,3e verdieping,Oui-Ja,,,50.855198600728,4.427050521796
+16152.0,Appareil fixe-Vast apparaat,Priester Pattijnstraat,15.0,8870.0,Izegem,West-Vlaanderen,Buiten kant voetbalterrein,Oui-Ja,Oui-Ja,,50.939595313249,3.183999193452
+16153.0,Appareil fixe-Vast apparaat,Sportstraat,1.0,8730.0,Beernem,West-Vlaanderen,Buiten aan hoofdingang,Oui-Ja,Oui-Ja,,51.167426882855,3.332756684782
+16154.0,Appareil fixe-Vast apparaat,Wellingstraat,,8730.0,Beernem,West-Vlaanderen,Buiten aan hoofdingang,Oui-Ja,Oui-Ja,,51.133428148303,3.323896511225
+16155.0,Appareil fixe-Vast apparaat,Schaliënstraat,5.0,2000.0,ANTWERPEN,Antwerpen,1 ste verdieping refter,Oui-Ja,,,51.208574190367,4.386866588326
+16156.0,Appareil fixe-Vast apparaat,Neerhoflaan,2.0,1780.0,WEMMEL,Vlaams-Brabant,in de keuken,Oui-Ja,,,50.912540331908,4.307621812591
+16157.0,Appareil fixe-Vast apparaat,Mechelsesteenweg,355.0,2830.0,BLAASVELD,Antwerpen,inkom rechts,Oui-Ja,,,51.047331225615,4.380402045502
+16158.0,Appareil fixe-Vast apparaat,Spinnerijkaai ,,8500.0,KORTRIJK,West-Vlaanderen,Inkom,Oui-Ja,,,50.832497769775,3.279933927065
+16159.0,Appareil fixe-Vast apparaat,Brusselsesteenweg ,,9090.0,GONTRODE,Oost-Vlaanderen,1 verdiep lift,Oui-Ja,,,51.033707908836,3.756928929946
+16160.0,Appareil fixe-Vast apparaat,Marcel de Bisschopstraat,15.0,9300.0,AALST,Oost-Vlaanderen,inkom,Oui-Ja,,,50.922547695657,4.030845250949
+16161.0,Appareil fixe-Vast apparaat,Heidelbergstraat,24.0,8210.0,LOPPEM,West-Vlaanderen,/,Oui-Ja,,,51.154904109964,3.183405000336
+13371.0,Appareil fixe-Vast apparaat,Wijnbergstraat,121.0,8560.0,WEVELGEM,West-Vlaanderen,Buitenkast Inkom,Oui-Ja,,,50.819090409586,3.169541500122
+16162.0,Appareil fixe-Vast apparaat,Rijkegemkouterstraat,7.0,8700.0,TIELT,West-Vlaanderen,INKOM,Oui-Ja,,,51.011660276452,3.345677472346
+12264.0,Appareil fixe-Vast apparaat,Paleizenstraat,70.0,1030.0,SCHAARBEEK,Bruxelles-Brussel,Buitenkast gebouw C blok-2,Oui-Ja,,,50.86123910307,4.367352763362
+12265.0,Appareil fixe-Vast apparaat,Victor Rousseaulaan,75.0,1190.0,VORST,Bruxelles-Brussel,Inkom,Oui-Ja,,,50.814558691724,4.330963652735
+13372.0,Appareil fixe-Vast apparaat,Jupiterlaan,192.0,1190.0,VORST,Bruxelles-Brussel,Inkom ,Oui-Ja,,,50.820715576792,4.339993812302
+12266.0,Appareil fixe-Vast apparaat,Borsbeeksebrug,22.0,2000.0,ANTWERPEN,Antwerpen,4e verdieping ehbo lokaal,Oui-Ja,,,51.199000979139,4.435263974923
+16163.0,Appareil fixe-Vast apparaat,Bergkapekstraat,98.0,1840.0,LONDERZEEL,Vlaams-Brabant,/,Oui-Ja,,,51.008500592321,4.325341910275
+12263.0,Appareil fixe-Vast apparaat,Alexianenplein,1.0,9000.0,GENT,Oost-Vlaanderen,Inkom,Oui-Ja,,,51.051902003145,3.717477658632
+13374.0,Appareil fixe-Vast apparaat,Drie Sleutelsstraat,74.0,9300.0,AALST,Oost-Vlaanderen,Buitengevel naast de toegangspoort,Oui-Ja,,,50.94701409384,4.041872063671
+13375.0,Appareil fixe-Vast apparaat,Kouterstraat,,1703.0,SCHEPDAAL,Vlaams-Brabant,In de gang van de toiletten (enkel op afspraak),Non-Nee,,,50.840074439136,4.187582856617
+16164.0,Appareil fixe-Vast apparaat,J.hammeneckersstraat,72.0,2800.0,BORNEM,Antwerpen,Buitenkast Inkom gemeenschapshuis mariekerke,Oui-Ja,,,51.061688671383,4.193714682103
+13361.0,Appareil fixe-Vast apparaat,Sint-Jansstraat,1.0,9800.0,DEINZE,Oost-Vlaanderen,Leiezicht,Oui-Ja,,,50.976568810165,3.472922138624
+13363.0,Appareil fixe-Vast apparaat,Nieuwstraat,3.0,9800.0,DEINZE,Oost-Vlaanderen,TEn HOve,Oui-Ja,,,50.98325400659,3.560616375674
+7820.0,Appareil fixe-Vast apparaat,Leernsesteenweg,191.0,9800.0,DEINZE,Oost-Vlaanderen,Zijkant gebouw oud gemeentehuis,Oui-Ja,,,51.008258900143,3.576620865416
+16165.0,Appareil fixe-Vast apparaat,Hellestraat,102.0,9190.0,STEKENE,Oost-Vlaanderen,In de kantine.  Op afspraak Filip: 0478/623373,Non-Nee,,,51.228629737733,4.041132947449
+13365.0,Appareil fixe-Vast apparaat,Rijksweg,66.0,2880.0,BORNEM,Antwerpen,EHBO lokaal ( Ghislain De waele ),Oui-Ja,,,51.102675465449,4.245878534506
+13366.0,Appareil fixe-Vast apparaat,Schoondonkweg,17.0,2830.0,WILLEBROEK,Antwerpen,INKOM,Oui-Ja,,,51.045871726724,4.368171256207
+13367.0,Appareil fixe-Vast apparaat,Kontichsesteenweg,65.0,2630.0,AARTSELAAR,Antwerpen,Werkplaats,Oui-Ja,,,51.145116938811,4.392042162079
+13368.0,Appareil fixe-Vast apparaat,Schoondonkweg,17.0,2830.0,WILLEBROEK,Antwerpen,Werkplaats,Oui-Ja,,,51.045871726724,4.368171256207
+16166.0,Appareil fixe-Vast apparaat,Prins Boudewijnlaan,5.0,2550.0,KONTICH,Antwerpen,1e verdieping inkom,Oui-Ja,,,51.139399852203,4.437201677094
+13369.0,Appareil fixe-Vast apparaat,Grotesteenweg,155.0,2600.0,BERCHEM,Antwerpen,Inkom onder trap,Oui-Ja,,,51.194522432608,4.419474035697
+13370.0,Appareil fixe-Vast apparaat,Doornpannestraat,2.0,8670.0,KOKSIJDE,West-Vlaanderen,Buitenkast inkom,Oui-Ja,Oui-Ja,,51.121413066885,2.660451145443
+12042.0,Appareil fixe-Vast apparaat,Rue de Charneux,96.0,4651.0,BATTICE,Liège,In de refter.,Oui-Ja,,,50.649624880206,5.797705741351
+16167.0,Appareil fixe-Vast apparaat,Bloemstraat,56.0,2920.0,KALMTHOUT,Antwerpen,Naast kantoor laadkade,Oui-Ja,,,51.394659733118,4.504712291297
+16168.0,Appareil fixe-Vast apparaat,Bloemstraat,56.0,2920.0,KALMTHOUT,Antwerpen,Buitengevel inkom winkel.,Oui-Ja,,,51.394659733118,4.504712291297
+3727.0,Appareil fixe-Vast apparaat,Kruidtuinlaan,55.0,1000.0,BRUSSEL,Bruxelles-Brussel,Gebouw Doorbuilding aan onthaal,Oui-Ja,,,50.852970481316,4.365208421073
+16169.0,Appareil fixe-Vast apparaat,Kruidtuinlaan,55.0,1000.0,BRUSSEL,Bruxelles-Brussel,/,Oui-Ja,,,50.852970481316,4.365208421073
+3728.0,Appareil fixe-Vast apparaat,Kruidtuinlaan,,1000.0,BRUSSEL,Bruxelles-Brussel,Gebouw Finance Tower- EHBO LOKAAL/ INFIRMERIE,Oui-Ja,,,50.854407557433,4.360926152528
+3730.0,Appareil fixe-Vast apparaat,Kruidtuinlaan ,,1000.0,BRUSSEL,Bruxelles-Brussel,Gebouw Finance Tower-EHBO lokaal,Oui-Ja,,,50.854407557433,4.360926152528
+3737.0,Appareil fixe-Vast apparaat,Kruidtuinlaan,,1000.0,BRUSSEL,Bruxelles-Brussel,Gebouw Finance-gelijkvl dispatching,Oui-Ja,,,50.854407557433,4.360926152528
+3738.0,Appareil fixe-Vast apparaat,Kruidtuinlaan ,,1000.0,BRUSSEL,Bruxelles-Brussel,Finance Tower- gelijkvloers dispatch,Oui-Ja,,,50.854407557433,4.360926152528
+3733.0,Appareil fixe-Vast apparaat,Kruidtuinlaan ,,1000.0,BRUSSEL,Bruxelles-Brussel,Finance Tower verd 1 data lokaal,Oui-Ja,,,50.854407557433,4.360926152528
+3734.0,Appareil fixe-Vast apparaat,Kruidtuinlaan,,1000.0,BRUSSEL,Bruxelles-Brussel,Finance Tower 1 verd in datalokaal,Oui-Ja,,,50.854407557433,4.360926152528
+4878.0,Appareil fixe-Vast apparaat,Drinkeling,10.0,1785.0,BRUSSEGEM,Vlaams-Brabant,/,Oui-Ja,,,50.925368960446,4.26300829475
+13346.0,Appareil fixe-Vast apparaat,Dendermondestraat,25.0,1785.0,MERCHTEM,Vlaams-Brabant,/,Oui-Ja,,,50.961209182144,4.228455156194
+13347.0,Appareil fixe-Vast apparaat,Tussenhagenweg,1.0,3111.0,WEZEMAAL,Vlaams-Brabant,In gang naar het terras (Vooraf bellen 0477/838751),Non-Nee,,,50.948945996793,4.757121822218
+13348.0,Appareil fixe-Vast apparaat,Kroonlaan,358.0,1050.0,ELSENE,Bruxelles-Brussel,Aan het onthaal,Oui-Ja,,,50.823559807997,4.387002375157
+13349.0,Appareil fixe-Vast apparaat,Tervurenlaan,270.0,1150.0,BRUSSEL,Bruxelles-Brussel,"2é verdieping,in het secretariaat",Oui-Ja,,,50.835394300909,4.420397972884
+13350.0,Appareil fixe-Vast apparaat,Gouverneur Roppesingel,131.0,3500.0,HASSELT,Limburg,In het bureel naast het onthaal,Oui-Ja,,,50.917825624774,5.350451099384
+16170.0,Appareil fixe-Vast apparaat,Vriendschapsplein,2.0,3940.0,Hechtel-Eksel,Limburg,"Buitengevel,achteraan naast de inkom.",Oui-Ja,,,51.125547416101,5.36329116922
+16171.0,Appareil fixe-Vast apparaat,Lochtstraat,,3940.0,Hechtel-Eksel,Limburg,"buitengevel,naast de ingang.",Oui-Ja,,,51.146821717185,5.36268786055
+13351.0,Appareil fixe-Vast apparaat,Deinsesteenweg,114.0,9031.0,GENT,Oost-Vlaanderen,"1é verdiep,inkom,in de brandslangkast.",Oui-Ja,,,51.039371351264,3.628484310409
+16172.0,Appareil fixe-Vast apparaat,Tondelierlaan,19.0,9000.0,GENT,Oost-Vlaanderen,In de bergruimte,Oui-Ja,,,51.066023037334,3.715784681829
+13352.0,Appareil fixe-Vast apparaat,Centrumlaan,98.0,9400.0,NINOVE,Oost-Vlaanderen,"Hoofdingang burelen,naast onthaal",Oui-Ja,,,50.832878682219,4.018288405621
+13353.0,Appareil fixe-Vast apparaat,Mechelsesteenweg ,,2018.0,ANTWERPEN,Antwerpen,1é verdiep in zaal Drucker,Oui-Ja,,,51.207115114992,4.409647472313
+16173.0,Appareil fixe-Vast apparaat,Meir,13.0,2430.0,EINDHOUT,Antwerpen,/,Oui-Ja,,,51.102492404684,4.999216163996
+16174.0,Appareil fixe-Vast apparaat,Grevensmolenweg,26.0,2800.0,SINT-TRUIDEN,Limburg,Mobiel toestel (vooraf bellen Eddy 0495/231114),Non-Nee,,,50.820977553176,5.176264254924
+13202.0,Appareil fixe-Vast apparaat,Sacramentstraat,70.0,3700.0,TONGEREN,Limburg,Naast bureel directie (s maandags gesloten),Oui-Ja,,,50.784942745597,5.466275506404
+13203.0,Appareil fixe-Vast apparaat,Tennislaan,1.0,3900.0,OVERPELT,Limburg,Buitengevel naast secretariaat,Oui-Ja,,,51.232524640501,5.404207345752
+13204.0,Appareil fixe-Vast apparaat,Minderbroedersstraat,8.0,3000.0,LEUVEN,Vlaams-Brabant,"Gebouw nr 8 , in de inkom",Oui-Ja,,,50.877856477573,4.695916494679
+16175.0,Appareil fixe-Vast apparaat,kattenbroek,33.0,2650.0,EDEGEM,Antwerpen,Ingang kantine buiten,Oui-Ja,,,51.150873043179,4.424795203109
+16176.0,Appareil fixe-Vast apparaat,Avenue des Arts,47.0,1000.0,Bruxelles,Bruxelles-Brussel,"Au 5ème étage. Nous entrons par la porte principal du bureau. On tourne à droite,à droite et encore à droite, et on voit tout suite l appareil sur le mur. ",Non-Nee,Non-Nee,09:00 - 16:00,50.842250697707,4.367322839968
+16177.0,Appareil fixe-Vast apparaat,Allée de la recherche ,4.0,1070.0,Anderlecht,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.817228118338,4.265358831857
+16178.0,Appareil fixe-Vast apparaat,Den Boer,17.0,9930.0,Lievegem,Oost-Vlaanderen,Buiten op eerste verdieping,Oui-Ja,Oui-Ja,,51.123228730226,3.561824627017
+16179.0,Appareil fixe-Vast apparaat,Tulpenstraat,,9930.0,Lievegem,Oost-Vlaanderen,Buiten,Oui-Ja,Oui-Ja,,51.106033056084,3.634114543102
+16180.0,Appareil fixe-Vast apparaat,Neerstraat,43.0,9920.0,Lievegem,Oost-Vlaanderen,Buiten,Oui-Ja,Oui-Ja,,51.087281433135,3.649303909803
+16181.0,Appareil fixe-Vast apparaat,Sportstraat,24.0,9920.0,Lievegem,Oost-Vlaanderen,Buiten aan hoofdingang,Oui-Ja,Oui-Ja,,51.101201801142,3.608717100513
+16182.0,Appareil fixe-Vast apparaat,Avenue Louise,489.0,1050.0,Bruxelles,Bruxelles-Brussel,"6ème étage, réception Bandwidth",Non-Nee,Non-Nee,9h00-17h30,50.816682749808,4.37128136138
+16183.0,Appareil fixe-Vast apparaat,Ordamstraat,10.0,2030.0,Antwerpen,Antwerpen,"Gelijkvloers, in omgeving magazijn",Non-Nee,Non-Nee,Ma - Vr 08-16u,51.289384202701,4.356512280347
+16184.0,Appareil fixe-Vast apparaat,Pellenbergstraat,160.0,3010.0,Kessel-Lo,Vlaams-Brabant,Gelijkvloers centrale inkom,Oui-Ja,Oui-Ja,,50.87014001369,4.748831617063
+16185.0,Appareil fixe-Vast apparaat,Rue André Dumont,,1435.0,Mont-Saint-Guibert,Brabant Wallon,Rez de chaussée dans le bureau ,Non-Nee,Non-Nee,Pas accessible au public,50.656948755938,4.627428883206
+16186.0,Appareil fixe-Vast apparaat,VELDKANT ,2.0,2550.0,KONTICH,Antwerpen,INGANG KANTOOR - GELIJKVLOERS,Oui-Ja,Oui-Ja,,51.141704456481,4.441377373618
+16188.0,Appareil fixe-Vast apparaat,Rue du Château,8.0,5580.0,Lavaux-Sainte-Anne,Namur,Bureau d accueil,Non-Nee,Non-Nee,Heures d ouverture du Château,50.115738008225,5.09175866148
+16189.0,Appareil fixe-Vast apparaat,Industrielaan,21.0,2250.0,Olen,Antwerpen,EHBO-lokaal achteraan op gelijkvloers,Non-Nee,Non-Nee,06u00 - 22u00,51.149315224564,4.878099758587
+16192.0,Appareil fixe-Vast apparaat,Koningin Astridlaan ,,2800.0,Mechelen,Antwerpen,"1ste verdieping (tandartspraktijk), aan de inkom",Oui-Ja,Non-Nee,tandartspraktijk is geopend van 09-17u ,51.024694058339,4.470443317238
+16193.0,Appareil fixe-Vast apparaat,Parklaan,86.0,8200.0,Brugge,West-Vlaanderen,in de tandartspraktijk op de gelijkvloers,Oui-Ja,Non-Nee,tijdens de openingsuren van de praktijk (meestal 09-17u),51.183656510517,3.216706636928
+16194.0,Appareil fixe-Vast apparaat,Marktplein,18.0,3940.0,Hechtel-Eksel ,Limburg,tandartspraktijk - gelijkvloers,Oui-Ja,Non-Nee,tijdens de openingsuren van de praktijk (meestal 09-17u),51.146271126879,5.386530247231
+16195.0,Appareil fixe-Vast apparaat,Smeetsstraat,1.0,3640.0,Molenbeersel,Limburg,tandartspraktijk - gelijkvloers,Oui-Ja,Non-Nee,tijdens openingsuren van de praktijk (meestal 09-17u),51.170034576752,5.737404760782
+10547.0,Appareil fixe-Vast apparaat,Culliganlaan,,1831.0,Diegem,Vlaams-Brabant,9de verdiep Fujitsu EHBO room,Non-Nee,Non-Nee,Tijdens de werkuren van Fujitsu,50.885694503506,4.450756586642
+10548.0,Appareil fixe-Vast apparaat,culliganlaan,,1831.0,Diegem,Vlaams-Brabant,9de Verdiep omgeving onthaal,Non-Nee,Non-Nee,Tijdens de werkuren van Fujitsu,50.885694503506,4.450756586642
+10549.0,Appareil fixe-Vast apparaat,Square Marie Curie ,50.0,1070.0,Anderlecht,Bruxelles-Brussel,Gelijkvloers Technische ruimte Fujitsu,Non-Nee,Non-Nee,Tijdens de werkuren van Fujitsu,50.822224109816,4.285152612387
+13205.0,Appareil fixe-Vast apparaat,Steenweg op Nieuwrode,43.0,3111.0,WEZEMAAL,Vlaams-Brabant,"Buitengevel, naast ingang school",Oui-Ja,,,50.947119412453,4.759190224465
+16196.0,Appareil fixe-Vast apparaat,Vlamingenstraat,83.0,3000.0,LEUVEN,Vlaams-Brabant,C01 inkomhall,Oui-Ja,,,50.874268771556,4.701824982046
+16197.0,Appareil fixe-Vast apparaat,Tervuursevest,101.0,3001.0,HEVERLEE,Vlaams-Brabant,Gebouw 433.01 in de inkomhal,Oui-Ja,,,50.869485889966,4.693205619554
+16198.0,Appareil fixe-Vast apparaat,Tervuursevest,143.0,3001.0,HEVERLEE,Vlaams-Brabant,Links van de lift,Oui-Ja,,,50.870703864317,4.690149158561
+13206.0,Appareil fixe-Vast apparaat,Kasteelpark Arenberg,30.0,3001.0,HEVERLEE,Vlaams-Brabant,Gebouw 331.20 in lokaal 31,Oui-Ja,,,50.864486587636,4.687812870689
+16199.0,Appareil fixe-Vast apparaat,Lagaeplein,5.0,8501.0,HEULE,West-Vlaanderen,Mobiel toestel zwembad,Non-Nee,,,50.845153518415,3.235811005922
+13207.0,Appareil fixe-Vast apparaat,Sluizenstraat,101.0,2900.0,SCHOTEN,Antwerpen,Inkom expeditie,Oui-Ja,,,51.246008230953,4.505503123862
+16200.0,Appareil fixe-Vast apparaat,Kattenhagenstraat,,2460.0,Kasterlee,Antwerpen,kleedkamer heren,Oui-Ja,Non-Nee,18.00-24.00,51.219583785956,4.904255759107
+16201.0,Appareil fixe-Vast apparaat,Hollestraat,78.0,3078.0,Everberg,Vlaams-Brabant,"Gebouw A, in het bureel",Oui-Ja,,,50.869092946345,4.578749474408
+13208.0,Appareil fixe-Vast apparaat,Rue Sainte-Bernadette,,6987.0,BEFFE,Luxembourg,Inkom Receptie buitenkast,Oui-Ja,,,50.205682917519,5.540976632848
+13209.0,Appareil fixe-Vast apparaat,Floraliënlaan ,,9000.0,GENT,Oost-Vlaanderen,"4é verdieping, in de hall.",Oui-Ja,,,51.038891836619,3.718126693467
+13210.0,Appareil fixe-Vast apparaat,Naamsestraat,69.0,3000.0,LEUVEN,Vlaams-Brabant,In de hall van de Bib.,Oui-Ja,,,50.874913549458,4.70044213566
+13211.0,Appareil fixe-Vast apparaat,Herestraat,49.0,3000.0,LEUVEN,Vlaams-Brabant,In de inkomhal.,Oui-Ja,,,50.879342463277,4.671627499476
+14296.0,Appareil fixe-Vast apparaat,Agoralaan ,,3590.0,DIEPENBEEK,Limburg,E-blok,Oui-Ja,,,50.928153460623,5.38663339167
+14294.0,Appareil fixe-Vast apparaat,Agoralaan z/n,,3590.0,DIEPENBEEK,Limburg,inkom R blok,Oui-Ja,,,50.928153460623,5.38663339167
+13212.0,Appareil fixe-Vast apparaat,Europark-noord,32.0,9100.0,Nieuwkerken-Waas,Oost-Vlaanderen,Inkom,Oui-Ja,,,51.168301450633,4.165731363076
+14293.0,Appareil fixe-Vast apparaat,Agoralaan z/n,,3590.0,DIEPENBEEK,Limburg,gang A blok,Oui-Ja,,,50.928153460623,5.38663339167
+13191.0,Appareil fixe-Vast apparaat,Donksesteenweg,162.0,2930.0,BRASSCHAAT,Antwerpen,Inkom op afspraak 0473/66 56 57,Non-Nee,,,51.283113617116,4.463207705162
+13192.0,Appareil fixe-Vast apparaat,Oudeleeuwenrui,8.0,2000.0,ANTWERPEN,Antwerpen,Inkom 2e verdieping,Oui-Ja,,,51.226655673807,4.405779430832
+13193.0,Appareil fixe-Vast apparaat,Rue du Cloître,1.0,7911.0,Frasnes-Les-Anvaing,Hainaut,Inkom,Oui-Ja,,,50.668535083844,3.616786191061
+13195.0,Appareil fixe-Vast apparaat,diksmuidse heerweg,47.0,8200.0,SINT-ANDRIES,West-Vlaanderen,Buitenkast,Oui-Ja,,,51.200064882264,3.201198607311
+13196.0,Appareil fixe-Vast apparaat,Bukenstraat,22.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast trefpunt buken,Oui-Ja,,,50.936839972128,4.617498677511
+13197.0,Appareil fixe-Vast apparaat,Torfbroeklaan,25.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast sporthal berg,Oui-Ja,,,50.929749384955,4.536695035424
+13198.0,Appareil fixe-Vast apparaat,Zeypestraat,26.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast Sporthal Kampenhout,Oui-Ja,,,50.946519142458,4.563041201124
+13199.0,Appareil fixe-Vast apparaat,Aarschotsebaan,128.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast voorkant park van relst,Oui-Ja,,,50.945705804483,4.586074000497
+13200.0,Appareil fixe-Vast apparaat,Brouwerijstraat,6.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast Parochiezaal pax,Oui-Ja,,,50.943760197118,4.550436746585
+13201.0,Appareil fixe-Vast apparaat,Bogaertstraat,2.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast inkom parochie zaal ,Oui-Ja,,,50.919218697082,4.565252011905
+13190.0,Appareil fixe-Vast apparaat,Spinsterstraat,117.0,9600.0,RONSE,Oost-Vlaanderen,Inkom tennis,Oui-Ja,,,50.750179893878,3.587496701071
+16202.0,Appareil fixe-Vast apparaat,Nijverheidslaan,15.0,8580.0,AVELGEM,West-Vlaanderen,Buitenkast inkom,Oui-Ja,,,50.759709864277,3.446817371737
+12601.0,Appareil fixe-Vast apparaat,Boulevard Andre Delvaux,15.0,7000.0,MONS,Hainaut,Inkom Verdieping 0,Oui-Ja,,,50.460635978779,3.933269112446
+12602.0,Appareil fixe-Vast apparaat,Oude Heerstraat,11.0,3940.0,HECHTEL,Limburg,Buitenkast inkom,Oui-Ja,,,51.128876624223,5.381345956298
+12603.0,Appareil fixe-Vast apparaat,Willem De Croylaan ,,3001.0,HEVERLEE,Vlaams-Brabant,"Gebouw 339/20 ,centrale dispatch, aan het onthaal",Oui-Ja,,,50.857715180642,4.679413259174
+12604.0,Appareil fixe-Vast apparaat,Korte Nieuwstraat,33.0,2000.0,ANTWERPEN,Antwerpen,Bij ingang Aula CAR 0.05  (tel 0492/151830),Non-Nee,,,51.220488981912,4.404649131188
+12605.0,Appareil fixe-Vast apparaat,Sint-Jacobsmarkt ,,2000.0,ANTWERPEN,Antwerpen,In de inkomhal  (tel 0492/151830),Non-Nee,,,51.220139215822,4.413342112959
+12598.0,Appareil fixe-Vast apparaat,Alleé des Coquelicots,7.0,1070.0,ANDERLECHT,Bruxelles-Brussel,"1é verdiep, ingang sporthal 1.03",Oui-Ja,,,50.816925405905,4.26144833875
+12596.0,Appareil fixe-Vast apparaat,Antwerpsesteenweg,447.0,2850.0,BOOM,Antwerpen,Buitengevel zijkant v/h gebouw bij de afvalcontainers,Oui-Ja,,,51.103044646374,4.367521910168
+4515.0,Appareil fixe-Vast apparaat,Botermarkt,2.0,8800.0,BEVEREN,Oost-Vlaanderen,Aan dienst ingang-buiten,Oui-Ja,,,50.944424295306,3.125034683908
+4513.0,Appareil fixe-Vast apparaat,Diksmuidsesteenweg,396.0,8800.0,ROESELARE,West-Vlaanderen,Inkom sporthal,Oui-Ja,,,50.951459561918,3.103935505778
+16203.0,Appareil fixe-Vast apparaat,Ottergemsesteenweg zuid,808.0,9000.0,GENT,Oost-Vlaanderen,Inkom rechts Ghelamco Arena 1e verdieping,Oui-Ja,,,51.015595747631,3.7332202139
+16204.0,Appareil fixe-Vast apparaat,Paviljoenstraat,20.0,2440.0,GEEL,Antwerpen,Buitenkast inkom,Oui-Ja,,,51.200297480077,4.978569105723
+6154.0,Appareil fixe-Vast apparaat,Leuvensesteenweg,118.0,1910.0,KAMPENHOUT,Vlaams-Brabant,inkom ehbo lokaal,Oui-Ja,,,50.94863548919,4.603189762963
+16205.0,Appareil fixe-Vast apparaat,Uitbreidingstraat,80.0,2600.0,BERCHEM,Antwerpen,4de verdiep  - gang bij onthaal,Oui-Ja,,,51.192683694508,4.417096844137
+13172.0,Appareil fixe-Vast apparaat,Uitbreidingstraat,80.0,2600.0,BERCHEM,Antwerpen,Gelijkvloers - logistics in de CDS ruimte,Oui-Ja,,,51.192683694508,4.417096844137
+13173.0,Appareil fixe-Vast apparaat,Boomsesteenweg,37.0,2526.0,SCHELLE,Antwerpen,Inkom rechts,Oui-Ja,,,51.119128681011,4.37330377439
+13160.0,Appareil fixe-Vast apparaat,Sint-Martens-Latemlaan,,8500.0,KORTRIJK,West-Vlaanderen,"The Penta ,gebouw P,naast het onthaal",Oui-Ja,,,50.823606553946,3.249310286237
+16206.0,Appareil fixe-Vast apparaat,Steenweg op Antwerpen,26.0,2300.0,TURNHOUT,Antwerpen,leveren locatie???,Oui-Ja,,,51.320341169518,4.92380652806
+13162.0,Appareil fixe-Vast apparaat,Stuypenberg,13.0,9406.0,OUTER,Oost-Vlaanderen,Totem inkom,Oui-Ja,,,50.863862554945,3.981443990013
+13163.0,Appareil fixe-Vast apparaat,Industrielaan,10.0,9990.0,MALDEGEM,Oost-Vlaanderen,Inkom,Oui-Ja,,,51.197961695119,3.466809803372
+16207.0,Appareil fixe-Vast apparaat,Petite Rue,4.0,6000.0,CHARLEROI,Hainaut,onthaal,Oui-Ja,,,50.408151596975,4.441020053085
+3717.0,Appareil fixe-Vast apparaat,Rue des Anglais ,,4000.0,LUIK,Liège,Aan Polyvalente Zaal,Oui-Ja,,,50.647808170858,5.568239266973
+3714.0,Appareil fixe-Vast apparaat,Avenue des Guêrites,,7000.0,MONS,Hainaut,Aan het onthaal,Oui-Ja,,,50.449518555877,3.960233374525
+16209.0,Appareil fixe-Vast apparaat,Rue Joseph Misson,48.0,5170.0,PROFONDEVILLE,Namur,Bloc Sanitaire,Non-Nee,Non-Nee,Lors de la présence des membres sur le terrain ou se trouve l appareil,50.378258281471,4.786501270831
+15627.0,Appareil fixe-Vast apparaat,Hekkenstraat,,9308.0,Hofstade,Oost-Vlaanderen,Gelijkvloers,Non-Nee,Oui-Ja,,50.965814661935,4.043204365283
+16210.0,Appareil fixe-Vast apparaat,Avenue Jean Mermoz,,6041.0,Gosselies,Brabant Wallon,Gelijkvloers,Non-Nee,Oui-Ja,,50.476287863111,4.472670982957
+16211.0,Appareil fixe-Vast apparaat,Scheldeweg,8.0,2850.0,Boom,Antwerpen,Inkom,Non-Nee,Oui-Ja,,51.098061269661,4.362100243737
+16212.0,Appareil fixe-Vast apparaat,Sint-Lambertusstraat,14.0,3730.0,Hoeselt,Limburg,Tegen voorgevel kerkgebouw,Oui-Ja,Oui-Ja,,50.827652188403,5.492205762068
+16213.0,Appareil fixe-Vast apparaat,Polderbos ,3.0,9840.0,De Pinte,Oost-Vlaanderen,Ingang clubhuis TCDP,Oui-Ja,Oui-Ja,,50.991138318084,3.642611086202
+16214.0,Appareil fixe-Vast apparaat,Gouverneur Verwilghensingel ,,3500.0,Hasselt,Limburg,Op het 3e verdiep van het gebouw in de centrale speelhal voor bezoekers.,Oui-Ja,Non-Nee,dagelijks tussen 10h en 20h. Vanaf september op maandag gesloten.,50.937035620838,5.357519445141
+16217.0,Appareil fixe-Vast apparaat,Route de Liers ,121.0,4041.0,Milmort ,Liège,Local infirmerie ,Oui-Ja,Non-Nee,,50.688671460857,5.584572705489
+16218.0,Appareil fixe-Vast apparaat,Route de Liers,121.0,4041.0,Milomort ,Liège,Cabine haute tension ,Oui-Ja,Non-Nee,,50.68945752452,5.57917054997
+16219.0,Appareil fixe-Vast apparaat,Avenue de l astronomie  ,14.0,1210.0,Saint-Josse,Bruxelles-Brussel,RDC réception de la Tour Astro 14,Oui-Ja,Non-Nee,ouvert de 8H - 18 H du lundi au vendredi ; fermée les samedi et dimanche au public,50.8505496,4.3694905
+10368.0,Appareil fixe-Vast apparaat,Avenue de l astronomie ,14.0,1210.0,SAINT JOSSE,Bruxelles-Brussel,"étage +4, réfectoire de l espace cantine ",Oui-Ja,Non-Nee,"tous les jours de 8h à 18H sauf les samedis, dimanches et jours fériés",50.8505496,4.3694905
+8037.0,Appareil fixe-Vast apparaat,avenue de l Astronomie ,14.0,1210.0,SAINT JOSSE,Bruxelles-Brussel,+7 Maison des enfants ,Oui-Ja,Non-Nee,"du lundi au vendredi de 7H à 18H, fermée les samedis, dimanches et jours fériés",50.8505496,4.3694905
+8038.0,Appareil fixe-Vast apparaat,avenue de l Astronomie ,14.0,1210.0,SAINT JOSSE,Bruxelles-Brussel,ETAGE +15,Oui-Ja,Non-Nee,"accessible de 8H à 18H du lundi au vendredi, fermé les samedis, dimanches et jours fériés",50.8505496,4.3694905
+10359.0,Appareil fixe-Vast apparaat,boulevard d Anvers ,26.0,1000.0,Bruxelles,Bruxelles-Brussel,Accueil antenne Actiris,Oui-Ja,Non-Nee,"De 9H00 à 11H59 et de 14H00 à 15H59 du lundi au vendredi, fermé au public le jeudi matin, fermée les samedis, dimanches et jours férié ; horaires susceptibles d être modifiées",50.856890906979,4.351654799819
+10395.0,Appareil fixe-Vast apparaat,"Rue de Jerusalem,",46.0,1030.0,Schaerbeek,Bruxelles-Brussel,accueil,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis et dimanches et jours fériés ; horaires susceptibles d être modifiées",50.866040760123,4.379398815511
+10367.0,Appareil fixe-Vast apparaat,boulevard Louis Schmidt,29.0,1040.0,Etterbeek,Bruxelles-Brussel,derrière l accueil,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours férié ; horaires susceptibles d être modifiéess ",50.827017510695,4.399407424219
+3718.0,Appareil fixe-Vast apparaat,Chaussee de Liege,620.0,5100.0,JAMBES,Namur,Lokaal naast wachtruimte,Oui-Ja,,,50.463420734957,4.906359093686
+3732.0,Appareil fixe-Vast apparaat,Kruidtuinlaan,,1000.0,BRUSSEL,Bruxelles-Brussel,Financien tower verdiep -1 Pacheco zaal,Oui-Ja,,,50.854407557433,4.360926152528
+3731.0,Appareil fixe-Vast apparaat,Kruidtuinlaan ,,1000.0,BRUSSEL,Bruxelles-Brussel,Financien Tower -1 Pacheco zaal,Oui-Ja,,,50.854407557433,4.360926152528
+10357.0,Appareil fixe-Vast apparaat,rue de la source,15.0,1060.0,SAINT-GILLES,Bruxelles-Brussel,face à l accueil du RDC,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours férié ; horaires susceptibles d être modifiées",50.831582504712,4.350254602893
+3736.0,Appareil fixe-Vast apparaat,Kruidtuinlaan ,,1000.0,BRUSSEL,Bruxelles-Brussel,Verdiep -2 EHBO Lokaal,Oui-Ja,,,50.854407557433,4.360926152528
+10360.0,Appareil fixe-Vast apparaat,rue Vandenboogaerde,91.0,1080.0,Molenbeek,Bruxelles-Brussel,accueil,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiées",50.91947,4.9476
+10361.0,Appareil fixe-Vast apparaat,chaussée de Gand,1154.0,1082.0,Berchem-Sainte-Agathe,Bruxelles-Brussel,bureau,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.863898722857,4.297768298675
+3735.0,Appareil fixe-Vast apparaat,Kruidtuinlaan ,,1000.0,BRUSSEL,Bruxelles-Brussel,verdiep -2 EHBO Lokaal Financien gebouw,Oui-Ja,,,50.854407557433,4.360926152528
+3722.0,Appareil fixe-Vast apparaat,Koningin Fabiolalaan,116.0,9000.0,GENT,Oost-Vlaanderen,naast het onthaal,Oui-Ja,,,51.039524782002,3.699560418585
+3713.0,Appareil fixe-Vast apparaat,Koning Albert I-laan,,8200.0,SINT-ANDRIES,West-Vlaanderen,In de Administratief Ruimte,Oui-Ja,,,51.202550479579,3.218236132039
+10362.0,Appareil fixe-Vast apparaat,place de la reine Paola,11.0,1083.0,Ganshoren,Bruxelles-Brussel,bureau gauche,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.875293920224,4.301127178735
+10396.0,Appareil fixe-Vast apparaat,rue de Genève,175.0,1140.0,Evere,Bruxelles-Brussel,3e étage,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.857720589665,4.407873397883
+3719.0,Appareil fixe-Vast apparaat,Voorstraat,43.0,3500.0,HASSELT,Limburg,Blok A ingang naast Keuken,Oui-Ja,,,50.931053189994,5.357615531123
+13164.0,Appareil fixe-Vast apparaat,Entrepotplaats ,,2000.0,ANTWERPEN,Antwerpen,1e verdiep in de keuken,Oui-Ja,,,51.227613358635,4.411640708133
+10366.0,Appareil fixe-Vast apparaat,avenue Charles Thielemans,93.0,1150.0,Woluwe-Saint-Pierre,Bruxelles-Brussel,accueil commune de droite,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.837263884413,4.427112212604
+13159.0,Appareil fixe-Vast apparaat,Kerkstraat ,,2060.0,ANTWERPEN,Antwerpen,In gang naar sporthal. (Op afpraak 0472/290666),Non-Nee,,,51.218033326986,4.429166584338
+10365.0,Appareil fixe-Vast apparaat,rue du Pinson,127.0,1170.0,Wartermael-Boitsfort,Bruxelles-Brussel,self zone,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.800401238166,4.410354273585
+13157.0,Appareil fixe-Vast apparaat,Blauwvoetlaan,2.0,8450.0,BREDENE,West-Vlaanderen,Buitenkast Inkom,Oui-Ja,,,51.237449385802,2.961438038834
+13154.0,Appareil fixe-Vast apparaat,Bourgetlaan,30.0,1140.0,EVERE,Bruxelles-Brussel,Oud NAVO Gebouw inkom Op afspraak,Non-Nee,,,50.876960939701,4.41762216203
+13155.0,Appareil fixe-Vast apparaat,Bourgetlaan,30.0,1140.0,EVERE,Bruxelles-Brussel,Oud navo gebouw lange gang op afspraak,Non-Nee,,,50.876960939701,4.41762216203
+13156.0,Appareil fixe-Vast apparaat,Bourgetlaan,30.0,1140.0,EVERE,Bruxelles-Brussel,Inkom op afspraak,Non-Nee,,,50.876960939701,4.41762216203
+10355.0,Appareil fixe-Vast apparaat,chaussée d Alsemberg,1011.0,1180.0,Uccle,Bruxelles-Brussel,accueil,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.79563361164,4.334916893549
+10356.0,Appareil fixe-Vast apparaat,rue de la Station ,17.0,1190.0,Forest,Bruxelles-Brussel,accueil 2ème étage,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.809647734654,4.31386951558
+16220.0,Appareil fixe-Vast apparaat,Clement Dosschestraat,1.0,9800.0,DEINZE,Oost-Vlaanderen,inkomhal rechts,Oui-Ja,,,50.988330170972,3.516129508389
+16221.0,Appareil fixe-Vast apparaat,Zuidkaai,1.0,2170.0,MERKSEM,Antwerpen,receptie,Oui-Ja,,,51.239052131418,4.448945477814
+16222.0,Appareil fixe-Vast apparaat,Tweebruggenlaan,1.0,9800.0,DEINZE,Oost-Vlaanderen,in het magazijn,Oui-Ja,,,50.988330170972,3.516129508389
+10394.0,Appareil fixe-Vast apparaat,roodebegsteenweg,,1200.0,Woluwe-Saint-Pierre,Bruxelles-Brussel,accueil,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.850767037786,4.410776197438
+13165.0,Appareil fixe-Vast apparaat,Rue le Marais,,4530.0,VILLERS-LE-BOUILLET,Liège,Inkom,Oui-Ja,,,50.585484286285,5.283675385726
+13153.0,Appareil fixe-Vast apparaat,Stapelplein,70.0,9000.0,GENT,Oost-Vlaanderen,"Handelsdokcenter,1é verdiep in inkomhal",Oui-Ja,,,51.063842862409,3.734531646471
+13139.0,Appareil fixe-Vast apparaat,Rue de l informatique,13.0,4460.0,BIERSET,Liège,Inkom,Oui-Ja,,,50.653579603788,5.500408918341
+13140.0,Appareil fixe-Vast apparaat,Rue de l avenir,11.0,4460.0,BIERSET,Liège,Inkom naast keuken,Oui-Ja,,,50.653844457424,5.495671930488
+13141.0,Appareil fixe-Vast apparaat,Chaussee de liege,307.0,4460.0,BIERSET,Liège,Inkom depot,Oui-Ja,,,50.647241738926,5.488430971973
+13142.0,Appareil fixe-Vast apparaat,avenue de l Astronomie ,30.0,1210.0,Saint-Josse,Bruxelles-Brussel,accueil antenne Actiris RDC,Oui-Ja,Non-Nee,"du lundi au vendredi de 8H30 à 12H30 et de 13H30 à 16H, fermé le jeudi matin, fermé les samedis, dimanches et jours fériés ; horaires susceptibles d être modifiés",50.8505496,4.3694905
+16223.0,Appareil fixe-Vast apparaat,Rue Lairesse,22.0,4020.0,BRESSOUX,Liège,Inkom 1e verdieping,Oui-Ja,,,50.636545257008,5.586513236904
+16224.0,Appareil fixe-Vast apparaat,Culliganlaan,,1831.0,DIEGEM,Vlaams-Brabant,"gebouw Vendome 1B,gelijkvloers  aan receptie",Oui-Ja,,,50.885694503506,4.450756586642
+13143.0,Appareil fixe-Vast apparaat,Duffelsesteenweg,14.0,2550.0,KONTICH,Antwerpen,INkom bureel,Oui-Ja,,,51.13079348166,4.448245085985
+13144.0,Appareil fixe-Vast apparaat,Rue de L Avenir,26.0,4460.0,BIERSET,Liège,Inkom,Oui-Ja,,,50.650485577365,5.492574817265
+13145.0,Appareil fixe-Vast apparaat,Avenue Georges Lemaitre,21.0,6041.0,GOSSELIES,Hainaut,Gebouw telecom 1 aan het onthaal,Oui-Ja,,,50.471240338158,4.467063212985
+13146.0,Appareil fixe-Vast apparaat,Stadionlaan,5.0,9800.0,DEINZE,Oost-Vlaanderen,Inkom secretariaat - op afspraak 0495/876996,Non-Nee,,,50.983458902213,3.519894994572
+13148.0,Appareil fixe-Vast apparaat,Roterijstraat,205.0,8793.0,WAREGEM,West-Vlaanderen,Ingang Personeel nr1- op afspraak Marlies Van Rechem 0492/138274 marlies.vanrechem@baltagroup.com,Non-Nee,,,50.897158114657,3.403362652009
+13149.0,Appareil fixe-Vast apparaat,Wakkensteenweg,2.0,8710.0,OOIGEM,West-Vlaanderen,Buitengevel naast hoofdingang receptie op afspraak : carine.verkest@baltagroup.com,Non-Nee,,,50.911850291729,3.397302200737
+13150.0,Appareil fixe-Vast apparaat,Wakkensteenweg,2.0,8710.0,OOIGEM,West-Vlaanderen,Buitengevel links v/d toegangspoort nr 1 op afspraak : carine.verkest@baltagroup.com,Oui-Ja,,,50.911850291729,3.397302200737
+6278.0,Appareil fixe-Vast apparaat,Rijksweg ,,9870.0,ZULTE,Oost-Vlaanderen,aan het onthaal,Oui-Ja,,,50.954236100263,3.492346983669
+13152.0,Appareil fixe-Vast apparaat,Rue Des Artisans,3.0,6210.0,Frasnes-Lez-Gosselies,Hainaut,Bureau verkoop,Oui-Ja,,,50.540315564941,4.457668720572
+15242.0,Appareil fixe-Vast apparaat,Lierseweg,37.0,2200.0,HERENTALS,Antwerpen,/,Oui-Ja,,,51.176385041874,4.828164905695
+13137.0,Appareil fixe-Vast apparaat,Roesdammestraat,,8630.0,AVEKAPELLE,West-Vlaanderen,Buitenkast,Oui-Ja,,,51.063962172565,2.751653536045
+13138.0,Appareil fixe-Vast apparaat,Steenkerkestraat,,8630.0,AVEKAPELLE,West-Vlaanderen,Buitenkast,Oui-Ja,,,51.060099074128,2.68637176144
+15246.0,Appareil fixe-Vast apparaat,Gasthuisstraat,,2520.0,RANST,Antwerpen,/,Oui-Ja,,,51.189757777509,4.559339086948
+13134.0,Appareil fixe-Vast apparaat,Industrielaan,18.0,8810.0,LICHTERVELDE,West-Vlaanderen,Buitenkast inkom opslagplaats,Oui-Ja,,,51.031096526902,3.112882852141
+16225.0,Appareil fixe-Vast apparaat,Seringenlaan,5.0,2840.0,RUMST,Antwerpen,Inkom,Oui-Ja,,,51.107734111654,4.389961103159
+12845.0,Appareil fixe-Vast apparaat,Ter Bergstraat,4.0,2830.0,WILLEBROEK,Antwerpen,Inkom atlas copco academy,Oui-Ja,,,51.048625768651,4.369913350963
+13125.0,Appareil fixe-Vast apparaat,Groene Dreef,,9770.0,KRUISEM,Oost-Vlaanderen,Kast zie site 1,Oui-Ja,Oui-Ja,,50.902735099685,3.479501744255
+16226.0,Appareil fixe-Vast apparaat,Edourd Faestraat,125.0,1090.0,JETTE,Bruxelles-Brussel,/,Oui-Ja,,,50.870883362773,4.332501396692
+16227.0,Appareil fixe-Vast apparaat,Waregemseweg,75.0,9790.0,ELSEGEM,Oost-Vlaanderen,Toonzaal ( aan onthaal),Oui-Ja,,,50.857229745415,3.498822722351
+16228.0,Appareil fixe-Vast apparaat,Kortrijkstraat,380.0,8560.0,WEVELGEM,West-Vlaanderen,/,Oui-Ja,,,50.816766610749,3.212405966228
+13126.0,Appareil fixe-Vast apparaat,GROENSTRAAT,15.0,9660.0,BRAKEL,Oost-Vlaanderen,Afspraak katty.vandesteene@stellamatutina.be,Non-Nee,,,50.83474671507,3.764891318867
+13147.0,Appareil fixe-Vast apparaat,Industriepark de Bruwaan,16.0,9700.0,OUDENAARDE,Oost-Vlaanderen,OP AFSPRAAK : ronny.demeulemeester@captiqs.com   ,Non-Nee,,,50.865131826543,3.597188547066
+16229.0,Appareil fixe-Vast apparaat,Kortrijksesteenweg ,,9800.0,DEINZE,Oost-Vlaanderen,achter de receptie,Oui-Ja,,,50.969766120044,3.516015024958
+16230.0,Appareil fixe-Vast apparaat,Charles Demeestraat ,63.0,1000.0,BRUSSEL,Bruxelles-Brussel,/,Oui-Ja,,,50.872370396216,4.343182372089
+13100.0,Appareil fixe-Vast apparaat,zijstraat van de Peperstraat,,9900.0,EEKLO,Oost-Vlaanderen,Inkom cafe huysmanhoeve,Oui-Ja,,,51.203730028201,3.57226228048
+13136.0,Appareil fixe-Vast apparaat,Rue de la Croissance,8.0,6900.0,MARCHE-EN-FAMENNE,Luxembourg,Inkom,Oui-Ja,,,50.239082826413,5.292480599737
+16231.0,Appareil fixe-Vast apparaat,Bergstraat,15.0,1910.0,KAMPENHOUT,Vlaams-Brabant,Buitenkast inkom cultuurberg,Oui-Ja,,,50.931889620112,4.538023818535
+16232.0,Appareil fixe-Vast apparaat,Monnikenwerve ,,8000.0,BRUGGE,West-Vlaanderen,Productiehal,Oui-Ja,,,51.24836615593,3.202812296082
+16233.0,Appareil fixe-Vast apparaat,Karel van mandenstraat,123.0,8310.0,ASSEBROEK,West-Vlaanderen,mobiel toestel ,Non-Nee,,,51.221382241334,3.242065917348
+13096.0,Appareil fixe-Vast apparaat,Steenstraat,46.0,8610.0,HANDZAME,West-Vlaanderen,Loods 1 poort 2,Oui-Ja,,,51.036487599386,2.966946457963
+13097.0,Appareil fixe-Vast apparaat,Steenstraat,46.0,8610.0,HANDZAME,West-Vlaanderen,Productie ruimte,Oui-Ja,,,51.036487599386,2.966946457963
+13098.0,Appareil fixe-Vast apparaat,Steenstraat,46.0,8610.0,HANDZAME,West-Vlaanderen,Loods 4,Oui-Ja,,,51.036487599386,2.966946457963
+16234.0,Appareil fixe-Vast apparaat,Guldensporen park,,9820.0,MERELBEKE,Oost-Vlaanderen,/,Oui-Ja,,,51.005259583152,3.754166240654
+16235.0,Appareil fixe-Vast apparaat,Rue de Hainaut,40.0,6180.0,COURCELLES,Hainaut,ACCEUIL FOURNISSEUR,Oui-Ja,,,50.479207169488,4.361698247661
+16236.0,Appareil fixe-Vast apparaat,Elisabethlaan,153.0,9400.0,NINOVE,Oost-Vlaanderen,trap werkplaats ,Oui-Ja,,,50.830325177326,4.012011282152
+13095.0,Appareil fixe-Vast apparaat,Jozef Huysmanslaan,107.0,1651.0,LOT,Vlaams-Brabant,Inkom magazijn,Oui-Ja,,,50.776722277876,4.283995993568
+16237.0,Appareil fixe-Vast apparaat,Nijverheidsstraat,1.0,8630.0,VEURNE,West-Vlaanderen,Werkplaats in toiletten ,Oui-Ja,,,51.06506075294,2.674621214473
+6277.0,Appareil fixe-Vast apparaat,Albert 1 Laan,141.0,8670.0,KOKSIJDE,West-Vlaanderen,aan trap ingang hotel naast brasserie,Oui-Ja,,,51.134412703633,2.683311571685
+13092.0,Appareil fixe-Vast apparaat,Zaterdagplein,1.0,1000.0,BRUSSEL,Bruxelles-Brussel,In de Hall van de vormingslokalen ,Oui-Ja,,,50.85134963079,4.349688405334
+13085.0,Appareil fixe-Vast apparaat,Gehuchtstraat ,,1640.0,SINT-GENESIUS-RODE,Vlaams-Brabant,Buitengevel naast ingang kerk,Oui-Ja,,,50.737749742756,4.36858219037
+16238.0,Appareil fixe-Vast apparaat,Uitbreidingstraat,72.0,2600.0,BERCHEM,Antwerpen,1e verdiep,Oui-Ja,,,51.192762652036,4.416591247738
+10699.0,Appareil fixe-Vast apparaat,Mudakkers,25.0,3920.0,LOMMEL,Limburg,Buitenkant sporthal,Oui-Ja,,,51.231584987245,5.315298068018
+12694.0,Appareil fixe-Vast apparaat,Gulden Vlieslaan ,,1060.0,SINT-GILLIS,Bruxelles-Brussel,Aan het onthaal,Oui-Ja,,,50.835083395307,4.354001545807
+12695.0,Appareil fixe-Vast apparaat,Rue Verte,11.0,7000.0,MONS,Hainaut,Onthaal,Oui-Ja,,,50.455944538329,3.955467550063
+12599.0,Appareil fixe-Vast apparaat,Lodewijk De Raetlaan ,,8870.0,EMELGEM,West-Vlaanderen,SAS MAGAZIJN,Oui-Ja,,,50.926608293396,3.213097735954
+13077.0,Appareil fixe-Vast apparaat,Felix d hoopstraat,180.0,8700.0,AARSELE,West-Vlaanderen,In de Inkom ,Oui-Ja,,,50.997887133154,3.345486867868
+13078.0,Appareil fixe-Vast apparaat,Klijtmolenstraat,16.0,8740.0,EGEM,West-Vlaanderen,Buitengevel cafetaria - OP AFSPRAAK 0473861965 Bart Verhelst ,Non-Nee,,,51.021127468451,3.276397186926
+13079.0,Appareil fixe-Vast apparaat,Weiveldlaan,8.0,1930.0,NOSSEGEM,Vlaams-Brabant,In bureau ,Oui-Ja,,,50.870053135264,4.489934576903
+13080.0,Appareil fixe-Vast apparaat,Edmond Mesenslaan,2.0,1040.0,ETTERBEEK,Bruxelles-Brussel,"Gebouw D, naast directiebureau",Oui-Ja,,,50.831596670128,4.407640967708
+16239.0,Appareil fixe-Vast apparaat,Olympialaan,74.0,8200.0,SINT-ANDRIES,West-Vlaanderen,mobiel toestel,Non-Nee,,,51.193218166564,3.179793657353
+16240.0,Appareil fixe-Vast apparaat,Industrielaan,8.0,3590.0,DIEPENBEEK,Limburg,In de werkplaats ,Oui-Ja,,,50.910498584113,5.42215995743
+16241.0,Appareil fixe-Vast apparaat,Energieweg,,5527.0,HAPERT,Antwerpen,/,Oui-Ja,,,51.372511102524,5.269989446982
+6274.0,Appareil fixe-Vast apparaat,wijngaardveld,34.0,9300.0,AALST,Oost-Vlaanderen,inkom,Oui-Ja,,,50.96050401263,4.044535329586
+13074.0,Appareil fixe-Vast apparaat,Esmoreitlaan,1.0,2050.0,ANTWERPEN,Antwerpen,Inkom naast trap 0474/49 03 73 Carina ,Non-Nee,,,51.233112631009,4.385822706104
+13075.0,Appareil fixe-Vast apparaat,De Stappe,37.0,2640.0,MORTSEL,Antwerpen,Inkom,Oui-Ja,,,51.162721198594,4.470084637622
+13076.0,Appareil fixe-Vast apparaat,Rooienberg,52.0,2570.0,DUFFEL,Antwerpen,INKOM,Oui-Ja,,,51.096391510729,4.495377281911
+13066.0,Appareil fixe-Vast apparaat,Rue de l’Ecole Moyenne,1.0,7972.0,Quevaucamps,Hainaut,In de entree principale,Oui-Ja,,,50.532073718743,3.695114573322
+10698.0,Appareil fixe-Vast apparaat,Schoolstraat,13.0,3570.0,ALKEN,Limburg,Inkom school ,Oui-Ja,,,50.871612839807,5.269947361792
+13067.0,Appareil fixe-Vast apparaat,Kogelstraat,29.0,1000.0,BRUSSEL,Bruxelles-Brussel,Buitengevel  ingang kinderdagverblijf,Oui-Ja,,,50.849554394767,4.343455454495
+13068.0,Appareil fixe-Vast apparaat,Culliganlaan Park Lane,,1831.0,DIEGEM,Vlaams-Brabant,Verdiep 2 aan het onthaal,Oui-Ja,,,50.885694503506,4.450756586642
+10704.0,Appareil fixe-Vast apparaat,Fortstraat,47.0,9700.0,OUDENAARDE,Oost-Vlaanderen,/,Oui-Ja,,,50.84777344989,3.612925318821
+13071.0,Appareil fixe-Vast apparaat,Noordervest,33.0,3990.0,GROTE-BROGEL,Limburg,Inkom Secretariaat ,Oui-Ja,,,51.132321209243,5.458090410315
+13072.0,Appareil fixe-Vast apparaat,Atheneumstraat,2.0,3790.0,LEOPOLDSBURG,Limburg,Buitengevel ingang secundair onderwijs,Oui-Ja,,,51.121309190579,5.254457017991
+13049.0,Appareil fixe-Vast apparaat,Herestraat,,3000.0,LEUVEN,Vlaams-Brabant,Gebouw O&N5  In de inkomhal,Oui-Ja,,,50.876723947671,4.672522137647
+13101.0,Appareil fixe-Vast apparaat,De Keyserhoeve,66.0,2040.0,ANTWERPEN ZANDVLIET,Antwerpen,"Buitengevel,straatkant",Oui-Ja,,,51.359278713986,4.311681755032
+13050.0,Appareil fixe-Vast apparaat,Papiermolenstraat,5.0,9200.0,DENDERMONDE,Oost-Vlaanderen,"Parkingzijde,buitengevel naast ingang",Oui-Ja,,,51.031858525719,4.103192893836
+12551.0,Appareil fixe-Vast apparaat,Beerzelplein,9.0,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.056812038206,4.670464678048
+12550.0,Appareil fixe-Vast apparaat,Tinstraat ,,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.0322846551,4.608896784208
+12552.0,Appareil fixe-Vast apparaat,Mechelbaan,604.0,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.051386055095,4.613804269868
+12549.0,Appareil fixe-Vast apparaat,Voetbalstraat ,,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.034340917093,4.582835572922
+12548.0,Appareil fixe-Vast apparaat,Kattestraat,72.0,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.053884323246,4.6634499471
+12547.0,Appareil fixe-Vast apparaat,Heuvel,41.0,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.045805258232,4.627534078726
+12553.0,Appareil fixe-Vast apparaat,Galeistraat,,2580.0,BEERZEL,Antwerpen,/,Oui-Ja,,,51.03886946104,4.649020422349
+13045.0,Appareil fixe-Vast apparaat,Mont Saint-Martin,73.0,4000.0,LIEGE,Liège,1e verdieping in de wc,Oui-Ja,,,50.643661325166,5.563443389518
+13046.0,Appareil fixe-Vast apparaat,Generaal Maczekplein. (achter het zwembad),,8700.0,TIELT,West-Vlaanderen,In de judozaal (bellen Patrick Acx 0473/313725),Non-Nee,,,51.002233713907,3.326800558859
+13047.0,Appareil fixe-Vast apparaat,Avenue Besme,129.0,1190.0,VORST,Bruxelles-Brussel,Inkom,Oui-Ja,,,50.821335167075,4.341633647839
+13048.0,Appareil fixe-Vast apparaat,Avenue Albert,,1190.0,VORST,Bruxelles-Brussel,Tweede verdieping Inkom,Oui-Ja,,,50.82138759588,4.343189580526
+16242.0,Appareil fixe-Vast apparaat,Cockerillkaai,26.0,2000.0,ANTWERPEN,Antwerpen,/,Oui-Ja,,,51.210948699718,4.389100868436
+16243.0,Appareil fixe-Vast apparaat,Koperstraat,,9830.0,SINT-MARTENS-LATEM,Oost-Vlaanderen,/,Oui-Ja,,,51.020853115226,3.634653835954
+16244.0,Appareil fixe-Vast apparaat,Hermann-Debrouxlaan,46.0,1160.0,OUDERGEM,Bruxelles-Brussel,/,Oui-Ja,,,50.813403791195,4.432017302342
+16245.0,Appareil fixe-Vast apparaat,Boulevard Emile de Laveleye,191.0,4020.0,BRESSOUX,Liège,/,Oui-Ja,,,50.619688704898,5.592275879156
+16246.0,Appareil fixe-Vast apparaat,Boulevard de la Meuse,23.0,5100.0,DAVE,Namur,/,Oui-Ja,,,50.456314138349,4.865681801394
+16247.0,Appareil fixe-Vast apparaat,Jan Samijnstraat,15.0,9050.0,GENTBRUGGE,Oost-Vlaanderen,BUITENKAST,Oui-Ja,,,51.071423749007,3.683989943789
+13043.0,Appareil fixe-Vast apparaat,Doornlarenhoofdstraat,14.0,1640.0,SINT-GENESIUS-RODE,Vlaams-Brabant,Buitengevel naast ingang kleedkamers,Oui-Ja,,,50.742697618316,4.351698720991
+12985.0,Appareil fixe-Vast apparaat,Industriepark West,65.0,9100.0,SINT-NIKLAAS,Oost-Vlaanderen,In de bureelruimte ,Oui-Ja,,,51.142208460319,4.160078188479
+12986.0,Appareil fixe-Vast apparaat,Blarenberglaan,6.0,2800.0,MECHELEN,Antwerpen,"In gebouw Bulo, verdiep 1, inkom linkerkant",Oui-Ja,,,51.056341184795,4.446383297651
+16248.0,Appareil fixe-Vast apparaat,Zurkelberg,3.0,2250.0,OLEN,Antwerpen,MOBIEL TOESTEL,Non-Nee,,,51.171333855563,4.908910545012
+12987.0,Appareil fixe-Vast apparaat,Van Dormaelstraat,,1630.0,LINKEBEEK,Vlaams-Brabant,Buitenkast achterkant gebouw speelplaats,Oui-Ja,,,50.773316459159,4.332939895956
+12988.0,Appareil fixe-Vast apparaat,Hollebeekstraat,212.0,1630.0,LINKEBEEK,Vlaams-Brabant,Buitenkast zijkant hoeve t’holleken,Oui-Ja,,,50.765140510279,4.34738736391
+12989.0,Appareil fixe-Vast apparaat,Kerkstraat,31.0,1840.0,LONDERZEEL,Vlaams-Brabant,In de winkelruimte,Oui-Ja,,,51.002894386377,4.302493106842
+12990.0,Appareil fixe-Vast apparaat,Boonmarkt,,2220.0,HEIST-OP-DEN-BERG,Antwerpen,infoborden naast wandelpad - voor gebouw,Oui-Ja,,,51.08670733716,4.716193852827
+12991.0,Appareil fixe-Vast apparaat,Kastelsedijk,5.0,2470.0,RETIE,Antwerpen,"Buitengevel,ingang personeel",Oui-Ja,,,51.233372302369,5.049256293592
+12992.0,Appareil fixe-Vast apparaat,Hof-ter-burstbaan,13.0,9280.0,LEBBEKE,Oost-Vlaanderen,Buitenkast inkom,Oui-Ja,,,50.983629515853,4.146888928556
+12993.0,Appareil fixe-Vast apparaat,A. Amelotstraat,53.0,9770.0,KRUISEM,Oost-Vlaanderen,Buitenwand  fietsenstalling,Oui-Ja,,,50.906737037425,3.652317832994
+12571.0,Appareil fixe-Vast apparaat, Avenue Georges Lecointe,50.0,1180.0,UKKEL,Bruxelles-Brussel,Aan het onthaal,Oui-Ja,,,50.796108907459,4.351675586939
+12996.0,Appareil fixe-Vast apparaat,Rue de Stalle,,1180.0,UKKEL,Bruxelles-Brussel,"Gebouw D , in de inkom",Oui-Ja,,,50.796427854893,4.328268280299
+16249.0,Appareil fixe-Vast apparaat,Luchthavenlei,,2100.0,DEURNE,Antwerpen,/,Oui-Ja,,,51.186912130967,4.453336086114
+12997.0,Appareil fixe-Vast apparaat,vilvoordsesteenweg,46.0,1120.0,NEDER-OVER-HEEMBEEK,Bruxelles-Brussel,INKOM,Oui-Ja,,,50.888073724003,4.384950899873
+12998.0,Appareil fixe-Vast apparaat,A. Van Osslaan 1 ,,1120.0,NEDER-OVER-HEEMBEEK,Bruxelles-Brussel,In de inkomhal ,Oui-Ja,,,50.907278424551,4.402913574317
+16251.0,Appareil fixe-Vast apparaat,Lepelstraat ,,9140.0,ELVERSELE,Oost-Vlaanderen,Buitengevel clubhuis bootsteiger aan de Schelde),Oui-Ja,,,51.12666429696,4.285422695797
+12999.0,Appareil fixe-Vast apparaat,Melkerijstraat,61.0,2900.0,SCHOTEN,Antwerpen,In het kantoor gelijkvloers,Oui-Ja,,,51.237717648613,4.47741972491
+13000.0,Appareil fixe-Vast apparaat,Waterloosesteenweg,861.0,1180.0,UKKEL,Bruxelles-Brussel,Inkom Toonzaal,Oui-Ja,,,50.809170594816,4.369520407342
+13001.0,Appareil fixe-Vast apparaat,Place de la Resistance,2.0,7331.0,BAUDOUR,Hainaut,Aan het onthaal,Oui-Ja,,,50.482827187741,3.83745839998
+13002.0,Appareil fixe-Vast apparaat,Mevrouw Simonnetlaan,,9830.0,SINT-MARTENS-LATEM,Oost-Vlaanderen,Buitenzijde clublokaal,Oui-Ja,,,51.014133664928,3.632436884496
+13003.0,Appareil fixe-Vast apparaat,Woudlaan,200.0,1000.0,BRUSSEL,Bruxelles-Brussel,Inkom,Oui-Ja,,,50.797527209296,4.396269994041
+13040.0,Appareil fixe-Vast apparaat,Nieuwe Steenweg,106.0,9140.0,ELVERSELE,Oost-Vlaanderen,"buitengevel,naast inkom.",Oui-Ja,,,51.122361161337,4.145294187658
+13039.0,Appareil fixe-Vast apparaat,Diepestraat,118.0,9300.0,AALST,Oost-Vlaanderen,In de bureelruimte,Oui-Ja,,,50.929555260078,4.034359447674
+8866.0,Appareil fixe-Vast apparaat,Stadionlaan,48.0,8210.0,LOPPEM,West-Vlaanderen,/,Oui-Ja,,,51.139890906,3.152967543878
+13038.0,Appareil fixe-Vast apparaat,Rue Louvres,95.0,4000.0,LUIK,Liège,INKOM,Oui-Ja,,,50.633399151561,5.565749167262
+13037.0,Appareil fixe-Vast apparaat,Rue Louvres,95.0,4000.0,LUIK,Liège,7e verdieping ,Oui-Ja,,,50.633399151561,5.565749167262
+16252.0,Appareil fixe-Vast apparaat,Brusselsesteenweg,188.0,9090.0,MELLE,Oost-Vlaanderen,Inkom werkplaats ,Oui-Ja,,,51.0063970699,3.793283842408
+13036.0,Appareil fixe-Vast apparaat,Buchtenstraat,11.0,9052.0,ZWIJNAARDE,Oost-Vlaanderen,1e verdieping ,Oui-Ja,,,51.029214831548,3.684983786049
+16253.0,Appareil fixe-Vast apparaat,Grotesteenweg,150.0,2600.0,BERCHEM,Antwerpen,"Verdiep 1, ingang dienst bevolking.",Oui-Ja,,,51.195175466684,4.41964167376
+15727.0,Appareil fixe-Vast apparaat,M.Dequeeckerplein,1.0,2100.0,DEURNE,Antwerpen,INKOMHAL,Non-Nee,,,51.218629917697,4.459824266126
+13094.0,Appareil fixe-Vast apparaat,Columbiastraat,231.0,2030.0,ANTWERPEN,Antwerpen,Buitenkast inkom,Oui-Ja,,,51.252881265829,4.422352884161
+13091.0,Appareil fixe-Vast apparaat,Ferdinand Verbieststraat,10.0,2030.0,ANTWERPEN,Antwerpen,Buitenkast inkom,Oui-Ja,,,51.274371124466,4.411232026485
+13081.0,Appareil fixe-Vast apparaat,Moretuslei,64.0,2180.0,EKEREN,Antwerpen,Buitenkant inkom,Oui-Ja,,,51.283195089215,4.420399649264
+15164.0,Appareil fixe-Vast apparaat,Ter Rivierenlaan,92.0,2100.0,DEURNE,Antwerpen,Buitengevel naast Kerk,Oui-Ja,,,51.223628717113,4.469501592437
+15167.0,Appareil fixe-Vast apparaat,Willem gijsselstraat,16.0,2050.0,ANTWERPEN,Antwerpen,Buitenkast inkom containers ,Oui-Ja,,,51.223373530071,4.372916167776
+14192.0,Appareil fixe-Vast apparaat,Vredestraat,93.0,2600.0,BERCHEM,Antwerpen,Buitenkast inkom,Oui-Ja,,,51.196125387771,4.427098969196
+14190.0,Appareil fixe-Vast apparaat,Sint -Bernardsesteenweg,181.0,2020.0,ANTWERPEN,Antwerpen,Inkom buitenkast,Oui-Ja,,,51.188908359589,4.377391768795
+14191.0,Appareil fixe-Vast apparaat,Floralienlaan,400.0,2600.0,BERCHEM,Antwerpen,Inkom Sint-Anna buitenkast,Oui-Ja,,,51.180619843311,4.426612262694
+14194.0,Appareil fixe-Vast apparaat,Van Duystraat,192.0,2100.0,DEURNE,Antwerpen,Buitenkast inkom,Oui-Ja,,,51.232324019648,4.451277239458
+16254.0,Appareil fixe-Vast apparaat,De Lunden,2.0,2170.0,MERKSEM,Antwerpen,Buitenkast inkom melgeshof,Oui-Ja,,,51.256420692083,4.449066093401
+14197.0,Appareil fixe-Vast apparaat,Herentalsebaan,597.0,2100.0,DEURNE,Antwerpen,Buitenkant  inkom,Oui-Ja,,,51.204918004202,4.478116344883
+16255.0,Appareil fixe-Vast apparaat,Universiteitsplein,1.0,2610.0,ANTWERPEN,Antwerpen,Buitenkant inkom gebouwA,Oui-Ja,,,51.162772747298,4.402289625445
+16256.0,Appareil fixe-Vast apparaat,Rodestraat,14.0,2000.0,ANTWERPEN,Antwerpen,Buitenkant inkom,Oui-Ja,,,51.223552232247,4.412733979715
+15160.0,Appareil fixe-Vast apparaat,Ekersedijk,,2030.0,ANTWERPEN,Antwerpen,Inkom WC buitenkast ,Oui-Ja,,,51.284755467835,4.392954877791
+16254.0,Appareil fixe-Vast apparaat,Groenendaallaan,105.0,2170.0,MERKSEM,Antwerpen,Buitengevel ,Oui-Ja,,,51.242487035339,4.43154129406
+15195.0,Appareil fixe-Vast apparaat,De Coninckplein,,2060.0,ANTWERPEN,Antwerpen,"Buitengevel,blok B",Oui-Ja,,,51.221621731795,4.420224355914
+14199.0,Appareil fixe-Vast apparaat,Tongerlostraat,2.0,2040.0,ANTWERPEN,Antwerpen,Buitengevel naast inkom,Oui-Ja,,,51.34710693329,4.330475071599
+14195.0,Appareil fixe-Vast apparaat,Kapelstraat,64.0,2660.0,HOBOKEN,Antwerpen,Buitenkant inkom bib,Oui-Ja,,,51.175243175204,4.347323786629
+14198.0,Appareil fixe-Vast apparaat,Droogdokkenweg,4.0,2000.0,ANTWERPEN,Antwerpen,mobiel gebruik 03/3389314,Non-Nee,,,51.236862317304,4.404217714632
+16261.0,Appareil fixe-Vast apparaat,Frans Messingstraat,36.0,2100.0,DEURNE,Antwerpen,/,Oui-Ja,,,51.226676502836,4.46812494866
+15173.0,Appareil fixe-Vast apparaat,Lodewijk Van Sullstraat,37.0,2600.0,BERCHEM,Antwerpen,"in de gang,toegang tot kleedingkamers",Oui-Ja,,,51.187610128516,4.429246580428
+15202.0,Appareil fixe-Vast apparaat,Ruggeveldlaan,480.0,2100.0,DEURNE,Antwerpen,"buitengevel,kleedkamers atletiekpiste",Oui-Ja,,,51.218319540796,4.481588710897
+15203.0,Appareil fixe-Vast apparaat,Rodeloopstraat,2.0,2170.0,MERKSEM,Antwerpen,buitengevel EHBO lokaal atletiek piste,Oui-Ja,,,51.250335598015,4.442487724331
+15211.0,Appareil fixe-Vast apparaat,Plantin-Moretuslei,343.0,2140.0,BORGERHOUT,Antwerpen,kleedkamergang,Oui-Ja,,,51.209357940224,4.439423551988
+15193.0,Appareil fixe-Vast apparaat,Luisbekelaar,,2140.0,BORGERHOUT,Antwerpen,Buitengevel inkom links,Oui-Ja,,,51.205390442211,4.44578162987
+15194.0,Appareil fixe-Vast apparaat,Te Couwelaarlei,95.0,2100.0,DEURNE,Antwerpen,Buitenkast inkom ,Oui-Ja,,,51.223666435677,4.45809608533
+15197.0,Appareil fixe-Vast apparaat,Berchemstadionstraat,73.0,2600.0,BERCHEM,Antwerpen,"buitengevel,achteraan sporthal",Oui-Ja,,,51.188051393809,4.438134666736
+16255.0,Appareil fixe-Vast apparaat,Francis Wellensplein,1.0,2018.0,ANTWERPEN,Antwerpen,/,Oui-Ja,,,51.205845922793,4.398441158421
+16256.0,Appareil fixe-Vast apparaat,Mechelsesteenweg,216.0,2018.0,ANTWERPEN,Antwerpen,lokettenzaal harmonie,Oui-Ja,,,51.202542447114,4.411774335621
+15206.0,Appareil fixe-Vast apparaat,Mechelsesteenweg,216.0,2018.0,ANTWERPEN,Antwerpen,mobiel toestel kast lokettenzaal,Oui-Ja,,,51.202542447114,4.411774335621
+16257.0,Appareil fixe-Vast apparaat,Willem Van Laerstraat,,2600.0,BERCHEM,Antwerpen,inkomhal gelijkvloers,Oui-Ja,,,51.195067784441,4.421665943842
+16258.0,Appareil fixe-Vast apparaat,Arenbergstraat,,2000.0,ANTWERPEN,Antwerpen,aan traphal bij inkom,Oui-Ja,,,51.215301503227,4.407082049292
+16259.0,Appareil fixe-Vast apparaat,Suikerrui,,2000.0,ANTWERPEN,Antwerpen,buitengevel ingang,Oui-Ja,,,51.22099166821,4.398156498434
+16260.0,Appareil fixe-Vast apparaat,August Leyweg,2.0,2020.0,ANTWERPEN,Antwerpen,zwemhal,Oui-Ja,,,51.194856199992,4.37877553719
+1350.0,Appareil fixe-Vast apparaat,Doornstraat,,2610.0,WILRIJK,Antwerpen,buiten,Oui-Ja,,,51.152412610199,4.398531724884
+1344.0,Appareil fixe-Vast apparaat,Desguinlei,,2018.0,ANTWERPEN,Antwerpen,in 2e gedeelte inkomhal,Oui-Ja,,,51.196678155077,4.397064636194
+1351.0,Appareil fixe-Vast apparaat,Van Baurscheitlaan,88.0,2100.0,DEURNE,Antwerpen,mobiel toestel EHBO lokaal,Non-Nee,,,51.19601294454,4.462508905894
+15677.0,Appareil fixe-Vast apparaat,De Berlaimontstraat,39.0,2100.0,DEURNE,Antwerpen,ingang kantoren,Oui-Ja,,,51.228022134846,4.455954476011
+16261.0,Appareil fixe-Vast apparaat,Allée Verte,52.0,1000.0,Bruxelles,Bruxelles-Brussel,Salle d escalade,Oui-Ja,Non-Nee,,50.86787803139,4.357822958547
+16262.0,Appareil fixe-Vast apparaat,Korte Mate ,1.0,9042.0,Desteldonk,Oost-Vlaanderen,"gelijkvloers, magazijn, aan bureau traffic",Non-Nee,Oui-Ja,,51.125997943397,3.78384598707
+16263.0,Appareil fixe-Vast apparaat,Korte Mate ,1.0,9042.0,Desteldonk,Oost-Vlaanderen,gelijkvloers - inkomhal bureau admin,Non-Nee,Oui-Ja,,51.125997943397,3.78384598707
+16264.0,Appareil fixe-Vast apparaat,Korte Keppestraat,21.0,9320.0,Erembodegem,Oost-Vlaanderen,6de verdieping - printer ruimte,Non-Nee,Non-Nee,6u-19u,50.916093211116,4.040276568402
+16265.0,Appareil fixe-Vast apparaat,Stadionlaan,6.0,3010.0,KESSEL-LO,Vlaams-Brabant,EHBO lokaal veld C (enkel op afspraak),Non-Nee,,,50.882568993085,4.734452881261
+16266.0,Appareil fixe-Vast apparaat,Avenue de Villez,6.0,6980.0,La Roche en ardennes,Luxembourg,Piscine,Oui-Ja,Non-Nee,9h à 19h,50.179474293338,5.583022341869
+16267.0,Appareil fixe-Vast apparaat,Route d Houffalize,18.0,6980.0,LA Roche en ardennes,Luxembourg,Accueil,Non-Nee,Non-Nee,10h - 17h,50.176647873678,5.598418053984
+16268.0,Appareil fixe-Vast apparaat,Rue de La Roche,89.0,6987.0,Rendeux,Luxembourg,Accueil,Non-Nee,Non-Nee,10h - 17h,50.225656690634,5.524320265305
+16269.0,Appareil fixe-Vast apparaat,Chaussée de France,25.0,6840.0,Neufchateau,Luxembourg,Réception - accueil,Oui-Ja,Oui-Ja,,49.837280749268,5.429427486579
+16270.0,Appareil fixe-Vast apparaat,Clos des horlés,1.0,6760.0,Virton,Luxembourg,Accueil,Non-Nee,Non-Nee,10h - 17h,49.578972579715,5.54844187831
+16271.0,Appareil fixe-Vast apparaat,Clos des Horlés,1.0,6760.0,Virton,Luxembourg,Piscine,Oui-Ja,Non-Nee,9h - 19h,49.578972579715,5.54844187831
+16272.0,Appareil fixe-Vast apparaat,Herentalsesteenweg,64.0,2460.0,Kasterlee,Limburg,Accueil,Non-Nee,Non-Nee,10h - 20h,51.212918991788,4.903643608514
+16273.0,Appareil fixe-Vast apparaat,Herentalsesteenweg,64.0,2460.0,Kasterlee,Luxembourg,Zwembad,Oui-Ja,Oui-Ja,,51.212918991788,4.903643608514
+16274.0,Appareil fixe-Vast apparaat,Eekhoornlaan,1.0,2960.0,Brecht,Antwerpen,INGANG RESTAURANT,Oui-Ja,Oui-Ja,,51.306839516064,4.586244907503
+16275.0,Appareil fixe-Vast apparaat,Tieltstraat ,29.0,8755.0,Ruiselede,Oost-Vlaanderen, ,Oui-Ja,Non-Nee,,51.034912053046,3.395394228117
+16276.0,Appareil fixe-Vast apparaat,De Meeussquare,26.0,1000.0,BRUSSEL,Bruxelles-Brussel,Onthaal ,Oui-Ja,,,50.840276843328,4.370449289852
+16277.0,Appareil fixe-Vast apparaat,Sportpleinstraat ,11.0,9220.0,Hamme,Oost-Vlaanderen,Vigor Wuitens Hamme - gelijkvloers - doorloop/overdekte gang van parking naar het A-terrein -eerste voetbalveld natuurgras,Non-Nee,Oui-Ja,,51.093305419708,4.144604776122
+13035.0,Appareil fixe-Vast apparaat,Zuidstraat,18.0,8560.0,WEVELGEM,West-Vlaanderen,inkom werkplaats,Oui-Ja,,,50.809961008285,3.218658027807
+13034.0,Appareil fixe-Vast apparaat,Dieleghemsesteenweg,,1090.0,JETTE,Bruxelles-Brussel,In de inkomhal,Oui-Ja,,,50.883791630483,4.319734718401
+13033.0,Appareil fixe-Vast apparaat,Frans Vervaeckstraat,47.0,1083.0,GANSHOREN,Bruxelles-Brussel,Doorgang tussen peuter- en babyafdeling.,Oui-Ja,,,50.872704750333,4.318391636162
+16278.0,Appareil fixe-Vast apparaat,Sterrebeekstraat,172.0,1930.0,ZAVENTEM,Bruxelles-Brussel,"Gebouw Asco 7, naast de trap naar de refter.",Oui-Ja,,,50.87069405749,4.484660599606
+13027.0,Appareil fixe-Vast apparaat,Rue de la tete d’or,26.0,7500.0,DOORNIK,Hainaut,inkom,Oui-Ja,,,50.605129087626,3.390215217783
+16279.0,Appareil fixe-Vast apparaat,boombekelaan,12.0,2660.0,HOBOKEN,Antwerpen,Inkom werkplaats,Oui-Ja,,,51.180231203875,4.341135343696
+13028.0,Appareil fixe-Vast apparaat,evangeliestraat,195.0,9220.0,HAMME,Oost-Vlaanderen,EHBO lokaal,Oui-Ja,,,51.084045512175,4.117968931849
+13029.0,Appareil fixe-Vast apparaat,frankrijklei,109.0,2000.0,ANTWERPEN,Antwerpen,inkom winkel,Oui-Ja,,,51.212492478645,4.410739422036
+13030.0,Appareil fixe-Vast apparaat,leopoldstraat,21.0,2000.0,ANTWERPEN,Antwerpen,inkom winkel,Oui-Ja,,,51.214948963008,4.407031687166
+16278.0,Appareil fixe-Vast apparaat,Rue de Niederpallen,1.0,8506.0,Redange,Luxembourg, ,Oui-Ja,Non-Nee,,49.764281874413,5.890244071321
+16279.0,Appareil fixe-Vast apparaat,Haneboesch,2.0,4563.0,Differdange,Luxembourg, ,Oui-Ja,Non-Nee,,49.539881688328,5.898354484652
+16280.0,Appareil fixe-Vast apparaat,Rue de l innovation ,10.0,5020.0,Sualee,Namur, ,Oui-Ja,Non-Nee,,50.488070193905,4.807770897079
+16281.0,Appareil fixe-Vast apparaat,Oever,3.0,9850.0,Deinze-Merendree,Oost-Vlaanderen,buiten aan de technische ruimte ter hoogte van tennisterrein 2,Non-Nee,Oui-Ja,,51.082535348499,3.562421504618
+16282.0,Appareil fixe-Vast apparaat,Schaliehoevestraat,12.0,2220.0,Heist-op-den-Berg,Vlaams-Brabant,Buitenkant lokaal leaders in Automated Packing,Non-Nee,Oui-Ja,,51.05597372216,4.701221485017
+16283.0,Appareil fixe-Vast apparaat,Markstraat ,17.0,1541.0,Sint-Pieters-Kapelle,Vlaams-Brabant,Binnenplaats van een gemeentelijke feestzaal,Oui-Ja,Oui-Ja,,50.70636994704,3.991554157805
+16284.0,Appareil fixe-Vast apparaat,Sint-Niklaasstraat,24.0,1540.0,Herfelingen,Vlaams-Brabant,Aan de muur aan een kunstwerk van een konijn,Oui-Ja,Oui-Ja,,50.747688203467,4.096039358571
+16285.0,Appareil fixe-Vast apparaat,Heilige Geeststraat,,1540.0,Herne,Vlaams-Brabant,Aan de voordeur van het gebouw,Oui-Ja,Oui-Ja,,50.700389278914,4.036823946911
+16286.0,Appareil fixe-Vast apparaat,Hernekouter,1.0,1540.0,Herne,Vlaams-Brabant,Ingang sporthal,Oui-Ja,Oui-Ja,,50.726172612387,4.01749983617
+16287.0,Appareil fixe-Vast apparaat,Pater Damiaanstraat ,10.0,2460.0,Kasterlee,Antwerpen,Buitengevel technisch lokaal ,Oui-Ja,Oui-Ja,,51.234209025853,4.963564409392
+16288.0,Appareil fixe-Vast apparaat,Schaarstraat,9.0,2460.0,Kasterlee,Antwerpen,Buitengevel aan keuken,Oui-Ja,Oui-Ja,,51.243333942836,4.898441883222
+16289.0,Appareil fixe-Vast apparaat,Melkerijstraat,61.0,2900.0,SCHOTEN,Antwerpen,Buitenkast inkom poort 6,Oui-Ja,,,51.237717648613,4.47741972491
+13031.0,Appareil fixe-Vast apparaat,kloosterstraat,18.0,9750.0,ZINGEM,Oost-Vlaanderen,Inkom sporthal ,Oui-Ja,,,50.900925863954,3.590116567719
+16290.0,Appareil fixe-Vast apparaat,Oostdijk,110.0,2830.0,WILLEBROEK,Antwerpen,Altijd op afspraak toestel staat op boot 0499/59 33 66 koen,Non-Nee,,,51.052188538505,4.363600772043
+16291.0,Appareil fixe-Vast apparaat,Breestraat,,8710.0,WIELSBEKE,West-Vlaanderen,Inkom 2 verdieping ,Oui-Ja,,,50.92193254463,3.356101361829
+16292.0,Appareil fixe-Vast apparaat,Rue Valère Letot,16.0,7050.0,Jurbise,Hainaut,,Oui-Ja,Non-Nee,,50.512715461903,3.853708647123
+16293.0,Appareil fixe-Vast apparaat,Gistelsteenweg,112.0,8490.0,JABBEKE,West-Vlaanderen,/,Oui-Ja,,,51.186596002051,3.144329573561
+16294.0,Appareil fixe-Vast apparaat,Bohemen,101.0,9260.0,WICHELEN,Oost-Vlaanderen,Inkom feestzaal,Oui-Ja,,,51.002212195193,3.988684613252
+16295.0,Appareil fixe-Vast apparaat,Van Overbekelaan ,229.0,1083.0,GANSHOREN,Bruxelles-Brussel,Inkom nieuwbouw,Oui-Ja,,,50.87510210037,4.3079292608
+16296.0,Appareil fixe-Vast apparaat,Pater E. Devroyestraat,29.0,1040.0,ETTERBEEK,Bruxelles-Brussel,Buitengevel van de serre,Oui-Ja,,,50.833434779585,4.407749261897
+16297.0,Appareil fixe-Vast apparaat,Nekkersgatlaan,17.0,1180.0,UKKEL,Bruxelles-Brussel,Gebouw De Iris naast het secretariaat,Oui-Ja,,,50.79211111683,4.327038910392
+16298.0,Appareil fixe-Vast apparaat,Louis vander swaelmenlaan,25.0,1170.0,WATERMAAL-BOSVOORDE,Bruxelles-Brussel,inkom kinderopvang buitenkast,Oui-Ja,,,50.804494498672,4.41741259043
+16299.0,Appareil fixe-Vast apparaat,Floreallaan,14.0,1180.0,UKKEL,Bruxelles-Brussel,Inkom school,Oui-Ja,,,50.80836857241,4.337921805837
+16300.0,Appareil fixe-Vast apparaat,Edmond Mesenlaan ,2.0,1040.0,ETTERBEEK,Bruxelles-Brussel,Inkom sporthal Gebouw S,Oui-Ja,,,50.831596670128,4.407640967708
+16301.0,Appareil fixe-Vast apparaat,Mayerlei ,154.0,2640.0,Mortsel,Antwerpen,aan de zuidgevel van het gebouw = aan de rechter zijgevel,Oui-Ja,Oui-Ja,,51.166172153859,4.472198050689
+16302.0,Appareil fixe-Vast apparaat,Lambermontlaan ,,1030.0,SCHAARBEEK,Bruxelles-Brussel,/,Oui-Ja,,,50.872193564485,4.38035853385
+16303.0,Appareil fixe-Vast apparaat,Lambermontlaan,,1030.0,SCHAARBEEK,Bruxelles-Brussel,/,Oui-Ja,,,50.872193564485,4.38035853385
+16304.0,Appareil fixe-Vast apparaat,Lambermontlaan,,1030.0,SCHAARBEEK,Bruxelles-Brussel,/,Oui-Ja,,,50.872193564485,4.38035853385
+16305.0,Appareil fixe-Vast apparaat,Okegembaan,212.0,9400.0,NINOVE,Oost-Vlaanderen,Buitenkast inkom ,Oui-Ja,,,50.851148590842,4.040967153404
+16306.0,Appareil fixe-Vast apparaat,Lochtemanweg,56.0,3580.0,BERINGEN,Limburg,INKOM,Oui-Ja,,,51.032455317226,5.229702575705
+16307.0,Appareil fixe-Vast apparaat,Route de Thionville,201.0,5885.0,LUXEMBURG,Luxembourg,/,Oui-Ja,,,49.586452673928,6.143715002641
+16308.0,Appareil fixe-Vast apparaat,Mastendreef,10.0,2900.0,SCHOTEN,Antwerpen,Buitenkast linksom bar,Oui-Ja,,,51.259769220492,4.516918521615
+16309.0,Appareil fixe-Vast apparaat,Meendijkstraat,42.0,3300.0,TIENEN,Vlaams-Brabant,Mobiel (vooraf bellen 016/418080),Non-Nee,,,50.80360044297,4.936072186071
+16310.0,Appareil fixe-Vast apparaat,Klein Berchemstraat,1.0,1081.0,KOEKELBERG,Bruxelles-Brussel,In de eetzaal,Oui-Ja,,,50.865730126792,4.308696288759
+16311.0,Appareil fixe-Vast apparaat,Frans Vervaeckstraat,47.0,1083.0,GANSHOREN,Bruxelles-Brussel,Inkom secretariaat ,Oui-Ja,,,50.872704750333,4.318391636162
+16312.0,Appareil fixe-Vast apparaat,Raveschoot,22.0,9080.0,BEERVELDE,Oost-Vlaanderen,aan het onthaal.,Oui-Ja,,,51.069796638262,3.891331578009
+16313.0,Appareil fixe-Vast apparaat,Picardstraat,170.0,1080.0,SINT-JANS-MOLENBEEK,Bruxelles-Brussel,Ingang secretariaat,Oui-Ja,,,50.864561857127,4.342069255347
+16314.0,Appareil fixe-Vast apparaat,Picardstraat,172.0,1080.0,SINT-JANS-MOLENBEEK,Bruxelles-Brussel,/,Oui-Ja,,,50.864676773019,4.341585619534
+16315.0,Appareil fixe-Vast apparaat,Picardstraat,172.0,1080.0,SINT-JANS-MOLENBEEK,Bruxelles-Brussel,"Verdiep 4, toegang naar sporthal",Oui-Ja,,,50.864676773019,4.341585619534
+16316.0,Appareil fixe-Vast apparaat,Dwarslaan,7.0,2050.0,ANTWERPEN,Antwerpen,Inkom onder trap,Oui-Ja,,,51.22186130901,4.347868275059
+14200.0,Appareil fixe-Vast apparaat,Wandeldijk,40.0,2000.0,ANTWERPEN,Antwerpen,Aan zwembad ehbo lokaal ,Oui-Ja,,,51.23479626199,4.393612092544
+16317.0,Appareil fixe-Vast apparaat,sint-jansweg,7.0,9130.0,DOEL,Oost-Vlaanderen,buitenkast inkom naast garage,Oui-Ja,,,51.268883953462,4.262326343107
+16318.0,Appareil fixe-Vast apparaat,Van Doornelaan,2.0,2440.0,GEEL,Antwerpen,Magazijn,Oui-Ja,,,51.125402870181,4.939908918431
+16319.0,Appareil fixe-Vast apparaat,Van Doornelaan,2.0,2440.0,GEEL,Antwerpen,Inkom,Oui-Ja,,,51.125402870181,4.939908918431
+12857.0,Appareil fixe-Vast apparaat,ten bergstraat,4.0,2830.0,WILLEBROEK,Antwerpen,Inkom werkplaats,Oui-Ja,,,51.048625768651,4.369913350963
+16320.0,Appareil fixe-Vast apparaat,kastanjelaan,17.0,2950.0,KAPELLEN,Antwerpen,MOBIEL TOESTEL,Non-Nee,,,51.32286701413,4.435013497451
+16321.0,Appareil fixe-Vast apparaat,Gelmelstraat,,2320.0,HOOGSTRATEN,Antwerpen,BUITENKAST INKOM,Oui-Ja,,,51.40330217631,4.771691472647
+16322.0,Appareil fixe-Vast apparaat,Melanedreef,,8650.0,HOUTHULST,West-Vlaanderen,Inkom atelier ,Oui-Ja,,,50.967519841467,2.941689372636
+16323.0,Appareil fixe-Vast apparaat,Ransbeekstraat,310.0,1120.0,NEDER-OVER-HEEMBEEK,Bruxelles-Brussel,MOBIEL TOESTEL,Non-Nee,,,50.901126652444,4.400379054435
+16324.0,Appareil fixe-Vast apparaat,Kattestraat,27.0,1785.0,Merchtem,Vlaams-Brabant,2de verdieping bij uitstappen lift 1,Non-Nee,Oui-Ja,,50.960850771964,4.229365095603
+16325.0,Appareil fixe-Vast apparaat,rue de la Petite Ile et rue de la Filature (entrée C),,1070.0,Anderlecht,Bruxelles-Brussel,Bureaux de chantier (baraquement),Non-Nee,Non-Nee,7h-17h,50.830607189876,4.319731016194
+16326.0,Appareil fixe-Vast apparaat,Kielsbroek ,44.0,2020.0,Antwerpen,Antwerpen,Aan de ingang van de winkel ,Oui-Ja,Non-Nee,Openingsuren winkel ,51.199559914507,4.37412861007
+16327.0,Appareil fixe-Vast apparaat,Kernenergiestraat ,79.0,2610.0,Wilrijk,Antwerpen,In de productieruimte: Tussen montagehal en Conventieel frezen en draaien hal,Non-Nee,Non-Nee,9u-17u,51.156943594644,4.389338830667
+16328.0,Appareil fixe-Vast apparaat,Luchthavenlei ,1.0,2100.0,Antwerpen,Antwerpen,Bureau Technische Dienst (naast deur loods),Non-Nee,Oui-Ja,,51.185590047941,4.456625983332
+16329.0,Appareil fixe-Vast apparaat,Gouverneur Verwilghensingle,,3500.0,Hasselt,Limburg,Aan de ingang van het gebouw ,Oui-Ja,Non-Nee,Openingsuren van de vestiging ,50.937035620838,5.357519445141
+16330.0,Appareil fixe-Vast apparaat,Werkhuizenkaai,23.0,1000.0,Brussel ,Bruxelles-Brussel,Aan de ingang van het gebouw,Oui-Ja,Non-Nee,Openingsuren van de vestiging ,50.875720014272,4.364480452782
+16331.0,Appareil fixe-Vast apparaat,Lieutenant Lotinstraat,20.0,1190.0,Vorst,Bruxelles-Brussel,Aan de ingang van het gebouw,Oui-Ja,Non-Nee,Openingsuren van de vestiging,50.81004922334,4.306756223314
+16332.0,Appareil fixe-Vast apparaat,rue Coquiamont,11.0,4280.0,Merdorp,Liège,Au fond de la cour sur la batiment de gauche dans une armoire verte,Oui-Ja,Oui-Ja,,50.648806137335,4.992080314547
+16333.0,Appareil fixe-Vast apparaat,SCHAAPBRUGGESTRAAT,50.0,8800.0,ROESELARE,West-Vlaanderen,INKOMHAL - In de kast bij het alarm.,Non-Nee,Non-Nee,Van maandag tot vrijdag: 8u - 17u ,50.940420522962,3.157926157528
+16334.0,Appareil fixe-Vast apparaat,BORSBEEKSEBRUG,26.0,2600.0,Berchem,Antwerpen,"EERSTE VERDIEPING AAN ONTHAAL (CM-BADGE IS NOODZAKELIJK VOOR TOEGANG)
+",Oui-Ja,,,51.199418386072,4.435071835497
+16335.0,Appareil fixe-Vast apparaat,REGENBEEKSTRAAT ,36.0,8800.0,ROESELARE,West-Vlaanderen,In de inkom,Non-Nee,Non-Nee,Maandag-Vrijdag 8u-17u,50.932727433244,3.171159710349
+16336.0,Appareil fixe-Vast apparaat,KACHTEMSESTRAAT ,289.0,8800.0,ROESELARE,West-Vlaanderen,In de inkom,Non-Nee,Non-Nee,Maandag-vrijdag 8u-17u,50.946834302017,3.160198108833
+16337.0,Appareil fixe-Vast apparaat,Woluwestraat,1.0,1830.0,Machelen,Vlaams-Brabant,Naast inkomdeur,Oui-Ja,Oui-Ja,,50.912577715196,4.432623900675
+16338.0,Appareil fixe-Vast apparaat,Kosterstraat,2.0,1831.0,Diegem,Vlaams-Brabant,Naast inkomdeur,Non-Nee,Oui-Ja,,50.893885107196,4.435225978696
+16339.0,Appareil fixe-Vast apparaat,Nieuwstraat,5.0,1830.0,Machelen,Vlaams-Brabant,Nabij ingang service flats,Oui-Ja,Oui-Ja,,50.913452785888,4.437857812474
+16340.0,Appareil fixe-Vast apparaat,Av. Georges Truffaut,43.0,4020.0,Liège,Liège,Aan de ingang van het gebouw ,Oui-Ja,Non-Nee,Tijdens de openingsuren van de winkel,50.649854168598,5.612470901391
+16341.0,Appareil fixe-Vast apparaat,Kortrijkstraat ,345.0,8560.0,Wevelgem,Oost-Vlaanderen,Aan de ingang van het gebouw ,Oui-Ja,Non-Nee,Tijdens de openingsuren van de winkel ,50.818066937299,3.214322069294
+16342.0,Appareil fixe-Vast apparaat,Papaverstraat  ,4.0,8430.0,Middelkerke,West-Vlaanderen,Aan de ingang van het gebouw,Oui-Ja,Non-Nee,Openingsuren van de winkel,51.193441795741,2.844198096005
+16343.0,Appareil fixe-Vast apparaat,Krommebeekstraat,14.0,8930.0,MENEN,West-Vlaanderen,Straatkant wit gebouw,Oui-Ja,Oui-Ja,,50.810860470315,3.128746190634
+2683.0,Appareil fixe-Vast apparaat,Rue de Mons,3.0,4000.0,liege,Liège,"gelijkvloers, eerste gang links, midden van de gang aan nooduitgang",Oui-Ja,,,50.641979747751,5.553336658307
+10372.0,Appareil fixe-Vast apparaat,Boulevard du Jardin Botanique,,1000.0,Bruxelles,Bruxelles-Brussel,Hall d accueil du 9ème étage de la Tour des Finances,Non-Nee,Oui-Ja,,50.854407557433,4.360926152528
+16344.0,Appareil fixe-Vast apparaat,Boulevard du Jardin Botanique,,1000.0,Bruxelles,Bruxelles-Brussel,A l intérieur des bureau du SPF Intérieur au 8ème étage de la Tour des Finances,Non-Nee,Oui-Ja,,50.854407557433,4.360926152528
+16345.0,Appareil fixe-Vast apparaat,Avenue Einstein ,12.0,1300.0,Wavre ,Brabant Wallon,Infirmerie ,Non-Nee,Non-Nee,,50.730574578387,4.586477756773
+16346.0,Appareil fixe-Vast apparaat,Poldergotestraat,1.0,9240.0,ZELE,Oost-Vlaanderen,Gelijkvloers - tussen keuken en personeelsingang,Non-Nee,Oui-Ja,,51.08446670281,4.04169989938
+16347.0,Appareil fixe-Vast apparaat,GELMELSTRAAT 96 HOOGSTRATEN,96.0,2320.0,HOOGSTRATEN,Antwerpen,KANTOOR BUITENZIJDE,Non-Nee,Oui-Ja,,51.398180509637,4.776410257805
+16348.0,Appareil fixe-Vast apparaat,GELMELSTRAAT 96,96.0,2320.0,HOOGSTRATEN,Antwerpen,KANTOOR BUITENZIJDE,Non-Nee,Oui-Ja,,51.398180509637,4.776410257805
+16349.0,Appareil fixe-Vast apparaat,Rue Chaumont,4.0,4480.0,Engis,Liège, ,Oui-Ja,Non-Nee,,50.561477476992,5.370564817158
+16350.0,Appareil fixe-Vast apparaat,PONT WEST,111.0,111.0,RONSE,Oost-Vlaanderen,EHBO LOKAAL - GELIJKVLOERS,Non-Nee,Oui-Ja,,50.738445688383,3.574907017674
+16352.0,Appareil fixe-Vast apparaat,Route de la Plate Taille,51.0,6440.0,BOUSSU LEZ WALCOURT,Hainaut,Rez-de-Chaussée/ Réception/ Derrière la Vendin Machine,Oui-Ja,Oui-Ja,,50.192632055711,4.381477883223
+16353.0,Appareil fixe-Vast apparaat,Zeedijk,157.0,8370.0,Blankenberge,West-Vlaanderen,gelijkvloers kantoorruimte / binnen,Oui-Ja,Non-Nee,Ma-Di-Do-Vrij: 9u00 - 12u30 / 13u30 - 17u30 + Zat: 10u00 - 12u30 - 13u30 - 17u00,51.31690940881,3.131889739601
+16354.0,Appareil fixe-Vast apparaat,MONNIKENHOFSTRAAT  ,,2040.0,ANTWERPEN,Antwerpen,"PONDEROSA VOETBALVELD 
+Scheidsrechter kantine",Non-Nee,Non-Nee,,51.348824707632,4.343972271972
+16355.0,Appareil fixe-Vast apparaat,Rue Jean Wautequin,5.0,1480.0,Tubize,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.690391860292,4.221006410299
+16356.0,Appareil fixe-Vast apparaat,Rue Buisson-aux-Loups,7.0,1400.0,Nivelles,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.590317594162,4.353532429949
+16357.0,Appareil fixe-Vast apparaat,Kruisveldstraat,20.0,3670.0,OUDSBERGEN,Limburg,Buitengevel lokaal KSJ ROY,Oui-Ja,,,51.092613451692,5.587286132196
+16358.0,Appareil fixe-Vast apparaat,Zuiderring,11.0,3600.0,Genk,Limburg,"In de lobby, aan de linkerzijde op het gelijkvloers",Non-Nee,Non-Nee,van maandag tot vrijdag van 08u tot 17u,50.951381358761,5.485542903415
+16359.0,Appareil fixe-Vast apparaat,Industriepark-West,62.0,9100.0,Sint-Niklaas,Oost-Vlaanderen,Gelijkvloers lokaal plotter-printer,Non-Nee,Non-Nee,08:00h - 16:30h,51.142727300126,4.156008020116
+15939.0,Appareil fixe-Vast apparaat,Rue des Spinettes,16.0,4140.0,Sprimont,Liège,EWP Infirmerie,Oui-Ja,Oui-Ja,,50.515423907437,5.687910370787
+15940.0,Appareil fixe-Vast apparaat,Rue des Spinettes,,4140.0,Sprimont,Liège,EWP P10 - Infirmerie,Oui-Ja,Oui-Ja,,50.515423907437,5.687910370787
+16360.0,Appareil fixe-Vast apparaat,Rue de l’Artisanat  ,16.0,5020.0,Rhisnes,Namur,Aan de ingang van de vestiging ,Oui-Ja,Non-Nee,Gedurende de openingsuren van de winkel,50.49009459116,4.80162972808
+16361.0,Appareil fixe-Vast apparaat,Rue de Thisnes,33.0,5080.0,EMINES,Namur,inkom sporthal RCA La Bruyère,Non-Nee,,,50.700835216879,4.999352920804
+16362.0,Appareil fixe-Vast apparaat,Avenue du rois soleil,18.0,5660.0,Mariembourg,Namur,rez de chaussée,Oui-Ja,Oui-Ja,,50.093041178628,4.516367148038
+16363.0,Appareil fixe-Vast apparaat,Rue d Edimbourg,22.0,6040.0,Jumet,Hainaut,Je suis au rez-de-chaussée - réfectoire ,Non-Nee,Non-Nee,08:00h - 16:30h,50.451286492805,4.443791457743
+16364.0,Appareil fixe-Vast apparaat,Boulevard d Avroy,83.0,4000.0,LIEGE,Liège,Sonnettes en façade-Demander ouverture des portes- L appareil( coffret mural) se trouve dans le hall à droite sur le mur au pied de l escalier,Non-Nee,Oui-Ja,,50.635872986464,5.568988856659
+16365.0,Appareil fixe-Vast apparaat,Begijnenvest,113.0,2000.0,Antwerpen,Antwerpen,Onthaal,Oui-Ja,Non-Nee,Enkel tijdens de kantooruren 08u00 - 19u00,51.212249906367,4.406471608396
+16366.0,Appareil fixe-Vast apparaat,Rue Paul Pastur ,1.0,6240.0,Farciennes,Hainaut,cafétéria,Oui-Ja,Oui-Ja,,50.424901689919,4.541881862944
+16367.0,Appareil fixe-Vast apparaat,Rue Adrienne Bolland,,6041.0,Gosselies,Hainaut,"2ème étage, partie CellCarta",Non-Nee,,,50.472828699698,4.466922559793
+16368.0,Appareil fixe-Vast apparaat,Avenue Louise,523.0,1050.0,Ixelles,Bruxelles-Brussel,réception 4e étage,Non-Nee,Non-Nee,8h30-17h30,50.833901358225,4.357334796506
+16369.0,Appareil fixe-Vast apparaat,Rue Gatti de Gamond,95.0,1180.0,Uccle,Bruxelles-Brussel,"Rez-de-chaussée, dans l infirmerie au croisement des deux ailes principales, en position centrale facilement accessible en cas d urgence. Accessible en permanence de l ouverture à la fermeture de l école.",Non-Nee,Non-Nee,"07h30-21h30 du lundi au vendredi, de 08h00 à 18h le samedi. Fermé durant les congés scolaires ainsi que les dimanche et jours fériés.",50.803572992237,4.327496646125
+16370.0,Appareil fixe-Vast apparaat,Schietspoelstraat,9.0,9900.0,EEKLO,Oost-Vlaanderen,Buitenkant inkom,Oui-Ja,,,51.189899184364,3.564728118277
+16371.0,Appareil fixe-Vast apparaat,Pastoor de nevestraat ,,9900.0,EEKLO,Oost-Vlaanderen,Buitenkant inkom dienstencentrum,Oui-Ja,,,51.187219957666,3.563140533936
+16372.0,Appareil fixe-Vast apparaat,Visstraat,14.0,9900.0,EEKLO,Oost-Vlaanderen,Buitengevel ,Oui-Ja,,,51.181153967595,3.57303919437
+16373.0,Appareil fixe-Vast apparaat,Zuidmoerstraat,136.0,9900.0,EEKLO,Oost-Vlaanderen,Buitengevel ,Oui-Ja,,,51.18171102888,3.567568158529
+16374.0,Appareil fixe-Vast apparaat,Balgerhoeke,,9900.0,EEKLO,Oost-Vlaanderen,Buitenkast ,Oui-Ja,,,51.201864771441,3.521947254897
+16375.0,Appareil fixe-Vast apparaat,Balgerhoeke,166.0,9900.0,EEKLO,Oost-Vlaanderen,Buitenkast ,Oui-Ja,,,51.204307717832,3.517383105828
+16376.0,Appareil fixe-Vast apparaat,Beverlosesteenweg,365.0,3583.0,Beringen-Paal,Limburg,In de wachtruimte van de Huisartsenpraktijk,Non-Nee,Non-Nee,Tijdens de praktijkuren,51.067848322479,5.206652761068
+16377.0,Appareil fixe-Vast apparaat,Gasthuisstraat,,2520.0,Ranst,Antwerpen,rechts naast de toegangspoort van GVBS Annuncia Instituut te Ranst,Oui-Ja,Oui-Ja,,51.189757777509,4.559339086948
+16378.0,Appareil fixe-Vast apparaat,Christoffel Columbuslaan,,9042.0,Gent,West-Vlaanderen,Inkom PT4,Non-Nee,Non-Nee,Van maandag tot vrijdag: 8u - 17u,51.170276061702,3.791630197204
+16379.0,Appareil fixe-Vast apparaat,Christoffel Columbuslaan,,9042.0,RIEME,West-Vlaanderen,PT3 sturing droger,Non-Nee,Non-Nee,Van maandag tot vrijdag: 8u - 17u,51.170276061702,3.791630197204
+16380.0,Appareil fixe-Vast apparaat,Rue de la fusée ,96.0,1130.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.882878997774,4.4291936068
+16381.0,Appareil fixe-Vast apparaat,Rue Belliard,,1040.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.842439419823,4.36888452939
+16382.0,Appareil fixe-Vast apparaat,A.Stocletlaan,3.0,2570.0,Duffel,Antwerpen,Refter Transformatie (D1),Non-Nee,Oui-Ja,,51.087907348335,4.492420817023
+16383.0,Appareil fixe-Vast apparaat,A.Stocletlaan,23.0,2570.0,Duffel,Antwerpen,Extern Magazijn,Oui-Ja,Non-Nee,,51.085675876162,4.490410669004
+16384.0,Appareil fixe-Vast apparaat,Kortekeer,1.0,9680.0,Maarkedal,West-Vlaanderen,Ter hoogte van de voetbal kantine,Oui-Ja,Oui-Ja,,50.796960299274,3.586632042931
+16385.0,Appareil fixe-Vast apparaat,rue de Marbaix ,257.0,6110.0,Montigny le tilleul,Hainaut,sellerie,Oui-Ja,Oui-Ja,,50.357643451406,4.377868649815
+13252.0,Appareil fixe-Vast apparaat,Hondstraat,100.0,8700.0,Tielt,West-Vlaanderen,Gelijkvloers buiten kant speelplein,Oui-Ja,Oui-Ja,,51.002234281507,3.310805737651
+16386.0,Appareil fixe-Vast apparaat,RUE DEFUISSEAUX ,124.0,7333.0,SAINT-GHISLAIN,Hainaut,COULOIR DU B3 ENTRE LE BUREAU TECHNIQUE ET LE REFECTOIRE,Non-Nee,Non-Nee,6h00 à 18h00,50.462619760289,3.808518454343
+16387.0,Appareil fixe-Vast apparaat,Nijverheidsstraat,,2160.0,Wommelgem,Antwerpen,"Aan receptie winkel, net achter de ingang van de winkel, op het gelijkvloers",Oui-Ja,Non-Nee,"Maandag, dinsdag, woensdag, zaterdag van 07u00 -17u00; donderdag en vrijdag van 07u00 - 19u00; zondag gesloten",51.211553312422,4.51134238084
+16388.0,Appareil fixe-Vast apparaat,Villeroux,25.0,6640.0,Vaux-sur-Sûre,Luxembourg,"Dans le bâtiment dans le couloir d entrée. Sur le mur à votre droite après avoir monté les escaliers extérieurs  
+",Non-Nee,Non-Nee,7h30 - 15h35,49.977072343486,5.658408531015
+16389.0,Appareil fixe-Vast apparaat,Aachener Straße,30.0,4731.0,Eynatten,Liège,Rez-de-Chaussez,Non-Nee,Non-Nee,07:00-22:00,50.694676773015,6.083678280042
+16390.0,Appareil fixe-Vast apparaat,Place Jean Guyot,1.0,6200.0,Chatelet,Hainaut, ,Oui-Ja,Non-Nee,,50.405003113958,4.525966195629
+16391.0,Appareil fixe-Vast apparaat,Rue de Mons,80.0,6030.0,Marchienne au pont,Hainaut, ,Oui-Ja,Non-Nee,,50.409033037913,4.387957660662
+16392.0,Appareil fixe-Vast apparaat,Rue de Quévy,21.0,7040.0,Genly,Hainaut, ,Oui-Ja,Non-Nee,,50.383292516441,3.92181689763
+16393.0,Appareil fixe-Vast apparaat,Rue Paul Pastur,,7800.0,Ath,Hainaut,Salle de sport ,Oui-Ja,Non-Nee,,50.620878652409,3.772650368562
+2142.0,Appareil fixe-Vast apparaat,Ravensteingalerij,,1000.0,Brussel,Bruxelles-Brussel,"Het AED toestel is bevestigd aan de muur van het EHBO lokaal (naast de printer, kant nr 3)",Non-Nee,Oui-Ja,,50.844731761908,4.358724349983
+16394.0,Appareil fixe-Vast apparaat,Rue du Roton,4.0,6240.0,Farcienne,Hainaut, ,Oui-Ja,Non-Nee,,50.434424010233,4.539408298996
+16395.0,Appareil fixe-Vast apparaat,Rue du roton,4.0,6240.0,Farcienne,Hainaut, ,Oui-Ja,Non-Nee,,50.434424010233,4.539408298996
+16396.0,Appareil fixe-Vast apparaat,Rue des Bourgeois ,118.0,5000.0,Namur,Namur, ,Oui-Ja,Non-Nee,,50.466894080748,4.875892337515
+16397.0,Appareil fixe-Vast apparaat,Fond de Malonne ,118.0,5020.0,Malonne,Namur, ,Oui-Ja,Non-Nee,,50.438412279095,4.795396525783
+16402.0,Appareil fixe-Vast apparaat,Allées des artisans ,20.0,4130.0,Tilff,Liège, Nouveau Bureau ,Oui-Ja,Non-Nee,,50.552833136429,5.582719000793
+16403.0,Appareil fixe-Vast apparaat,Rue Saint Léonard,375.0,4000.0,Liege,Liège,Local bureau,Oui-Ja,Non-Nee,,50.65231335674,5.599627200631
+16404.0,Appareil fixe-Vast apparaat,Rue Visé Voie ,1.0,4041.0,Vottem,Liège,"couloir rez de chaussée, face à X-ray",Non-Nee,Oui-Ja,,50.676640466336,5.58638943881
+16405.0,Appareil fixe-Vast apparaat,Rue Beth,12.0,6852.0,Pont,Luxembourg, ,Oui-Ja,Non-Nee,,50.36478,6.03947
+16406.0,Appareil fixe-Vast apparaat,Rue des deux laiteries,143.0,6637.0,Fauvillers,Luxembourg,Façade ,Oui-Ja,Non-Nee,,49.864847781074,5.722939859015
+16407.0,Appareil fixe-Vast apparaat,Route de Warnach,17.0,6637.0,Fauvillers,Luxembourg,Façade,Oui-Ja,Non-Nee,,49.878432876374,5.750603576075
+16408.0,Appareil fixe-Vast apparaat,Rue Saint Jean,5.0,6637.0,Fauvillers,Luxembourg,Facade,Oui-Ja,Non-Nee,,49.879999076892,5.659458090393
+16409.0,Appareil fixe-Vast apparaat,Route de Livarchamps,48.0,6637.0,Fauvillers,Luxembourg,Façade,Oui-Ja,Non-Nee,,49.909969451795,5.729952662126
+16411.0,Appareil fixe-Vast apparaat,Rue George Stephenson,2.0,7140.0,seneffe,Hainaut, ,Oui-Ja,Non-Nee,,50.515333548993,4.251788115678
+16412.0,Appareil fixe-Vast apparaat,Rue les heures claires,,1400.0,Nivelles ,Brabant Wallon,Hall d entrée ,Oui-Ja,Non-Nee,,50.604411585768,4.332352203732
+16413.0,Appareil fixe-Vast apparaat,Avenue Jules Mathieu ,10.0,1400.0,Nivelles,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.586928413523,4.322333393769
+16414.0,Appareil fixe-Vast apparaat,Avenue Jules Mathieu,20.0,1400.0,Nivelles ,Brabant Wallon,Salle de la dodaine ,Oui-Ja,Non-Nee,,50.589321164314,4.32492260573
+16415.0,Appareil fixe-Vast apparaat,Avenue Jules Mathieu,10.0,1400.0,Nivelles ,Brabant Wallon, ,Non-Nee,Non-Nee,,50.586928413523,4.322333393769
+16416.0,Appareil fixe-Vast apparaat,Avenue Jules Mathieu,10.0,1400.0,Nivelles,Brabant Wallon,Infirmerie Piscine ,Oui-Ja,Non-Nee,,50.586928413523,4.322333393769
+16417.0,Appareil fixe-Vast apparaat,Chaussée de bruxelles ,,1400.0,Nivelles,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.620673682303,4.344478126932
+16418.0,Appareil fixe-Vast apparaat,Avenue Jules Mathieu,10.0,1400.0,Nivelles ,Brabant Wallon,Hall Piscine ,Oui-Ja,Non-Nee,,50.586928413523,4.322333393769
+16419.0,Appareil fixe-Vast apparaat,Avenue jules Mathieu,10.0,1400.0,Nivelles,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.586928413523,4.322333393769
+16420.0,Appareil fixe-Vast apparaat,Rue Jospeh Wauters,1.0,7972.0,Quevaucamps ,Hainaut, ,Oui-Ja,Non-Nee,,50.520680239667,3.680281957463
+16421.0,Appareil fixe-Vast apparaat,rue de Condé,62.0,7971.0,Basecles,Hainaut, ,Oui-Ja,Non-Nee,,50.52051830016,3.646841802813
+16422.0,Appareil fixe-Vast apparaat,Chaussée de la hulpe ,120.0,1000.0,Bruxelles ,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.796950157172,4.39884633962
+16423.0,Appareil fixe-Vast apparaat,Rue de la barrière de Fer,23.0,7711.0,Dottignies ,Hainaut, ,Oui-Ja,Non-Nee,,50.728005650792,3.32190907715
+16424.0,Appareil fixe-Vast apparaat,Rue Castiau,5.0,7600.0,Peruwelz,Hainaut, ,Oui-Ja,Non-Nee,,50.510344882612,3.599414695002
+16425.0,Appareil fixe-Vast apparaat,Molenstraat ,127.0,3630.0,Maasmechelen,Limburg,Buitengevel kleuterschool,Oui-Ja,Oui-Ja,,50.99950890569,5.745601423898
+16426.0,Appareil fixe-Vast apparaat,Steenakkerstraat ,8.0,3630.0,Maasmechelen,Limburg,Buitengevel basisschool Driestap,Oui-Ja,Oui-Ja,,50.988767329133,5.740994394636
+16427.0,Appareil fixe-Vast apparaat,Langstraat,30.0,3630.0,Maasmechelen,Limburg,Buitengevel Schoolgebouw,Oui-Ja,Oui-Ja,,50.986278867808,5.712800941296
+16428.0,Appareil fixe-Vast apparaat,Bloemenlaan,71.0,3630.0,Maasmechelen,Limburg,Buitengevel Schoolgebouw,Oui-Ja,Oui-Ja,,50.98193301865,5.699567173468
+16429.0,Appareil fixe-Vast apparaat,Marie-Joseestraat,4.0,3630.0,Maasmechelen,Limburg,Buitengevel schoolgebouw De Griffel - Qrios,Oui-Ja,Oui-Ja,,50.992834228553,5.686126875545
+16430.0,Appareil fixe-Vast apparaat,Avenue Louise ,250.0,1050.0,Ixelles,Bruxelles-Brussel,"Au 9ème étage, quand vous entrez par les portes d entrée, c est à droite au fond du couloir.",Non-Nee,Non-Nee,08h30 - 17h30,50.825203624938,4.366583388469
+16431.0,Appareil fixe-Vast apparaat,Freÿr ,12.0,5540.0,Hastière,Namur,Dans la réserve de l accueil visiteurs du château,Oui-Ja,,,50.227539520817,4.886180416162
+16432.0,Appareil fixe-Vast apparaat,rue de moustier,3.0,7050.0,jurbise,Hainaut, ,Oui-Ja,Non-Nee,,50.532986717547,3.907345367552
+16433.0,Appareil fixe-Vast apparaat,Rue Croisette,42.0,7804.0,Rebaix,Hainaut,Hall d entrée de la maison,Non-Nee,Oui-Ja,,50.663668969955,3.79205782143
+16434.0,Appareil fixe-Vast apparaat,Kruisweg,6.0,2040.0,Antwerpen,Antwerpen,Portocabine - eet- & verpozingsruimte,Non-Nee,Non-Nee,08.00 - 16.30 Hrs,51.315800692568,4.332739526561
+16436.0,Appareil fixe-Vast apparaat,Rue de Hodimont ,244.0,4800.0,Veriers,Liège,Hall 1er étage,Oui-Ja,Non-Nee,,50.59562870329,5.853017273291
+16437.0,Appareil fixe-Vast apparaat,Rue de limbourg,77.0,7800.0,Verviers,Liège, ,Oui-Ja,Non-Nee,,50.601101289783,5.879626966026
+16438.0,Appareil fixe-Vast apparaat,Route de Berizenne,4.0,4900.0,Spa,Liège, ,Oui-Ja,Non-Nee,,50.456002384664,5.882176709029
+16439.0,Appareil fixe-Vast apparaat,RUE HERGE,6.0,7060.0,SOIGNIES,Hainaut,CUISINE AU REZ-DE-CHAUSSE,Non-Nee,Non-Nee,08:00 a 16:00 du lundi au vendredi,50.588654942667,4.075692112802
+16440.0,Appareil fixe-Vast apparaat,Rue Arthur descamps,175.0,7340.0,Colfontaine,Hainaut, ,Non-Nee,Oui-Ja,,50.397288105636,3.853706551648
+16441.0,Appareil fixe-Vast apparaat,Fabriekstraat,51.0,3800.0,Sint-Truiden,Limburg,onthaal,Oui-Ja,Non-Nee,weekdagen 7u30-22u,50.818192246751,5.173507363151
+16442.0,Appareil fixe-Vast apparaat,Fabriekstraat,51.0,3800.0,Sint-Truiden,Limburg,ingang sporthal,Oui-Ja,Non-Nee,weekdagen 7u30-22u,50.818192246751,5.173507363151
+16443.0,Appareil fixe-Vast apparaat,Dorpstraat,,2811.0,Leest,Antwerpen,Onder de tribune,Oui-Ja,,,51.031612091415,4.413754300654
+16444.0,Appareil fixe-Vast apparaat,Antwerpsebaan,44.0,2040.0,Antwerpen,Antwerpen,Onthaal,Oui-Ja,Non-Nee,9-17h,51.319368114378,4.344197588202
+16445.0,Appareil fixe-Vast apparaat,Herkenrodesingel ,14.0,3500.0,Hasselt,Limburg,Onthaal,Oui-Ja,Non-Nee,8h-17h,50.942978375099,5.324384302518
+16446.0,Appareil fixe-Vast apparaat,Allée de la Recherche ,36.0,1070.0,Bruxelles,Bruxelles-Brussel,Accueil,Oui-Ja,Non-Nee,8h-17h,50.817464740864,4.272104824027
+16447.0,Appareil fixe-Vast apparaat,avenue Chapelle aux Champs,40.0,1200.0,Bruxelles,Bruxelles-Brussel,Accueil,Oui-Ja,Non-Nee,8h-17h,50.849522375897,4.446585888251
+16448.0,Appareil fixe-Vast apparaat,Heersterveldweg ,,3700.0,Tongres,Limburg,Accueil,Oui-Ja,Non-Nee,8h-17h,50.786408683065,5.513605830902
+16449.0,Appareil fixe-Vast apparaat,Borgval ,,1000.0,Bruxelles,Bruxelles-Brussel,Accueil,Oui-Ja,Non-Nee,8h-17h,50.847584120383,4.348099676697
+16450.0,Appareil fixe-Vast apparaat,avenue Emile Gryson,1.0,1070.0,Bruxelles,Bruxelles-Brussel,Accueil,Oui-Ja,Non-Nee,8h-17h,50.815451196775,4.294899592313
+16451.0,Appareil fixe-Vast apparaat,Boulevard du Souverain ,24.0,1170.0,Bruxelles,Bruxelles-Brussel,Accueil,Oui-Ja,Non-Nee,8h-17h,50.802630614863,4.423569014493
+16452.0,Appareil fixe-Vast apparaat,rue Beckers,4.0,1040.0,Bruxelles,Bruxelles-Brussel,Accueil,Oui-Ja,Non-Nee,8h-17h,50.828591422564,4.389074297803
+16453.0,Appareil fixe-Vast apparaat,rue Beckers,4.0,1040.0,Bruxelles,Bruxelles-Brussel,.,Oui-Ja,Non-Nee,8h-17h,50.828591422564,4.389074297803
+16454.0,Appareil fixe-Vast apparaat,avenue Charles Quint,140.0,1083.0,Ganshoren,Bruxelles-Brussel, ,Non-Nee,Oui-Ja,,50.869919737275,4.307731783161
+16455.0,Appareil fixe-Vast apparaat,Chemin du Foriest,,1420.0,braine l alleud ,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.683236045208,4.349226974691
+16456.0,Appareil fixe-Vast apparaat,Kerkstraat,19.0,3321.0,Hoegaarden,Vlaams-Brabant,"Naast de Sint-Niklaaskerk, aan de straatzijde",Oui-Ja,Oui-Ja,,50.766197205878,4.919835936706
+16457.0,Appareil fixe-Vast apparaat,Ferdinant Maesstraat ,95.0,2550.0,Kontich,Antwerpen,Achteraan parking Berkenhof naast de trap.,Oui-Ja,Oui-Ja,,51.103782421492,4.455795588184
+16458.0,Appareil fixe-Vast apparaat,Gemeenteplein ,1.0,2550.0,Kontich,Antwerpen,Rechts naast de voorgevel van het gemeentehuis.,Oui-Ja,Oui-Ja,,51.135494807333,4.446000244676
+16459.0,Appareil fixe-Vast apparaat,Antwerpsesteenweg,77.0,2550.0,Kontich,Antwerpen,Inkomhal serviceflats,Oui-Ja,Oui-Ja,,51.139992871853,4.449672440276
+11963.0,Appareil fixe-Vast apparaat,Mechelsesteenweg,140.0,2550.0,Kontich,Antwerpen,"Achter de deur ingang secretariaat 1e verdieping
+",Oui-Ja,Non-Nee,Enkel beschikbaar tijdens de openingsuren,51.129975575549,4.445912905245
+7668.0,Appareil fixe-Vast apparaat,Sint-Jansplein ,8.0,2550.0,Kontich,Antwerpen,Hal 1e verdieping,Oui-Ja,Non-Nee,Beschikbaar tijdens de openingsuren ,51.13432029315,4.446522269606
+16460.0,Appareil fixe-Vast apparaat,Vierwindenstraat,155.0,1080.0,Molenbeek Saint Jean,Bruxelles-Brussel,In de hal die toegang verleent tot de sporthal. ,Non-Nee,Oui-Ja,,50.849507875205,4.325496975484
+9467.0,Appareil fixe-Vast apparaat,Populierenlaan,35.0,8430.0,Middelkerke,West-Vlaanderen,links van de hoofdingang sporthal,Oui-Ja,Oui-Ja,,51.186859109992,2.821161692413
+16461.0,Appareil fixe-Vast apparaat,Gouvernementstraat,,9000.0,GENT,Oost-Vlaanderen,/,Oui-Ja,Oui-Ja,,51.051583314599,3.726802859463
+14026.0,Appareil fixe-Vast apparaat,Sint-Jansstraat,132.0,9982.0,SINT-LAUREINS,Oost-Vlaanderen,Buitenkast inkom ,Oui-Ja,,,51.263469705015,3.580471679373
+16461.0,Appareil fixe-Vast apparaat,Diepvenneke,45.0,2350.0,Vosselaar,Antwerpen,Achtergevel van de sporthal - naar de buitenterreinen,Oui-Ja,Oui-Ja,,51.30152538945,4.894657621577
+16462.0,Appareil fixe-Vast apparaat,Diepvenneke,45.0,2350.0,Vosselaar,Antwerpen,Onthaal van de sporthal,Oui-Ja,Non-Nee,9:00-22:00,51.30152538945,4.894657621577
+16463.0,Appareil fixe-Vast apparaat,Craenendam,5.0,9185.0,WACHTEBEKE,Oost-Vlaanderen,Buiten aan de Practice,Oui-Ja,,,51.152145612803,3.867198535618
+16464.0,Appareil fixe-Vast apparaat,Puyenbrug,,9185.0,WACHTEBEKE,Oost-Vlaanderen,Kast aan fietsenverhuur,Oui-Ja,,,51.152727387995,3.863709003397
+16465.0,Appareil fixe-Vast apparaat,Puyenbrug,,9185.0,WACHTEBEKE,Oost-Vlaanderen,Mobiel toestel SN: D00000006316,Non-Nee,,,51.152727387995,3.863709003397
+13766.0,Appareil fixe-Vast apparaat,Onkerzelestraat,280.0,9500.0,GERAARDSBERGEN,Oost-Vlaanderen,/,Oui-Ja,,,50.791458166573,3.91802030798
+8618.0,Appareil fixe-Vast apparaat,Stadionlaan,1.0,9800.0,Deinze,Oost-Vlaanderen,Buitenzijde toiletten aan speeltuin ,Oui-Ja,,,50.981519246,3.515798004119
+14169.0,Appareil fixe-Vast apparaat,Puidonkdreef,1.0,9185.0,WACHTEBEKE,Oost-Vlaanderen,Sportcentrum,Oui-Ja,,,51.151370383404,3.898520983708
+14170.0,Appareil fixe-Vast apparaat,Godshuizenlaan,65.0,9000.0,GENT,Oost-Vlaanderen,Inkom ,Oui-Ja,,,51.043459373081,3.715699270235
+8621.0,Appareil fixe-Vast apparaat,Lange Rekstraat,30.0,9100.0,NIEUWKERKEN-WAAS,Oost-Vlaanderen,Sporthal ,Oui-Ja,,,51.168964584902,4.186641361651
+8622.0,Appareil fixe-Vast apparaat,Lange Rekstraat,30.0,9100.0,NIEUWKERKEN-WAAS,Oost-Vlaanderen,EHBO Strand ,Oui-Ja,,,51.168964584902,4.186641361651
+8623.0,Appareil fixe-Vast apparaat,Grote Baan,111.0,9100.0,SINT-NIKLAAS,Oost-Vlaanderen,Westakkers paulo brandweeropleiding ,Oui-Ja,,,51.187214921781,4.204335643074
+16466.0,Appareil fixe-Vast apparaat,Ten Edestraat,31.0,9890.0,SEMMERZAKE,Oost-Vlaanderen,Militarily domain ,Oui-Ja,,,50.940416553693,3.66840539596
+16467.0,Appareil fixe-Vast apparaat,Puyenbrug,,9185.0,WACHTEBEKE,Oost-Vlaanderen,Buitenkast inkom camping ,Oui-Ja,,,51.152727387995,3.863709003397
+16468.0,Appareil fixe-Vast apparaat,Kapiteinstraat,55.0,9000.0,GENT,Oost-Vlaanderen,Buitenkast inkom,Oui-Ja,,,51.087445547379,3.723412213718
+16469.0,Appareil fixe-Vast apparaat,Lotharingenstraat,1.0,9700.0,OUDENAARDE,Oost-Vlaanderen,/,Oui-Ja,,,50.858089435314,3.631217397578
+16470.0,Appareil fixe-Vast apparaat,Meulenbroekstraat,15.0,9220.0,HAMME,Oost-Vlaanderen,Buitenkast speelplaats,Oui-Ja,,,51.100477646617,4.133974595058
+16471.0,Appareil fixe-Vast apparaat,Begijnhoflaan,45.0,9200.0,DENDERMONDE,Oost-Vlaanderen,Buitenkast inkom ,Oui-Ja,,,51.027158373514,4.095096813559
+16472.0,Appareil fixe-Vast apparaat,Sabine van Beirenlaan,35.0,9620.0,ZOTTEGEM,Oost-Vlaanderen,Inkom ,Oui-Ja,,,50.870155520211,3.822403831325
+16473.0,Appareil fixe-Vast apparaat,Stoepestraat,38.0,9000.0,ASSENEDE,Oost-Vlaanderen,INKOM,Oui-Ja,,,51.1918464262,3.754526005944
+16474.0,Appareil fixe-Vast apparaat,Edgard Tinelstraat,92.0,9040.0,SINT-AMANDSBERG,Oost-Vlaanderen,INKOM,Oui-Ja,,,51.073404602275,3.768962660697
+16475.0,Appareil fixe-Vast apparaat,Avenue Georges Rodenbach,6.0,1030.0,Schaerbeek,Bruxelles-Brussel,Reception accueil,Oui-Ja,Oui-Ja,,50.878610136397,4.38147300127
+13767.0,Appareil fixe-Vast apparaat,Onkerzelestraat,280.0,9500.0,GERAARDSBERGEN,Oost-Vlaanderen,/,Oui-Ja,,,50.791458166573,3.91802030798
+6140.0,Appareil fixe-Vast apparaat,Gentsesteenweg,80.0,9900.0,Eeklo,Oost-Vlaanderen,Gevel Brasserie Het Leen (houten gebouw),Oui-Ja,,,51.167173833198,3.574603257503
+16477.0,Appareil fixe-Vast apparaat,Jan Davidlaan,11.0,3920.0,Lommel,Limburg,"Rechts van de hoofingang van WZC Hoevezal aan het overdekt terras.
+Rechtstreeks toegankelijk via de openbare weg via een centraal pad tussen WZC Hoevezavel en de Kunstacademie Noord-Limburg",Oui-Ja,Oui-Ja,,51.228256826861,5.285115505236
+16478.0,Appareil fixe-Vast apparaat,Keienpoelweg,6.0,3300.0,TIENEN (Hakendover),Vlaams-Brabant,Buitenmuur OC Hakendover,Oui-Ja,Oui-Ja,,50.794808287544,4.985907126677
+16479.0,Appareil fixe-Vast apparaat,Boomkensstraat ,303.0,3500.0,Hasselt,Limburg,Apparaat wordt gebruikt in hulppost van Rode Kruis Hasselt-Diepenbeek bij preventieve hulpacties,Non-Nee,Non-Nee,Tijdens preventieve hulpacties bij evenementen,50.918511306363,5.325716438389
+16480.0,Appareil fixe-Vast apparaat,Boomkensstraat ,303.0,3500.0,Hasselt,Limburg,Apparaat wordt gebruikt in hulppost van Rode Kruis Hasselt-Diepenbeek bij preventieve hulpacties. ( opgelet :  dit is de tweede AED die we registreren.  Van de eerste nieuwe is pas ook een registratie verstuurd met alle gegevens identiek behalve serienummer),Non-Nee,Non-Nee,TRijdens preventieve hulpacties bij evenementen,50.918511306363,5.325716438389
+16481.0,Appareil fixe-Vast apparaat,Rue Du Tilleul,24.0,6210.0,Villers perwin,Hainaut, ,Oui-Ja,Non-Nee,,50.528676407658,4.47806555055
+9518.0,Appareil fixe-Vast apparaat,Lochtemanweg ,17.0,3580.0,Beringen,Limburg,Verdieping 2 aan het EHBO lokaal,Non-Nee,Non-Nee,,51.033563572463,5.226360962366
+16482.0,Appareil fixe-Vast apparaat,N30,497.0,6600.0,bastogne,Luxembourg, ,Oui-Ja,Non-Nee,,50.07481294833,5.767761049303
+16483.0,Appareil fixe-Vast apparaat,Rue du planeur ,10.0,1130.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.878856815807,4.413354994922
+16484.0,Appareil fixe-Vast apparaat,Rue du planeur ,10.0,1130.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.878856815807,4.413354994922
+16485.0,Appareil fixe-Vast apparaat,Rue du planeur,10.0,1130.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.878856815807,4.413354994922
+16486.0,Appareil fixe-Vast apparaat,Fabrieksstraat,,1930.0,Zaventem,Vlaams-Brabant, ,Oui-Ja,Non-Nee,,50.886164663627,4.463823388698
+16487.0,Appareil fixe-Vast apparaat,Rue Dieudonné Lefèvre,252.0,1020.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.869778879392,4.343909250732
+16488.0,Appareil fixe-Vast apparaat,Rue Dieudonné Lefèvre ,252.0,1020.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.869778879392,4.343909250732
+16489.0,Appareil fixe-Vast apparaat,Excelsiorlaan ,45.0,1930.0,Zaventem,Vlaams-Brabant, ,Oui-Ja,Non-Nee,,50.884037837798,4.454078387681
+16490.0,Appareil fixe-Vast apparaat,Ottergemsesteenweg,419.0,9000.0,Gent,Oost-Vlaanderen, ,Oui-Ja,Non-Nee,,51.025788477168,3.73412654909
+16491.0,Appareil fixe-Vast apparaat,Industriestraat ,25.0,8755.0,Ruiselede,West-Vlaanderen, ,Oui-Ja,Non-Nee,,51.045483770336,3.408695973181
+16492.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas ,34.0,1000.0,Bruxelles,Bruxelles-Brussel,Security Desk - Control Center,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16493.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas ,34.0,1000.0,Bruxelles,Bruxelles-Brussel,11è étage - GBS + Corp + Thermal Europe,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16494.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,3è étage - Tractebel,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+9517.0,Appareil fixe-Vast apparaat,Lochtemanweg ,17.0,3580.0,Beringen,Limburg,"Euroshoe, Magazijn op het gelijkvloers, tussen inbound en outbound. ",Non-Nee,Non-Nee,,51.033563572463,5.226360962366
+16495.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas ,34.0,1000.0,Bruxelles,Bruxelles-Brussel,5è étage - Tractebel,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16496.0,Appareil fixe-Vast apparaat,Bredabaan,182.0,2930.0,Brasschaat,Antwerpen,Buiten naast de dienst toerisme op gelijkvloers,Oui-Ja,Oui-Ja,,51.287572663877,4.486142855364
+16497.0,Appareil fixe-Vast apparaat,Door Verstraetelei,50.0,2930.0,Brasschaat,Antwerpen,Buiten tegen linkse refter,Oui-Ja,Oui-Ja,,51.290967921396,4.497742152073
+16498.0,Appareil fixe-Vast apparaat,Bredabaan,1093.0,2930.0,Brasschaat,Antwerpen,gelijkvloers rechts aan de hoofdingang van de school (schoolpoort),Oui-Ja,Oui-Ja,,51.325072544313,4.521481881161
+16499.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,7è étage - Energy Assistance - T&G - Impact,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16500.0,Appareil fixe-Vast apparaat,Graaf Reusendreef,1.0,2930.0,Brasschaat,Antwerpen,aan de hoofdingang rechts tussen ijzeren poort en voordeur,Oui-Ja,Oui-Ja,,51.289170967084,4.49553410732
+16501.0,Appareil fixe-Vast apparaat,Schoolstraat,1.0,3665.0,As,Limburg,Buiten aan het oud gemeentehuis,Oui-Ja,Oui-Ja,,51.017142921228,5.605667897316
+16502.0,Appareil fixe-Vast apparaat,Schuttenbergstraat ,2.0,3665.0,As,Limburg,Buiten aan ingang van de sporthal,Oui-Ja,Oui-Ja,,51.006784230008,5.596250661461
+16503.0,Appareil fixe-Vast apparaat,Vennekeslaan,11.0,3665.0,As,Limburg,Buiten op het terras aan de tennis,Oui-Ja,Oui-Ja,,50.999634550419,5.558862847071
+16504.0,Appareil fixe-Vast apparaat,Melkerijstraat,0.0,3665.0,As,Limburg,Buiten aan het voetbalterrein,Oui-Ja,Non-Nee,Tijdens openingsuren voetbal,51.017185018034,5.609293618744
+16505.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,9è étage - Supply + Renewables ,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16506.0,Appareil fixe-Vast apparaat,Bevrijdingslaan,88.0,3665.0,As,Limburg,Binnen bij de buitenschoolse kinderopvang As (Peter Pan),Non-Nee,Non-Nee,Tijdens openingsuren buitenschoolse kinderopvang,51.000888273586,5.57989714927
+16507.0,Appareil fixe-Vast apparaat,Pelikaanstraat ,,9700.0,Oudenaarde,Oost-Vlaanderen,Voetbalterrein VV Volkegem - hoek kantine - onder overdekte staanplaats achter doel,Oui-Ja,Oui-Ja,,50.871378356181,3.636371926079
+16508.0,Appareil fixe-Vast apparaat,Lammekensstraat,,9700.0,Oudenaarde,Oost-Vlaanderen,Voetbalterrein VV Volkegem - onder overdekking bij de inkom van de kantine,Oui-Ja,Oui-Ja,,50.825717487209,3.605370103612
+16509.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas ,34.0,1000.0,Bruxelles,Bruxelles-Brussel,12è étage - HUB Europe + engie Digital,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16510.0,Appareil fixe-Vast apparaat,Boulevard Simon bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,10è étage - GBS IT - HR - Achats,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16511.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,Zone catering,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16512.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,Fitness,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16513.0,Appareil fixe-Vast apparaat,Boulevard Simon Bolivas,34.0,1000.0,Bruxelles,Bruxelles-Brussel,2è étage - GEMS,Oui-Ja,Non-Nee,,50.861003990686,4.354824751781
+16514.0,Appareil fixe-Vast apparaat,Avenue du vert chasseur,46.0,1180.0,Uccle,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.799884661473,4.369969509714
+16515.0,Appareil fixe-Vast apparaat,Rue Pierre Victor Jacobs,17.0,1080.0,Molenbeek Saint Jean,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.862950268603,4.339547727415
+16516.0,Appareil fixe-Vast apparaat,Quai du Hainaut,69.0,1080.0,Molenbeek Saint Jean,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.850614998886,4.335486024774
+16517.0,Appareil fixe-Vast apparaat,Rue de Jerusalem,56.0,1030.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.86542812682,4.378331715417
+16518.0,Appareil fixe-Vast apparaat,Rue de Jerusalem,56.0,1030.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.86542812682,4.378331715417
+16519.0,Appareil fixe-Vast apparaat,Herentstraat,139.0,3910.0,Pelt,Limburg,Inkomhal kleedkamers voetbalterrein kant,Oui-Ja,Non-Nee,Toegankelijk tijdens trainingen en wedstijden ,51.202842351609,5.449214813043
+16520.0,Appareil fixe-Vast apparaat,Sportpark Montaignehof ,1.0,3620.0,Lanaken,Limburg,voetbal Lanaken VV,Non-Nee,,,50.884434930461,5.635101369412
+16521.0,Appareil fixe-Vast apparaat,Hoogvorst ,2.0,9506.0,Grimminge,Oost-Vlaanderen,in de inkomhal,Non-Nee,Non-Nee,Openingsuren   De HELIX ,50.782607002548,3.935955317661
+16522.0,Appareil fixe-Vast apparaat,Hoeksken,56.0,2275.0,Lille,Antwerpen, Gelijkvloers - Inkomhal personeelsingang,Oui-Ja,Non-Nee,ma - vrijdag van 08:00u tot 17:00u  (exclusief feestdagen),51.243651742695,4.828137580691
+16523.0,Appareil fixe-Vast apparaat,Achterstenhoek,3.0,2275.0,Lille,Antwerpen,Gelijkvloers - traphal,Oui-Ja,Non-Nee,maandag - vrijdag van 08:00u tot 17:00u (exclusief feestdagen),51.247754810028,4.812639022624
+16524.0,Appareil fixe-Vast apparaat,Graaf Reusensdreef,1.0,2930.0,Brasschaat,Antwerpen,Aan de hoofdingang tussen het ijzeren hek en de voordeur rechts tegen de muur,Oui-Ja,Oui-Ja,,51.289170967084,4.49553410732
+16525.0,Appareil fixe-Vast apparaat,Kluisstraat,25.0,3550.0,Heusden-Zolder,Limburg,Voetbalclub Bolderberg FC (gang secretariaat),Non-Nee,Non-Nee,,50.989958900488,5.277439274489
+16526.0,Appareil fixe-Vast apparaat,Koningsstraat ,138.0,1000.0,Brussel,Bruxelles-Brussel,Gelijkvloerse verdieping aan het onthaal,Oui-Ja,Non-Nee,8u - 17u,50.849256124743,4.363411173394
+16527.0,Appareil fixe-Vast apparaat,Kapelsesteenweg,74.0,2930.0,Brasschaat,Antwerpen,Kleedkamer scheidsrechters Voetbalvereniging OSSMI,Non-Nee,,,51.274376991798,4.459583370229
+16528.0,Appareil fixe-Vast apparaat,Rue de Meuse,9.0,4520.0,Wanze,Liège, ,Oui-Ja,Non-Nee,,50.52708340008,5.199917903041
+16529.0,Appareil fixe-Vast apparaat,Rue de Meuse,9.0,4520.0,Wanze,Liège, ,Oui-Ja,Non-Nee,,50.52708340008,5.199917903041
+16530.0,Appareil fixe-Vast apparaat,Turnhoutsebaan,261.0,2110.0,Wijnegem,Antwerpen, ,Oui-Ja,Non-Nee,,51.226544823137,4.51710686298
+16531.0,Appareil fixe-Vast apparaat,Rue Jean Sonet ,21.0,5032.0,Isnes,Namur, ,Oui-Ja,Non-Nee,,50.594979943985,4.666272133899
+16532.0,Appareil fixe-Vast apparaat,Rustoordlei ,92.0,2930.0,Brasschaat,Antwerpen,"Gebouw van de kleedkamers, technische ruimte",Non-Nee,Oui-Ja,,51.301620943147,4.470578080262
+16533.0,Appareil fixe-Vast apparaat,Rue de mousiter,8.0,7050.0,Jurbise,Hainaut, ,Oui-Ja,Non-Nee,,50.53391823356,3.908518731852
+16534.0,Appareil fixe-Vast apparaat,Rue Saint Martin,45.0,6860.0,Leglise,Luxembourg, ,Oui-Ja,Non-Nee,,49.853181471048,5.54121952762
+16535.0,Appareil fixe-Vast apparaat,Westendelaan ,96.0,8430.0,Middelkerke,West-Vlaanderen,Sportpark - Petanque club,Oui-Ja,Oui-Ja,,51.177255841637,2.804646335759
+16536.0,Appareil fixe-Vast apparaat,Rue de luins,10.0,4190.0,Ferrieres,Luxembourg,Facade,Oui-Ja,Non-Nee,,50.403708866453,5.520232818528
+16537.0,Appareil fixe-Vast apparaat,Rue de l ognoul,26.0,4190.0,Ferrieres,Luxembourg,sacoche,Oui-Ja,Non-Nee,,50.401577460767,5.613867913193
+16538.0,Appareil fixe-Vast apparaat,Passage des Deportés,2.0,5030.0,,Namur, ,Oui-Ja,Non-Nee,,43.499484,-87.848432
+16540.0,Appareil fixe-Vast apparaat,Rijkmakerlaan,43.0,2910.0,Essen,Antwerpen,Gelijkvloers werkplaats ,Non-Nee,Non-Nee,8u - 16.30u op weekdagen,51.449705619109,4.50112894387
+16541.0,Appareil fixe-Vast apparaat,Chemin des Primevères,68.0,7800.0,Ath,Hainaut, ,Oui-Ja,Oui-Ja,,50.638318197168,3.779473902555
+16542.0,Appareil fixe-Vast apparaat,Chemin des Primervères ,68.0,7800.0,Ath,Hainaut, ,Oui-Ja,Oui-Ja,,50.638318197168,3.779473902555
+16543.0,Appareil fixe-Vast apparaat,Rue de la Croix du Maïeur ,1.0,7110.0,Strepy-Bracquegnies,Hainaut, ,Oui-Ja,Non-Nee,,50.491310344306,4.113864397683
+16544.0,Appareil fixe-Vast apparaat,Kotterlaan,,2830.0,WILLEBROEK,Antwerpen,Buitenkast inkom sporthal Tisselt ,Oui-Ja,,,51.035814940108,4.35631105937
+16545.0,Appareil fixe-Vast apparaat,Mechelsesteenweg,102.0,2830.0,WILLEBROEK,Antwerpen,Buitenkast inkom ,Oui-Ja,,,51.056922972694,4.369939167225
+16546.0,Appareil fixe-Vast apparaat,Ringbaan,199.0,2830.0,Willebroek,Antwerpen,Buitenkast inkom ,Oui-Ja,,,51.048798561585,4.346543934358
+16547.0,Appareil fixe-Vast apparaat,Wilgenhof,2.0,2830.0,WILLEBROEK,Antwerpen,Buitenkast inkom ,Oui-Ja,,,51.053790362111,4.356717469337
+16548.0,Appareil fixe-Vast apparaat,Beenhouwerstraat,28.0,2830.0,WILLEBROEK,Antwerpen,Buitenkast totem parking de zwaan,Oui-Ja,,,51.060932753359,4.406661548546
+16549.0,Appareil fixe-Vast apparaat,Oud-sasplein,,2830.0,WILLEBROEK,Antwerpen,Buitenkast totem naast de brug,Oui-Ja,,,51.060247801272,4.363224215043
+16550.0,Appareil fixe-Vast apparaat,Pastorijstraat,1.0,2830.0,WILLEBROEK,Antwerpen,Aan brievenbus buitengevel toegankelijk ,Oui-Ja,,,51.063939254295,4.360524278302
+16551.0,Appareil fixe-Vast apparaat,Augustus van landeghemplein,,2830.0,WILLEBROEK,Antwerpen,Totem buitenkast ,Oui-Ja,,,51.060647360595,4.360387525737
+16552.0,Appareil fixe-Vast apparaat,Rue des Combattants,15.0,6997.0,Erezee,Luxembourg, ,Oui-Ja,Non-Nee,,50.293616745758,5.557823742534
+16553.0,Appareil fixe-Vast apparaat,Stadionlaan,2.0,2830.0,WILLEBROEK,Antwerpen,Buitengevel inkom,Oui-Ja,,,51.061241538758,4.346824644295
+16554.0,Appareil fixe-Vast apparaat,Stationsplein,,2830.0,WILLEBROEK,Antwerpen,Totem buitenkast ,Oui-Ja,,,51.066202455918,4.35485991653
+16555.0,Appareil fixe-Vast apparaat,Bovigny ,59.0,6671.0,Bovigny,Luxembourg, ,Oui-Ja,Non-Nee,,50.224650894211,5.916432355919
+16557.0,Appareil fixe-Vast apparaat,Rue Louise Michel (ondergrondse parkeergarage),,4000.0,LUIK,Liège,Gelijkvloers onthaal,Oui-Ja,,,50.646381210917,5.538109292297
+16558.0,Appareil fixe-Vast apparaat,Rue Louise Michel (ondergrondse parkeergarage),,4000.0,LUIK,Liège,1 ste verdieping rechts achter glazen deur ,Oui-Ja,,,50.646381210917,5.538109292297
+16559.0,Appareil fixe-Vast apparaat,Rue Louise Michel (ondergrondse parkeergarage),,4000.0,LUIK,Liège,2de verdieping rechts achter glazen deur,Oui-Ja,,,50.646381210917,5.538109292297
+16560.0,Appareil fixe-Vast apparaat,Ambachtsstraat ,3.0,1840.0,Londerzeel,Vlaams-Brabant,Garage tussen kantoren en werkplaats,Non-Nee,Non-Nee,8u - 17u van maandag tot vrijdag (enkel op werkdagen),51.016621734489,4.321775494293
+16561.0,Appareil fixe-Vast apparaat,Drève d argenteuil,23.0,1410.0,Waterloo,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.717094131148,4.418052548737
+16568.0,Appareil fixe-Vast apparaat,Rue des Clarisses,38.0,4000.0,Liege,Liège, ,Oui-Ja,Non-Nee,,50.638887244574,5.571428661035
+16569.0,Appareil fixe-Vast apparaat,Siemenslaan,1.0,8020.0,HERTSBERGE,West-Vlaanderen,/,Oui-Ja,,,51.148093017353,3.234902407618
+10201.0,Appareil fixe-Vast apparaat,Boulevard Sainte-Beuve,,4000.0,Liege,Liège,Production étage,Oui-Ja,Non-Nee,,50.63608578152,5.548701604681
+16570.0,Appareil fixe-Vast apparaat,Veldakkerwegel ,38.0,9230.0,WETTEREN,Oost-Vlaanderen,Kantine,Non-Nee,,,51.005952745213,3.82816010333
+14289.0,Appareil fixe-Vast apparaat,Nieuwe Brug,,9230.0,WETTEREN,Oost-Vlaanderen,Toonzaal garage,Non-Nee,,,51.00882185851,3.879462308124
+16567.0,Appareil fixe-Vast apparaat,Rue de la Rivelaine ,21.0,6060.0,Montignies/S/Sambre ,Hainaut,Entrée principal (RDC) dans le hall d entrée en face de l accueil,Oui-Ja,Non-Nee,08h30 à 16h30,50.405836096222,4.457156390165
+16571.0,Appareil fixe-Vast apparaat,Robert Tavernierlaan,2.0,8700.0,Tielt,West-Vlaanderen,"Gelijkvloers, productiehal EPEC (GE1), naast personeelsingang ",Non-Nee,Oui-Ja,,51.000666781795,3.343788107552
+16572.0,Appareil fixe-Vast apparaat,Galgenveldstraat ,10.0,8700.0,Tielt,West-Vlaanderen,"Gelijkvloers, productiehal, naast planningsbord",Non-Nee,Oui-Ja,,51.000666781795,3.343788107552
+16573.0,Appareil fixe-Vast apparaat,Galgenveldstraat ,12.0,8700.0,Tielt,West-Vlaanderen,"Gelijkvloers, magazijn/atelier, naast drankenautomaat",Non-Nee,Oui-Ja,,50.999702695291,3.344943217628
+16574.0,Appareil fixe-Vast apparaat,Zwaarvoerdersspoor ,3.0,2440.0,Geel,Antwerpen,"Buitenkant, links op de gevelhoek. ",Oui-Ja,Non-Nee,"17u30-20u30 op weekdagen, zaterdag 8u30-17u30",51.162758414244,4.9572563567
+16575.0,Appareil fixe-Vast apparaat,"Blue Tower 1, Sluisweg 1, 9000 Gent",1.0,9000.0,Gent,Oost-Vlaanderen,8ste verdieping van Blue Tower 1 aan de receptie. ,Oui-Ja,Non-Nee,08:30 - 16:30,51.013496122795,3.735277300577
+16576.0,Appareil fixe-Vast apparaat,"Generaal Lemanstraat 67, 2018 Antwerpen",67.0,2018.0,Antwerpen,Antwerpen,te PwC Antwerpen op de 1ste verdieping aan de receptie. ,Oui-Ja,Non-Nee,08:30 - 16:30,51.194184013267,4.411453308729
+16577.0,Appareil fixe-Vast apparaat,Rue Visé - Voie 81,81.0,4000.0,Liège,Liège,Te PwC Liège aan de receptie op de 1ste verdieping. ,Oui-Ja,Non-Nee,08:30-16:30,50.665828022485,5.56684015578
+16578.0,Appareil fixe-Vast apparaat," Culliganlaan 5, 1831 Machelen",5.0,1831.0,Machelen,Vlaams-Brabant,Te PwC Machelen op de 4de verdieping aan de receptie. ,Oui-Ja,Non-Nee,06:00 - 23:00,50.887910654251,4.453703129875
+16579.0,Appareil fixe-Vast apparaat,Antwerpsesteenweg,100.0,2630.0,Artselaar,Antwerpen, ,Oui-Ja,Non-Nee,,51.143826460998,4.380801778464
+16580.0,Appareil fixe-Vast apparaat,Steenstraat,22.0,1750.0,Lennik,Vlaams-Brabant, ,Oui-Ja,Non-Nee,,50.823868429672,4.195301544012
+16581.0,Appareil fixe-Vast apparaat,Steenweg op Mol ,157.0,2360.0,Oud-Turnhout,Antwerpen,Buitengevel naast ingang sporthal,Oui-Ja,Oui-Ja,,51.30960478974,5.001439631452
+16582.0,Appareil fixe-Vast apparaat,Steenweg op Mol,3.0,2360.0,Oud-Turnhout,Antwerpen,Buitengeven naast ingang,Oui-Ja,Oui-Ja,,51.3172141329,4.98278780141
+16583.0,Appareil fixe-Vast apparaat,Dynamicalaan,14.0,2610.0,Wilrijk,Antwerpen, ,Oui-Ja,Non-Nee,,51.15680634098,4.377601567832
+16584.0,Appareil fixe-Vast apparaat,Koning Boudewijnlaan ,80.0,2360.0,Oud-Turnhout,Antwerpen,Buitengeven link naast ingang,Oui-Ja,Oui-Ja,,51.318673715609,4.976948045649
+16585.0,Appareil fixe-Vast apparaat,Zoning industriel du vieux pont,5.0,7900.0,Leuze-en-Hainaut,Hainaut,Bureau bascule Gate 2.,Non-Nee,Oui-Ja,,50.601187707205,3.62706449983
+16586.0,Appareil fixe-Vast apparaat,SZAMOTULYSTRAAT ,10.0,8700.0,Tielt,West-Vlaanderen,Gelijkvloers - productiehal/atelier ES - aan de ingang boven de brandblussers,Oui-Ja,Oui-Ja,,50.999525669496,3.360170704946
+16587.0,Appareil fixe-Vast apparaat,Lindestraat ,19.0,9880.0,Aalter,Oost-Vlaanderen,spelerstunnel gelegen onder de hoofdtribune ,Oui-Ja,Non-Nee,tijdens activiteiten op de voetbal accommodatie ,51.08233539438,3.437568360678
+16588.0,Appareil fixe-Vast apparaat,Rue de Wandre,,4610.0,Beyne-Heusay,Liège,"1er étage, zone fitness de l établissement ""Maréchal Gym & Santé""",Oui-Ja,Non-Nee,9h-13h / 15h-21h ,50.645546322523,5.665541661574
+16589.0,Appareil fixe-Vast apparaat,Rue du village ,5.0,6800.0,LIBRAMONT,Luxembourg,il se trouve dans le premier bureau à gauche juste à l entrée  (la salle d accueil) au RDC,Oui-Ja,Non-Nee,8h30 à 12h30,49.915253948381,5.378913360359
+16590.0,Appareil fixe-Vast apparaat,Rue du Vertbois,23.0,4000.0,Liège,Liège,RDC à proximité de l accueil (hall d entrée),Oui-Ja,Non-Nee,08h30 à 12h30 du lundi au vendredi,50.637539686001,5.571454058202
+16591.0,Appareil fixe-Vast apparaat,Place Joséphine-Charlotte,8.0,5100.0,JAMBE,Namur,Etage 3 hall de l accueil (quand on sort des ascenseurs à gauche),Oui-Ja,Non-Nee,08h30 à 16h30 du lundi au vendredi,50.460278107999,4.876639044321
+16592.0,Appareil fixe-Vast apparaat,Rue Albert Einstein,11.0,1400.0,Nivelles,Brabant Wallon,Rez-de-chaussée à la réception dans l armoire tout à droite (lorsqu on se trouve en face de la réception),Oui-Ja,Non-Nee,08h00 à 17h00,50.584812360157,4.352180428967
+16593.0,Appareil fixe-Vast apparaat,Boulevard Gendebien,3.0,7000.0,Mons,Hainaut,RDC au milieu des deux ascenseurs ,Oui-Ja,Non-Nee,08h30 à12h30 et 13h30 à 16h30 lundi au vendredi,50.452744118149,3.942625049475
+10448.0,Appareil fixe-Vast apparaat,Interleuvenlaan ,,3001.0,Heverlee,Vlaams-Brabant,"2de verdiep, bureau secretaresse",Non-Nee,Non-Nee,9-17h,50.850182509041,4.728976878746
+16595.0,Appareil fixe-Vast apparaat,De Pannelaan,68.0,8660.0,De Panne,West-Vlaanderen,Eerste verdieping burelen Plopsa-Group (ter hoogte van receptie),Oui-Ja,Non-Nee,Dagelijks tussen 08u00-19u00 (of later tijdens nocturnes),51.081470507701,2.60045612352
+16596.0,Appareil fixe-Vast apparaat,moervaartkaai,13.0,9042.0,gent,Oost-Vlaanderen,trappenhal productie ,Non-Nee,Non-Nee,,51.140441261763,3.779545651646
+16597.0,Appareil fixe-Vast apparaat,moervaartkaai,13.0,9042.0,gent,Oost-Vlaanderen,aanmelding vrachtwagen chauffeurs ,Oui-Ja,Non-Nee,7u tot 17u00  winter en 7u tot 18u00 in de winter  weekdagen,51.140441261763,3.779545651646
+16598.0,Appareil fixe-Vast apparaat,Duinhoekstraat,101.0,8660.0,De Panne,West-Vlaanderen,Aan de zijkant van het receptiegebouw (buiten),Oui-Ja,Oui-Ja,,51.082949201149,2.59151967363
+16599.0,Appareil fixe-Vast apparaat,Goormansdijk ,64.0,2480.0,Dessel,Antwerpen,EHBO lokaal,Non-Nee,Non-Nee,,51.229328704639,5.126969192702
+16601.0,Appareil fixe-Vast apparaat,/,,9270.0,LAARNE,Oost-Vlaanderen,/,Oui-Ja,,,51.042425499,3.884201938
+16602.0,Appareil fixe-Vast apparaat,Colmanstraat,51.0,9270.0,LAARNE,Oost-Vlaanderen,Buitenkast inkom ,Oui-Ja,,,51.033340446201,3.893555544267
+16603.0,Appareil fixe-Vast apparaat,Keistraat,5.0,9270.0,KALKEN,Oost-Vlaanderen,Mobiel toestel ,Oui-Ja,,,51.027679727891,3.853911908275
+16604.0,Appareil fixe-Vast apparaat,Kouterstraat ,4.0,9270.0,KALKEN,Oost-Vlaanderen,Buitenkast inkom voetbalplein ,Oui-Ja,,,51.041027866789,3.917211119047
+16605.0,Appareil fixe-Vast apparaat,Dorpstraat,2.0,9270.0,LAARNE,Oost-Vlaanderen,Buitenkast inkom ,Oui-Ja,,,51.029879265013,3.85013108321
+16606.0,Appareil fixe-Vast apparaat,Vijverstraat ,92.0,9340.0,Lede,Oost-Vlaanderen,rechter zijgevel van het gebouw,Oui-Ja,Oui-Ja,,50.971220359658,3.979195879763
+16607.0,Appareil fixe-Vast apparaat,Hondelee,18.0,9052.0,Zwijnaarde,Oost-Vlaanderen,Buitengevel,Oui-Ja,Non-Nee,,50.996121024245,3.716319614889
+16608.0,Appareil fixe-Vast apparaat,Hockeyweg ,1.0,2500.0,Lier,Antwerpen,"Gelijkvloers, recht voor hoofdingang kantine, naast trap en mannentoilet",Oui-Ja,Non-Nee,,51.13766329207,4.54420104179
+16609.0,Appareil fixe-Vast apparaat,Looiven,38.0,2460.0,Kasterlee,Antwerpen,Ingang school,Oui-Ja,,,51.249738345505,4.991637833878
+16610.0,Appareil fixe-Vast apparaat,Kuurnsesteenweg,107.0,8500.0,Kortrijk,West-Vlaanderen,gelijkvloers aan de receptie,Oui-Ja,Non-Nee,tijdens de kantooruren,50.843612505516,3.269696106794
+16611.0,Appareil fixe-Vast apparaat,Torleylaan,100.0,1654.0,Huizingen,Vlaams-Brabant,"In kast in de inkomhal van het gebouw Wauweringen, naast de prikklok",Non-Nee,Non-Nee,Enkel beschikbaar tijdens de openingsuren van het domein,50.743211219433,4.281168190893
+16612.0,Appareil fixe-Vast apparaat,Rue Edouard Bellin,11.0,1435.0,Mont Saint Guibert,Brabant Wallon,Acceuil,Oui-Ja,Non-Nee,,50.658271820826,4.628538961986
+16613.0,Appareil fixe-Vast apparaat,Zandvoordestraat,366.0,8400.0,Oostende,West-Vlaanderen,Gelijkvloers - Burelen,Oui-Ja,Oui-Ja,,51.209021742087,2.959737183042
+16614.0,Appareil fixe-Vast apparaat,Zandvoordestraat,366.0,8400.0,Oostende,West-Vlaanderen,"Gelijkvloers, Productie VISO",Oui-Ja,Oui-Ja,,51.209021742087,2.959737183042
+16615.0,Appareil fixe-Vast apparaat,Zandvoordestraat,366.0,8400.0,Oostende,West-Vlaanderen,"Gelijkvloers, Productie Mixplant",Oui-Ja,Non-Nee,Werkuren,51.209021742087,2.959737183042
+16556.0,Appareil fixe-Vast apparaat,Rue Louise Michel (ondergrondse parkeergarage),,4000.0,LUIK,Liège,-1 verdieping parkeergarage ,Oui-Ja,,,50.646381210917,5.538109292297
+16616.0,Appareil fixe-Vast apparaat,Kerkeblokken,11.0,2560.0,Nijlen,Antwerpen,Buitengevel ingang woonzorgcentrum,Oui-Ja,Oui-Ja,,51.158386665004,4.669612238495
+16617.0,Appareil fixe-Vast apparaat,Nijvelsebaan,190.0,3090.0,Overijse,Vlaams-Brabant,Achterkant buiten,Non-Nee,Non-Nee,07h30 - 18h,50.770234223814,4.56483090509
+16618.0,Appareil fixe-Vast apparaat,Tienne de Boussu,,5660.0,Couvin,Namur,  ,Oui-Ja,Non-Nee,,50.0568626798,4.486314473062
+16619.0,Appareil fixe-Vast apparaat,Bois Frion,107.0,6110.0,Montigny-le-tilleul,Hainaut, ,Oui-Ja,Non-Nee,,50.38037409558,4.366964932702
+16620.0,Appareil fixe-Vast apparaat,Donckstraat,118.0,9200.0,Dendermonde,Oost-Vlaanderen,Oprit van huisnummer 118,Oui-Ja,Oui-Ja,,51.036145492008,4.087123528163
+16621.0,Appareil fixe-Vast apparaat,Avenue de la Libération,2.0,5660.0,Couvin,Namur, ,Oui-Ja,Non-Nee,,50.055794953395,4.490756506329
+16622.0,Appareil fixe-Vast apparaat,Rue des grès ,,5580.0,Rochefort,Namur, ,Oui-Ja,Non-Nee,,50.176546106904,5.204868963761
+16623.0,Appareil fixe-Vast apparaat,Gasthuisstraat ,10.0,2560.0,Kessel,Antwerpen,Aan inkom van het WZC boven brievenbus,Oui-Ja,Oui-Ja,,51.137494100787,4.628272692034
+15100.0,Appareil fixe-Vast apparaat,Avenue Jean Van Horebeeck,196.0,1160.0,Brussel,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.805429374243,4.434516450593
+16624.0,Appareil fixe-Vast apparaat,RUE DE COUILLET,,6200.0,CHATELET,Hainaut,Pièce de confidentialité/Vaccination,Non-Nee,Non-Nee,8h30-12h30 / 13h30-18h30,50.397179117155,4.496007968837
+16625.0,Appareil fixe-Vast apparaat,Wederik,7.0,2390.0,Oostmalle,Antwerpen,Buiten muur garage achter in de tuin,Oui-Ja,Oui-Ja,,51.309401067584,4.728787469086
+16626.0,Appareil fixe-Vast apparaat,Sint-Bernardsesteenweg ,,2020.0,Antwerpen ,Antwerpen,Gelijkvloers - links van de ingang van de brasserie - een signalisatiebord is aanwezig,Oui-Ja,Non-Nee,8u30-18u,51.190681206618,4.379007874069
+3256.0,Appareil fixe-Vast apparaat,Worriken,9.0,4750.0,Bütgenbach,Liège,"entre décembre et mars : location de skis
+entre avril et novembre : réception",Non-Nee,Non-Nee,9h-17h,50.425064894569,6.222250166453
+16627.0,Appareil fixe-Vast apparaat,Avenue de Marie ,175.0,7500.0,Tournai,Hainaut, ,Oui-Ja,Non-Nee,,50.619943221388,3.371568668341
+16628.0,Appareil fixe-Vast apparaat,Reppelsebaan,65.0,3294.0,Diest,Vlaams-Brabant, ,Oui-Ja,Non-Nee,,51.011191518517,5.0110479747
+16629.0,Appareil fixe-Vast apparaat,Avenue du Boulevard,21.0,1210.0,Saint-Josse-Ten-Noode,Bruxelles-Brussel,Bureau at 23rd floor,Non-Nee,Non-Nee,Monday to Friday from 8:00 to 18:00,50.856098272305,4.356772119345
+16630.0,Appareil fixe-Vast apparaat,xngng,218.0,6001.0,marcinelle,Hainaut,Loge de garde,Oui-Ja,Non-Nee,06h00 à 22h00,50.39216,4.44388
+16631.0,Appareil fixe-Vast apparaat,Smekenstraat ,12.0,2390.0,Oostmalle,Antwerpen,voorkant straat,Oui-Ja,Oui-Ja,,51.303766165536,4.737858364702
+16632.0,Appareil fixe-Vast apparaat,Avenue du Pont de Warche,40.0,4960.0,Malmedy,Liège,Rez-de-chaussée bureau,Non-Nee,Non-Nee,8h00 - 16h30,50.417892207552,6.002440473604
+16633.0,Appareil fixe-Vast apparaat,Port D ivoz Ramet,,4400.0,Flémalle,Liège, ,Oui-Ja,Non-Nee,,50.590357327216,5.471991469841
+16634.0,Appareil fixe-Vast apparaat,Place du Chatelet ,9.0,4960.0,Malmedy,Liège, ,Oui-Ja,Non-Nee,,50.427268119728,6.027284164926
+16635.0,Appareil fixe-Vast apparaat,Astridlaan ,85.0,1970.0,Wezembeek-Oppem,Vlaams-Brabant,Buiten aan de cafetaria,Oui-Ja,Oui-Ja,,50.834059650467,4.498615378746
+16636.0,Appareil fixe-Vast apparaat,Rue des huberts,2.0,7100.0,LA LOUVIERE,Hainaut,Inkom sportzaal,Oui-Ja,,,50.461508417698,4.100484093264
+16637.0,Appareil fixe-Vast apparaat,Place de Seurre,3.0,5570.0,Beauraing,Namur,Hôtel de Ville - hall d entrée - rez-de-chaussée,Oui-Ja,Oui-Ja,,50.11024916084,4.956360834165
+16638.0,Appareil fixe-Vast apparaat,Stad,,3930.0,Hamont-Achel,Limburg,"In de tandartspraktijk, gelijkvloers, achter de balie van de assistente",Non-Nee,Non-Nee,"openingsuren van de tandartspraktijk: maandag tem vrijdag vanaf 8.30 u tem 16.30 u, ",51.251282979983,5.54515914044
+16639.0,Appareil fixe-Vast apparaat,Klaarstraat,139.0,1745.0,Opwijk,Vlaams-Brabant,voetbalkantine Tesseskouter,Oui-Ja,Oui-Ja,,50.971170319697,4.168505856846
+16642.0,Appareil fixe-Vast apparaat,Rue Defalque,4.0,1490.0,Court-Saint-Etienne,Brabant Wallon, ,Oui-Ja,Non-Nee,,50.642322316134,4.567711178478
+16643.0,Appareil fixe-Vast apparaat,Avenue Emile Gryson,1.0,1070.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.815451196775,4.294899592313
+16644.0,Appareil fixe-Vast apparaat,leo baekelandlaan ,15.0,3900.0,Pelt,Limburg,in het magazijn bereikbaar tussen 8 en 17 uur op werkdagen van ma tot vr,Non-Nee,Non-Nee,van 8 tot 17 uur op werkdagen van ma tot vr,51.215521740362,5.391801793776
+16645.0,Appareil fixe-Vast apparaat,lieven gevaertlaan,1.0,3900.0,Pelt,Limburg,in het magazijn bij het EHBO lokaal,Non-Nee,Non-Nee,tussen 8 en 17 uur van ma tot vrij,51.218295034521,5.375308739391
+16646.0,Appareil fixe-Vast apparaat,Sint Rochusstraat ,35.0,9200.0,Dendermonde,Oost-Vlaanderen,gemeenschappelijke leefruimte,Non-Nee,Oui-Ja,,51.028054566601,4.096848296047
+16647.0,Appareil fixe-Vast apparaat,WALGOEDstraat ,14.0,9140.0,Temse,Oost-Vlaanderen,"Magazijn, gelijkvloers",Non-Nee,Oui-Ja,,51.139770919057,4.190893333494
+16648.0,Appareil fixe-Vast apparaat,Prins Boudewijnlaan,70.0,2610.0,Wilrijk,Antwerpen,Gelijkvloers praktijk,Oui-Ja,Non-Nee,"MA,DI,WO,DO: 09u00 - 18u00 / VR: 09u00 - 17u00",51.178650460755,4.423813682247
+16649.0,Appareil fixe-Vast apparaat,Westerlosesteenweg,37.0,2220.0,Heist-op-den-Berg,Antwerpen,Inkom wzc- aan de rechtste muur,Oui-Ja,Oui-Ja,,51.073573958629,4.73797017929
+16650.0,Appareil fixe-Vast apparaat,Davidstraat ,50.0,3806.0,Velm,Limburg,gelijksvloer ingang voetbalkantine,Non-Nee,Non-Nee,tijdens trainingen en wedstrijden op het voetbalterrein,50.781018715716,5.124186065571
+13572.0,Appareil fixe-Vast apparaat,QUAI DE MEUSE ,1.0,5500.0,anseremme,Namur,a l acceuil du magasin ,Non-Nee,Non-Nee,7h00 a 19h00,50.239655687585,4.916840747426
+16651.0,Appareil fixe-Vast apparaat,Antoon van Osslaan ,,1120.0,Neder-over-Heembeek,Bruxelles-Brussel,Gelijkvloers,Non-Nee,Non-Nee,ma-vrij 8u-17u,50.907641976265,4.405674382736
+14575.0,Appareil fixe-Vast apparaat,Carrefour de la Spetz,2.0,6700.0,Arlon,Luxembourg,Extérieur Hall 2,Non-Nee,Oui-Ja,,49.675259357167,5.826493159787
+16652.0,Appareil fixe-Vast apparaat,rue de Dinant ,148.0,5570.0,BEAURAING,Namur,Ferme des Trois Moulins - hall d entrée - rez-de-chaussée - en face de l ascenseur,Oui-Ja,Non-Nee,En fonction des locations,50.12079665443,4.954813870115
+16653.0,Appareil fixe-Vast apparaat,Lichtenberglaan,2095.0,3800.0,Sint-Truiden,Limburg,Gelijkvloers buiten tegen loods,Oui-Ja,Non-Nee,Tussen 8u en 16u30,50.798795642703,5.190613989341
+16654.0,Appareil fixe-Vast apparaat,Farnières,4.0,6698.0,Grand Halleux,Liège, ,Oui-Ja,Non-Nee,,50.310444222309,5.879325896363
+16658.0,Appareil fixe-Vast apparaat,Rue Lanoy ,52.0,7740.0,Pecq,Hainaut, ,Oui-Ja,Non-Nee,,50.685470928757,3.335364546317
+16659.0,Appareil fixe-Vast apparaat,Rue Lanoy ,52.0,7740.0,Pecq,Hainaut, ,Oui-Ja,Non-Nee,,50.685470928757,3.335364546317
+16660.0,Appareil fixe-Vast apparaat,Chaussée de Marche ,799.0,5100.0,Wierde,Namur, ,Oui-Ja,Non-Nee,,50.426617097308,4.929220902235
+16661.0,Appareil fixe-Vast apparaat,Nekkerspoel-Borcht ,19.0,2800.0,Mechelen,Antwerpen,"Hoofdgebouw, 1ste verdieping, thv cafetaria",Oui-Ja,Non-Nee,"maandag tot en met vrijdag van 8 tot 23 uur; weekend en feestdagen van 9 tot 23 uur, niet beschikbaar tijdens de kerstvakantie",51.025184225768,4.503494149308
+16662.0,Appareil fixe-Vast apparaat,Nekkerspoel-Borcht,19.0,2800.0,Mechelen,Antwerpen,reddersgebouw aan zwemvijver,Non-Nee,Non-Nee,,51.025184225768,4.503494149308
+16664.0,Appareil fixe-Vast apparaat,Nieuwe Dreef ,17.0,9160.0,Lokeren,Oost-Vlaanderen,Locatie : ingang poort hoofdgebouw,Oui-Ja,Oui-Ja,,51.097808639099,3.911762546707
+16665.0,Appareil fixe-Vast apparaat,Panterschipstraat ,207.0,9000.0,Gent,Oost-Vlaanderen, ,Oui-Ja,Non-Nee,,51.096023042265,3.727444495879
+16666.0,Appareil fixe-Vast apparaat,Albert Leemansplein,20.0,1050.0,Bruxelles,Bruxelles-Brussel, ,Oui-Ja,Non-Nee,,50.821723039645,4.362859727984
+16668.0,Appareil fixe-Vast apparaat,rue Saint-Donat,18.0,5640.0,METTET,Namur,Site de Mettet - Magasin,Non-Nee,Non-Nee,8h00 à 17h00,50.301210414759,4.647303132642
