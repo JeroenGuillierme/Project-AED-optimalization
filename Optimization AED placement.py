@@ -1,3 +1,4 @@
+
 import pandas as pd
 from pandas.compat import pyarrow
 
@@ -113,4 +114,9 @@ aed5.loc[:, 'longitude'] = longitudes
 print(aed5)
 
 # Sla de dataset op met de toegevoegde coördinaten
+#<<<<<<< HEAD
 aed5.to_csv('DATA/aed5.csv', index=False)
+#=======
+#aed.to_csv('updated_dataset.csv', index=False)
+
+#>>>>>>> d8d7207b39d670cdaf633689ecfcc141df8e4c20
