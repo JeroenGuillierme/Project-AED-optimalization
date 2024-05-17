@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
-<<<<<<< HEAD
-<<<<<<< HEAD
     <orderEntry type="inheritedJdk" />
-=======
-    <orderEntry type="jdk" jdkName="Python 3.9 (Project-AED-optimalization)" jdkType="Python SDK" />
->>>>>>> 1da3a5b58edf1714c5953f57448bf4e6c0af334f
-=======
-
-    <orderEntry type="inheritedJdk" />
-
-    <orderEntry type="jdk" jdkName="Python 3.9 (Project-AED-optimalization)" jdkType="Python SDK" />
-
->>>>>>> a3d73b15a992ffb0f31346a6d9cc2af0d0f23957
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
