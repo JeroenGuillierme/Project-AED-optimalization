@@ -131,6 +131,23 @@ data = pd.concat(frames)
 train, test = train_test_split(data, random_state=1)
 print(train)
 
+
+### onehot enoder (chatgpt)
+from sklearn.preprocessing import OneHotEncoder
+
+# Definieer X en y (features en target)
+X_train = train[['CityName permanence', 'CityName intervention', 'Vector type', 'EventLevel Firstcall']]
+y1 = train['Time1']
+y2 = train['Time2']
+
+# Maak een OneHotEncoder
+encoder = OneHotEncoder(sparse_output=False)
+
+# Encode de categorische variabelen
+X_train_encoded = encoder.fit_transform(X_train)
+print(X_train_encoded)
+
+#### imputers (github les) (missing values veranderen)
 ## Nagaan hoeveel data er ontbreekt
 city_permanence_count = data['CityName permanence'].isna().sum()
 #print(city_permanence_count/1045549) # 0.10775774258308314
@@ -144,4 +161,46 @@ time1_count = data['Time1'].isna().sum()
 #print(time1_count/1045549) # 0.2206171112018662
 time2_count = data['Time2'].isna().sum()
 #print(time2_count/1045549) # 0.3882247508246864
+
+from sklearn.impute import SimpleImputer
+import numpy as np
+import pandas as pd
+SI_numerical = SimpleImputer(missing_values=None, strategy='mean')
+SI_categorical = SimpleImputer(missing_values= pd.NaT, strategy='most_frequent')
+
+train.y1 =SI_numerical.fit_transform(train['y1'].values.reshape(-1,1))
+train.y2 =SI_numerical.fit_transform(train['y2'].values.reshape(-1,1))
+train.X_train_encoded = SI_categorical.fit_transform(train['X_train_encoded'].values.reshape(-1,1)).flatten()
+print(train['y1'])
+print(train['y2'])
+print(train['X_train_encoded'])#geeft rare foutmelding -> geraak er nog niet uit :(
+
+
+#isolationforest (voor outliers)
+#Necessary Imports
+from sklearn.ensemble import IsolationForest
+import pandas as pd
+import numpy as np
+from plotly.offline import iplot
+import plotly.graph_objects as go
+import plotly.offline as pyo
+from sklearn.linear_model import LinearRegression
+
+IsoFo = IsolationForest(n_estimators=100, contamination= 'auto')
+labels_citynameP = IsoFo.fit_predict(np.array(train.X_train_encoded['CityName permanence']).reshape(-1,1))
+labels_citynameI = IsoFo.fit_predict(np.array(train.X_train_encoded['CityName intervention']).reshape(-1,1))
+labels_vector = IsoFo.fit_predict(np.array(train.X_train_encoded['Vector type']).reshape(-1,1))
+labels_eventlevel = IsoFo.fit_predict(np.array(train.X_train_encoded['EventLevel Firstcall']).reshape(-1,1))
+
+#Only including the inliers
+CityName_permanence_filtered = frames.X_train_encoded['CityName permanence'][labels_citynameP == 1]
+CityName_intervention_filtered = frames.X_train_encoded['CityName intervention'][labels_citynameI == 1]
+Vector_type_filtered = frames.X_train_encoded['Vector type'][labels_vector == 1]
+EventLevel_Firstcall_filtered = frames.X_train_encoded['EventLevel Firstcall'][labels_eventlevel == 1]
+
+y1_filtered = np.array(frames.y1[labels == 1]).reshape(-1,1)
+y2_filtered = np.array(frames.y2[labels == 1]).reshape(-1,1)
+
+##nu klaar om regressie te doen
+
 

@@ -1,3 +1,4 @@
+
 import pandas as pd
 from pandas.compat import pyarrow
 
@@ -56,16 +57,19 @@ if __name__ == "__main__":
 import pandas as pd
 import boto3
 
-aed1 = aed.head(750).copy()
+aed["municipality"] = aed["municipality"].replace("KalloBeveren-Waas)","Beveren")
+
+aed5 = aed.iloc[14001:15227].copy()
+
 
 # AWS-regio waarin Amazon Location Service is geconfigureerd
-region_name = 'us-east-1'
+#region_name = 'us-east-1'
 
 # AWS-credentials configureren
-session = boto3.Session(
-    aws_access_key_id='AKIA6GBMAUQCXW4TPTUE',
-    aws_secret_access_key='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',
-    region_name=region_name)
+#session = boto3.Session(
+#    aws_access_key_id='AKIA6GBMAUQCXW4TPTUE',
+#    aws_secret_access_key='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',
+#    region_name=region_name)
 
 # Creëer een client voor Amazon Location Service
 client = boto3.client('location')
@@ -94,7 +98,7 @@ latitudes = []
 longitudes = []
 
 # Doorloop elk adres in de dataset en haal de coördinaten op
-for index, row in aed1.iterrows():
+for index, row in aed5.iterrows():
     street = row['address']
     house_number = row['number']
     city = row['municipality']
@@ -104,10 +108,15 @@ for index, row in aed1.iterrows():
     longitudes.append(longitude)
 
 # Voeg de coördinaten toe aan de dataset
-aed1.loc[:, 'latitude'] = latitudes
-aed1.loc[:, 'longitude'] = longitudes
+aed5.loc[:, 'latitude'] = latitudes
+aed5.loc[:, 'longitude'] = longitudes
 
-print(aed1)
+print(aed5)
 
 # Sla de dataset op met de toegevoegde coördinaten
+#<<<<<<< HEAD
+aed5.to_csv('DATA/aed5.csv', index=False)
+#=======
 #aed.to_csv('updated_dataset.csv', index=False)
+
+#>>>>>>> d8d7207b39d670cdaf633689ecfcc141df8e4c20

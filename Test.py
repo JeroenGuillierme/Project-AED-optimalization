@@ -47,6 +47,7 @@ df.Y = SI_categorical.fit_transform(df['Y'].values.reshape(-1,1)).flatten()
 df
 
 
+<<<<<<< HEAD
 #isolationforest (voor outliers)
 #Necessary Imports
 from sklearn.ensemble import IsolationForest
@@ -66,3 +67,12 @@ calls_filtered = df.calls[labels == 1]
 date_filtered = np.array(df.year[labels == 1]).reshape(-1,1)
 OLS_filtered = LinearRegression()
 OLS_filtered.fit(date_filtered, calls_filtered)
+=======
+aed1 = aed.head(50)
+print(aed1)
+
+naam = "helena)"
+print(naam.replace(")",""))
+
+print(sum(aed["address"] == "None"))
+>>>>>>> main
