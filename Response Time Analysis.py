@@ -1,5 +1,13 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.impute import SimpleImputer
+import numpy as np
+from sklearn.ensemble import IsolationForest
+from plotly.offline import iplot
+import plotly.graph_objects as go
+import plotly.offline as pyo
+from sklearn.linear_model import LinearRegression
 
 ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
 mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
@@ -20,8 +28,8 @@ pd.set_option('display.max_columns', None)
 
 
 # interventions1: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
-interventions1["T0"] = pd.to_datetime(interventions1["T0"], format='%d%b%y:%H:%M:%S') # Convert the first time format to datetime
-interventions1["T3"] = pd.to_datetime(interventions1["T3"], format='%Y-%m-%d %H:%M:%S.%f') # Convert the column back to datetime with the new format
+interventions1["T0"] = pd.to_datetime(interventions1["T0"], format='%d%b%y:%H:%M:%S')
+interventions1["T3"] = pd.to_datetime(interventions1["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 interventions1["T5"] = pd.to_datetime(interventions1["T5"], format='%Y-%m-%d %H:%M:%S.%f')
 
 df1 = pd.DataFrame({
@@ -36,8 +44,8 @@ df1["CityName intervention"] = df1["CityName intervention"].str.extract(r'\((.*?
 #print(df1["Time2"])
 
 # interventions2: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
-interventions2["T0"] = pd.to_datetime(interventions2["T0"], format='%d%b%y:%H:%M:%S') # Convert the first time format to datetime
-interventions2["T3"] = pd.to_datetime(interventions2["T3"], format='%Y-%m-%d %H:%M:%S.%f') # Convert the column back to datetime with the new format
+interventions2["T0"] = pd.to_datetime(interventions2["T0"], format='%d%b%y:%H:%M:%S')
+interventions2["T3"] = pd.to_datetime(interventions2["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 interventions2["T5"] = pd.to_datetime(interventions2["T5"], format='%Y-%m-%d %H:%M:%S.%f')
 
 df2 = pd.DataFrame({"CityName permanence": interventions2["CityName permanence"].str.upper(),
@@ -52,8 +60,8 @@ df2["CityName intervention"] = df2["CityName intervention"].str.extract(r'\((.*?
 
 
 # interventions3: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
-interventions3["T0"] = pd.to_datetime(interventions3["T0"], format='%d%b%y:%H:%M:%S') # Convert the first time format to datetime
-interventions3["T3"] = pd.to_datetime(interventions3["T3"], format='%Y-%m-%d %H:%M:%S.%f')# Convert the column back to datetime with the new format
+interventions3["T0"] = pd.to_datetime(interventions3["T0"], format='%d%b%y:%H:%M:%S')
+interventions3["T3"] = pd.to_datetime(interventions3["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 interventions3["T5"] = pd.to_datetime(interventions3["T5"], format='%Y-%m-%d %H:%M:%S.%f')
 
 df3 = pd.DataFrame({"CityName permanence": interventions3["CityName permanence"].str.upper(),
@@ -67,8 +75,8 @@ df3["CityName intervention"] = df3["CityName intervention"].str.extract(r'\((.*?
 #print(df3["Time2"])
 
 # interventions4: cityname_permanence, CityName intervention, vector_type, eventLevel_firstcall
-interventions4["t0"] = pd.to_datetime(interventions4["t0"], format='%Y-%m-%d %H:%M:%S.%f %z')# Convert the first time format to datetime
-interventions4["t3"] = pd.to_datetime(interventions4["t3"], format='%Y-%m-%d %H:%M:%S.%f %z') # Convert the column back to datetime with the new format
+interventions4["t0"] = pd.to_datetime(interventions4["t0"], format='%Y-%m-%d %H:%M:%S.%f %z')
+interventions4["t3"] = pd.to_datetime(interventions4["t3"], format='%Y-%m-%d %H:%M:%S.%f %z')
 interventions4["t5"] = pd.to_datetime(interventions4["t5"], format='%Y-%m-%d %H:%M:%S.%f %z')
 
 df4 = pd.DataFrame({"CityName permanence": interventions4["cityname_permanence"].str.upper(),
@@ -85,8 +93,8 @@ df4["CityName intervention"] = df4["CityName intervention"].replace("BRUXELLES",
 
 
 #interventions5
-interventions5["T0"] = pd.to_datetime(interventions5["T0"], format='%d%b%y:%H:%M:%S')# Convert the first time format to datetime
-interventions5["T3"] = pd.to_datetime(interventions5["T3"], format='%d%b%y:%H:%M:%S') # Convert the column back to datetime with the new format
+interventions5["T0"] = pd.to_datetime(interventions5["T0"], format='%d%b%y:%H:%M:%S')
+interventions5["T3"] = pd.to_datetime(interventions5["T3"], format='%d%b%y:%H:%M:%S')
 interventions5["T5"] = pd.to_datetime(interventions5["T5"], format='%d%b%y:%H:%M:%S')
 
 df5 = pd.DataFrame({"CityName permanence": interventions5["Cityname Permanence"].str.upper(),
@@ -105,8 +113,8 @@ df5["EventLevel Firstcall"] = df5["EventLevel Firstcall"].str.replace("0", "")
 #print(df5["Time2"])
 
 #cad
-cad["T0"] = pd.to_datetime(cad["T0"], format='%Y-%m-%d %H:%M:%S.%f') # Convert the column back to datetime with the new format
-cad["T3"] = pd.to_datetime(cad["T3"], format='%Y-%m-%d %H:%M:%S.%f') # Convert the column back to datetime with the new format
+cad["T0"] = pd.to_datetime(cad["T0"], format='%Y-%m-%d %H:%M:%S.%f')
+cad["T3"] = pd.to_datetime(cad["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 cad["T5"] = pd.to_datetime(cad["T5"], format='%Y-%m-%d %H:%M:%S.%f')
 
 df6 = pd.DataFrame({"CityName permanence": cad["Permanence long name"].str.upper(),
@@ -129,7 +137,24 @@ data = pd.concat(frames)
 
 """ Vanaf hier data opsplitsen in train en test"""
 train, test = train_test_split(data, random_state=1)
-print(train)
+X_train = train[['CityName permanence', 'CityName intervention', 'Vector type', 'EventLevel Firstcall']]
+y1_train = train['Time1']
+y2_train = train['Time2']
+print(X_train)
+
+# Maak een OneHotEncoder
+encoder = OneHotEncoder()
+#encoder = OneHotEncoder(sparse_output=False)
+
+# Encode de categorische variabelen
+encoder.fit(X_train)
+X_train = encoder.transform(X_train).toarray()
+#X_train = encoder.fit_transform(X_train)
+#print(X_train)
+
+"""Moeten we hier geen PCA doen?"""
+
+#### imputers (github les) (missing values veranderen)
 
 ## Nagaan hoeveel data er ontbreekt
 city_permanence_count = data['CityName permanence'].isna().sum()
@@ -145,3 +170,33 @@ time1_count = data['Time1'].isna().sum()
 time2_count = data['Time2'].isna().sum()
 #print(time2_count/1045549) # 0.3882247508246864
 
+"""Gingen we de ontbrekende waarden niet verwijderen?"""
+
+#SI_numerical = SimpleImputer(missing_values=pd.NaT, strategy='mean') #missing value is NaT
+#SI_categorical = SimpleImputer(missing_values=None, strategy='most_frequent') #missing value is None? maar na encoder denk ik dat er dan gewoon in alle kolommen een 0 staat dus geen None meer
+
+#y1_train = SI_numerical.fit_transform(y1_train.values.reshape(-1,1))
+#y2_train = SI_numerical.fit_transform(y2_train.values.reshape(-1,1))
+#X_train = SI_categorical.fit_transform(X_train.values.reshape(-1,1)).flatten()
+#print(y1_train)
+#print(y2_train)
+#print(X_train) #geeft rare foutmelding -> geraak er nog niet uit :(
+
+#isolationforest (voor outliers)
+"""Hoe kan je spreken van outliers als het gaat over categorische variabelen?"""
+IsoFo = IsolationForest(n_estimators=100, contamination= 'auto')
+labels_citynameP = IsoFo.fit_predict(np.array(X_train['CityName permanence']).reshape(-1,1))
+labels_citynameI = IsoFo.fit_predict(np.array(X_train['CityName intervention']).reshape(-1,1))
+labels_vector = IsoFo.fit_predict(np.array(X_train['Vector type']).reshape(-1,1))
+labels_eventlevel = IsoFo.fit_predict(np.array(X_Train['EventLevel Firstcall']).reshape(-1,1))
+
+#Only including the inliers
+CityName_permanence_filtered = frames.X_Train['CityName permanence'][labels_citynameP == 1] 
+CityName_intervention_filtered = frames.X_train['CityName intervention'][labels_citynameI == 1]
+Vector_type_filtered = frames.X_train['Vector type'][labels_vector == 1]
+EventLevel_Firstcall_filtered = frames.X_train['EventLevel Firstcall'][labels_eventlevel == 1]
+
+y1_train = np.array(frames.y1_train[labels == 1]).reshape(-1,1)
+y2_train = np.array(frames.y2_train[labels == 1]).reshape(-1,1)
+
+##nu klaar om regressie te doen
