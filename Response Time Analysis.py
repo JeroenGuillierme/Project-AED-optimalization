@@ -8,7 +8,11 @@ from plotly.offline import iplot
 import plotly.graph_objects as go
 import plotly.offline as pyo
 from sklearn.linear_model import LinearRegression
+from datetime import datetime, timedelta
 
+
+
+"""
 ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
 mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
 pit = pd.read_parquet('DATA/pit_locations.parquet.gzip')
@@ -24,7 +28,7 @@ pd.set_option('display.max_columns', None)
 
 
 ##### DATA PRE-PREPROCESSING #####
-""" Ambulance, mug, pit en aed bevatten geen responstijd variabelen dus gebruiken we niet """
+#Ambulance, mug, pit en aed bevatten geen responstijd variabelen dus gebruiken we niet
 
 
 # interventions1: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
@@ -41,7 +45,9 @@ df1 = pd.DataFrame({
     "Time2": interventions1["T5"]-interventions1["T0"]})
 df1["CityName permanence"] = df1["CityName permanence"].str.extract(r'\((.*?)\)')
 df1["CityName intervention"] = df1["CityName intervention"].str.extract(r'\((.*?)\)')
-#print(df1["Time2"])
+df1["Time1"] = df1['Time1'].dt.total_seconds().round()
+df1["Time2"] = df1['Time2'].dt.total_seconds().round()
+print(df1["Time1"])
 
 # interventions2: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
 interventions2["T0"] = pd.to_datetime(interventions2["T0"], format='%d%b%y:%H:%M:%S')
@@ -56,6 +62,8 @@ df2 = pd.DataFrame({"CityName permanence": interventions2["CityName permanence"]
                     "Time2": interventions2["T5"]-interventions2["T0"]})
 df2["CityName permanence"] = df2["CityName permanence"].str.extract(r'\((.*?)\)')
 df2["CityName intervention"] = df2["CityName intervention"].str.extract(r'\((.*?)\)')
+df2["Time1"] = df2['Time1'].dt.total_seconds().round()
+df2["Time2"] = df2['Time2'].dt.total_seconds().round()
 #print(df2["Time2"])
 
 
@@ -72,6 +80,8 @@ df3 = pd.DataFrame({"CityName permanence": interventions3["CityName permanence"]
                     "Time2": interventions3["T5"]-interventions3["T0"]})
 df3["CityName permanence"] = df3["CityName permanence"].str.extract(r'\((.*?)\)')
 df3["CityName intervention"] = df3["CityName intervention"].str.extract(r'\((.*?)\)')
+df3["Time1"] = df3['Time1'].dt.total_seconds().round()
+df3["Time2"] = df3['Time2'].dt.total_seconds().round()
 #print(df3["Time2"])
 
 # interventions4: cityname_permanence, CityName intervention, vector_type, eventLevel_firstcall
@@ -89,6 +99,8 @@ df4["CityName permanence"] = df4["CityName permanence"].str.split(" \(").str[0]
 df4["CityName permanence"] = df4["CityName permanence"].replace("BRUXELLES", "BRUSSEL")
 df4["CityName intervention"] = df4["CityName intervention"].str.split(" \(").str[0]
 df4["CityName intervention"] = df4["CityName intervention"].replace("BRUXELLES", "BRUSSEL")
+df4["Time1"] = df4['Time1'].dt.total_seconds().round()
+df4["Time2"] = df4['Time2'].dt.total_seconds().round()
 #print(df4["Time2"])
 
 
@@ -110,6 +122,8 @@ df5["CityName intervention"] = df5["CityName intervention"].replace("BRUXELLES",
 df5["Vector type"] = df5["Vector type"].replace("AMB", "AMBULANCE")
 df5["EventLevel Firstcall"] = df5["EventLevel Firstcall"].str.split(" ").str[1]
 df5["EventLevel Firstcall"] = df5["EventLevel Firstcall"].str.replace("0", "")
+df5["Time1"] = df5['Time1'].dt.total_seconds().round()
+df5["Time2"] = df5['Time2'].dt.total_seconds().round()
 #print(df5["Time2"])
 
 #cad
@@ -126,35 +140,28 @@ df6 = pd.DataFrame({"CityName permanence": cad["Permanence long name"].str.upper
 df6["CityName permanence"] = df6["CityName permanence"].str.split(" ").str[1]
 df6["Time1"][df6["Time1"] < pd.Timedelta(0)] = pd.NaT
 df6["Time2"][df6["Time2"] < pd.Timedelta(0)] = pd.NaT
+df6["Time1"] = df6['Time1'].dt.total_seconds().round()
+df6["Time2"] = df6['Time2'].dt.total_seconds().round()
 #print(df6["Time2"])
 
 frames = [df1, df2, df3, df4, df5, df6]
 
 data = pd.concat(frames)
+
+data.to_csv('DATA/interventions.csv', index=False)
 #print(data["CityName intervention"])
 
+"""
+
+
+
+
 ##### DATA PREPROCESSING #####
+data = pd.read_csv("DATA/interventions.csv")
 
-""" Vanaf hier data opsplitsen in train en test"""
+
+# Vanaf hier data opsplitsen in train en test
 train, test = train_test_split(data, random_state=1)
-X_train = train[['CityName permanence', 'CityName intervention', 'Vector type', 'EventLevel Firstcall']]
-y1_train = train['Time1']
-y2_train = train['Time2']
-print(X_train)
-
-# Maak een OneHotEncoder
-encoder = OneHotEncoder()
-#encoder = OneHotEncoder(sparse_output=False)
-
-# Encode de categorische variabelen
-encoder.fit(X_train)
-X_train = encoder.transform(X_train).toarray()
-#X_train = encoder.fit_transform(X_train)
-#print(X_train)
-
-"""Moeten we hier geen PCA doen?"""
-
-#### imputers (github les) (missing values veranderen)
 
 ## Nagaan hoeveel data er ontbreekt
 city_permanence_count = data['CityName permanence'].isna().sum()
@@ -170,33 +177,72 @@ time1_count = data['Time1'].isna().sum()
 time2_count = data['Time2'].isna().sum()
 #print(time2_count/1045549) # 0.3882247508246864
 
-"""Gingen we de ontbrekende waarden niet verwijderen?"""
 
-#SI_numerical = SimpleImputer(missing_values=pd.NaT, strategy='mean') #missing value is NaT
-#SI_categorical = SimpleImputer(missing_values=None, strategy='most_frequent') #missing value is None? maar na encoder denk ik dat er dan gewoon in alle kolommen een 0 staat dus geen None meer
+#missing data verwijderen
+train = train.dropna(subset=[
+    'CityName permanence',
+    'CityName intervention',
+    'Vector type',
+    'EventLevel Firstcall',
+    'Time1',
+    'Time2'
+])
 
-#y1_train = SI_numerical.fit_transform(y1_train.values.reshape(-1,1))
-#y2_train = SI_numerical.fit_transform(y2_train.values.reshape(-1,1))
-#X_train = SI_categorical.fit_transform(X_train.values.reshape(-1,1)).flatten()
-#print(y1_train)
-#print(y2_train)
-#print(X_train) #geeft rare foutmelding -> geraak er nog niet uit :(
+
+
+y1_train = train['Time1']
+y2_train = train['Time2']
+X_train = train[['CityName permanence', 'CityName intervention', 'Vector type', 'EventLevel Firstcall']]
+
+
+# Maak een OneHotEncoder
+encoder = OneHotEncoder()
+# Encode de categorische variabelen
+#print(len(list(data["CityName intervention"].unique())))
+encoder.fit(X_train)
+X_train = encoder.transform(X_train).toarray()
+
+
+
+
+## Nagaan hoeveel data er ontbreekt
+city_permanence_count = data['CityName permanence'].isna().sum()
+#print(city_permanence_count/1045549) # 0.10775774258308314
+city_intervention_count = data['CityName intervention'].isna().sum()
+#print(city_intervention_count/1045549) # 0.005094930988408961
+vector_count = data['Vector type'].isna().sum()
+#print(vector_count/1045549) # 0.018477374087680253
+level_count = data['EventLevel Firstcall'].isna().sum()
+#print(level_count/1045549) # 0.026061906232993384
+time1_count = data['Time1'].isna().sum()
+#print(time1_count/1045549) # 0.2206171112018662
+time2_count = data['Time2'].isna().sum()
+#print(time2_count/1045549) # 0.3882247508246864
+
 
 #isolationforest (voor outliers)
-"""Hoe kan je spreken van outliers als het gaat over categorische variabelen?"""
+
+#print(y1_train) # lengte = 404108
+#print(y2_train) # lengte = 404108
+
 IsoFo = IsolationForest(n_estimators=100, contamination= 'auto')
-labels_citynameP = IsoFo.fit_predict(np.array(X_train['CityName permanence']).reshape(-1,1))
-labels_citynameI = IsoFo.fit_predict(np.array(X_train['CityName intervention']).reshape(-1,1))
-labels_vector = IsoFo.fit_predict(np.array(X_train['Vector type']).reshape(-1,1))
-labels_eventlevel = IsoFo.fit_predict(np.array(X_Train['EventLevel Firstcall']).reshape(-1,1))
+y1_labels = IsoFo.fit_predict(np.array(y1_train).reshape(-1,1))
+y2_labels = IsoFo.fit_predict(np.array(y2_train).reshape(-1,1))
 
 #Only including the inliers
-CityName_permanence_filtered = frames.X_Train['CityName permanence'][labels_citynameP == 1] 
-CityName_intervention_filtered = frames.X_train['CityName intervention'][labels_citynameI == 1]
-Vector_type_filtered = frames.X_train['Vector type'][labels_vector == 1]
-EventLevel_Firstcall_filtered = frames.X_train['EventLevel Firstcall'][labels_eventlevel == 1]
 
-y1_train = np.array(frames.y1_train[labels == 1]).reshape(-1,1)
-y2_train = np.array(frames.y2_train[labels == 1]).reshape(-1,1)
+#voor time1
+y1_train_filtered = y1_train[y1_labels == 1]
+X1_train = np.array(X_train[y1_labels == 1]).reshape(-1,1)
+
+#voor time2
+y2_train_filtered = y2_train[y2_labels == 1]
+X2_train = np.array(X_train[y2_labels == 1]).reshape(-1,1)
+
+
+#print(y1_train_filtered) # lengte = 374498 dus er zijn  outliers verwijderd
+#print(y2_train_filtered) # lengte = 374365 dus er zijn  outliers verwijderd
+
+print(y1_train[y1_labels == -1])
 
 ##nu klaar om regressie te doen
