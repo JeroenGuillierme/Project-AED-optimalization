@@ -71,15 +71,16 @@ def extract_numeric(text):
     match = re.search(r'\d+', text)
     return int(match.group()) if match else np.nan
 
+
 # Function to filter rows based on coordinates falling within Belgium
 def is_within_belgium(lat, lon):
     return (belgium_boundaries['min_latitude'] <= lat <= belgium_boundaries['max_latitude']) and \
         (belgium_boundaries['min_longitude'] <= lon <= belgium_boundaries['max_longitude'])
 
+
 # Function to convert Timedelta to minutes
 def timedelta_to_minutes(td):
     return td.total_seconds() / 60
-
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -101,7 +102,6 @@ interventions3["T3"] = pd.to_datetime(interventions3["T3"],
                                       format='%Y-%m-%d %H:%M:%S.%f')  # Convert the column back to datetime with the new format
 interventions_total = pd.concat([interventions1, interventions2, interventions3], axis=0)
 
-
 interventions_total['CAD9'] = 0
 interventions_total["T3-T0"] = interventions_total["T3"] - interventions_total["T0"]
 interventions_total = interventions_total[interventions_total["EventType Firstcall"] == "P003 - Cardiac arrest"]
@@ -112,24 +112,22 @@ interventions_total['Intervention'] = 1
 interventions_total = interventions_total[
     ['Latitude', 'Longitude', "Intervention", "CAD9", "Eventlevel", "T3-T0"]]
 
-
 # Append CAD9 dataset
 CAD9_expanded = cad
-CAD9_expanded['CAD9'] = 1 # add extra column CAD9
-CAD9_expanded['Intervention'] = 1 # add extra column Intervention
+CAD9_expanded['CAD9'] = 1  # add extra column CAD9
+CAD9_expanded['Intervention'] = 1  # add extra column Intervention
 CAD9_expanded["T0"] = pd.to_datetime(CAD9_expanded["T0"],
                                      format='%Y-%m-%d %H:%M:%S.%f')  # Convert the column back to datetime with the new format
 CAD9_expanded["T3"] = pd.to_datetime(CAD9_expanded["T3"],
                                      format='%Y-%m-%d %H:%M:%S.%f')  # Convert the column back to datetime with the new format
 CAD9_expanded["T3-T0"] = CAD9_expanded["T3"] - CAD9_expanded["T0"]
-CAD9_expanded.loc[CAD9_expanded['T3-T0'] < pd.Timedelta(0), 'T3-T0'] = pd.NaT # Transform negative time difference to NaT
+CAD9_expanded.loc[
+    CAD9_expanded['T3-T0'] < pd.Timedelta(0), 'T3-T0'] = pd.NaT  # Transform negative time difference to NaT
 CAD9_expanded = CAD9_expanded[CAD9_expanded["EventType Trip"] == "P003 - HARTSTILSTAND - DOOD - OVERLEDEN"]
 CAD9_expanded['Eventlevel'] = CAD9_expanded['EventLevel Trip']
 CAD9_expanded['Latitude'] = CAD9_expanded['Latitude intervention'].apply(correct_latitude)
 CAD9_expanded['Longitude'] = CAD9_expanded['Longitude intervention'].apply(correct_longitude)
 CAD9_expanded = CAD9_expanded[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0']]
-
-
 
 # Append datasets interventions Brussels
 # Interventions 4
@@ -145,7 +143,6 @@ interventions4['T3-T0'] = interventions4['t3'] - interventions4['t0']
 interventions4['Latitude'] = interventions4['latitude_intervention'].apply(correct_latitude)
 interventions4['Longitude'] = interventions4['longitude_intervention'].apply(correct_longitude)
 interventions4 = interventions4[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0']]
-
 
 # Interventions 5
 interventions5["T0"] = pd.to_datetime(interventions5["T0"],
@@ -163,51 +160,34 @@ interventions5['Latitude'] = interventions5['Latitude intervention'].apply(corre
 interventions5['Longitude'] = interventions5['Longitude intervention'].apply(correct_longitude)
 interventions5 = interventions5[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0']]
 
-
 # Putting everything together
 interventions_TOTAL = pd.concat([interventions_total, CAD9_expanded, interventions4, interventions5], axis=0)
-interventions_TOTAL['AED'] = 0 # Adding extra AED column
+interventions_TOTAL['AED'] = 0  # Adding extra AED column
 interventions_TOTAL['Eventlevel'] = interventions_TOTAL['Eventlevel'].apply(extract_numeric)
 interventions_TOTAL['Ambulance'] = 0
 interventions_TOTAL['Mug'] = 0
 interventions_TOTAL['Occasional_Permanence'] = np.nan
 
-# Filter out rows where T3-T0 is greater than one day
-#one_day = pd.Timedelta(days=1)
-#one_hour = pd.Timedelta(minutes=55)
-#interventions_TOTAL = interventions_TOTAL[interventions_TOTAL['T3-T0'] < one_hour] # We lose approx. 4000 interventions with a response tie longer then one day
+# Filter out rows where T3-T0 is greater than one day => Changed by IsolationForest algorithm
+# one_day = pd.Timedelta(days=1)
+# one_hour = pd.Timedelta(minutes=55)
+# interventions_TOTAL = interventions_TOTAL[interventions_TOTAL['T3-T0'] < one_hour] # We lose approx. 4000 interventions with a response tie longer then one day
 
 interventions_TOTAL['T3-T0_min'] = interventions_TOTAL['T3-T0'].apply(timedelta_to_minutes)
-interventions_TOTAL = interventions_TOTAL[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence']]
+interventions_TOTAL = interventions_TOTAL[
+    ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
+     'Occasional_Permanence']]
 print(list(interventions_TOTAL.columns))
 print(interventions_TOTAL['T3-T0_min'])
-
-
-
-# Get the minimum and maximum values of the 'latitude' column
-min_latitude = interventions_TOTAL['Latitude'].min()
-max_latitude = interventions_TOTAL['Latitude'].max()
-# Get the minimum and maximum values of the 'longitude' column
-min_longitude = interventions_TOTAL['Longitude'].min()
-max_longitude = interventions_TOTAL['Longitude'].max()
-
-print(f"Minimum latitude: {min_latitude}")
-print(f"Maximum latitude: {max_latitude}")
-print(f"Minimum longitude: {min_longitude}")
-print(f"Maximum longitude: {max_longitude}")
-
-
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PREPROCESSING AED DATASETS
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 aed_total = pd.concat([aed_1, aed_2, aed_3, aed_4, aed_5], axis=0)
 yes_values = ['Y', 'y', 'Oui-Ja', 'Ja', 'Oui', 'J', np.nan]
 aed_total = aed_total[
     aed_total['public'].isin(yes_values)]  # discard non-public aed's and also when no data is available
-
 
 aed_total['Latitude'] = aed_total['latitude'].apply(correct_latitude)
 aed_total['Longitude'] = aed_total['longitude'].apply(correct_longitude)
@@ -219,21 +199,9 @@ aed_total['T3-T0_min'] = pd.NaT
 aed_total['Ambulance'] = 0
 aed_total['Mug'] = 0
 aed_total['Occasional_Permanence'] = np.nan
-aed_total = aed_total[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence']]
-
-
-# Get the minimum and maximum values of the 'latitude' column
-min_latitude = aed_total['Latitude'].min()
-max_latitude = aed_total['Latitude'].max()
-# Get the minimum and maximum values of the 'longitude' column
-min_longitude = aed_total['Longitude'].min()
-max_longitude = aed_total['Longitude'].max()
-
-print(f"Minimum latitude: {min_latitude}")
-print(f"Maximum latitude: {max_latitude}")
-print(f"Minimum longitude: {min_longitude}")
-print(f"Maximum longitude: {max_longitude}")
-print(len(aed_total))
+aed_total = aed_total[
+    ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
+     'Occasional_Permanence']]
 
 # Define the geographical boundaries of Belgium
 belgium_boundaries = {
@@ -243,23 +211,8 @@ belgium_boundaries = {
     'max_longitude': 8
 }
 
-
 # Apply the filter function to the aed_total
 aed_total2 = aed_total[aed_total.apply(lambda row: is_within_belgium(row['Latitude'], row['Longitude']), axis=1)]
-
-
-# Get the minimum and maximum values of the 'latitude' column
-min_latitude = aed_total2['Latitude'].min()
-max_latitude = aed_total2['Latitude'].max()
-# Get the minimum and maximum values of the 'longitude' column
-min_longitude = aed_total2['Longitude'].min()
-max_longitude = aed_total2['Longitude'].max()
-
-print(f"Minimum latitude aed_total2: {min_latitude}")
-print(f"Maximum latitude aed_total2: {max_latitude}")
-print(f"Minimum longitude aed_total2: {min_longitude}")
-print(f"Maximum longitude aed_total2: {max_longitude}")
-print(len(aed_total2))
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PREPROCESSING AMBULANCE DATASETS
@@ -275,9 +228,9 @@ ambulance['Eventlevel'] = np.nan
 ambulance['T3-T0_min'] = pd.NaT
 ambulance['Ambulance'] = 1
 ambulance['Mug'] = 0
-ambulance = ambulance[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence']]
-print(ambulance.head())
-
+ambulance = ambulance[
+    ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
+     'Occasional_Permanence']]
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PREPROCESSING MUG DATASETS
@@ -285,7 +238,7 @@ print(ambulance.head())
 
 mug1['Latitude'] = mug1['latitude'].apply(correct_latitude)
 mug1['Longitude'] = mug1['longitude'].apply(correct_longitude)
-mug1['Occasional_Permanence'] = 1 # we assume the mug comes from the hospital and is permanently available.
+mug1['Occasional_Permanence'] = 1  # we assume the mug comes from the hospital and is permanently available.
 mug1['CAD9'] = 0
 mug1['Intervention'] = 0
 mug1['AED'] = 0
@@ -293,10 +246,8 @@ mug1['Eventlevel'] = np.nan
 mug1['T3-T0_min'] = pd.NaT
 mug1['Ambulance'] = 1
 mug1['Mug'] = 1
-mug1 = mug1[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence']]
-print(mug1.head())
-
-
+mug1 = mug1[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
+             'Occasional_Permanence']]
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ALL TOGETHER FOR AED OPTIMISATION
@@ -305,59 +256,91 @@ print(list(aed_total2.columns))
 print(list(interventions_TOTAL.columns))
 print(list(ambulance.columns))
 print(list(mug1.columns))
-
 aed_df = pd.concat([interventions_TOTAL, aed_total2, ambulance, mug1], axis=0)
 
 print(aed_df.head())
 print(len(aed_df))
-print('Unique Latitude values: ', len(list(aed_df['Latitude'].unique())))
-print('Unique Longitude values: ', len(list(aed_df['Longitude'].unique())))
-print('Unique eventlevels', aed_df['Eventlevel'].unique())
+print('Unique number of values Latitude values: ', len(list(aed_df['Latitude'].unique())))
+print('Unique number of values Longitude values: ', len(list(aed_df['Longitude'].unique())))
+print('Unique values eventlevels', aed_df['Eventlevel'].unique())
 print('Unique values CAD9: ', aed_df['CAD9'].unique())
 cross_tab = pd.crosstab(index=pd.Categorical(aed_df["Eventlevel"]), columns='count')
-print(cross_tab)
-
-
-# Get the minimum and maximum values of the 'latitude' column
-min_latitude = aed_df['Latitude'].min()
-max_latitude = aed_df['Latitude'].max()
-# Get the minimum and maximum values of the 'longitude' column
-min_longitude = aed_df['Longitude'].min()
-max_longitude = aed_df['Longitude'].max()
-
-print(f"Minimum latitude aed_df: {min_latitude}")
-print(f"Maximum latitude aed_df: {max_latitude}")
-print(f"Minimum longitude aed_df: {min_longitude}")
-print(f"Maximum longitude aed_df: {max_longitude}")
-
+print('Cross table of Event Levels: \n', cross_tab)
 
 max_responseTime = aed_df['T3-T0_min'].max()
 print(f"Maximum Response Time for aed_df: {max_responseTime}")
 
-print(aed_df['Longitude'].isna().sum())
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# OUTLIER DETECTION RESPONSE TIME T3-T0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# IsolationForest (for outliers/anomalies of the response time T3-T0, because some are longer than 1 day)
+# => probably incorrectly filled in, in the dataset
 
-# df.to_parquet('DATA/aed_placement_df.parquet', index=False)
+print(aed_df['T3-T0_min'].isna().sum())  # 17445 NaN values
+
+# Split the DataFrame into two: one with the NaN and one without in the 'T3-T0_min' column
+aed_df_with_nan = aed_df[aed_df['T3-T0_min'].isna()]  # DataFrame with NaN values
+aed_df_without_nan = aed_df[~aed_df['T3-T0_min'].isna()]  # DataFrame without NaN values
+print('Without NaN: ', len(aed_df_without_nan))
+print('With NaN: ', len(aed_df_with_nan))
+
+Time = aed_df_without_nan['T3-T0_min']
+
+# IsolationForest algorithm
+IsoFo = IsolationForest(n_estimators=100, contamination='auto',
+                        random_state=45)  # Random state added for reproducibility
+y_labels = IsoFo.fit_predict(np.array(Time).reshape(-1, 1))
+
+# Only including the inliers
+aed_df_filtered = aed_df_without_nan[y_labels == 1]  # DataFrame with inliers
+discarded_rows = aed_df_without_nan[y_labels == -1]  # DataFrame with outliers
+
+min_timedelta = discarded_rows['T3-T0_min'].min()  # Time deltas larger than 44.27 minutes are discarded
+max_timedelta = discarded_rows['T3-T0_min'].max()
+min_timedelta2 = aed_df_filtered['T3-T0_min'].min()
+max_timedelta2 = aed_df_filtered['T3-T0_min'].max()
+print(f"min_timedelta of outliers: {min_timedelta}")  # Minimum outlier value = 44.27 minutes
+print(f"max_timedelta of outliers: {max_timedelta}")  # Maximum outlier value = 80267.83 minutes
+print(f"min_timedelta of inliers: {min_timedelta2}")  # Minimum outlier value = 0.62 minutes
+print(f"max_timedelta of inliers: {max_timedelta2}")  # Maximum outlier value = 44.17 minutes
+print(f"Number of discarded rows: {len(discarded_rows)}")  # 1040
+print(f"Number of filtered rows: {len(aed_df_filtered)}")  # 9306
+
+print("\nFiltered DataFrame (Inliers):")
+# print(aed_df_filtered)
 
 
-#isolationforest (voor outliers)
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# TOTAL DATASET WITHOUT OUTLIERS
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#print(y1_train) # lengte = 404108
-#print(y2_train) # lengte = 404108
+# Add rows with NaN values again:
+print(list(aed_df_filtered.columns))
+print(list(aed_df_with_nan.columns))
+aed_ready = pd.concat([aed_df_filtered, aed_df_with_nan], axis=0)
 
-
-Time = aed_df['T3-T0_min']
-Time2 = Time.dropna()
-x = range(0, len(Time2))
-plt.scatter(x, Time2)
+x = range(0, 9306)
+plt.scatter(x, aed_df_filtered['T3-T0_min'])
 plt.show()
 
-IsoFo = IsolationForest(n_estimators=100, contamination= 'auto')
-y_labels = IsoFo.fit_predict(np.array(Time).reshape(-1,1))
+# Last check if no weird values are included in the dataset
 
+# Get the minimum and maximum values of the 'latitude' column
+min_latitude = aed_ready['Latitude'].min()
+max_latitude = aed_ready['Latitude'].max()
+# Get the minimum and maximum values of the 'longitude' column
+min_longitude = aed_ready['Longitude'].min()
+max_longitude = aed_ready['Longitude'].max()
+# Get the minimum and maximum values of the response time column
+min_timedelta = aed_ready['T3-T0_min'].min()
+max_timedelta = aed_ready['T3-T0_min'].max()
 
-#Only including the inliers
+print('Length of dataset: ', len(aed_ready))
+print(f"Minimum latitude of dataset: {min_latitude}")
+print(f"Maximum latitude of dataset: {max_latitude}")
+print(f"Minimum longitude of dataset: {min_longitude}")
+print(f"Maximum longitude of dataset: {max_longitude}")
+print(f"min_timedelta of dataset: {min_timedelta}")  # Minimum outlier value = 44.27 minutes
+print(f"max_timedelta of dataset: {max_timedelta}")  # Maximum outlier value = 80267.83 minutes
 
-# voor T3-T0
-aed_df_filtered = np.array(aed_df[y_labels == 1]).reshape(-1, 1)
-
-
+aed_ready.to_csv('DATA/aed_placement_df.csv', index=False)
