@@ -169,95 +169,91 @@ data.to_csv('DATA/interventions.csv', index=False)
 """
 
 
-
-
 ##### DATA PREPROCESSING #####
-data = pd.read_csv("DATA/interventions.csv")
+interventions = pd.read_csv("DATA/interventions.csv")
+
+data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]]
+
+## Nagaan hoeveel data er ontbreekt
+#print(data.isna().sum().sort_values()/len(data))
+
+# Remove missing observations
+data = data.dropna(subset=['Province','Vector','Eventlevel','Time1','Time2'])
 
 
 # Vanaf hier data opsplitsen in train en test
-train, test = train_test_split(data, random_state=1)
-
-## Nagaan hoeveel data er ontbreekt
-city_permanence_count = data['CityName permanence'].isna().sum()
-#print(city_permanence_count/1045549) # 0.10775774258308314
-city_intervention_count = data['CityName intervention'].isna().sum()
-#print(city_intervention_count/1045549) # 0.005094930988408961
-vector_count = data['Vector type'].isna().sum()
-#print(vector_count/1045549) # 0.018477374087680253
-level_count = data['EventLevel Firstcall'].isna().sum()
-#print(level_count/1045549) # 0.026061906232993384
-time1_count = data['Time1'].isna().sum()
-#print(time1_count/1045549) # 0.2206171112018662
-time2_count = data['Time2'].isna().sum()
-#print(time2_count/1045549) # 0.3882247508246864
-
-
-#missing data verwijderen
-train = train.dropna(subset=[
-    'CityName permanence',
-    'CityName intervention',
-    'Vector type',
-    'EventLevel Firstcall',
-    'Time1',
-    'Time2'
-])
-
+train, test = train_test_split(data, random_state=21) #784161 observaties
 
 
 y1_train = train['Time1']
+y1_test = test['Time1']
 y2_train = train['Time2']
-X_train = train[['CityName permanence', 'CityName intervention', 'Vector type', 'EventLevel Firstcall']]
+y2_test = test['Time2']
+X_train = train[['Province', 'Vector', 'Eventlevel']] # observaties na verwijderen van missing data
+X_test = test[['Province', 'Vector', 'Eventlevel']]
 
-
-# Maak een OneHotEncoder
-encoder = OneHotEncoder()
 # Encode de categorische variabelen
-#print(len(list(data["CityName intervention"].unique())))
+#print(data["Province"].value_counts()) #11 regio's met elk voldoende observaties
+#print(data["Vector"].value_counts()) #5 vector types
+#print(data["Eventlevel"].value_counts()) #10 eventlevels
+encoder = OneHotEncoder(handle_unknown='ignore')
 encoder.fit(X_train)
 X_train = encoder.transform(X_train).toarray()
+X_test = encoder.transform(X_test).toarray()
 
 
-
-
-## Nagaan hoeveel data er ontbreekt
-city_permanence_count = data['CityName permanence'].isna().sum()
-#print(city_permanence_count/1045549) # 0.10775774258308314
-city_intervention_count = data['CityName intervention'].isna().sum()
-#print(city_intervention_count/1045549) # 0.005094930988408961
-vector_count = data['Vector type'].isna().sum()
-#print(vector_count/1045549) # 0.018477374087680253
-level_count = data['EventLevel Firstcall'].isna().sum()
-#print(level_count/1045549) # 0.026061906232993384
-time1_count = data['Time1'].isna().sum()
-#print(time1_count/1045549) # 0.2206171112018662
-time2_count = data['Time2'].isna().sum()
-#print(time2_count/1045549) # 0.3882247508246864
-
-
-#isolationforest (voor outliers)
-
-#print(y1_train) # lengte = 404108
-#print(y2_train) # lengte = 404108
-
+# Isolationforest (voor outliers)
 IsoFo = IsolationForest(n_estimators=100, contamination= 'auto')
 y1_labels = IsoFo.fit_predict(np.array(y1_train).reshape(-1,1))
-y2_labels = IsoFo.fit_predict(np.array(y2_train).reshape(-1,1))
+#y2_labels = IsoFo.fit_predict(np.array(y2_train).reshape(-1,1))
 
-#Only including the inliers
+# Only including the inliers
 
 #voor time1
 y1_train_filtered = y1_train[y1_labels == 1]
-X1_train = np.array(X_train[y1_labels == 1]).reshape(-1,1)
+X1_train_filtered = np.array(X_train[y1_labels == 1]) # observaties na verwijderen van outliers
+print(min(y1_train[y1_labels == -1])) #verwijderde outliers: meer dan 2767sec of 46min
+
 
 #voor time2
-y2_train_filtered = y2_train[y2_labels == 1]
-X2_train = np.array(X_train[y2_labels == 1]).reshape(-1,1)
+#y2_train_filtered = y2_train[y2_labels == 1]
+#X2_train_filtered = np.array(X_train[y2_labels == 1]).reshape(-1,1)
 
 
-#print(y1_train_filtered) # lengte = 374498 dus er zijn  outliers verwijderd
-#print(y2_train_filtered) # lengte = 374365 dus er zijn  outliers verwijderd
-
-print(y1_train[y1_labels == -1])
 
 ##nu klaar om regressie te doen
+
+
+# Define parameters: these will need to be tuned to prevent overfitting and underfitting
+params = {
+    "n_estimators": 100,  # Number of trees in the forest
+    "max_depth": 10,  # Max depth of the tree
+    "min_samples_split": 4,  # Min number of samples required to split a node
+    "min_samples_leaf": 2,  # Min number of samples required at a leaf node
+    "ccp_alpha": 0,  # Cost complexity parameter for pruning
+    "random_state": 123,
+}
+
+
+# Create a RandomForestRegressor object with the parameters above
+rf = RandomForestRegressor(**params)
+
+# Train the random forest on the train set
+rf = rf.fit(X1_train_filtered, y1_train_filtered)
+
+# Predict the outcomes on the test set
+y1_pred = rf.predict(X_test)
+
+# Evaluate performance with error metrics
+print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
+print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
+print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
+
+
+# Create a sorted Series of features importances
+importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
+
+# Plot a horizontal barplot of importances_sorted
+importances_sorted.plot(kind="barh")
+plt.title("Features Importances")
+plt.show()
