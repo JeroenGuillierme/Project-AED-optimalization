@@ -44,18 +44,10 @@ df1 = pd.DataFrame({
     "Eventlevel": interventions1["EventLevel Firstcall"].str.upper(),
     "Time1": interventions1["T3"]-interventions1["T0"],
     "Time2": interventions1["T5"]-interventions1["T0"]})
-df1["Province"] = df1["Province"].replace("ANT","ANTWERPEN")
-df1["Province"] = df1["Province"].replace("OVL","OOST-VLAANDEREN")
-df1["Province"] = df1["Province"].replace("WVL","WEST-VLAANDEREN")
-df1["Province"] = df1["Province"].replace("HAI","HENEGOUWEN")
-df1["Province"] = df1["Province"].replace("BRW","WAALS_BRABANT")
-df1["Province"] = df1["Province"].replace("VBR","VLAAMS-BRABANT")
 df1["City Permanence"] = df1["City Permanence"].str.extract(r'\((.*?)\)')
 df1["City Intervention"] = df1["City Intervention"].str.extract(r'\((.*?)\)')
 df1["Eventlevel"] = df1["Eventlevel"].str.replace("A","")
 df1["Eventlevel"] = df1["Eventlevel"].str.replace("B","")
-df1["Time1"] = df1['Time1'].dt.total_seconds().round()
-df1["Time2"] = df1['Time2'].dt.total_seconds().round()
 
 
 # interventions2: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
@@ -70,12 +62,10 @@ df2 = pd.DataFrame({
                     "Eventlevel": interventions2["EventLevel Firstcall"].str.upper(),
                     "Time1": interventions2["T3"]-interventions2["T0"],
                     "Time2": interventions2["T5"]-interventions2["T0"]})
-df2["Province"] = df2["Province"].replace("HAI","HENEGOUWEN")
-df2["Province"] = df2["Province"].replace("LIE","LUIK")
 df2["City Permanence"] = df2["City Permanence"].str.extract(r'\((.*?)\)')
 df2["City Intervention"] = df2["City Intervention"].str.extract(r'\((.*?)\)')
-df2["Time1"] = df2['Time1'].dt.total_seconds().round()
-df2["Time2"] = df2['Time2'].dt.total_seconds().round()
+df2["Eventlevel"] = df2["Eventlevel"].str.replace("A","")
+df2["Eventlevel"] = df2["Eventlevel"].str.replace("B","")
 
 
 # interventions3: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
@@ -90,14 +80,10 @@ df3 = pd.DataFrame({
                     "Eventlevel": interventions3["EventLevel Firstcall"].str.upper(),
                     "Time1": interventions3["T3"]-interventions3["T0"],
                     "Time2": interventions3["T5"]-interventions3["T0"]})
-df3["Province"] = df3["Province"].replace("LIE","LUIK")
-df3["Province"] = df3["Province"].replace("LIM","LIMBURG")
-df3["Province"] = df3["Province"].replace("NAM","NAMEN")
-df3["Province"] = df3["Province"].replace("LUX","LUXEMBURG")
 df3["City Permanence"] = df3["City Permanence"].str.extract(r'\((.*?)\)')
 df3["City Intervention"] = df3["City Intervention"].str.extract(r'\((.*?)\)')
-df3["Time1"] = df3['Time1'].dt.total_seconds().round()
-df3["Time2"] = df3['Time2'].dt.total_seconds().round()
+df3["Eventlevel"] = df3["Eventlevel"].str.replace("A","")
+df3["Eventlevel"] = df3["Eventlevel"].str.replace("B","")
 
 
 # interventions4: cityname_permanence, CityName intervention, vector_type, eventLevel_firstcall
@@ -116,8 +102,6 @@ df4["City Permanence"] = df4["City Permanence"].str.split(" \(").str[0]
 df4["City Permanence"] = df4["City Permanence"].replace("BRUXELLES", "BRUSSEL")
 df4["City Intervention"] = df4["City Intervention"].str.split(" \(").str[0]
 df4["City Intervention"] = df4["City Intervention"].replace("BRUXELLES", "BRUSSEL")
-df4["Time1"] = df4['Time1'].dt.total_seconds().round()
-df4["Time2"] = df4['Time2'].dt.total_seconds().round()
 
 
 #interventions5
@@ -138,9 +122,9 @@ df5["City Intervention"] = df5["City Intervention"].str.extract(r'\((.*?)\)')
 df5["City Intervention"] = df5["City Intervention"].replace("BRUXELLES", "BRUSSEL")
 df5["Vector"] = df5["Vector"].replace("AMB", "AMBULANCE")
 df5["Eventlevel"] = df5["Eventlevel"].str.split(" ").str[1]
+df5["Eventlevel"] = df5["Eventlevel"].str.replace("BUITENDIENSTSTELLING", "")
+df5["Eventlevel"] = df5["Eventlevel"].str.replace("INTERVENTIEPLAN", "")
 df5["Eventlevel"] = df5["Eventlevel"].str.replace("0", "")
-df5["Time1"] = df5['Time1'].dt.total_seconds().round()
-df5["Time2"] = df5['Time2'].dt.total_seconds().round()
 
 
 #cad
@@ -155,19 +139,32 @@ df6 = pd.DataFrame({
                     "Eventlevel": cad["EventLevel Trip"].str.upper(),
                     "Time1": cad["T3"]-cad["T0"],
                     "Time2": cad["T5"]-cad["T0"]})
-df6["Province"] = df6["Province"].replace("NAM","NAMEN")
-df6["Province"] = df6["Province"].replace("WVL","WEST-VLAANDEREN")
-df6["Province"] = df6["Province"].replace("OVL","OOST-VLAANDEREN")
-df6["Province"] = df6["Province"].replace("VBR","VLAAMS-BRABANT")
 df6["City Permanence"] = df6["City Permanence"].str.split(" ").str[1]
-df6["Time1"] = df6['Time1'].dt.total_seconds().round()
-df6["Time2"] = df6['Time2'].dt.total_seconds().round()
-df6["Time1"][df6['Time1'] < 0] = pd.NaT
-df6["Time2"][df6['Time2'] < 0] = pd.NaT
+valid_categories = ["N1","N2", "N3", "N4", "N5", "N6", "N7", "N8"]
+df6.loc[~df6['Eventlevel'].isin(valid_categories), 'Eventlevel'] = 'OTHER'
 
 
 frames = [df1, df2, df3, df4, df5, df6]
 data = pd.concat(frames)
+
+
+data["Province"] = data["Province"].replace("ANT","ANTWERPEN")
+data["Province"] = data["Province"].replace("OVL","OOST-VLAANDEREN")
+data["Province"] = data["Province"].replace("WVL","WEST-VLAANDEREN")
+data["Province"] = data["Province"].replace("HAI","HENEGOUWEN")
+data["Province"] = data["Province"].replace("BRW","WAALS_BRABANT")
+data["Province"] = data["Province"].replace("VBR","VLAAMS-BRABANT")
+data["Province"] = data["Province"].replace("NAM","NAMEN")
+data["Province"] = data["Province"].replace("LIE","LUIK")
+data["Province"] = data["Province"].replace("LIM","LIMBURG")
+data["Province"] = data["Province"].replace("LUX","LUXEMBURG")
+data["Vector"] = data["Vector"].str.split(" ").str[0]
+data["Time1"] = data["Time1"].dt.total_seconds().round()
+data["Time1"][data["Time1"] < 0] = pd.NaT
+data["Time2"] = data["Time2"].dt.total_seconds().round()
+data["Time2"][data["Time2"] < 0] = pd.NaT
+
+
 data.to_csv('DATA/interventions.csv', index=False)
 """
 
