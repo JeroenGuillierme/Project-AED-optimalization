@@ -16,7 +16,7 @@ from sklearn import metrics
 
 
 
-
+"""
 #Open data
 ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
 mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
@@ -170,7 +170,7 @@ data["Time2"][data["Time2"] < 0] = pd.NaT
 
 
 data.to_csv('DATA/interventions.csv', index=False)
-
+"""
 
 
 ##### DATA PREPROCESSING #####
@@ -261,3 +261,35 @@ importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(
 importances_sorted.plot(kind="barh")
 plt.title("Features Importances")
 plt.show()
+
+
+### Hyperparameter tuning with random search
+# Define a parameter grid with distributions of possible parameters to use
+rs_param_grid = {
+    "n_estimators": list((range(20, 200))),
+    "max_depth": list((range(3, 12))),
+    "min_samples_split": list((range(2, 5))),
+    "min_samples_leaf": list((range(1, 5))),
+    "ccp_alpha": [0, 0.001, 0.01, 0.1],
+}
+
+# Create a RandomForestRegressor
+rf = RandomForestRegressor(random_state=123)
+
+# Instantiate RandomizedSearchCV() with rf and the parameter grid
+rf_rs = RandomizedSearchCV(
+    estimator=rf,
+    param_distributions=rs_param_grid,
+    cv=3,  # Number of folds
+    n_iter=10,  # Number of parameter candidate settings to sample
+    verbose=2,  # The higher this is, the more messages are outputed
+    scoring="neg_mean_absolute_error",  # Metric to evaluate performance
+    random_state=123
+)
+
+# Train the model on the training set
+rf_rs.fit(X1_train_filtered, y1_train_filtered)
+
+# Print the best parameters and highest accuracy
+print("Best parameters found: ", rf_rs.best_params_)
+print("Best performance: ", rf_rs.best_score_)
