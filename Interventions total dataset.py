@@ -336,6 +336,9 @@ min_timedelta = aed_ready['T3-T0_min'].min()
 max_timedelta = aed_ready['T3-T0_min'].max()
 
 print('Length of dataset: ', len(aed_ready))
+print('Number of missing values per column: \n', print(aed_ready[['Latitude', 'Longitude', 'Intervention', 'CAD9',
+                                                                  'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
+                                                                  'Occasional_Permanence']].isna().sum())) # 1210 missing values for latitude from intervention dataset
 print(f"Minimum latitude of dataset: {min_latitude}")
 print(f"Maximum latitude of dataset: {max_latitude}")
 print(f"Minimum longitude of dataset: {min_longitude}")
@@ -343,4 +346,4 @@ print(f"Maximum longitude of dataset: {max_longitude}")
 print(f"min_timedelta of dataset: {min_timedelta}")  # Minimum outlier value = 44.27 minutes
 print(f"max_timedelta of dataset: {max_timedelta}")  # Maximum outlier value = 80267.83 minutes
 
-aed_ready.to_csv('DATA/aed_placement_df.csv', index=False)
+#aed_ready.to_csv('DATA/aed_placement_df.csv', index=False)
