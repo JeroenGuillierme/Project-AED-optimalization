@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn import metrics
+import statsmodels as sm
 
 
 
@@ -176,24 +177,26 @@ data.to_csv('DATA/interventions.csv', index=False)
 ##### DATA PREPROCESSING #####
 interventions = pd.read_csv("DATA/interventions.csv")
 
-data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]]
+data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observaties
 
 ## Nagaan hoeveel data er ontbreekt
 #print(data.isna().sum().sort_values()/len(data))
 
 # Remove missing observations
-data = data.dropna(subset=['Province','Vector','Eventlevel','Time1','Time2'])
+data = data.dropna(subset=['Province','Vector','Eventlevel','Time1','Time2']) # 622375 observaties na verwijderen van missing data
 
+#print("min(Time1) = ",min(data["Time1"])) # min Time1 = 13s
+#print("max(Time1) = ",max(data["Time1"])) # max Time1 = 4820918s
 
 # Vanaf hier data opsplitsen in train en test
-train, test = train_test_split(data, random_state=21) #784161 observaties
+train, test = train_test_split(data, random_state=21) #466781 observaties in train (dus 75% van data wordt gebruikt als train)
 
 
 y1_train = train['Time1']
 y1_test = test['Time1']
 y2_train = train['Time2']
 y2_test = test['Time2']
-X_train = train[['Province', 'Vector', 'Eventlevel']] # observaties na verwijderen van missing data
+X_train = train[['Province', 'Vector', 'Eventlevel']]
 X_test = test[['Province', 'Vector', 'Eventlevel']]
 
 # Encode de categorische variabelen
@@ -205,9 +208,8 @@ encoder.fit(X_train)
 X_train = encoder.transform(X_train).toarray()
 X_test = encoder.transform(X_test).toarray()
 
-
 # Isolationforest (voor outliers)
-IsoFo = IsolationForest(n_estimators=100, contamination= 'auto')
+IsoFo = IsolationForest(n_estimators=100, contamination= 'auto', random_state=31)
 y1_labels = IsoFo.fit_predict(np.array(y1_train).reshape(-1,1))
 #y2_labels = IsoFo.fit_predict(np.array(y2_train).reshape(-1,1))
 
@@ -215,14 +217,16 @@ y1_labels = IsoFo.fit_predict(np.array(y1_train).reshape(-1,1))
 
 #voor time1
 y1_train_filtered = y1_train[y1_labels == 1]
-X1_train_filtered = np.array(X_train[y1_labels == 1]) # observaties na verwijderen van outliers
-print(min(y1_train[y1_labels == -1])) #verwijderde outliers: meer dan 2767sec of 46min
-
+X1_train_filtered = np.array(X_train[y1_labels == 1]) # 420393 observaties na verwijderen van outliers
+#print("smallest removed outlier: ",min(y1_train[y1_labels == -1])) # removed outliers > 2812sec or 47min
+#print("mean(Time1) = ",y1_train_filtered.mean()) # mean(Time1) = 826sec or 13,7min
+#print("min(Time1): ",min(y1_train_filtered)) # min(Time1) = 18s -> impossible?!
+#print("max(Time1): ",max(y1_train_filtered)) # max(Time1) = 2811sec or 46min
+#print(y1_train_filtered[y1_train_filtered < 120]) # 1821 observations have Time1 < 120s or 2min
 
 #voor time2
 #y2_train_filtered = y2_train[y2_labels == 1]
 #X2_train_filtered = np.array(X_train[y2_labels == 1]).reshape(-1,1)
-
 
 
 ### Random Forest Regression
@@ -253,7 +257,7 @@ print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
 print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
 print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
 
-
+"""
 # Create a sorted Series of features importances
 importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
 
@@ -293,3 +297,4 @@ rf_rs.fit(X1_train_filtered, y1_train_filtered)
 # Print the best parameters and highest accuracy
 print("Best parameters found: ", rf_rs.best_params_)
 print("Best performance: ", rf_rs.best_score_)
+"""
