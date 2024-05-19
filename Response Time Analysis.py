@@ -9,10 +9,14 @@ import plotly.graph_objects as go
 import plotly.offline as pyo
 from sklearn.linear_model import LinearRegression
 from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn import metrics
 
 
 
-"""
+
 #Open data
 ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
 mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
@@ -166,7 +170,7 @@ data["Time2"][data["Time2"] < 0] = pd.NaT
 
 
 data.to_csv('DATA/interventions.csv', index=False)
-"""
+
 
 
 ##### DATA PREPROCESSING #####
@@ -221,7 +225,7 @@ print(min(y1_train[y1_labels == -1])) #verwijderde outliers: meer dan 2767sec of
 
 
 
-##nu klaar om regressie te doen
+### Random Forest Regression
 
 
 # Define parameters: these will need to be tuned to prevent overfitting and underfitting
