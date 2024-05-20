@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-<<<<<<< HEAD
-    <orderEntry type="inheritedJdk" />
-=======
-<<<<<<< Updated upstream
     <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
-=======
-    <orderEntry type="inheritedJdk" />
->>>>>>> Stashed changes
->>>>>>> ec934ff814eb2588d98e60e0703e7f229c948939
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
