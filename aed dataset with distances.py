@@ -80,6 +80,7 @@ print(data[data['Mug']==1])
 print(data[data['CAD9']==1])
 
 
+
 # Visual of closest AED location of previous Intervention locations
 
 # Create a base map centered around Belgium
@@ -146,6 +147,7 @@ for idx, row in intervention_locations.iterrows():
             tooltip=f'AED Distance: {row["distance_to_aed"]:.2f} meters'
         ).add_to(map_)
 
+    '''
     if not pd.isna(row['distance_to_ambulance']):
         # Draw a line from intervention to the nearest ambulance
         folium.PolyLine(
@@ -160,7 +162,7 @@ for idx, row in intervention_locations.iterrows():
             locations=[intervention_point, mug_locations.iloc[nearest_mug_idx]],
             color='green',
             tooltip=f'Mug Distance: {row["distance_to_mug"]:.2f} meters'
-        ).add_to(map_)
+        ).add_to(map_)'''
 
 # Add layer control to toggle visibility of clusters
 folium.LayerControl().add_to(map_)
@@ -169,4 +171,4 @@ map_.save('aed_interventions_map.html')
 map_
 
 # Save the updated dataset
-data.to_csv('DATA/updated_aed_df_with_all_distances.csv', index=False)
+# data.to_csv('DATA/updated_aed_df_with_all_distances.csv', index=False)
