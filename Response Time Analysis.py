@@ -14,168 +14,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn import metrics
 import statsmodels as sm
-
-
-
-"""
-#Open data
-ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
-mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
-pit = pd.read_parquet('DATA/pit_locations.parquet.gzip')
-interventions1 = pd.read_parquet('DATA/interventions1.parquet.gzip')
-interventions2 = pd.read_parquet('DATA/interventions2.parquet.gzip')
-interventions3 = pd.read_parquet('DATA/interventions3.parquet.gzip')
-interventions4 = pd.read_parquet('DATA/interventions_bxl.parquet.gzip')
-interventions5 = pd.read_parquet('DATA/interventions_bxl2.parquet.gzip')
-cad = pd.read_parquet('DATA/cad9.parquet.gzip')
-aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
-
-pd.set_option('display.max_columns', None)
-
-
-
-#Ambulance, mug, pit en aed bevatten geen responstijd variabelen dus gebruiken we niet
-
-
-# interventions1: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
-interventions1["T0"] = pd.to_datetime(interventions1["T0"], format='%d%b%y:%H:%M:%S')
-interventions1["T3"] = pd.to_datetime(interventions1["T3"], format='%Y-%m-%d %H:%M:%S.%f')
-interventions1["T5"] = pd.to_datetime(interventions1["T5"], format='%Y-%m-%d %H:%M:%S.%f')
-df1 = pd.DataFrame({
-    "Province": interventions1["Province intervention"].str.upper(),
-    "City Permanence": interventions1["CityName permanence"].str.upper(),
-    "City Intervention": interventions1["CityName intervention"].str.upper(),
-    "Vector": interventions1["Vector type"].str.upper(),
-    "Eventlevel": interventions1["EventLevel Firstcall"].str.upper(),
-    "Time1": interventions1["T3"]-interventions1["T0"],
-    "Time2": interventions1["T5"]-interventions1["T0"]})
-df1["City Permanence"] = df1["City Permanence"].str.extract(r'\((.*?)\)')
-df1["City Intervention"] = df1["City Intervention"].str.extract(r'\((.*?)\)')
-df1["Eventlevel"] = df1["Eventlevel"].str.replace("A","")
-df1["Eventlevel"] = df1["Eventlevel"].str.replace("B","")
-
-
-# interventions2: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
-interventions2["T0"] = pd.to_datetime(interventions2["T0"], format='%d%b%y:%H:%M:%S')
-interventions2["T3"] = pd.to_datetime(interventions2["T3"], format='%Y-%m-%d %H:%M:%S.%f')
-interventions2["T5"] = pd.to_datetime(interventions2["T5"], format='%Y-%m-%d %H:%M:%S.%f')
-df2 = pd.DataFrame({
-                    "Province": interventions2["Province intervention"].str.upper(),
-                    "City Permanence": interventions2["CityName permanence"].str.upper(),
-                    "City Intervention": interventions2["CityName intervention"].str.upper(),
-                    "Vector": interventions2["Vector type"].str.upper(),
-                    "Eventlevel": interventions2["EventLevel Firstcall"].str.upper(),
-                    "Time1": interventions2["T3"]-interventions2["T0"],
-                    "Time2": interventions2["T5"]-interventions2["T0"]})
-df2["City Permanence"] = df2["City Permanence"].str.extract(r'\((.*?)\)')
-df2["City Intervention"] = df2["City Intervention"].str.extract(r'\((.*?)\)')
-df2["Eventlevel"] = df2["Eventlevel"].str.replace("A","")
-df2["Eventlevel"] = df2["Eventlevel"].str.replace("B","")
-
-
-# interventions3: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
-interventions3["T0"] = pd.to_datetime(interventions3["T0"], format='%d%b%y:%H:%M:%S')
-interventions3["T3"] = pd.to_datetime(interventions3["T3"], format='%Y-%m-%d %H:%M:%S.%f')
-interventions3["T5"] = pd.to_datetime(interventions3["T5"], format='%Y-%m-%d %H:%M:%S.%f')
-df3 = pd.DataFrame({
-                    "Province": interventions3["Province intervention"].str.upper(),
-                    "City Permanence": interventions3["CityName permanence"].str.upper(),
-                    "City Intervention": interventions3["CityName intervention"].str.upper(),
-                    "Vector": interventions3["Vector type"].str.upper(),
-                    "Eventlevel": interventions3["EventLevel Firstcall"].str.upper(),
-                    "Time1": interventions3["T3"]-interventions3["T0"],
-                    "Time2": interventions3["T5"]-interventions3["T0"]})
-df3["City Permanence"] = df3["City Permanence"].str.extract(r'\((.*?)\)')
-df3["City Intervention"] = df3["City Intervention"].str.extract(r'\((.*?)\)')
-df3["Eventlevel"] = df3["Eventlevel"].str.replace("A","")
-df3["Eventlevel"] = df3["Eventlevel"].str.replace("B","")
-
-
-# interventions4: cityname_permanence, CityName intervention, vector_type, eventLevel_firstcall
-interventions4["t0"] = pd.to_datetime(interventions4["t0"], format='%Y-%m-%d %H:%M:%S.%f %z')
-interventions4["t3"] = pd.to_datetime(interventions4["t3"], format='%Y-%m-%d %H:%M:%S.%f %z')
-interventions4["t5"] = pd.to_datetime(interventions4["t5"], format='%Y-%m-%d %H:%M:%S.%f %z')
-df4 = pd.DataFrame({
-                    "Province": ["BRUSSEL"]*len(interventions4),
-                    "City Permanence": interventions4["cityname_permanence"].str.upper(),
-                    "City Intervention": interventions4["cityname_intervention"].str.upper(),
-                    "Vector": interventions4["vector_type"].str.upper(),
-                    "Eventlevel": interventions4["eventLevel_firstcall"].str.upper(),
-                    "Time1": interventions4["t3"]-interventions4["t0"],
-                    "Time2": interventions4["t5"]-interventions4["t0"]})
-df4["City Permanence"] = df4["City Permanence"].str.split(" \(").str[0]
-df4["City Permanence"] = df4["City Permanence"].replace("BRUXELLES", "BRUSSEL")
-df4["City Intervention"] = df4["City Intervention"].str.split(" \(").str[0]
-df4["City Intervention"] = df4["City Intervention"].replace("BRUXELLES", "BRUSSEL")
-
-
-#interventions5
-interventions5["T0"] = pd.to_datetime(interventions5["T0"], format='%d%b%y:%H:%M:%S')
-interventions5["T3"] = pd.to_datetime(interventions5["T3"], format='%d%b%y:%H:%M:%S')
-interventions5["T5"] = pd.to_datetime(interventions5["T5"], format='%d%b%y:%H:%M:%S')
-df5 = pd.DataFrame({
-                    "Province": ["BRUSSEL"]*len(interventions5),
-                    "City Permanence": interventions5["Cityname Permanence"].str.upper(),
-                    "City Intervention": interventions5["Cityname Intervention"].str.upper(),
-                    "Vector": interventions5["Vector type NL"].str.upper(),
-                    "Eventlevel": interventions5["EventType and EventLevel"].str.upper(),
-                    "Time1": interventions5["T3"]-interventions5["T0"],
-                    "Time2": interventions5["T5"]-interventions5["T0"]})
-df5["City Permanence"] = df5["City Permanence"].str.extract(r'\((.*?)\)')
-df5["City Permanence"] = df5["City Permanence"].replace("BRUXELLES", "BRUSSEL")
-df5["City Intervention"] = df5["City Intervention"].str.extract(r'\((.*?)\)')
-df5["City Intervention"] = df5["City Intervention"].replace("BRUXELLES", "BRUSSEL")
-df5["Vector"] = df5["Vector"].replace("AMB", "AMBULANCE")
-df5["Eventlevel"] = df5["Eventlevel"].str.split(" ").str[1]
-df5["Eventlevel"] = df5["Eventlevel"].str.replace("BUITENDIENSTSTELLING", "")
-df5["Eventlevel"] = df5["Eventlevel"].str.replace("INTERVENTIEPLAN", "")
-df5["Eventlevel"] = df5["Eventlevel"].str.replace("0", "")
-
-
-#cad
-cad["T0"] = pd.to_datetime(cad["T0"], format='%Y-%m-%d %H:%M:%S.%f')
-cad["T3"] = pd.to_datetime(cad["T3"], format='%Y-%m-%d %H:%M:%S.%f')
-cad["T5"] = pd.to_datetime(cad["T5"], format='%Y-%m-%d %H:%M:%S.%f')
-df6 = pd.DataFrame({
-                    "Province": cad["province"].str.upper(),
-                    "City Permanence": cad["Permanence long name"].str.upper(),
-                    "City Intervention": cad["CityName intervention"].str.upper(),
-                    "Vector": cad["Vector Type"].str.upper(),
-                    "Eventlevel": cad["EventLevel Trip"].str.upper(),
-                    "Time1": cad["T3"]-cad["T0"],
-                    "Time2": cad["T5"]-cad["T0"]})
-df6["City Permanence"] = df6["City Permanence"].str.split(" ").str[1]
-valid_categories = ["N1","N2", "N3", "N4", "N5", "N6", "N7", "N8"]
-df6.loc[~df6['Eventlevel'].isin(valid_categories), 'Eventlevel'] = 'OTHER'
-
-
-frames = [df1, df2, df3, df4, df5, df6]
-data = pd.concat(frames)
-
-
-data["Province"] = data["Province"].replace("ANT","ANTWERPEN")
-data["Province"] = data["Province"].replace("OVL","OOST-VLAANDEREN")
-data["Province"] = data["Province"].replace("WVL","WEST-VLAANDEREN")
-data["Province"] = data["Province"].replace("HAI","HENEGOUWEN")
-data["Province"] = data["Province"].replace("BRW","WAALS_BRABANT")
-data["Province"] = data["Province"].replace("VBR","VLAAMS-BRABANT")
-data["Province"] = data["Province"].replace("NAM","NAMEN")
-data["Province"] = data["Province"].replace("LIE","LUIK")
-data["Province"] = data["Province"].replace("LIM","LIMBURG")
-data["Province"] = data["Province"].replace("LUX","LUXEMBURG")
-data["Vector"] = data["Vector"].str.split(" ").str[0]
-data["Time1"] = data["Time1"].dt.total_seconds().round()
-data["Time1"][data["Time1"] < 0] = pd.NaT
-data["Time2"] = data["Time2"].dt.total_seconds().round()
-data["Time2"][data["Time2"] < 0] = pd.NaT
-
-
-data.to_csv('DATA/interventions.csv', index=False)
-"""
+from sklearn.metrics import mean_squared_error
 
 
 ##### DATA PREPROCESSING #####
 interventions = pd.read_csv("DATA/interventions.csv")
+
+pd.set_option('display.max_columns', None)
 
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observaties
 
@@ -199,6 +44,7 @@ y2_test = test['Time2']
 X_train = train[['Province', 'Vector', 'Eventlevel']]
 X_test = test[['Province', 'Vector', 'Eventlevel']]
 
+
 # Encode de categorische variabelen
 #print(data["Province"].value_counts()) #11 regio's met elk voldoende observaties
 #print(data["Vector"].value_counts()) #5 vector types
@@ -207,6 +53,41 @@ encoder = OneHotEncoder(handle_unknown='ignore')
 encoder.fit(X_train)
 X_train = encoder.transform(X_train).toarray()
 X_test = encoder.transform(X_test).toarray()
+
+## Encoding linken aan originele variabelen
+#traindata = pd.DataFrame(X_train)
+#traindata.to_csv('DATA/XTrain.csv', index=False)
+#frame = pd.DataFrame(X_train)
+#frame.to_csv('DATA/EncodedXTrain.csv', index=False)
+"""
+0: Antwerpen
+1: Brussel
+2: Henegouwen
+3: Limburg
+4: Luik
+5: Luxemburg
+6: Namen
+7: Oost-Vlaanderen
+8: Vlaams-Brabant
+9: Waals-Brabant
+10: West-Vlaanderen
+11: Ambulance
+12: Brandziekenwagen
+13: Decontaminatiewagen
+14: Mug
+15: Pit
+16: N0
+17: N1
+18: N2
+19: N3
+20: N4
+21: N5
+22: N6
+23: N7
+24: N8
+25: Other 
+"""
+
 
 # Isolationforest (voor outliers)
 IsoFo = IsolationForest(n_estimators=100, contamination= 'auto', random_state=31)
@@ -228,34 +109,8 @@ X1_train_filtered = np.array(X_train[y1_labels == 1]) # 420393 observaties na ve
 #y2_train_filtered = y2_train[y2_labels == 1]
 #X2_train_filtered = np.array(X_train[y2_labels == 1]).reshape(-1,1)
 
-
-### Random Forest Regression
 """
-
-Het kiezen tussen ANOVA en supervised learning methoden zoals Random Forest of Gradient Boosting hangt sterk af van het doel van je analyse en de aard van je data. Hier is een vergelijking van ANOVA met Random Forest en Gradient Boosting, zodat je een weloverwogen beslissing kunt nemen.
-
-ANOVA (Analysis of Variance)
-Voordelen:
-Interpretability: ANOVA is een statistische methode die eenvoudig te interpreteren is. Het helpt je te begrijpen of er significante verschillen zijn tussen de middelen van verschillende groepen.
-Factor Analysis: Geschikt voor het analyseren van de effecten van categorische onafhankelijke variabelen (factoren) en hun interacties op een continue afhankelijke variabele.
-Statistical Significance: ANOVA geeft directe p-waarden die de significantie van effecten aangeven.
-Simplicity: Gemakkelijk toe te passen op kleinere datasets en minder complexe modellen.
-Nadelen:
-Assumpties: ANOVA gaat uit van normaal verdeelde residuen, homoscedasticiteit (gelijke varianties), en onafhankelijkheid van waarnemingen.
-Limitations with Non-linear Relationships: Minder geschikt voor complexe, niet-lineaire relaties tussen variabelen.
-Fixed Factors: Beperkt tot het analyseren van categorische variabelen; niet geschikt voor continue onafhankelijke variabelen.
-Supervised Learning (Random Forest en Gradient Boosting)
-Voordelen:
-Flexibility: Kan omgaan met zowel categorische als continue onafhankelijke variabelen en kan complexe, niet-lineaire relaties modelleren.
-Performance: Vaak superieur in voorspellende prestaties, vooral bij complexe datasets met veel variabelen.
-Feature Importance: Kan inzicht geven in de relatieve belangrijkheid van verschillende kenmerken.
-Handling of Large Datasets: Geschikt voor grote datasets en hoge-dimensionaliteit.
-Nadelen:
-Interpretability: Minder intuïtief te interpreteren dan ANOVA. De resultaten zijn complexer en vereisen meer inspanning om te begrijpen.
-Hyperparameter Tuning: Vereist uitgebreide hyperparameter tuning om de beste prestaties te bereiken.
-Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen."""
-
-
+### Random Forest Regression
 # Define parameters: these will need to be tuned to prevent overfitting and underfitting
 params = {
     "n_estimators": 100,  # Number of trees in the forest
@@ -265,7 +120,6 @@ params = {
     "ccp_alpha": 0,  # Cost complexity parameter for pruning
     "random_state": 123,
 }
-
 
 # Create a RandomForestRegressor object with the parameters above
 rf = RandomForestRegressor(**params)
@@ -281,7 +135,7 @@ print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
 print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
 print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
 
-"""
+
 # Create a sorted Series of features importances
 importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
 
@@ -289,8 +143,9 @@ importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(
 importances_sorted.plot(kind="barh")
 plt.title("Features Importances")
 plt.show()
+"""
 
-
+"""
 ### Hyperparameter tuning with random search
 # Define a parameter grid with distributions of possible parameters to use
 rs_param_grid = {
@@ -321,4 +176,136 @@ rf_rs.fit(X1_train_filtered, y1_train_filtered)
 # Print the best parameters and highest accuracy
 print("Best parameters found: ", rf_rs.best_params_)
 print("Best performance: ", rf_rs.best_score_)
+"""
+
+#na ongeveer 30 min runnen resultaat beste parameters in volgende code aangepast
+# Define parameters: these will need to be tuned to prevent overfitting and underfitting
+params = {
+    "n_estimators": 110,  # Number of trees in the forest
+    "max_depth": 11,  # Max depth of the tree
+    "min_samples_split": 4,  # Min number of samples required to split a node
+    "min_samples_leaf": 1,  # Min number of samples required at a leaf node
+    "ccp_alpha": 0,  # Cost complexity parameter for pruning
+    "random_state": 123,
+}
+
+# Create a RandomForestRegressor object with the parameters above
+rf = RandomForestRegressor(**params)
+
+# Train the random forest on the train set
+rf = rf.fit(X1_train_filtered, y1_train_filtered)
+
+# Predict the outcomes on the test set
+y1_pred = rf.predict(X_test)
+
+# Evaluate performance with error metrics
+#print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
+#print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
+#print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
+
+
+# Create a sorted Series of features importances
+importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
+
+#importances = model.feature_importances_
+province_importances = importances_sorted[0:11]
+vector_importances = importances_sorted[11:16]
+eventlevel_importances = importances_sorted[16:27]
+
+total_province_importance = sum(province_importances)
+total_vector_importance = sum(vector_importances)
+total_eventlevel_importance = sum(eventlevel_importances)
+
+
+#visualisatie per categorie
+categories = ['Province', 'Vector', 'Eventlevel']
+total_importances = [total_province_importance, total_vector_importance, total_eventlevel_importance]
+
+plt.bar(categories, total_importances)
+plt.xlabel('Categorical Variables')
+plt.ylabel('Total Importance')
+plt.title('Total Feature Importances per Categorical Variable')
+plt.show()
+
+
+feature_names = ["Province_" + str(i) for i in range(11)] + \
+                ["Vector_" + str(i) for i in range(5)] + \
+                ["Eventlevel_" + str(i) for i in range(11)]
+
+sorted_indices = importances_sorted.argsort()[::-1]
+sorted_importances = importances_sorted[sorted_indices]
+sorted_feature_names = [feature_names[i] for i in sorted_indices]
+
+
+#visualisatie individueel
+plt.barh(sorted_feature_names, sorted_importances)
+plt.xlabel('Importance')
+plt.title('Feature Importances')
+plt.show()
+
+
+#prediction (end output)
+# Stel een drempelwaarde in voor belangrijkheid
+threshold = 0.025
+
+# Selecteer de belangrijkste features op basis van de drempelwaarde
+important_features = [feature for feature, importances_sorted in zip(sorted_feature_names, sorted_importances) if importances_sorted >= threshold]
+
+print("Belangrijkste features:", important_features)#['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
+
+# Filter de dataset om alleen de belangrijke features te behouden
+X_important = X1_train_filtered[:,[21,20,14,11,8,0]]
+
+# Train een nieuw Random Forest Regressor model met de geselecteerde features
+new_model = RandomForestRegressor(**params)
+new_model.fit(X_important, y1_train_filtered)
+
+# Evalueer het model
+y_test_pred = new_model.predict(X_test[:,[21,20,14,11,8,0]])
+test_mse = mean_squared_error(y1_test, y_test_pred)
+print("Mean Squared Error op de testset van het nieuwe model:", test_mse)
+
+# Voorspel de responstijd
+predicted_response_time = new_model.predict([[0,0,0,0,0,0]])
+
+# Print de voorspelde responstijd
+print("Voorspelde responstijd (in seconden):", predicted_response_time[0])
+
+
+# Converteer de voorspelde responstijd van seconden naar minuten en seconden
+def convert_seconds_to_minutes_seconds(seconds):
+    minutes = int(seconds // 60)
+    remaining_seconds = int(seconds % 60)
+    return minutes, remaining_seconds
+
+predicted_seconds = predicted_response_time[0]
+minutes, seconds = convert_seconds_to_minutes_seconds(predicted_seconds)
+
+print(f"Voorspelde responstijd: {minutes} minuten en {seconds} seconden")
+
+
+
+"""
+Het kiezen tussen ANOVA en supervised learning methoden zoals Random Forest of Gradient Boosting hangt sterk af van het doel van je analyse en de aard van je data. Hier is een vergelijking van ANOVA met Random Forest en Gradient Boosting, zodat je een weloverwogen beslissing kunt nemen.
+
+ANOVA (Analysis of Variance)
+Voordelen:
+Interpretability: ANOVA is een statistische methode die eenvoudig te interpreteren is. Het helpt je te begrijpen of er significante verschillen zijn tussen de middelen van verschillende groepen.
+Factor Analysis: Geschikt voor het analyseren van de effecten van categorische onafhankelijke variabelen (factoren) en hun interacties op een continue afhankelijke variabele.
+Statistical Significance: ANOVA geeft directe p-waarden die de significantie van effecten aangeven.
+Simplicity: Gemakkelijk toe te passen op kleinere datasets en minder complexe modellen.
+Nadelen:
+Assumpties: ANOVA gaat uit van normaal verdeelde residuen, homoscedasticiteit (gelijke varianties), en onafhankelijkheid van waarnemingen.
+Limitations with Non-linear Relationships: Minder geschikt voor complexe, niet-lineaire relaties tussen variabelen.
+Fixed Factors: Beperkt tot het analyseren van categorische variabelen; niet geschikt voor continue onafhankelijke variabelen.
+Supervised Learning (Random Forest en Gradient Boosting)
+Voordelen:
+Flexibility: Kan omgaan met zowel categorische als continue onafhankelijke variabelen en kan complexe, niet-lineaire relaties modelleren.
+Performance: Vaak superieur in voorspellende prestaties, vooral bij complexe datasets met veel variabelen.
+Feature Importance: Kan inzicht geven in de relatieve belangrijkheid van verschillende kenmerken.
+Handling of Large Datasets: Geschikt voor grote datasets en hoge-dimensionaliteit.
+Nadelen:
+Interpretability: Minder intuïtief te interpreteren dan ANOVA. De resultaten zijn complexer en vereisen meer inspanning om te begrijpen.
+Hyperparameter Tuning: Vereist uitgebreide hyperparameter tuning om de beste prestaties te bereiken.
+Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen.
 """

@@ -281,7 +281,6 @@ X1_train_filtered = np.array(X_train[y1_labels == 1]) # 420393 observaties na ve
 
 ### Random Forest Regression
 """
-
 Het kiezen tussen ANOVA en supervised learning methoden zoals Random Forest of Gradient Boosting hangt sterk af van het doel van je analyse en de aard van je data. Hier is een vergelijking van ANOVA met Random Forest en Gradient Boosting, zodat je een weloverwogen beslissing kunt nemen.
 
 ANOVA (Analysis of Variance)
@@ -294,6 +293,7 @@ Nadelen:
 Assumpties: ANOVA gaat uit van normaal verdeelde residuen, homoscedasticiteit (gelijke varianties), en onafhankelijkheid van waarnemingen.
 Limitations with Non-linear Relationships: Minder geschikt voor complexe, niet-lineaire relaties tussen variabelen.
 Fixed Factors: Beperkt tot het analyseren van categorische variabelen; niet geschikt voor continue onafhankelijke variabelen.
+
 Supervised Learning (Random Forest en Gradient Boosting)
 Voordelen:
 Flexibility: Kan omgaan met zowel categorische als continue onafhankelijke variabelen en kan complexe, niet-lineaire relaties modelleren.
@@ -303,7 +303,11 @@ Handling of Large Datasets: Geschikt voor grote datasets en hoge-dimensionalitei
 Nadelen:
 Interpretability: Minder intuïtief te interpreteren dan ANOVA. De resultaten zijn complexer en vereisen meer inspanning om te begrijpen.
 Hyperparameter Tuning: Vereist uitgebreide hyperparameter tuning om de beste prestaties te bereiken.
-Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen."""
+Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen.
+
+random forest vs gradient boosting
+gradient boosting: beter, maar complexer en nog moeilijker te interpreteren => random forest kiezen
+"""
 
 """
 ### Hyperparameter tuning with random search
@@ -336,10 +340,8 @@ rf_rs.fit(X1_train_filtered, y1_train_filtered)
 # Print the best parameters and highest accuracy
 print("Best parameters found: ", rf_rs.best_params_)
 print("Best performance: ", rf_rs.best_score_)
-
-#na ongeveer 30 min runnen resultaat beste parameters in volgende code aangepast
-
 """
+#na ongeveer 30 min runnen resultaat beste parameters in volgende code aangepast
 # Define parameters: these will need to be tuned to prevent overfitting and underfitting
 params = {
     "n_estimators": 110,  # Number of trees in the forest
@@ -349,7 +351,6 @@ params = {
     "ccp_alpha": 0,  # Cost complexity parameter for pruning
     "random_state": 123,
 }
-
 
 # Create a RandomForestRegressor object with the parameters above
 rf = RandomForestRegressor(**params)
@@ -361,19 +362,104 @@ rf = rf.fit(X1_train_filtered, y1_train_filtered)
 y1_pred = rf.predict(X_test)
 
 # Evaluate performance with error metrics
-print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
-print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
-print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
-
+#print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
+#print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
+#print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
 
 
 # Create a sorted Series of features importances
 importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
-
+#visualisatie: individueal features (nummer not label)
+"""
+#print(importances_sorted) #gives values of the first graph
 # Plot a horizontal barplot of importances_sorted
-importances_sorted.plot(kind="barh")
-plt.title("Features Importances")
+#importances_sorted.plot(kind="barh")
+#plt.title("Features Importances")
+#plt.show()
+"""
+
+#importances = model.feature_importances_
+province_importances = importances_sorted[0:11]
+vector_importances = importances_sorted[11:16]
+eventlevel_importances = importances_sorted[16:27]
+
+total_province_importance = sum(province_importances)
+total_vector_importance = sum(vector_importances)
+total_eventlevel_importance = sum(eventlevel_importances)
+"""
+#visualisatie per categorie
+import matplotlib.pyplot as plt
+
+categories = ['Province', 'Vector', 'Eventlevel']
+total_importances = [total_province_importance, total_vector_importance, total_eventlevel_importance]
+
+plt.bar(categories, total_importances)
+plt.xlabel('Categorical Variables')
+plt.ylabel('Total Importance')
+plt.title('Total Feature Importances per Categorical Variable')
 plt.show()
+"""
+
+feature_names = ["Province_" + str(i) for i in range(11)] + \
+                ["Vector_" + str(i) for i in range(5)] + \
+                ["Eventlevel_" + str(i) for i in range(11)]
+
+sorted_indices = importances_sorted.argsort()[::-1]
+sorted_importances = importances_sorted[sorted_indices]
+sorted_feature_names = [feature_names[i] for i in sorted_indices]
+
+"""
+#visualisatie individueel
+plt.barh(sorted_feature_names, sorted_importances)
+plt.xlabel('Importance')
+plt.title('Feature Importances')
+plt.show()
+"""
+
+
+#prediction (end output)
+# Stel een drempelwaarde in voor belangrijkheid
+threshold = 0.025
+
+# Selecteer de belangrijkste features op basis van de drempelwaarde
+important_features = [feature for feature, importances_sorted in zip(sorted_feature_names, sorted_importances) if importances_sorted >= threshold]
+
+print("Belangrijkste features:", important_features)#['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
+
+# Filter de dataset om alleen de belangrijke features te behouden
+X_important = X1_train_filtered[:,[21,20,14,11,8,0]]
+
+
+# Split de data in train en test sets voor een betere evaluatie
+from sklearn.model_selection import train_test_split
+
+# Train een nieuw Random Forest Regressor model met de geselecteerde features
+new_model = RandomForestRegressor()
+new_model.fit(X_important, y1_train_filtered)
+
+# Evalueer het model
+from sklearn.metrics import mean_squared_error
+
+y_test_pred = new_model.predict(X_test[:,[21,20,14,11,8,0]])
+test_mse = mean_squared_error(y1_test, y_test_pred)
+print("Mean Squared Error op de testset van het nieuwe model:", test_mse)
 
 
 
+# Voorspel de responstijd
+predicted_response_time = new_model.predict([[0,0,0,0,0,0]])
+
+# Print de voorspelde responstijd
+print("Voorspelde responstijd (in seconden):", predicted_response_time[0])
+
+
+# Converteer de voorspelde responstijd van seconden naar minuten en seconden
+def convert_seconds_to_minutes_seconds(seconds):
+    minutes = int(seconds // 60)
+    remaining_seconds = int(seconds % 60)
+    return minutes, remaining_seconds
+
+predicted_seconds = predicted_response_time[0]
+minutes, seconds = convert_seconds_to_minutes_seconds(predicted_seconds)
+
+print(f"Voorspelde responstijd: {minutes} minuten en {seconds} seconden")
