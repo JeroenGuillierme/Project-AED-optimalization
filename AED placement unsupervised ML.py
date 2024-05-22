@@ -8,7 +8,7 @@ import seaborn as sns
 import geopandas as gpd
 
 
-data = pd.read_csv('DATA/aed_placement_df.csv')
+data = pd.read_csv('DATA/updated_aed_df_with_all_distances.csv')
 # Load Belgium shapefile
 belgium_boundary = gpd.read_file('DATA/België.json')
 
@@ -109,7 +109,7 @@ for cluster in range(optimal_clusters):
 # Now look if there is a clusters which represent the locations where low AED coverage is?
 '''
 CLUSTER 1
-> Represents the interventions locations
+> Represents the interventions locations with mostly no close aed's and a mean response time of 10 min
 
 CLUSTER 2
 > Represents the current AED locations in Antwerp
