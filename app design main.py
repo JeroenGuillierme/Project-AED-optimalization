@@ -6,6 +6,7 @@ import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 from operator import itemgetter
+import joblib
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # IMPORTING DATASETS
@@ -38,6 +39,9 @@ app = dash.Dash(__name__)
 initial_map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10)
 initial_map_figure.update_traces(marker=dict(size=10, color='red'))
 initial_map_figure.update_layout(mapbox_style='open-street-map')
+
+# Import ResponseTimeModel
+model = joblib.load('ResponseTimeModel.joblib')
 
 # Define Dash layout
 app.layout = html.Div([
@@ -80,6 +84,12 @@ app.layout = html.Div([
     dcc.Graph(id='map', figure=initial_map_figure),
     html.Div(id='error-message', style={'color': 'red'})
 ])
+
+def give_predicted_response_time(vectorMetLengteZes):
+    predicted_total_seconds = model.predict([vectorMetLengteZes])[0]
+    minutes = int(predicted_total_seconds // 60)
+    seconds = int(predicted_total_seconds % 60)
+    return [minutes, seconds]
 
 
 def event_level_to_matrix(event_level):
@@ -184,7 +194,8 @@ def update_map(n_clicks, lat, lon, event_level, vector):
                 # Pop-up message with event level, vector, and combined matrix
                 popup_message = (f'Je hebt gezocht op locatie: Breedtegraad {lat}, '
                                  f'Lengtegraad {lon}, Event Level: {event_level}, '
-                                 f'Vector: {vector}, Province: {province}, Combined Matrix: {respons_matrix}')
+                                 f'Vector: {vector}, Province: {province}, Combined Matrix: {respons_matrix}',
+                                  "Voorspelde responstijd: ",give_predicted_response_time(respons_matrix)[0], " minuten en ",give_predicted_response_time(respons_matrix)[1], " seconden")
             except Exception as e:
                 error_message = f'Error while processing coordinates: {e}'
 
