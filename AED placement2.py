@@ -145,7 +145,7 @@ optimal_clusters = determine_optimal_clusters(all_potential_locations[['Latitude
 print(f"Optimal number of clusters: {optimal_clusters}")
 
 # Perform KMeans clustering with the optimal number of clusters
-kmeans = KMeans(n_clusters=optimal_clusters, random_state=42)
+kmeans = KMeans(n_clusters=20, random_state=42)
 kmeans.fit(all_potential_locations[['Latitude', 'Longitude']])
 all_potential_locations['cluster'] = kmeans.labels_
 
@@ -154,7 +154,7 @@ top_new_aed_locations = all_potential_locations.groupby('cluster').apply(
     lambda group: group.nlargest(1, 'final_score')[['Latitude', 'Longitude']]).reset_index(drop=True)
 
 # Save new AED locations to a CSV file
-top_new_aed_locations.to_csv('new_aed_locations.csv', index=False)
+top_new_aed_locations.to_csv('DATA/new_aed_locations.csv', index=False)
 
 # Optionally, visualize the new AED locations on a map
 belgium_map = folium.Map(location=[50.85, 4.35], zoom_start=8)
