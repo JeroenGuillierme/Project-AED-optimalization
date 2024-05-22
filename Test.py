@@ -123,17 +123,46 @@ def main():
 from geopy.geocoders import Nominatim
 
 # Maak een Nominatim geolocator object
-geolocator = Nominatim(user_agent="myGeocoder")
+#geolocator = Nominatim(user_agent="myGeocoder")
 
 # Het adres dat je wilt omzetten
-adres = input("Voer het adres in: ")
+#adres = input("Voer het adres in: ")
 
 # Gebruik de geolocator om het adres om te zetten naar coördinaten
-locatie = geolocator.geocode(adres)
+#locatie = geolocator.geocode(adres)
 
-if locatie:
-    print(f"Adres: {adres}")
-    print(f"Breedtegraad: {locatie.latitude}")
-    print(f"Lengtegraad: {locatie.longitude}")
-else:
-    print("Adres niet gevonden")
+#if locatie:
+    #print(f"Adres: {adres}")
+    #print(f"Breedtegraad: {locatie.latitude}")
+    #print(f"Lengtegraad: {locatie.longitude}")
+#else:
+    #print("Adres niet gevonden")
+
+interventions1 = pd.read_parquet('DATA/interventions1.parquet.gzip')
+interventions2 = pd.read_parquet('DATA/interventions2.parquet.gzip')
+interventions3 = pd.read_parquet('DATA/interventions3.parquet.gzip')
+interventions4 = pd.read_parquet('DATA/interventions_bxl.parquet.gzip')
+interventions5 = pd.read_parquet('DATA/interventions_bxl2.parquet.gzip')
+interventions = pd.read_csv('DATA/interventions.csv')
+
+# Filter de dataset voor rijen waar 'EventLevel Firstcall' gelijk is aan 'N5'
+N5_subset = interventions1[interventions1['EventLevel Firstcall'] == 'N5']
+
+# Print de gefilterde subset
+print(N5_subset['EventType Firstcall'])
+
+# Filter de dataset voor rijen waar 'EventLevel Firstcall' gelijk is aan 'N1'
+N1_subset = interventions1[interventions1['EventLevel Firstcall'] == 'N1']
+
+# Print de gefilterde subset
+print(N1_subset['EventType Firstcall'])
+
+print(interventions1['EventLevel Firstcall'].unique())
+print(interventions2['EventLevel Firstcall'].unique())
+print(interventions3['EventLevel Firstcall'].unique())
+
+
+N8_subset = interventions[interventions['Eventlevel'] == 'N8']
+print(N8_subset['Time1'])
+print(max(interventions['Time1']))
+print(max(N8_subset['Time1']))

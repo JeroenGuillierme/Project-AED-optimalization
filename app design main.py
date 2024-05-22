@@ -38,6 +38,23 @@ app.layout = html.Div([
     dcc.Input(id='lat-input', type='number', placeholder='Enter the latitude'),
     dcc.Input(id='lon-input', type='number', placeholder='Enter the longitude'),
     html.Button(id='submit-button', n_clicks=0, children='Search'),
+html.Div([
+        dcc.Dropdown(
+            id='event-level-dropdown',
+            options=[
+                {'label': 'N0', 'value': 'N0'},
+                {'label': 'N1', 'value': 'N1'},
+                {'label': 'N2', 'value': 'N2'},
+                {'label': 'N3', 'value': 'N3'},
+                {'label': 'N4', 'value': 'N4'},
+                {'label': 'N5', 'value': 'N5'},
+                {'label': 'N6', 'value': 'N6'},
+                {'label': 'N7', 'value': 'N7'},
+                {'label': 'N8', 'value': 'N8'}
+            ],
+            placeholder='Select Event Level'
+        )
+    ]),
     html.Div(id='popup-message'),
     dcc.Graph(id='map', figure=initial_map_figure),
     html.Div(id='error-message', style={'color': 'red'})
