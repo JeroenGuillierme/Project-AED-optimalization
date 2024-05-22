@@ -18,6 +18,7 @@ import statsmodels as sm
 
 
 """
+### Dataset "interventions" maken en opslaan als csv file
 #Open data
 ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
 mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
@@ -31,8 +32,6 @@ cad = pd.read_parquet('DATA/cad9.parquet.gzip')
 aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
 
 pd.set_option('display.max_columns', None)
-
-
 
 #Ambulance, mug, pit en aed bevatten geen responstijd variabelen dus gebruiken we niet
 
@@ -177,6 +176,8 @@ data.to_csv('DATA/interventions.csv', index=False)
 ##### DATA PREPROCESSING #####
 interventions = pd.read_csv("DATA/interventions.csv")
 
+pd.set_option('display.max_columns', None)
+
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observaties
 
 ## Nagaan hoeveel data er ontbreekt
@@ -199,6 +200,7 @@ y2_test = test['Time2']
 X_train = train[['Province', 'Vector', 'Eventlevel']]
 X_test = test[['Province', 'Vector', 'Eventlevel']]
 
+
 # Encode de categorische variabelen
 #print(data["Province"].value_counts()) #11 regio's met elk voldoende observaties
 #print(data["Vector"].value_counts()) #5 vector types
@@ -207,6 +209,41 @@ encoder = OneHotEncoder(handle_unknown='ignore')
 encoder.fit(X_train)
 X_train = encoder.transform(X_train).toarray()
 X_test = encoder.transform(X_test).toarray()
+
+## Encoding linken aan originele variabelen
+#traindata = pd.DataFrame(X_train)
+#traindata.to_csv('DATA/XTrain.csv', index=False)
+#frame = pd.DataFrame(X_train)
+#frame.to_csv('DATA/EncodedXTrain.csv', index=False)
+"""
+0: Antwerpen
+1: Brussel
+2: Henegouwen
+3: Limburg
+4: Luik
+5: Luxemburg
+6: Namen
+7: Oost-Vlaanderen
+8: Vlaams-Brabant
+9: Waals-Brabant
+10: West-Vlaanderen
+11: Ambulance
+12: Brandziekenwagen
+13: Decontaminatiewagen
+14: Mug
+15: Pit
+16: N0
+17: N1
+18: N2
+19: N3
+20: N4
+21: N5
+22: N6
+23: N7
+24: N8
+25: Other 
+"""
+
 
 # Isolationforest (voor outliers)
 IsoFo = IsolationForest(n_estimators=100, contamination= 'auto', random_state=31)
@@ -230,32 +267,6 @@ X1_train_filtered = np.array(X_train[y1_labels == 1]) # 420393 observaties na ve
 
 
 ### Random Forest Regression
-"""
-
-Het kiezen tussen ANOVA en supervised learning methoden zoals Random Forest of Gradient Boosting hangt sterk af van het doel van je analyse en de aard van je data. Hier is een vergelijking van ANOVA met Random Forest en Gradient Boosting, zodat je een weloverwogen beslissing kunt nemen.
-
-ANOVA (Analysis of Variance)
-Voordelen:
-Interpretability: ANOVA is een statistische methode die eenvoudig te interpreteren is. Het helpt je te begrijpen of er significante verschillen zijn tussen de middelen van verschillende groepen.
-Factor Analysis: Geschikt voor het analyseren van de effecten van categorische onafhankelijke variabelen (factoren) en hun interacties op een continue afhankelijke variabele.
-Statistical Significance: ANOVA geeft directe p-waarden die de significantie van effecten aangeven.
-Simplicity: Gemakkelijk toe te passen op kleinere datasets en minder complexe modellen.
-Nadelen:
-Assumpties: ANOVA gaat uit van normaal verdeelde residuen, homoscedasticiteit (gelijke varianties), en onafhankelijkheid van waarnemingen.
-Limitations with Non-linear Relationships: Minder geschikt voor complexe, niet-lineaire relaties tussen variabelen.
-Fixed Factors: Beperkt tot het analyseren van categorische variabelen; niet geschikt voor continue onafhankelijke variabelen.
-Supervised Learning (Random Forest en Gradient Boosting)
-Voordelen:
-Flexibility: Kan omgaan met zowel categorische als continue onafhankelijke variabelen en kan complexe, niet-lineaire relaties modelleren.
-Performance: Vaak superieur in voorspellende prestaties, vooral bij complexe datasets met veel variabelen.
-Feature Importance: Kan inzicht geven in de relatieve belangrijkheid van verschillende kenmerken.
-Handling of Large Datasets: Geschikt voor grote datasets en hoge-dimensionaliteit.
-Nadelen:
-Interpretability: Minder intuïtief te interpreteren dan ANOVA. De resultaten zijn complexer en vereisen meer inspanning om te begrijpen.
-Hyperparameter Tuning: Vereist uitgebreide hyperparameter tuning om de beste prestaties te bereiken.
-Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen."""
-
-
 # Define parameters: these will need to be tuned to prevent overfitting and underfitting
 params = {
     "n_estimators": 100,  # Number of trees in the forest
@@ -265,7 +276,6 @@ params = {
     "ccp_alpha": 0,  # Cost complexity parameter for pruning
     "random_state": 123,
 }
-
 
 # Create a RandomForestRegressor object with the parameters above
 rf = RandomForestRegressor(**params)
@@ -281,7 +291,7 @@ print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
 print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
 print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
 
-"""
+
 # Create a sorted Series of features importances
 importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
 
@@ -290,7 +300,7 @@ importances_sorted.plot(kind="barh")
 plt.title("Features Importances")
 plt.show()
 
-
+"""
 ### Hyperparameter tuning with random search
 # Define a parameter grid with distributions of possible parameters to use
 rs_param_grid = {
@@ -321,4 +331,32 @@ rf_rs.fit(X1_train_filtered, y1_train_filtered)
 # Print the best parameters and highest accuracy
 print("Best parameters found: ", rf_rs.best_params_)
 print("Best performance: ", rf_rs.best_score_)
+"""
+
+
+
+
+"""
+Het kiezen tussen ANOVA en supervised learning methoden zoals Random Forest of Gradient Boosting hangt sterk af van het doel van je analyse en de aard van je data. Hier is een vergelijking van ANOVA met Random Forest en Gradient Boosting, zodat je een weloverwogen beslissing kunt nemen.
+
+ANOVA (Analysis of Variance)
+Voordelen:
+Interpretability: ANOVA is een statistische methode die eenvoudig te interpreteren is. Het helpt je te begrijpen of er significante verschillen zijn tussen de middelen van verschillende groepen.
+Factor Analysis: Geschikt voor het analyseren van de effecten van categorische onafhankelijke variabelen (factoren) en hun interacties op een continue afhankelijke variabele.
+Statistical Significance: ANOVA geeft directe p-waarden die de significantie van effecten aangeven.
+Simplicity: Gemakkelijk toe te passen op kleinere datasets en minder complexe modellen.
+Nadelen:
+Assumpties: ANOVA gaat uit van normaal verdeelde residuen, homoscedasticiteit (gelijke varianties), en onafhankelijkheid van waarnemingen.
+Limitations with Non-linear Relationships: Minder geschikt voor complexe, niet-lineaire relaties tussen variabelen.
+Fixed Factors: Beperkt tot het analyseren van categorische variabelen; niet geschikt voor continue onafhankelijke variabelen.
+Supervised Learning (Random Forest en Gradient Boosting)
+Voordelen:
+Flexibility: Kan omgaan met zowel categorische als continue onafhankelijke variabelen en kan complexe, niet-lineaire relaties modelleren.
+Performance: Vaak superieur in voorspellende prestaties, vooral bij complexe datasets met veel variabelen.
+Feature Importance: Kan inzicht geven in de relatieve belangrijkheid van verschillende kenmerken.
+Handling of Large Datasets: Geschikt voor grote datasets en hoge-dimensionaliteit.
+Nadelen:
+Interpretability: Minder intuïtief te interpreteren dan ANOVA. De resultaten zijn complexer en vereisen meer inspanning om te begrijpen.
+Hyperparameter Tuning: Vereist uitgebreide hyperparameter tuning om de beste prestaties te bereiken.
+Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen.
 """
