@@ -166,3 +166,17 @@ N8_subset = interventions[interventions['Eventlevel'] == 'N8']
 print(N8_subset['Time1'])
 print(max(interventions['Time1']))
 print(max(N8_subset['Time1']))
+
+import geopandas as gpd
+
+pd.set_option('display.max_columns', None)
+provinces_gdf = gpd.read_file('/Users/helenaverschoore/Desktop/georef-belgium-province-millesime.geojson')
+print(provinces_gdf.head())
+provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].apply(lambda x: x[0] if isinstance(x, list) else x)
+
+# Verify the changes
+print(provinces_gdf.head())
+print(provinces_gdf['prov_name_nl'].unique())
+provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].str.replace('Provincie ', '')
+print(provinces_gdf['prov_name_nl'].unique())
+
