@@ -1,42 +1,13 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.linear_model import LinearRegression
-from sklearn.cluster import KMeans
-from shapely.geometry import Point
-import geopandas as gpd
+from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
-import folium
-from scipy.spatial.distance import cdist
-
-# Load the Belgium boundary shapefile
-belgium_boundary = gpd.read_file('DATA/België.json')
-
-# Adjust grid size as needed
-grid_size = 0.01  # Adjust this value based on your needs
-
-# Generate a grid of potential new locations within Belgium boundary
-minx, miny, maxx, maxy = belgium_boundary.total_bounds
-grid_points = []
-
-x_coords = np.arange(minx, maxx, grid_size)
-y_coords = np.arange(miny, maxy, grid_size)
-
-for x in x_coords:
-    for y in y_coords:
-        point = Point(x, y)
-        if belgium_boundary.contains(point).any():
-            grid_points.append(point)
-
-# Create a GeoDataFrame for the grid points
-grid_gdf = gpd.GeoDataFrame(grid_points, columns=['geometry'])
-grid_gdf['Latitude'] = grid_gdf.geometry.y
-grid_gdf['Longitude'] = grid_gdf.geometry.x
-
-print(grid_gdf.head())
 
 # Load your original dataset
 df = pd.read_csv('DATA/updated_aed_df_with_all_distances.csv')
+df2 = df
 
 # Fill NaN values in Eventlevel and Occasional_Permanence
 df['Eventlevel'].fillna(-1, inplace=True)
@@ -66,7 +37,7 @@ reg = LinearRegression().fit(X, y)
 coefficients = reg.coef_
 weights = coefficients / coefficients.sum()
 
-
+print("Weights from Linear Regression:")
 print(weights) # Result: [0.         0.06526201 0.00450788 0.26577536 0.63171176 0.03274299]
 
 # Apply the weights to calculate the weighted score for each location
@@ -77,4 +48,54 @@ df['score'] = (df['Intervention'] * weights[0] +
                df['distance_to_ambulance'] * weights[4] +
                df['distance_to_mug'] * weights[5])
 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PCA
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Drop any rows with NaN values
+df2.dropna(inplace=True)
+
+# Select relevant variables for PCA
+# For example, excluding variables like latitude, longitude, and intervention
+# You can adjust this based on your specific dataset
+selected_columns = ['Intervention', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence',
+                    'distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']
+
+# Extract the selected columns
+data = df2[selected_columns]
+
+# Standardize the data
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(data)
+
+# Perform PCA
+pca = PCA()
+principal_components = pca.fit_transform(scaled_data)
+
+# Plot explained variance ratio
+plt.figure(figsize=(10, 6))
+plt.plot(range(1, len(pca.explained_variance_ratio_) + 1), pca.explained_variance_ratio_, marker='o', linestyle='-')
+plt.title('Explained Variance Ratio')
+plt.xlabel('Principal Component')
+plt.ylabel('Explained Variance Ratio')
+plt.grid(True)
+plt.show()
+
+# Determine the number of components to retain
+# You can also use a scree plot to visually inspect for an "elbow"
+explained_variance = pca.explained_variance_ratio_
+cumulative_variance = explained_variance.cumsum()
+num_components = len(cumulative_variance[cumulative_variance <= 0.95]) + 1
+print("Number of components to retain: ", num_components)
+
+# Fit PCA with the determined number of components
+pca = PCA(n_components=num_components)
+principal_components = pca.fit_transform(scaled_data)
+
+# Get the loadings of each variable on each principal component
+loadings = pca.components_.T * np.sqrt(pca.explained_variance_)
+
+# Display the loadings
+loadings_df = pd.DataFrame(loadings, columns=[f'PC{i+1}' for i in range(num_components)], index=selected_columns)
+print("Loadings of variables on principal components:")
+print(loadings_df)
