@@ -15,8 +15,13 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn import metrics
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
+import joblib
 
 
+
+model = joblib.load('ResponseTimeModel.joblib')
+
+"""
 ##### DATA PREPROCESSING #####
 interventions = pd.read_csv("DATA/interventions.csv")
 
@@ -31,9 +36,9 @@ data = data.dropna(subset=['Province','Vector','Eventlevel','Time1','Time2']) # 
 #no encoding needed right? (en ook niet gedaan vermoed ik)
 df = pd.DataFrame(data)
 
-model = ols("""Time1 ~ C(Vector) + C(Eventlevel) + C(Province) +
-               C(Vector):C(Eventlevel) + C(Vector):C(Province) + C(Eventlevel):C(Province) +
-               C(Vector):C(Eventlevel):C(Province)""", data=df).fit()
+#model = ols(Time1 ~ C(Vector) + C(Eventlevel) + C(Province) +
+        C(Vector):C(Eventlevel) + C(Vector):C(Province) + C(Eventlevel):C(Province) +
+             C(Vector):C(Eventlevel):C(Province), data=df).fit()
 
 #print(sm.stats.anova_lm(model, typ=2)) # allemaal heel significant
 #print(model.summary())
@@ -55,7 +60,7 @@ print(sm.stats.anova_lm(gls_model, typ=2))
 
 # Samenvatting van het model
 print(gls_model.summary())
-
+"""
 
 
 

@@ -15,6 +15,7 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn import metrics
 import statsmodels as sm
 from sklearn.metrics import mean_squared_error
+import joblib
 
 
 ##### DATA PREPROCESSING #####
@@ -225,7 +226,7 @@ plt.bar(categories, total_importances)
 plt.xlabel('Categorical Variables')
 plt.ylabel('Total Importance')
 plt.title('Total Feature Importances per Categorical Variable')
-plt.show()
+#plt.show()
 
 
 feature_names = ["Province_" + str(i) for i in range(11)] + \
@@ -241,7 +242,7 @@ sorted_feature_names = [feature_names[i] for i in sorted_indices]
 plt.barh(sorted_feature_names, sorted_importances)
 plt.xlabel('Importance')
 plt.title('Feature Importances')
-plt.show()
+#plt.show()
 
 
 #prediction (end output)
@@ -251,7 +252,7 @@ threshold = 0.025
 # Selecteer de belangrijkste features op basis van de drempelwaarde
 important_features = [feature for feature, importances_sorted in zip(sorted_feature_names, sorted_importances) if importances_sorted >= threshold]
 
-print("Belangrijkste features:", important_features)#['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
+#print("Belangrijkste features:", important_features)#['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
 
 # Filter de dataset om alleen de belangrijke features te behouden
 X_important = X1_train_filtered[:,[21,20,14,11,8,0]]
@@ -263,26 +264,30 @@ new_model.fit(X_important, y1_train_filtered)
 # Evalueer het model
 y_test_pred = new_model.predict(X_test[:,[21,20,14,11,8,0]])
 test_mse = mean_squared_error(y1_test, y_test_pred)
-print("Mean Squared Error op de testset van het nieuwe model:", test_mse)
+#print("Mean Squared Error op de testset van het nieuwe model:", test_mse)
 
 # Voorspel de responstijd
 predicted_response_time = new_model.predict([[0,0,0,0,0,0]])
-
 # Print de voorspelde responstijd
 print("Voorspelde responstijd (in seconden):", predicted_response_time[0])
 
 
-# Converteer de voorspelde responstijd van seconden naar minuten en seconden
-def convert_seconds_to_minutes_seconds(seconds):
-    minutes = int(seconds // 60)
-    remaining_seconds = int(seconds % 60)
-    return minutes, remaining_seconds
 
-predicted_seconds = predicted_response_time[0]
-minutes, seconds = convert_seconds_to_minutes_seconds(predicted_seconds)
+### Functie om in de app te gebruiken
+def give_predicted_response_time(vectorMetLengteZes):
+    predicted_total_seconds = new_model.predict([vectorMetLengteZes])[0]
+    minutes = int(predicted_total_seconds // 60)
+    seconds = int(predicted_total_seconds % 60)
+    return [minutes, seconds]
 
-print(f"Voorspelde responstijd: {minutes} minuten en {seconds} seconden")
+vector = [0,0,0,0,0,0]
+print(give_predicted_response_time(vector))
+print("Voorspelde responstijd: ",give_predicted_response_time(vector)[0], " minuten en ",give_predicted_response_time(vector)[1], " seconden")
 
+
+joblib.dump(new_model, 'ResponseTimeModel.joblib')
+#model = joblib.load('ResponseTimeModel.joblib')
+#model.predict([vectorMetLengteZes])[0]
 
 
 """
