@@ -185,7 +185,7 @@ def update_map(n_clicks, lat, lon, event_level, vector):
                 vector_matrix = vector_to_matrix(vector)
                 province_matrix = province_to_matrix(province)
 
-                # Combine the matrices into a single 1x15 matrix
+                # Combine the matrices into a single matrix
                 combined_matrix = province_matrix + vector_matrix + event_level_matrix
 
                 indices = [0, 8, 11, 14, 20, 21]
