@@ -36,7 +36,7 @@ features = ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T
             'Ambulance', 'Mug', 'Occasional_Permanence']
 
 # Standardize the features
-scaler = StandardScaler()
+scaler = RobustScaler()
 scaled_data = scaler.fit_transform(data[features])
 
 print(data[features].isna().sum())

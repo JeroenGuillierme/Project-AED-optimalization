@@ -1,13 +1,54 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+from scipy.stats import lognorm
+import statsmodels.api as sm
+import math
+from sklearn.cluster import KMeans
 
 # Load your original dataset
 df = pd.read_csv('DATA/updated_aed_df_with_all_distances.csv')
-df2 = df
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Coverage Radius
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Response times for Ambulances
+response_times = df['T3-T0_min'].dropna()
+print(response_times.describe())
+percentile_90_ambulance = np.percentile(response_times, 90)
+print(f"90th percentile ambulance response time: {percentile_90_ambulance} minutes")
+
+# Response times for AED
+target_aed_response_time = 5  # Target response time for AEDs in minutes
+average_speed_km_per_min = 12 / 60  # 12 km/h in km per minute becaue in distress people will run to AED
+coverage_radius_km = target_aed_response_time * average_speed_km_per_min
+coverage_radius_m = coverage_radius_km * 1000  # Convert to meters
+print(f"Adjusted coverage radius for AEDs: {coverage_radius_m} meters")
+
+
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Plot Distributions
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Create histogram
+plt.hist(np.log1p(df['distance_to_aed']), edgecolor='black', bins=20)
+plt.show()
+
+plt.hist(np.log1p(df['distance_to_ambulance']+1), edgecolor='black', bins=20)
+plt.show()
+
+plt.hist(np.log1p(df['distance_to_mug']+1), edgecolor='black', bins=20)
+plt.show()
+
+plt.hist(np.log1p(df['T3-T0_min']), edgecolor='black', bins=20)
+plt.show()
+
+
 
 # Fill NaN values in Eventlevel and Occasional_Permanence
 df['Eventlevel'].fillna(-1, inplace=True)
@@ -16,56 +57,24 @@ df['Occasional_Permanence'].fillna(-1, inplace=True)
 # Remove rows with NaN values in Latitude or Longitude
 df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
 
-# Normalize the numerical columns
-scaler = MinMaxScaler()
-df[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug']] = scaler.fit_transform(
-    df[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug']])
-
-# Train a regression model to determine weights dynamically
-features = ['Intervention', 'CAD9', 'Eventlevel', 'distance_to_aed', 'distance_to_ambulance', 'distance_to_mug']
-target = 'T3-T0_min'  # Replace with the actual target variable in your dataset
-
-# Ensure there are no NaN values in the features and target
-df = df.dropna(subset=features + [target])
-
-# Train a linear regression model
-X = df[features]
-y = df[target]
-reg = LinearRegression().fit(X, y)
-
-# Extract the coefficients and normalize them to sum to 1
-coefficients = reg.coef_
-weights = coefficients / coefficients.sum()
-
-print("Weights from Linear Regression:")
-print(weights) # Result: [0.         0.06526201 0.00450788 0.26577536 0.63171176 0.03274299]
-
-# Apply the weights to calculate the weighted score for each location
-df['score'] = (df['Intervention'] * weights[0] +
-               df['CAD9'] * weights[1] +
-               df['Eventlevel'] * weights[2] +
-               df['distance_to_aed'] * weights[3] +
-               df['distance_to_ambulance'] * weights[4] +
-               df['distance_to_mug'] * weights[5])
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PCA
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Drop any rows with NaN values
-df2.dropna(inplace=True)
 
 # Select relevant variables for PCA
 # For example, excluding variables like latitude, longitude, and intervention
 # You can adjust this based on your specific dataset
-selected_columns = ['Intervention', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence',
+selected_columns = ['Intervention', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence', 'Eventlevel',
                     'distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']
 
 # Extract the selected columns
-data = df2[selected_columns]
+data = df[selected_columns]
+print(data.isna().sum())
 
 # Standardize the data
-scaler = StandardScaler()
+scaler = RobustScaler()
 scaled_data = scaler.fit_transform(data)
 
 # Perform PCA
