@@ -131,12 +131,21 @@ coverage_radius = 1000  # Assuming a coverage radius of 1000 meters
 
 grid_gdf['coverage'] = grid_gdf.apply(lambda row: evaluate_coverage(row, incident_coords, coverage_radius), axis=1)
 grid_gdf['final_score'] = grid_gdf['score'] + grid_gdf['coverage']
-
+grid_gdf['Intervention'] = 0
+grid_gdf['CAD9'] = 0
+grid_gdf['Eventlevel'] = -1
+grid_gdf['AED'] = 0
+grid_gdf['Ambulance'] = 0
+grid_gdf['Mug'] = 0
+grid_gdf['Occasional_Permanence'] = 0
 # Combine existing potential locations with new grid locations
-all_potential_locations = pd.concat([potential_locations, grid_gdf[['Latitude', 'Longitude', 'score', 'coverage', 'final_score']]], ignore_index=True)
+all_potential_locations = pd.concat([potential_locations, grid_gdf[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel',
+                                                                    'AED', 'Ambulance', 'Mug', 'Occasional_Permanence',
+                                                                    'distance_to_aed', 'distance_to_ambulance', 'distance_to_mug',
+                                                                    'score', 'coverage', 'final_score']]], ignore_index=True)
 
 
-all_potential_locations.to_csv('DATA/aed_locations_extended.csv')
+all_potential_locations.to_csv('DATA/aed_locations_extended.csv') # ongeveer 24.000 locaties toegevoegd
 
 
 
