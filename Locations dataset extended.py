@@ -10,6 +10,7 @@ import folium
 from folium.plugins import MarkerCluster
 import logging
 import time
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Start time
 start_time = time.ctime(int(time.time()))
@@ -59,6 +60,7 @@ df['distance_to_mug'] = np.log1p(df['distance_to_mug'])
 df['T3-T0_min'] = np.log1p(df['T3-T0_min'])
 '''
 
+'''
 # Normalize the numerical columns using RobustScaler
 scaler = RobustScaler()
 df[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']] = scaler.fit_transform(
@@ -83,6 +85,8 @@ df['score'] = (df['Intervention'] * weights['Intervention'] + df['CAD9'] * weigh
 
 # Filter out locations with existing AEDs
 potential_locations = df[df['AED'] == 0].copy() # Use a copy!!
+'''
+
 
 # Calculate distances for grid locations
 def haversine(lat1, lon1, lat2, lon2):
@@ -94,18 +98,23 @@ def haversine(lat1, lon1, lat2, lon2):
     c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
     return R * c * 1000  # Distance in meters
 
+
 def calculate_nearest_distance(lat, lon, coords):
     distances = np.array([haversine(lat, lon, coord_lat, coord_lon) for coord_lat, coord_lon in coords])
     return np.min(distances)
+
 
 # Calculate distances to the nearest AED, ambulance, and MUG for grid locations
 aed_coords = df[df['AED'] == 1][['Latitude', 'Longitude']].dropna().to_numpy()
 ambulance_coords = df[df['Ambulance'] == 1][['Latitude', 'Longitude']].dropna().to_numpy()
 mug_coords = df[df['Mug'] == 1][['Latitude', 'Longitude']].dropna().to_numpy()
 
-grid_gdf['distance_to_aed'] = grid_gdf.apply(lambda row: calculate_nearest_distance(row['Latitude'], row['Longitude'], aed_coords), axis=1)
-grid_gdf['distance_to_ambulance'] = grid_gdf.apply(lambda row: calculate_nearest_distance(row['Latitude'], row['Longitude'], ambulance_coords), axis=1)
-grid_gdf['distance_to_mug'] = grid_gdf.apply(lambda row: calculate_nearest_distance(row['Latitude'], row['Longitude'], mug_coords), axis=1)
+grid_gdf['distance_to_aed'] = grid_gdf.apply(
+    lambda row: calculate_nearest_distance(row['Latitude'], row['Longitude'], aed_coords), axis=1)
+grid_gdf['distance_to_ambulance'] = grid_gdf.apply(
+    lambda row: calculate_nearest_distance(row['Latitude'], row['Longitude'], ambulance_coords), axis=1)
+grid_gdf['distance_to_mug'] = grid_gdf.apply(
+    lambda row: calculate_nearest_distance(row['Latitude'], row['Longitude'], mug_coords), axis=1)
 grid_gdf['T3-T0_min'] = np.nan
 
 '''
@@ -115,13 +124,15 @@ grid_gdf['distance_to_ambulance'] = np.log1p(grid_gdf['distance_to_ambulance'])
 grid_gdf['distance_to_mug'] = np.log1p(grid_gdf['distance_to_mug'])
 '''
 
+'''
 grid_gdf[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']] = scaler.transform(
     grid_gdf[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']])
+'''
 
+'''
 # Assign a neutral score and calculate coverage for grid locations
 grid_gdf['score'] = 0
 incident_coords = df[df['Intervention'] == 1][['Latitude', 'Longitude']].dropna().to_numpy()
-
 def evaluate_coverage(location, incident_coords, coverage_radius):
     distances = np.array([haversine(location['Latitude'], location['Longitude'], inc_lat, inc_lon)
                           for inc_lat, inc_lon in incident_coords])
@@ -131,6 +142,8 @@ coverage_radius = 1000  # Assuming a coverage radius of 1000 meters
 
 grid_gdf['coverage'] = grid_gdf.apply(lambda row: evaluate_coverage(row, incident_coords, coverage_radius), axis=1)
 grid_gdf['final_score'] = grid_gdf['score'] + grid_gdf['coverage']
+'''
+
 grid_gdf['Intervention'] = 0
 grid_gdf['CAD9'] = 0
 grid_gdf['Eventlevel'] = -1
@@ -138,20 +151,23 @@ grid_gdf['AED'] = 0
 grid_gdf['Ambulance'] = 0
 grid_gdf['Mug'] = 0
 grid_gdf['Occasional_Permanence'] = 0
+'''
 # Combine existing potential locations with new grid locations
-all_potential_locations = pd.concat([potential_locations, grid_gdf[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel',
-                                                                    'AED', 'Ambulance', 'Mug', 'Occasional_Permanence',
-                                                                    'distance_to_aed', 'distance_to_ambulance', 'distance_to_mug',
-                                                                    'score', 'coverage', 'final_score']]], ignore_index=True)
+all_potential_locations = pd.concat([df,
+                                     grid_gdf[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel',
+                                               'AED', 'Ambulance', 'Mug', 'Occasional_Permanence',
+                                               'distance_to_aed', 'distance_to_ambulance',
+                                               'distance_to_mug']]], ignore_index=True)
+'''
 
+grid_gdf.to_csv('DATA/gird_locations.csv', index=False)  # ongeveer 24.000 locaties toegevoegd
 
-all_potential_locations.to_csv('DATA/aed_locations_extended.csv') # ongeveer 24.000 locaties toegevoegd
-
-
+print(grid_gdf.head())
+print(len(grid_gdf))
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # End time
-end_time = time.time()
+end_time = time.ctime(int(time.time()))
 print(f'Program ended at {end_time}')
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

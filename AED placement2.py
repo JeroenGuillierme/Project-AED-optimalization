@@ -12,17 +12,19 @@ from folium.plugins import MarkerCluster
 import logging
 import time
 
-data = pd.read_csv('DATA/aed_locations_extended.csv') # data generated in locations dataset extended
-
+data = pd.read_csv('DATA/aed_locations_extended.csv', index_col='Unnamed: 0') # data generated in locations dataset extended
+pd.set_option('display.max_columns', None)
 print(len(data))
+print(data.head())
 aed_locations = pd.read_csv('DATA/updated_aed_df_with_all_distances.csv')
 
 
-features = ['Unnamed: 0', 'Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel',
+features = ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel',
             'T3-T0_min', 'AED', 'Ambulance', 'Mug', 'Occasional_Permanence', 'distance_to_aed',
             'distance_to_ambulance', 'distance_to_mug', 'score', 'coverage', 'final_score']
 print(features)
 print(data[features].isna().sum())
+print(len(data[data['Intervention']==1]))
 
 
 # Determine the optimal number of clusters using the Elbow method
