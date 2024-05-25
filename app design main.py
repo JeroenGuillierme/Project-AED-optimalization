@@ -36,7 +36,7 @@ provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].str.replace('Provi
 app = dash.Dash(__name__)
 
 # Initial map figure
-initial_map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10)
+initial_map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10, hover_name='type', hover_data='available')
 initial_map_figure.update_traces(marker=dict(size=10, color='red'))
 initial_map_figure.update_layout(mapbox_style='open-street-map')
 
@@ -49,10 +49,7 @@ app.layout = html.Div([
     dcc.Input(id='lat-input', type='number', placeholder='Enter the latitude'),
     dcc.Input(id='lon-input', type='number', placeholder='Enter the longitude'),
     html.Button(id='submit-button', n_clicks=0, children='Search'),
-    html.Div([
-        dcc.Dropdown(
-            id='event-level-dropdown',
-            options=[
+    html.Div([dcc.Dropdown(id='event-level-dropdown', options=[
                 {'label': 'N0', 'value': 'N0'},
                 {'label': 'N1', 'value': 'N1'},
                 {'label': 'N2', 'value': 'N2'},
@@ -62,25 +59,16 @@ app.layout = html.Div([
                 {'label': 'N6', 'value': 'N6'},
                 {'label': 'N7', 'value': 'N7'},
                 {'label': 'N8', 'value': 'N8'},
-                {'label': 'Other', 'value': 'Other'}
-            ],
-            placeholder='Select Event Level'
-        )
-    ]),
-    html.Div([
-        dcc.Dropdown(
-            id='vector-dropdown',
-            options=[
+                {'label': 'Other', 'value': 'Other'}], placeholder='Select Event Level')]),
+    html.Div([dcc.Dropdown(id='vector-dropdown', options=[
                 {'label': 'Ambulance', 'value': 'Ambulance'},
                 {'label': 'Brandziekenwagen', 'value': 'Brandziekenwagen'},
                 {'label': 'Decontaminatiewagen', 'value': 'Decontaminatiewagen'},
                 {'label': 'Mug', 'value': 'Mug'},
-                {'label': 'Pit', 'value': 'Pit'},
-            ],
-            placeholder='Select Vector'
-        )
-    ]),
+                {'label': 'Pit', 'value': 'Pit'}], placeholder='Select Vector')]),
     html.Div(id='popup-message'),
+    html.Button(id='instructions-button', n_clicks=0, children='Instructies'),
+    html.Div(id='instructions-message'),
     dcc.Graph(id='map', figure=initial_map_figure),
     html.Div(id='error-message', style={'color': 'red'})
 ])
@@ -148,8 +136,8 @@ def get_province_from_coordinates(lat, lon):
 @app.callback(
     [Output('map', 'figure'), Output('popup-message', 'children'), Output('error-message', 'children')],
     [Input('submit-button', 'n_clicks'), Input('lat-input', 'value'), Input('lon-input', 'value'),
-     Input('event-level-dropdown', 'value'), Input('vector-dropdown', 'value')]
-)
+     Input('event-level-dropdown', 'value'), Input('vector-dropdown', 'value')])
+
 def update_map(n_clicks, lat, lon, event_level, vector):
     map_figure = initial_map_figure
     popup_message = ''
@@ -162,10 +150,9 @@ def update_map(n_clicks, lat, lon, event_level, vector):
             try:
                 user_location = pd.DataFrame({
                     'latitude': [lat],
-                    'longitude': [lon]
-                })
+                    'longitude': [lon]})
 
-                map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10)
+                map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10, hover_name='type', hover_data='available')
                 map_figure.update_traces(marker=dict(size=10, color='red'))
 
                 user_trace = px.scatter_mapbox(user_location, lat='latitude', lon='longitude')
@@ -174,10 +161,7 @@ def update_map(n_clicks, lat, lon, event_level, vector):
                 for trace in user_trace.data:
                     map_figure.add_trace(trace)
 
-                map_figure.update_layout(
-                    mapbox_style='open-street-map',
-                    mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14)
-                )
+                map_figure.update_layout(mapbox_style='open-street-map', mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14))
 
                 province = get_province_from_coordinates(lat, lon)
                 # Create the event level and vector matrices
@@ -192,14 +176,25 @@ def update_map(n_clicks, lat, lon, event_level, vector):
                 respons_matrix = [combined_matrix[i] if i < len(combined_matrix) else 0 for i in indices]
 
                 # Pop-up message with event level, vector, and combined matrix
+                instructies = "Wat te doen bij het ongeval."
                 popup_message = (f'Je hebt gezocht op locatie: Breedtegraad {lat}, '
                                  f'Lengtegraad {lon}, Event Level: {event_level}, '
-                                 f'Vector: {vector}, Province: {province}, Combined Matrix: {respons_matrix}',
-                                  "Voorspelde responstijd: ",give_predicted_response_time(respons_matrix)[0], " minuten en ",give_predicted_response_time(respons_matrix)[1], " seconden")
+                                 f'Vector: {vector}, Province: {province}, Combined Matrix: {respons_matrix}\n',
+                                 f'Voorspelde responstijd: {give_predicted_response_time(respons_matrix)[0]} minuten en {give_predicted_response_time(respons_matrix)[1]} seconden\n'
+                                 f'{instructies}')
             except Exception as e:
                 error_message = f'Error while processing coordinates: {e}'
 
     return map_figure, popup_message, error_message
+
+@app.callback(
+    Output('instructions-message', 'children'),
+    [Input('instructions-button', 'n_clicks')])
+
+def show_instructions(n_clicks):
+    if n_clicks > 0:
+        return 'Instructies: Zorg ervoor dat u de noodnummers bij de hand hebt en volg de aanwijzingen van de hulpdiensten.'
+    return ''
 
 
 if __name__ == '__main__':
