@@ -1,12 +1,14 @@
 import dash
 from dash import dcc, html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import plotly.express as px
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 from operator import itemgetter
 import joblib
+import dash_bootstrap_components as dbc
+from dash.exceptions import PreventUpdate
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # IMPORTING DATASETS
@@ -33,7 +35,7 @@ provinces_gdf = gpd.read_file('data/georef-belgium-province-millesime.geojson')
 provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].apply(lambda x: x[0] if isinstance(x, list) else x)
 provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].str.replace('Provincie ', '')
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, title='AED localization app', external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Initial map figure
 initial_map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10, hover_name='type', hover_data='available')
@@ -49,6 +51,7 @@ app.layout = html.Div([
     dcc.Input(id='lat-input', type='number', placeholder='Enter the latitude'),
     dcc.Input(id='lon-input', type='number', placeholder='Enter the longitude'),
     html.Button(id='submit-button', n_clicks=0, children='Search'),
+    html.Button(id='reset-button', n_clicks=0, children='Reset'),
     html.Div([dcc.Dropdown(id='event-level-dropdown', options=[
                 {'label': 'N0', 'value': 'N0'},
                 {'label': 'N1', 'value': 'N1'},
@@ -132,27 +135,37 @@ def get_province_from_coordinates(lat, lon):
             return province['prov_name_nl']
     return 'Brussel'
 
-# Callback to update entered coordinates in the map
 @app.callback(
-    [Output('map', 'figure'), Output('popup-message', 'children'), Output('error-message', 'children')],
-    [Input('submit-button', 'n_clicks'), Input('lat-input', 'value'), Input('lon-input', 'value'),
-     Input('event-level-dropdown', 'value'), Input('vector-dropdown', 'value')])
+    [Output('lat-input', 'value'), Output('lon-input', 'value'), Output('map', 'figure'), Output('popup-message', 'children'), Output('error-message', 'children')],
+    [Input('submit-button', 'n_clicks'), Input('reset-button', 'n_clicks')],
+    [State('lat-input', 'value'), State('lon-input', 'value'),
+     State('event-level-dropdown', 'value'), State('vector-dropdown', 'value')])
 
-def update_map(n_clicks, lat, lon, event_level, vector):
+def update_or_reset_map(submit_clicks, reset_clicks, lat, lon, event_level, vector):
+    ctx = dash.callback_context
+    if not ctx.triggered:
+        raise PreventUpdate
+
+    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+
+    if button_id == 'reset-button':
+        return None, None, initial_map_figure, '', ''
+
     map_figure = initial_map_figure
     popup_message = ''
     error_message = ''
 
-    if n_clicks > 0:
+    if submit_clicks > 0:
         if lat is None or lon is None:
             error_message = 'Please provide latitude and longitude.'
         else:
             try:
                 user_location = pd.DataFrame({
                     'latitude': [lat],
-                    'longitude': [lon]})
+                    'longitude': [lon]
+                })
 
-                map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10, hover_name='type', hover_data='available')
+                map_figure = px.scatter_mapbox(aedLoc, lat='latitude', lon='longitude', zoom=10)
                 map_figure.update_traces(marker=dict(size=10, color='red'))
 
                 user_trace = px.scatter_mapbox(user_location, lat='latitude', lon='longitude')
@@ -161,41 +174,42 @@ def update_map(n_clicks, lat, lon, event_level, vector):
                 for trace in user_trace.data:
                     map_figure.add_trace(trace)
 
-                map_figure.update_layout(mapbox_style='open-street-map', mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14))
+                map_figure.update_layout(
+                    mapbox_style='open-street-map',
+                    mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14)
+                )
 
                 province = get_province_from_coordinates(lat, lon)
-                # Create the event level and vector matrices
                 event_level_matrix = event_level_to_matrix(event_level)
                 vector_matrix = vector_to_matrix(vector)
                 province_matrix = province_to_matrix(province)
-
-                # Combine the matrices into a single matrix
                 combined_matrix = province_matrix + vector_matrix + event_level_matrix
 
                 indices = [0, 8, 11, 14, 20, 21]
                 respons_matrix = [combined_matrix[i] if i < len(combined_matrix) else 0 for i in indices]
 
-                # Pop-up message with event level, vector, and combined matrix
                 instructies = "Wat te doen bij het ongeval."
                 popup_message = (f'Je hebt gezocht op locatie: Breedtegraad {lat}, '
                                  f'Lengtegraad {lon}, Event Level: {event_level}, '
-                                 f'Vector: {vector}, Province: {province}, Combined Matrix: {respons_matrix}\n',
-                                 f'Voorspelde responstijd: {give_predicted_response_time(respons_matrix)[0]} minuten en {give_predicted_response_time(respons_matrix)[1]} seconden\n'
+                                 f'Vector: {vector}, Province: {province}, Combined Matrix: {respons_matrix} '
+                                 f'Voorspelde responstijd: {give_predicted_response_time(respons_matrix)[0]} minuten en {give_predicted_response_time(respons_matrix)[1]} seconden. '
                                  f'{instructies}')
             except Exception as e:
                 error_message = f'Error while processing coordinates: {e}'
 
-    return map_figure, popup_message, error_message
+    return lat, lon, map_figure, popup_message, error_message
 
 @app.callback(
     Output('instructions-message', 'children'),
-    [Input('instructions-button', 'n_clicks')])
+    [Input('instructions-button', 'n_clicks')],
+    [State('instructions-message', 'children')])
 
-def show_instructions(n_clicks):
+def toggle_instructions(n_clicks, current_message):
     if n_clicks > 0:
+        if current_message:
+            return ''
         return 'Instructies: Zorg ervoor dat u de noodnummers bij de hand hebt en volg de aanwijzingen van de hulpdiensten.'
-    return ''
-
+    return current_message
 
 if __name__ == '__main__':
     app.run_server(debug=True)
