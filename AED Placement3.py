@@ -130,7 +130,7 @@ features_for_imputation = all_potential_locations[['Latitude', 'Longitude', 'dis
 features_to_scale = features_for_imputation[['Latitude', 'Longitude', 'distance_to_ambulance',
                                              'distance_to_mug']]
 # Initialize the scaler
-# IMPORTANT: IS THIS THE CORRECT SCALER?? => MOST OF THE VARIABLES ARE RIGHT SKEWED
+# IMPORTANT: IS THIS THE CORRECT SCALER?? => MOST OF THE VARIABLES ARE RIGHT SKEWED => MAYBE FIRST POWERTRANSFORM DISTANCES
 scaler = StandardScaler()
 # Fit and transform the features to scale
 scaled_features = scaler.fit_transform(features_to_scale)
@@ -138,6 +138,43 @@ scaled_features = scaler.fit_transform(features_to_scale)
 scaled_data = pd.DataFrame(scaled_features,
                            columns=['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance_scaled',
                                     'distance_to_mug_scaled'])
+
+# Setting the style for the plots
+sns.set(style="whitegrid")
+
+# Create a figure and a grid of subplots
+fig, axes = plt.subplots(3, 2, figsize=(15, 18))
+
+# Plot histogram for latitude
+sns.histplot(scaled_data['Latitude_scaled'], bins=30, kde=True, ax=axes[0, 0])
+axes[0, 0].set_title('Distribution of Latitudes')
+axes[0, 0].set_xlabel('Latitude')
+axes[0, 0].set_ylabel('Frequency')
+
+# Plot histogram for longitude
+sns.histplot(scaled_data['Longitude_scaled'], bins=30, kde=True, ax=axes[0, 1])
+axes[0, 1].set_title('Distribution of Longitudes')
+axes[0, 1].set_xlabel('Longitude')
+axes[0, 1].set_ylabel('Frequency')
+
+# Plot histogram for distance to the closest ambulance
+sns.histplot(scaled_data['distance_to_ambulance_scaled'], bins=30, kde=True, ax=axes[1, 0])
+axes[1, 0].set_title('Distribution of Distances to the Closest Ambulance Location')
+axes[1, 0].set_xlabel('Distance to closest Ambulance location')
+axes[1, 0].set_ylabel('Frequency')
+
+# Plot histogram for distance to the closest Mug
+sns.histplot(scaled_data['distance_to_mug_scaled'], bins=30, kde=True, ax=axes[1, 1])
+axes[1, 1].set_title('Distribution of Distances to the Closest Mug Location')
+axes[1, 1].set_xlabel('Distance to closest Mug location')
+axes[1, 1].set_ylabel('Frequency')
+
+# Adjust layout
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+
 scaled_data['T3-T0_min'] = features_for_imputation['T3-T0_min'].values
 # Initialize the KNN Imputer
 knn_imputer = KNNImputer(n_neighbors=5)
