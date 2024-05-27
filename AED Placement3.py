@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
@@ -94,17 +95,19 @@ plt.show()
 
 # Only check Response times for intervention locations (longer than 25 min)
 fig, ax = plt.subplots(figsize=(12, 8))
-scatter = sns.scatterplot(data=all_potential_locations[all_potential_locations['T3-T0_min'] > 25], x='Longitude',
-                          y='Latitude',
-                          hue='T3-T0_min', palette='coolwarm',
-                          size='T3-T0_min',
-                          sizes=(20, 200), legend='brief', ax=ax)
+scatter = sns.scatterplot(
+    data=all_potential_locations[(all_potential_locations['T3-T0_min'] > 25) & (all_potential_locations['AED'] == 0)],
+    x='Longitude',
+    y='Latitude',
+    hue='distance_to_aed', palette='YlOrRd',
+    size='T3-T0_min',
+    sizes=(20, 200), legend='brief', ax=ax)
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('Response Times for previous Intervention Locations')
-# Customize the legend
+'''# Customize the legend
 handles, labels = scatter.get_legend_handles_labels()
-ax.legend(handles=handles[1:], labels=labels[1:], title='Response Time (min)', loc='upper right',
-          bbox_to_anchor=(1, 1))
+ax.legend(handles=handles[1:], labels=labels[1:], loc='upper right',
+          bbox_to_anchor=(1, 1))'''
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
 plt.show()
@@ -126,9 +129,14 @@ Inverse Transform: After imputation, the scaled features were inverse transforme
 # Select features for imputation
 features_for_imputation = all_potential_locations[['Latitude', 'Longitude', 'distance_to_ambulance',
                                                    'distance_to_mug', 'T3-T0_min']]
+
+# Transform distances before scaling because right skewed
+features_for_imputation['distance_to_mug_log'] = np.log1p(features_for_imputation['distance_to_mug'])
+features_for_imputation['distance_to_ambulance_log'] = np.log1p(features_for_imputation['distance_to_ambulance'])
+
 # Separate features to scale
-features_to_scale = features_for_imputation[['Latitude', 'Longitude', 'distance_to_ambulance',
-                                             'distance_to_mug']]
+features_to_scale = features_for_imputation[['Latitude', 'Longitude', 'distance_to_ambulance_log',
+                                             'distance_to_mug_log']]
 # Initialize the scaler
 # IMPORTANT: IS THIS THE CORRECT SCALER?? => MOST OF THE VARIABLES ARE RIGHT SKEWED => MAYBE FIRST POWERTRANSFORM DISTANCES
 scaler = StandardScaler()
@@ -136,14 +144,14 @@ scaler = StandardScaler()
 scaled_features = scaler.fit_transform(features_to_scale)
 # Combine scaled features with the original dataframe
 scaled_data = pd.DataFrame(scaled_features,
-                           columns=['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance_scaled',
-                                    'distance_to_mug_scaled'])
+                           columns=['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance_log_scaled',
+                                    'distance_to_mug_log_scaled'])
 
 # Setting the style for the plots
 sns.set(style="whitegrid")
 
 # Create a figure and a grid of subplots
-fig, axes = plt.subplots(3, 2, figsize=(15, 18))
+fig, axes = plt.subplots(2, 2, figsize=(15, 18))
 
 # Plot histogram for latitude
 sns.histplot(scaled_data['Latitude_scaled'], bins=30, kde=True, ax=axes[0, 0])
@@ -158,13 +166,13 @@ axes[0, 1].set_xlabel('Longitude')
 axes[0, 1].set_ylabel('Frequency')
 
 # Plot histogram for distance to the closest ambulance
-sns.histplot(scaled_data['distance_to_ambulance_scaled'], bins=30, kde=True, ax=axes[1, 0])
+sns.histplot(scaled_data['distance_to_ambulance_log_scaled'], bins=30, kde=True, ax=axes[1, 0])
 axes[1, 0].set_title('Distribution of Distances to the Closest Ambulance Location')
 axes[1, 0].set_xlabel('Distance to closest Ambulance location')
 axes[1, 0].set_ylabel('Frequency')
 
 # Plot histogram for distance to the closest Mug
-sns.histplot(scaled_data['distance_to_mug_scaled'], bins=30, kde=True, ax=axes[1, 1])
+sns.histplot(scaled_data['distance_to_mug_log_scaled'], bins=30, kde=True, ax=axes[1, 1])
 axes[1, 1].set_title('Distribution of Distances to the Closest Mug Location')
 axes[1, 1].set_xlabel('Distance to closest Mug location')
 axes[1, 1].set_ylabel('Frequency')
@@ -182,18 +190,19 @@ knn_imputer = KNNImputer(n_neighbors=5)
 imputed_values = knn_imputer.fit_transform(scaled_data)
 # Create a dataframe with the imputed values
 imputed_data = pd.DataFrame(imputed_values, columns=scaled_data.columns)
-# Inverse transform the scaled features back to original scale
+'''# Inverse transform the scaled features back to original scale
 imputed_data[
-    ['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance', 'distance_to_mug']] = scaler.inverse_transform(
-    imputed_data[['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance_scaled', 'distance_to_mug_scaled']])
+    ['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance_log', 'distance_to_mug_log']] = scaler.inverse_transform(
+    imputed_data[['Latitude_scaled', 'Longitude_scaled', 'distance_to_ambulance_log_scaled', 'distance_to_mug_log_scaled']])
 imputed_data.rename(columns={'Latitude_scaled': 'Latitude', 'Longitude_scaled': 'Longitude',
-                             'distance_to_ambulance': 'distance_to_ambulance',
-                             'distance_to_mug': 'distance_to_mug'}, inplace=True)
+                             'distance_to_ambulance_log': 'distance_to_ambulance',
+                             'distance_to_mug_log': 'distance_to_mug'}, inplace=True)'''
 # Assign the imputed values back to the original dataframe
 all_potential_locations['T3-T0_min'] = imputed_data['T3-T0_min']
 
 # Verify the imputation
 print(all_potential_locations.isnull().sum())
+print(all_potential_locations.head())
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # IDENTIFYING HIGH-RISK AREAS
@@ -272,16 +281,17 @@ plt.show()
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Only check Response times longer then 25 minutes (otherwise plot overfull and not clear anymore)
 fig, ax = plt.subplots(figsize=(12, 8))
-scatter = sns.scatterplot(data=gdf_incidents[gdf_incidents['T3-T0_min'] > 25], x='Longitude', y='Latitude',
-                          hue='T3-T0_min', palette='coolwarm',
+scatter = sns.scatterplot(data=gdf_incidents[(gdf_incidents['T3-T0_min'] > 25) & (gdf_incidents['AED'] == 0)],
+                          x='Longitude', y='Latitude',
+                          hue='distance_to_aed', palette='YlOrRd',
                           size='T3-T0_min',
                           sizes=(20, 200), legend='brief', ax=ax)
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('Response Times by Location')
-# Customize the legend
+'''# Customize the legend
 handles, labels = scatter.get_legend_handles_labels()
-ax.legend(handles=handles[1:], labels=labels[1:], title='Response Time (min)', loc='upper right',
-          bbox_to_anchor=(1, 1))
+ax.legend(handles=handles[1:], labels=labels[1:], loc='upper right',
+          bbox_to_anchor=(1, 1))'''
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
 plt.show()
