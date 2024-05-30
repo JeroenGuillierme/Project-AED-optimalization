@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans, DBSCAN
 from sklearn.metrics import silhouette_score
 from sklearn import metrics
 from sklearn.datasets import make_blobs
-from sklearn.neighbors import NearestNeighbors
+from sklearn.neighbors import NearestNeighbors, BallTree
 import matplotlib.pyplot as plt
 import seaborn as sns
 import geopandas as gpd
@@ -32,6 +32,9 @@ aed_data = pd.read_csv('DATA/updated_aed_df_with_all_distances.csv')
 # grid_data = pd.read_csv('DATA/gird_locations.csv')
 # Load Belgium shapefile
 belgium_boundary = gpd.read_file('DATA/België.json')
+
+aed_locations = aed_data[aed_data['AED'] == 1]
+print(f'There are currently {len(aed_locations)} AEDs in Belgium')
 
 pd.set_option('display.max_columns', None)
 # print(aed_data.head())
@@ -186,6 +189,10 @@ ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
 plt.show()
 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ADDING INCIDENT DENSITY TO DATASET
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Create a GeoDataFrame from interventions data
 gdf_interventions = gpd.GeoDataFrame(
     interventions_data,
@@ -236,29 +243,73 @@ grid = gpd.GeoDataFrame(grid_cells, columns=['geometry'])
 # Filter out invalid geometries
 grid = grid[grid['geometry'].is_valid]
 # Spatial join the grid with the intervention points
-joined = gpd.sjoin(gdf_interventions, grid, how='left')
+joined_interventions = gpd.sjoin(gdf_interventions, grid, how='left')
 # Count incidents in each grid cell
-incident_counts = joined.groupby('index_right').size()
+incident_counts = joined_interventions.groupby('index_right').size()
 # Map incidents counts to the grid
 grid['incident_count'] = np.nan
 grid.loc[incident_counts.index, 'incident_count'] = incident_counts.values
-print(grid['incident_count'].sort_values(ascending=True).value_counts())
+# print(grid['incident_count'].sort_values(ascending=True).value_counts())
 
 # Perform a spatial join to add the incident_count to the interventions data
 gdf_interventions_with_incident_count = gpd.sjoin(gdf_interventions, grid[['geometry', 'incident_count']], how='left')
-
-# Drop the geometry column if it's not needed
-gdf_interventions_with_incident_count = gdf_interventions_with_incident_count.drop(columns='geometry')
-
-# print(gdf_interventions_with_incident_count['incident_count'].value_counts())
-
-# gdf_interventions.to_csv('DATA/interventions_with_densities.csv', index=False)
 
 # Plot the incident density
 fig, ax = plt.subplots(figsize=(12, 8))
 grid.plot(column='incident_count', ax=ax, cmap='OrRd', edgecolor='k', legend=True)
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('Incident Density Grid')
+ax.set_xlabel('Longitude')
+ax.set_ylabel('Latitude')
+plt.show()
+
+print(f'COLUMNS: {gdf_interventions_with_incident_count.columns}')
+# Drop the index right column if it's not needed
+gdf_interventions_with_incident_count = gdf_interventions_with_incident_count.drop(columns='index_right')
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# HEATMAP OF INCIDENT DENSITY
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fig, ax = plt.subplots(figsize=(12, 8))
+# kernel density estimate (KDE) plot
+
+kde = sns.kdeplot(data=aed_locations, x='Longitude', y='Latitude', cmap='Reds',
+                  fill=True, ax=ax, cbar=True)
+
+belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
+ax.set_title('Heatmap of AED Density')
+ax.set_xlabel('Longitude')
+ax.set_ylabel('Latitude')
+plt.show()
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ADDING AED DENSITY TO DATASET
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Convert to GeoDataFrame
+gdf_aed_locations = gpd.GeoDataFrame(
+    aed_locations,
+    geometry=gpd.points_from_xy(aed_locations.Longitude, aed_locations.Latitude)
+)
+# Spatial join the grid with the aed points
+joined_aed = gpd.sjoin(gdf_aed_locations, grid, how='left')
+# Count incidents in each grid cell
+aed_counts = joined_aed.groupby('index_right').size()
+# Map incidents counts to the grid
+grid['aed_count'] = np.nan
+grid.loc[aed_counts.index, 'aed_count'] = aed_counts.values
+print(grid[['incident_count', 'aed_count']].value_counts())
+
+# Perform a spatial join to add the incident_count to the interventions data
+gdf_interventions_with_both_count = gpd.sjoin(gdf_interventions_with_incident_count, grid[['geometry', 'aed_count']],
+                                              how='left')
+
+# Plot the AED density
+fig, ax = plt.subplots(figsize=(12, 8))
+grid.plot(column='aed_count', ax=ax, cmap='OrRd', edgecolor='k', legend=True)
+belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
+ax.set_title('AED Density Grid')
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
 plt.show()
@@ -271,7 +322,7 @@ plt.show()
 
 fig, ax = plt.subplots(figsize=(12, 8))
 scatter = sns.scatterplot(
-    data=gdf_interventions_with_incident_count[gdf_interventions_with_incident_count['T3-T0_min'] > 10],
+    data=gdf_interventions_with_both_count[gdf_interventions_with_both_count['T3-T0_min'] > 10],
     x='Longitude', y='Latitude',
     hue='distance_to_aed', palette='YlOrRd', hue_norm=(1500, 6000),
     size='T3-T0_min',
@@ -283,13 +334,16 @@ ax.set_ylabel('Latitude')
 plt.show()
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# IDENTIFYING HIGH-RISK AREAS
+# IDENTIFYING HIGH-RISK AREAS WITH LOW AED COVERAGE
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sns.histplot(data=gdf_interventions_with_incident_count['T3-T0_min'], kde=True, label='Response Time')
-sns.histplot(data=gdf_interventions_with_incident_count['incident_count'], kde=True,
+
+sns.histplot(data=gdf_interventions_with_both_count['T3-T0_min'], kde=True, label='Response Time')
+sns.histplot(data=gdf_interventions_with_both_count['incident_count'], kde=True,
              label='Incident Density (#incidents/3km²)')
+sns.histplot(data=gdf_interventions_with_both_count['aed_count'], kde=True,
+             label='AED Density (#AEDs/3km²)')
 plt.legend()
-plt.title('Density Response Time and Incident Density')
+plt.title('Density Response Time, Incident Density and AED Density')
 plt.xlabel('')
 plt.show()
 
@@ -315,13 +369,16 @@ resources.'
 '''
 # Define high-risk based on response time and incident frequency
 response_time_threshold = 10  # minutes
-incident_density_threshold = 5  # more than one previous intervention on that location
-
+incident_density_threshold = 5  # more than one previous intervention on that location area
+aed_density_threshold = 5  # less than 5 aeds on that location area
 # Identify high-risk areas
-high_risk_areas = gdf_interventions_with_incident_count[
-    (gdf_interventions_with_incident_count['T3-T0_min'] > response_time_threshold) &
-    (gdf_interventions_with_incident_count['incident_count'] > incident_density_threshold)
+high_risk_areas = gdf_interventions_with_both_count[
+    (gdf_interventions_with_both_count['T3-T0_min'] > response_time_threshold) &
+    (gdf_interventions_with_both_count['incident_count'] > incident_density_threshold) &
+    (gdf_interventions_with_both_count['aed_count'] < aed_density_threshold)
     ]
+
+print(f'Number of high risk areas in Belgium according to chosen thresholds: {len(high_risk_areas)}')
 
 # Visualise high-risk areas
 fig, ax = plt.subplots(figsize=(12, 8))
@@ -379,14 +436,14 @@ print("Estimated number of clusters: %d" % n_clusters_)
 print("Estimated number of noise points: %d" % n_noise_)
 # Plot clusters
 fig, ax = plt.subplots(figsize=(12, 8))
-custom_palette = sns.color_palette("Paired", 50)
+custom_palette = sns.color_palette("Paired", 12)
 # Plot the high-risk areas and color by cluster
 scatter = sns.scatterplot(
     data=high_risk_areas,
     x='Longitude', y='Latitude',
     hue='cluster', palette=custom_palette,
     size='incident_count',
-    sizes=(20, 200), legend=False, ax=ax)
+    sizes=(20, 200), legend='brief', ax=ax)
 # Overlay the Belgium boundary
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 
@@ -398,11 +455,11 @@ new_aed_gdf.plot(ax=ax, marker='x', color='blue', markersize=100, label='Propose
 ax.set_title('High-Risk Areas Clusters and Proposed AED Locations')
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
-
+ax.legend(bbox_to_anchor=(1, 1))
+plt.tight_layout()
 plt.show()
 
 new_aed_gdf[['Latitude', 'Longitude']].to_csv('DATA/new_aed_locations.csv', index=True)
-
 
 '''
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -419,6 +476,12 @@ new_aed_gdf['Address'] = new_aed_gdf.apply(lambda row: reverse_geocode(row['Lati
                                                  axis=1)
 
 '''
+
+# Save the filtered proposed AED locations
+# new_aed_gdf_filtered[['Latitude', 'Longitude']].to_csv('DATA/new_filtered_aed_locations.csv', index=True)
+
+# Save the combined AED locations (existing + new filtered)
+# combined_aed_gdf[['Latitude', 'Longitude']].to_csv('DATA/combined_aed_locations.csv', index=True)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # End time
