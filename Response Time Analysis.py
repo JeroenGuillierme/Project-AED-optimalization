@@ -203,14 +203,12 @@ category_names = ["Province_" + str(i) for i in range(11)] + \
 sorted_indices = importances_sorted.argsort()[::-1]
 sorted_importances = importances_sorted[sorted_indices]
 sorted_feature_names = [category_names[i] for i in sorted_indices]
-print("sorted_indices: ", sorted_indices)
-print("sorted_importances: ", sorted_importances)
-print("sorted_feature_names: ", sorted_feature_names)
 
 ## Visualisation of category importances
 plt.barh(sorted_feature_names, sorted_importances)
 plt.xlabel('Importance')
 plt.title('Category Importances')
+plt.axvline(x = 0.025, color = 'red')
 plt.show()
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
