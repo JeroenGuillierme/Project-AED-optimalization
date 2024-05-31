@@ -74,10 +74,10 @@ features = ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T
 print(list(data.columns))
 print(data[features].isna().sum())
 print(data.head())
-print(data[data['AED']==1])
-print(data[data['Ambulance']==1])
-print(data[data['Mug']==1])
-print(data[data['CAD9']==1])
+print(data[data['AED'] == 1])
+print(data[data['Ambulance'] == 1])
+print(data[data['Mug'] == 1])
+print(data[data['CAD9'] == 1])
 
 
 

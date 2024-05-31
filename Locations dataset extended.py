@@ -52,41 +52,6 @@ df['Occasional_Permanence'].fillna(-1, inplace=True)
 # Remove rows with NaN values in Latitude or Longitude0
 df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
 
-'''
-# Log transform right skewed numerical columns before scaling (np.log1p due to the zero values)
-df['distance_to_aed'] = np.log1p(df['distance_to_aed'])
-df['distance_to_ambulance'] = np.log1p(df['distance_to_ambulance'])
-df['distance_to_mug'] = np.log1p(df['distance_to_mug'])
-df['T3-T0_min'] = np.log1p(df['T3-T0_min'])
-'''
-
-'''
-# Normalize the numerical columns using RobustScaler
-scaler = RobustScaler()
-df[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']] = scaler.fit_transform(
-    df[['distance_to_aed', 'distance_to_ambulance', 'distance_to_mug', 'T3-T0_min']])
-
-# Assign weights based on assumption
-weights = {
-    'Intervention': 0.3,
-    'CAD9': 0.3,
-    'Eventlevel': 0.5,
-    'distance_to_aed': 0.8,
-    'distance_to_ambulance': 0.65,
-    'distance_to_mug': 0.65,
-    'T3-T0_min': 0.90
-}
-
-# Calculate a weighted score for each location
-df['score'] = (df['Intervention'] * weights['Intervention'] + df['CAD9'] * weights['CAD9'] +
-               df['Eventlevel'] * weights['Eventlevel'] + df['distance_to_aed'] * weights['distance_to_aed'] +
-               df['distance_to_ambulance'] * weights['distance_to_ambulance'] + df['distance_to_mug'] * weights['distance_to_mug'] +
-               df['T3-T0_min'] * weights['T3-T0_min'])
-
-# Filter out locations with existing AEDs
-potential_locations = df[df['AED'] == 0].copy() # Use a copy!!
-'''
-
 
 # Calculate distances for grid locations
 def haversine(lat1, lon1, lat2, lon2):
