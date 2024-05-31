@@ -18,12 +18,15 @@ from sklearn.metrics import mean_squared_error
 import joblib
 
 
-##### DATA PREPROCESSING #####
 interventions = pd.read_csv("DATA/interventions.csv")
-
 pd.set_option('display.max_columns', None)
-
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observaties
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PREPROCESSING
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Nagaan hoeveel data er ontbreekt
 #print(data.isna().sum().sort_values()/len(data))
@@ -89,7 +92,6 @@ X_test = encoder.transform(X_test).toarray()
 25: Other 
 """
 
-
 # Isolationforest (voor outliers)
 IsoFo = IsolationForest(n_estimators=100, contamination= 'auto', random_state=31)
 y1_labels = IsoFo.fit_predict(np.array(y1_train).reshape(-1,1))
@@ -106,45 +108,9 @@ X1_train_filtered = np.array(X_train[y1_labels == 1]) # 420393 observaties na ve
 #print("max(Time1): ",max(y1_train_filtered)) # max(Time1) = 2811sec or 46min
 #print(y1_train_filtered[y1_train_filtered < 120]) # 1821 observations have Time1 < 120s or 2min
 
-#voor time2
-#y2_train_filtered = y2_train[y2_labels == 1]
-#X2_train_filtered = np.array(X_train[y2_labels == 1]).reshape(-1,1)
-
-"""
-### Random Forest Regression
-# Define parameters: these will need to be tuned to prevent overfitting and underfitting
-params = {
-    "n_estimators": 100,  # Number of trees in the forest
-    "max_depth": 10,  # Max depth of the tree
-    "min_samples_split": 4,  # Min number of samples required to split a node
-    "min_samples_leaf": 2,  # Min number of samples required at a leaf node
-    "ccp_alpha": 0,  # Cost complexity parameter for pruning
-    "random_state": 123,
-}
-
-# Create a RandomForestRegressor object with the parameters above
-rf = RandomForestRegressor(**params)
-
-# Train the random forest on the train set
-rf = rf.fit(X1_train_filtered, y1_train_filtered)
-
-# Predict the outcomes on the test set
-y1_pred = rf.predict(X_test)
-
-# Evaluate performance with error metrics
-print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
-print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
-print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
-
-
-# Create a sorted Series of features importances
-importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
-
-# Plot a horizontal barplot of importances_sorted
-importances_sorted.plot(kind="barh")
-plt.title("Features Importances")
-plt.show()
-"""
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# RANDOM FOREST REGRESSION
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 """
 ### Hyperparameter tuning with random search
@@ -175,12 +141,11 @@ rf_rs = RandomizedSearchCV(
 rf_rs.fit(X1_train_filtered, y1_train_filtered)
 
 # Print the best parameters and highest accuracy
-print("Best parameters found: ", rf_rs.best_params_)
+print("Best parameters found: ", rf_rs.best_params_) #"n_estimators": 110, "max_depth": 11, "min_samples_split":4, "min_samples_leaf": 1, "ccp_alpha": 0, "random_state": 123
 print("Best performance: ", rf_rs.best_score_)
 """
 
-#na ongeveer 30 min runnen resultaat beste parameters in volgende code aangepast
-# Define parameters: these will need to be tuned to prevent overfitting and underfitting
+#after hyperparameter tuning, best parameters were found:
 params = {
     "n_estimators": 110,  # Number of trees in the forest
     "max_depth": 11,  # Max depth of the tree
@@ -200,10 +165,13 @@ rf = rf.fit(X1_train_filtered, y1_train_filtered)
 y1_pred = rf.predict(X_test)
 
 # Evaluate performance with error metrics
-#print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
-#print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
-#print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
+#print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred)) #Mean Absolute Error: 150195.8634726495
+#print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred)) #Mean Squared Error: 412718371777.74756
+#print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred))) #Root Mean Squared Error: 642431.6086384197
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# VISUALISATION RESULT RANDOM FOREST
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Create a sorted Series of features importances
 importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
@@ -226,7 +194,7 @@ plt.bar(categories, total_importances)
 plt.xlabel('Categorical Variables')
 plt.ylabel('Total Importance')
 plt.title('Total Feature Importances per Categorical Variable')
-#plt.show()
+plt.show()
 
 
 feature_names = ["Province_" + str(i) for i in range(11)] + \
@@ -242,8 +210,11 @@ sorted_feature_names = [feature_names[i] for i in sorted_indices]
 plt.barh(sorted_feature_names, sorted_importances)
 plt.xlabel('Importance')
 plt.title('Feature Importances')
-#plt.show()
+plt.show()
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PREDICTION - END OUTPUT
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #prediction (end output)
 # Stel een drempelwaarde in voor belangrijkheid
@@ -271,9 +242,10 @@ predicted_response_time = new_model.predict([[0,0,0,0,0,0]])
 # Print de voorspelde responstijd
 print("Voorspelde responstijd (in seconden):", predicted_response_time[0])
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# USED IN APP
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-### Functie om in de app te gebruiken
 def give_predicted_response_time(vectorMetLengteZes):
     predicted_total_seconds = new_model.predict([vectorMetLengteZes])[0]
     minutes = int(predicted_total_seconds // 60)
@@ -289,28 +261,3 @@ joblib.dump(new_model, 'ResponseTimeModel.joblib')
 #model = joblib.load('ResponseTimeModel.joblib')
 #model.predict([vectorMetLengteZes])[0]
 
-
-"""
-Het kiezen tussen ANOVA en supervised learning methoden zoals Random Forest of Gradient Boosting hangt sterk af van het doel van je analyse en de aard van je data. Hier is een vergelijking van ANOVA met Random Forest en Gradient Boosting, zodat je een weloverwogen beslissing kunt nemen.
-
-ANOVA (Analysis of Variance)
-Voordelen:
-Interpretability: ANOVA is een statistische methode die eenvoudig te interpreteren is. Het helpt je te begrijpen of er significante verschillen zijn tussen de middelen van verschillende groepen.
-Factor Analysis: Geschikt voor het analyseren van de effecten van categorische onafhankelijke variabelen (factoren) en hun interacties op een continue afhankelijke variabele.
-Statistical Significance: ANOVA geeft directe p-waarden die de significantie van effecten aangeven.
-Simplicity: Gemakkelijk toe te passen op kleinere datasets en minder complexe modellen.
-Nadelen:
-Assumpties: ANOVA gaat uit van normaal verdeelde residuen, homoscedasticiteit (gelijke varianties), en onafhankelijkheid van waarnemingen.
-Limitations with Non-linear Relationships: Minder geschikt voor complexe, niet-lineaire relaties tussen variabelen.
-Fixed Factors: Beperkt tot het analyseren van categorische variabelen; niet geschikt voor continue onafhankelijke variabelen.
-Supervised Learning (Random Forest en Gradient Boosting)
-Voordelen:
-Flexibility: Kan omgaan met zowel categorische als continue onafhankelijke variabelen en kan complexe, niet-lineaire relaties modelleren.
-Performance: Vaak superieur in voorspellende prestaties, vooral bij complexe datasets met veel variabelen.
-Feature Importance: Kan inzicht geven in de relatieve belangrijkheid van verschillende kenmerken.
-Handling of Large Datasets: Geschikt voor grote datasets en hoge-dimensionaliteit.
-Nadelen:
-Interpretability: Minder intuïtief te interpreteren dan ANOVA. De resultaten zijn complexer en vereisen meer inspanning om te begrijpen.
-Hyperparameter Tuning: Vereist uitgebreide hyperparameter tuning om de beste prestaties te bereiken.
-Computational Cost: Kan rekenintensief zijn, vooral voor grote datasets en complexe modellen.
-"""

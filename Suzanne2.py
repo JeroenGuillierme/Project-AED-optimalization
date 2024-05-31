@@ -14,12 +14,19 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn import metrics
 import statsmodels as sm
+from sklearn.metrics import mean_squared_error
+import joblib
 
 
-##### DATA PREPROCESSING #####
 interventions = pd.read_csv("DATA/interventions.csv")
-
+pd.set_option('display.max_columns', None)
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observaties
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PREPROCESSING
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Nagaan hoeveel data er ontbreekt
 #print(data.isna().sum().sort_values()/len(data))
@@ -41,6 +48,7 @@ y2_test = test['Time2']
 X_train = train[['Province', 'Vector', 'Eventlevel']]
 X_test = test[['Province', 'Vector', 'Eventlevel']]
 
+
 # Encode de categorische variabelen
 #print(data["Province"].value_counts()) #11 regio's met elk voldoende observaties
 #print(data["Vector"].value_counts()) #5 vector types
@@ -49,6 +57,40 @@ encoder = OneHotEncoder(handle_unknown='ignore')
 encoder.fit(X_train)
 X_train = encoder.transform(X_train).toarray()
 X_test = encoder.transform(X_test).toarray()
+
+## Encoding linken aan originele variabelen
+#traindata = pd.DataFrame(X_train)
+#traindata.to_csv('DATA/XTrain.csv', index=False)
+#frame = pd.DataFrame(X_train)
+#frame.to_csv('DATA/EncodedXTrain.csv', index=False)
+"""
+0: Antwerpen
+1: Brussel
+2: Henegouwen
+3: Limburg
+4: Luik
+5: Luxemburg
+6: Namen
+7: Oost-Vlaanderen
+8: Vlaams-Brabant
+9: Waals-Brabant
+10: West-Vlaanderen
+11: Ambulance
+12: Brandziekenwagen
+13: Decontaminatiewagen
+14: Mug
+15: Pit
+16: N0
+17: N1
+18: N2
+19: N3
+20: N4
+21: N5
+22: N6
+23: N7
+24: N8
+25: Other 
+"""
 
 # Isolationforest (voor outliers)
 IsoFo = IsolationForest(n_estimators=100, contamination= 'auto', random_state=31)
@@ -66,7 +108,10 @@ X1_train_filtered = np.array(X_train[y1_labels == 1]) # 420393 observaties na ve
 #print("max(Time1): ",max(y1_train_filtered)) # max(Time1) = 2811sec or 46min
 #print(y1_train_filtered[y1_train_filtered < 120]) # 1821 observations have Time1 < 120s or 2min
 
-### Random Forest Regression
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# RANDOM FOREST REGRESSION
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 """
 ### Hyperparameter tuning with random search
 # Define a parameter grid with distributions of possible parameters to use
@@ -96,11 +141,11 @@ rf_rs = RandomizedSearchCV(
 rf_rs.fit(X1_train_filtered, y1_train_filtered)
 
 # Print the best parameters and highest accuracy
-print("Best parameters found: ", rf_rs.best_params_)
+print("Best parameters found: ", rf_rs.best_params_) #"n_estimators": 110, "max_depth": 11, "min_samples_split":4, "min_samples_leaf": 1, "ccp_alpha": 0, "random_state": 123
 print("Best performance: ", rf_rs.best_score_)
 """
-#na ongeveer 30 min runnen resultaat beste parameters in volgende code aangepast
-# Define parameters: these will need to be tuned to prevent overfitting and underfitting
+
+#after hyperparameter tuning, best parameters were found:
 params = {
     "n_estimators": 110,  # Number of trees in the forest
     "max_depth": 11,  # Max depth of the tree
@@ -120,21 +165,16 @@ rf = rf.fit(X1_train_filtered, y1_train_filtered)
 y1_pred = rf.predict(X_test)
 
 # Evaluate performance with error metrics
-#print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred))
-#print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred))
-#print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred)))
+#print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred)) #Mean Absolute Error: 150195.8634726495
+#print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred)) #Mean Squared Error: 412718371777.74756
+#print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred))) #Root Mean Squared Error: 642431.6086384197
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# VISUALISATION RESULT RANDOM FOREST
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Create a sorted Series of features importances
 importances_sorted = pd.Series(data=rf.feature_importances_, index=pd.DataFrame(X1_train_filtered).columns).sort_values()
-#visualisatie: individueal features (nummer not label)
-"""
-#print(importances_sorted) #gives values of the first graph
-# Plot a horizontal barplot of importances_sorted
-#importances_sorted.plot(kind="barh")
-#plt.title("Features Importances")
-#plt.show()
-"""
 
 #importances = model.feature_importances_
 province_importances = importances_sorted[0:11]
@@ -144,10 +184,9 @@ eventlevel_importances = importances_sorted[16:27]
 total_province_importance = sum(province_importances)
 total_vector_importance = sum(vector_importances)
 total_eventlevel_importance = sum(eventlevel_importances)
-"""
-#visualisatie per categorie
-import matplotlib.pyplot as plt
 
+
+#visualisatie per categorie
 categories = ['Province', 'Vector', 'Eventlevel']
 total_importances = [total_province_importance, total_vector_importance, total_eventlevel_importance]
 
@@ -156,7 +195,7 @@ plt.xlabel('Categorical Variables')
 plt.ylabel('Total Importance')
 plt.title('Total Feature Importances per Categorical Variable')
 plt.show()
-"""
+
 
 feature_names = ["Province_" + str(i) for i in range(11)] + \
                 ["Vector_" + str(i) for i in range(5)] + \
@@ -166,14 +205,16 @@ sorted_indices = importances_sorted.argsort()[::-1]
 sorted_importances = importances_sorted[sorted_indices]
 sorted_feature_names = [feature_names[i] for i in sorted_indices]
 
-"""
+
 #visualisatie individueel
 plt.barh(sorted_feature_names, sorted_importances)
 plt.xlabel('Importance')
 plt.title('Feature Importances')
 plt.show()
-"""
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PREDICTION - END OUTPUT
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #prediction (end output)
 # Stel een drempelwaarde in voor belangrijkheid
@@ -182,48 +223,29 @@ threshold = 0.025
 # Selecteer de belangrijkste features op basis van de drempelwaarde
 important_features = [feature for feature, importances_sorted in zip(sorted_feature_names, sorted_importances) if importances_sorted >= threshold]
 
-print("Belangrijkste features:", important_features)#['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
+#print("Belangrijkste features:", important_features)#['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
 
 # Filter de dataset om alleen de belangrijke features te behouden
 X_important = X1_train_filtered[:,[21,20,14,11,8,0]]
 
-
-# Split de data in train en test sets voor een betere evaluatie
-from sklearn.model_selection import train_test_split
-
 # Train een nieuw Random Forest Regressor model met de geselecteerde features
-new_model = RandomForestRegressor()
+new_model = RandomForestRegressor(**params)
 new_model.fit(X_important, y1_train_filtered)
 
 # Evalueer het model
-from sklearn.metrics import mean_squared_error
-
 y_test_pred = new_model.predict(X_test[:,[21,20,14,11,8,0]])
 test_mse = mean_squared_error(y1_test, y_test_pred)
-print("Mean Squared Error op de testset van het nieuwe model:", test_mse)
-
-
+#print("Mean Squared Error op de testset van het nieuwe model:", test_mse)
 
 # Voorspel de responstijd
 predicted_response_time = new_model.predict([[0,0,0,0,0,0]])
-
 # Print de voorspelde responstijd
 print("Voorspelde responstijd (in seconden):", predicted_response_time[0])
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# USED IN APP
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Converteer de voorspelde responstijd van seconden naar minuten en seconden
-def convert_seconds_to_minutes_seconds(seconds):
-    minutes = int(seconds // 60)
-    remaining_seconds = int(seconds % 60)
-    return minutes, remaining_seconds
-
-predicted_seconds = predicted_response_time[0]
-minutes, seconds = convert_seconds_to_minutes_seconds(predicted_seconds)
-
-print(f"Voorspelde responstijd: {minutes} minuten en {seconds} seconden")
-
-
-### Functie om in de app te gebruiken
 def give_predicted_response_time(vectorMetLengteZes):
     predicted_total_seconds = new_model.predict([vectorMetLengteZes])[0]
     minutes = int(predicted_total_seconds // 60)
@@ -236,6 +258,8 @@ print("Voorspelde responstijd: ",give_predicted_response_time(vector)[0], " minu
 
 
 joblib.dump(new_model, 'ResponseTimeModel.joblib')
-#model = joblib.load('ResponseTimeModel.joblib')
-#model.predict([vectorMetLengteZes])[0]
+model = joblib.load('ResponseTimeModel.joblib')
+model.predict([vectorMetLengteZes])[0]
+
+
 
