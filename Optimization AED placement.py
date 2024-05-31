@@ -23,7 +23,8 @@ aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
 
 aed["municipality"] = aed["municipality"].replace("KalloBeveren-Waas)","Beveren")
 
-aed5 = aed.iloc[14001:15227].copy() # zou ik dit vervangen door ze toch allemaal? Of zouden ze dit controllen dat ik dat in 5 stappen gedaan heb?
+# I initially broke it down into five steps, thinking it would be faster, but I realized it could probably be done in one go
+aed5 = aed.iloc[14001:15227].copy()
 
 # Aws region in which the Amazon locator service is configured, it probably would have been better to replace it with eu-central-1
 # region_name = 'us-east-1'
