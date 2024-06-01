@@ -3,17 +3,11 @@ import numpy as np
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import StandardScaler, PowerTransformer
 from sklearn.cluster import KMeans, DBSCAN
-from sklearn.metrics import silhouette_score
-from sklearn import metrics
-from sklearn.datasets import make_blobs
-from sklearn.neighbors import NearestNeighbors, BallTree
+from sklearn.neighbors import NearestNeighbors
 import matplotlib.pyplot as plt
 import seaborn as sns
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
-from shapely.ops import unary_union
-from scipy.spatial import cKDTree
-from scipy.stats import boxcox
 import time
 from geopy.geocoders import ArcGIS
 

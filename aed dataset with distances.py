@@ -3,8 +3,7 @@ from scipy.spatial import KDTree
 import numpy as np
 import folium
 from folium.plugins import MarkerCluster
-import geopandas as gpd
-from shapely.geometry import Point, LineString
+
 
 # Load your dataset
 data = pd.read_csv('DATA/aed_placement_df.csv')
