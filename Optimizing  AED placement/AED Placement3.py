@@ -29,8 +29,8 @@ aed_data = pd.read_csv(
 # Load Belgium shapefile
 belgium_boundary = gpd.read_file('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/België.json')
 # Load Belgium with regions shapefile
-belgium_with_regions_boundary = gpd.read_file(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/belgium-with-regions_.geojson')
+belgium_with_provinces_boundary = gpd.read_file(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/BELGIUM_-_Provinces.geojson')
 
 aed_locations = aed_data[aed_data['AED'] == 1]
 print(f'There are currently {len(aed_locations)} AEDs in Belgium')
@@ -147,7 +147,7 @@ print('------------- Before removing duplicates -------------')
 # Verify the imputation
 # Check for missing values
 print(interventions_data.isnull().sum())
-print(len(interventions_data))
+print('Total length before removing duplicates: ', len(interventions_data))
 
 interventions_data.drop_duplicates(inplace=True)  # 2512 duplicates removed
 
@@ -155,7 +155,7 @@ print('------------- After removing duplicates -------------')
 # Verify the imputation
 # Check for missing values
 print(interventions_data.isnull().sum())
-print(len(interventions_data))
+print('Total length after removing duplicates: ', len(interventions_data))
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # HEATMAP OF INCIDENT DENSITY
@@ -246,7 +246,7 @@ gdf_interventions_with_incident_count = gpd.sjoin(gdf_interventions, grid[['geom
 
 # Plot the incident density
 fig, ax = plt.subplots(figsize=(12, 8))
-grid.plot(column='incident_count', ax=ax, cmap='OrRd', edgecolor='k', legend=True)
+grid.plot(column='incident_count', ax=ax, cmap='OrRd', edgecolor='k', alpha=0.5, legend=True)
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('Incident Density Grid')
 ax.set_xlabel('Longitude')
@@ -296,7 +296,7 @@ gdf_interventions_with_both_count = gpd.sjoin(gdf_interventions_with_incident_co
 
 # Plot the AED density
 fig, ax = plt.subplots(figsize=(12, 8))
-grid.plot(column='aed_count', ax=ax, cmap='OrRd', edgecolor='k', legend=True)
+grid.plot(column='aed_count', ax=ax, cmap='OrRd', edgecolor='k', alpha=0.5, legend=True)
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('AED Density Grid')
 ax.set_xlabel('Longitude')
@@ -375,7 +375,7 @@ print(
 
 # Visualise high-risk areas
 fig, ax = plt.subplots(figsize=(12, 8))
-belgium_with_regions_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
+belgium_with_provinces_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 scatter = sns.scatterplot(data=high_risk_areas,
                           x='Longitude', y='Latitude',
                           size='incident_count', hue='T3-T0_min', palette='coolwarm',
@@ -422,8 +422,10 @@ high_risk_areas_filtered = high_risk_areas[high_risk_areas['cluster'] != -1]
 # Determine new AED locations (cluster centers)
 cluster_centers = high_risk_areas_filtered.groupby('cluster').mean()[['Latitude', 'Longitude']]
 cluster_sizes = high_risk_areas_filtered['cluster'].value_counts()
-print('New AED Locations: \n', cluster_centers)
 labels = dbscan.labels_
+
+print('New AED Locations: \n', cluster_centers)
+
 # Number of clusters in labels, ignoring noise if present.
 n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
 n_noise_ = list(labels).count(-1)
@@ -462,7 +464,7 @@ fig, ax = plt.subplots(figsize=(12, 8))
 cluster_centers['size'] = cluster_sizes
 
 # Plot only cluster centers with sizes and colors depending on cluster size to determine most 'problematic' clusters
-belgium_with_regions_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
+belgium_with_provinces_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 scatter = sns.scatterplot(data=cluster_centers,
                           x='Longitude', y='Latitude', size='size', sizes=(20, 200),
                           hue='size', palette='coolwarm', legend='brief')
@@ -479,14 +481,16 @@ print("Silhouette Coefficient:%0.2f" % sc)
 # For incident_density_threshold = 10: sc = -0.13 and 11 clusters
 # For incident_density_threshold = 5: sc = 0.69  and 82 clusters
 
+# Save cluster centers to new csv file
 '''
 new_aed_gdf[['Latitude', 'Longitude']].to_csv(
     'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/new_aed_locations.csv', index=True)
 '''
 
+
 '''
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# CONVERT NEW LOCATIONS TO ADRESSES
+# CONVERT NEW LOCATIONS TO ADDRESSES
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def reverse_geocode(latitude, longitude):
     geolocator = ArcGIS()
