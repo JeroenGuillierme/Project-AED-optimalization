@@ -38,6 +38,13 @@ pd.options.mode.copy_on_write = True
 
 # Function to correct latitude values
 def correct_latitude(lat):
+    '''
+    Corrects and standardizes latitude values by ensuring they are numeric and properly formatted.
+    :param lat: str, float or int
+    The latitude value to be corrected.
+    :return: float
+    The corrected latitude value, or NaN if the input is NaN.
+    '''
     if pd.isna(lat):
         return lat  # Return NaN as it is
     if isinstance(lat, (str, float, int)):
@@ -53,6 +60,13 @@ def correct_latitude(lat):
 
 # Function to correct longitude values
 def correct_longitude(lon):
+    '''
+    Corrects and standardizes longitude values by ensuring they are numeric and properly formatted.
+    :param lon: str, float or int
+    The longitude value to be corrected.
+    :return:float
+    The corrected longitude value, or NaN if the input is NaN.
+    '''
     if pd.isna(lon):
         return lon  # Return NaN as it is
     if isinstance(lon, (str, float, int)):
@@ -68,18 +82,49 @@ def correct_longitude(lon):
 
 # Define a function to extract the numeric part using regex
 def extract_numeric(text):
+    '''
+    Extracts the first numeric part from a given text using regular expressions.
+    :param text: str
+    The text from which to extract the numeric part.
+    :return: int or float
+    The extracted numeric value, or NaN if no numeric part is found.
+    '''
     match = re.search(r'\d+', text)
     return int(match.group()) if match else np.nan
 
 
 # Function to filter rows based on coordinates falling within Belgium
 def is_within_belgium(lat, lon):
+    '''
+    Checks if given latitude and longitude coordinates fall within Belgium's geographical boundaries.
+    :param lat: float
+    The latitude value to be checked.
+    :param lon: float
+    The longitude value to be checked.
+    :return: bool
+    True if the coordinates are within Belgium's boundaries, False otherwise.
+    '''
+    # Define the geographical boundaries of Belgium
+    belgium_boundaries = {
+        'min_latitude': 48,
+        'max_latitude': 55,
+        'min_longitude': 2,
+        'max_longitude': 8
+    }
+
     return (belgium_boundaries['min_latitude'] <= lat <= belgium_boundaries['max_latitude']) and \
         (belgium_boundaries['min_longitude'] <= lon <= belgium_boundaries['max_longitude'])
 
 
 # Function to convert Timedelta to minutes
 def timedelta_to_minutes(td):
+    '''
+    Converts a pandas Timedelta object to minutes.
+    :param td: pd.TimeDelta
+    The Timedelta object to be converted.
+    :return: float
+    The total duration in minutes.
+    '''
     return td.total_seconds() / 60
 
 
@@ -203,13 +248,6 @@ aed_total = aed_total[
     ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
      'Occasional_Permanence']]
 
-# Define the geographical boundaries of Belgium
-belgium_boundaries = {
-    'min_latitude': 48,
-    'max_latitude': 55,
-    'min_longitude': 2,
-    'max_longitude': 8
-}
 
 # Apply the filter function to the aed_total
 aed_total2 = aed_total[aed_total.apply(lambda row: is_within_belgium(row['Latitude'], row['Longitude']), axis=1)]
@@ -252,6 +290,7 @@ mug1 = mug1[['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ALL TOGETHER FOR AED OPTIMISATION
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 print(list(aed_total2.columns))
 print(list(interventions_TOTAL.columns))
 print(list(ambulance.columns))

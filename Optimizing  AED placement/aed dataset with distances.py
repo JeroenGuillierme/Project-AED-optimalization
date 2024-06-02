@@ -13,6 +13,15 @@ pd.set_option('display.max_columns', None)
 
 # Haversine formula to calculate distance in meters between two points given in degrees
 def haversine(coord1, coord2):
+    '''
+    Calculates the shortest distance between two points on the Earth's surface using the Haversine formula.
+    :param coord1: tuple of float
+    A tuple (latitude, longitude) representing the coordinates of the first point.
+    :param coord2: tuple of float
+    A tuple (latitude, longitude) representing the coordinates of the second point.
+    :return: float
+    The straight-line distance between the two given points, taking into account the Earth's curvature, in meters.
+    '''
     # Radius of the Earth in meters
     R = 6371000
     lat1, lon1 = np.radians(coord1)
@@ -30,6 +39,19 @@ def haversine(coord1, coord2):
 
 # Function to find the minimum distance to a location
 def get_min_distance(row, locations, column_name):
+    '''
+    Determines the closest point to a given location from a list of locations using KDTree for efficient querying.
+    :param row: pd.Series
+    A row of a DataFrame containing at least 'Latitude' and 'Longitude' columns
+    and a binary column specified by `column_name`.
+    :param locations: pd.DataFrame
+    A DataFrame containing the locations to query against. It must have 'Latitude' and 'Longitude' columns.
+    :param column_name: str
+    The name of the binary column in `row` that indicates if the location is already at the desired point (1) or not (0).
+    :return: float
+    The minimum distance from the location in `row` to the closest point in `locations`, or 0 if the location is already at the desired point,
+        or NaN if the latitude or longitude in `row` is NaN.
+    '''
     if pd.isna(row['Latitude']) or pd.isna(row['Longitude']):
         return np.nan
     location_coord = (row['Latitude'], row['Longitude'])

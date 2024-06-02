@@ -4,6 +4,7 @@ from sklearn.impute import KNNImputer
 from sklearn.preprocessing import StandardScaler, PowerTransformer
 from sklearn.cluster import KMeans, DBSCAN
 from sklearn.neighbors import NearestNeighbors
+from sklearn.metrics import silhouette_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 import geopandas as gpd
@@ -22,10 +23,11 @@ print(f"Program started at {start_time}")
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-aed_data = pd.read_csv('DATA/updated_aed_df_with_all_distances.csv')
+aed_data = pd.read_csv(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/updated_aed_df_with_all_distances.csv')
 # grid_data = pd.read_csv('DATA/gird_locations.csv')
 # Load Belgium shapefile
-belgium_boundary = gpd.read_file('DATA/België.json')
+belgium_boundary = gpd.read_file('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/België.json')
 
 aed_locations = aed_data[aed_data['AED'] == 1]
 print(f'There are currently {len(aed_locations)} AEDs in Belgium')
@@ -101,20 +103,6 @@ plt.tight_layout()
 # Show the plot
 plt.show()
 
-# Only check Response times for intervention locations (longer than 10 min)
-fig, ax = plt.subplots(figsize=(12, 8))
-scatter = sns.scatterplot(
-    data=interventions_data[interventions_data['T3-T0_min'] > 10],
-    x='Longitude',
-    y='Latitude',
-    hue='distance_to_aed', palette='YlOrRd', hue_norm=(1500, 6000),
-    size='T3-T0_min',
-    sizes=(20, 200), legend='auto', ax=ax)
-belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
-ax.set_title('Response Times for previous Intervention Locations')
-ax.set_xlabel('Longitude')
-ax.set_ylabel('Latitude')
-plt.show()
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # REPLACING MISSING RESPONSE TIMES FROM GRID LOCATIONS WITH (KNN) IMPUTED VALUES BASED ON LOCATION AND DISTANCES
@@ -159,7 +147,7 @@ print('------------- Before removing duplicates -------------')
 print(interventions_data.isnull().sum())
 print(len(interventions_data))
 
-interventions_data.drop_duplicates(inplace=True)
+interventions_data.drop_duplicates(inplace=True)  # 2512 duplicates removed
 
 print('------------- After removing duplicates -------------')
 # Verify the imputation
@@ -200,6 +188,12 @@ print(len(interventions_data))
 
 # Function to calculate cell size in decimal degrees based on desired grid area and latitude
 def calculate_cell_size(grid_area_km2, latitude_degrees):
+    '''
+    This function calculates the cell size in degrees based on a given grid size in km² and the latitude coordinate.
+    :param grid_area_km2: Wanted grid are in km².
+    :param latitude_degrees: The latitude coordinate at which the grid size in degrees need to be calculated.
+    :return: The degrees of the cell size used to split Belgium up in different grids of given area in km².
+    '''
     # Convert latitude to radians for trigonometric functions
     latitude_rad = np.radians(latitude_degrees)
 
@@ -262,12 +256,11 @@ print(f'COLUMNS: {gdf_interventions_with_incident_count.columns}')
 gdf_interventions_with_incident_count = gdf_interventions_with_incident_count.drop(columns='index_right')
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# HEATMAP OF INCIDENT DENSITY
+# HEATMAP OF AED DENSITY
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 fig, ax = plt.subplots(figsize=(12, 8))
 # kernel density estimate (KDE) plot
-
 kde = sns.kdeplot(data=aed_locations, x='Longitude', y='Latitude', cmap='Reds',
                   fill=True, ax=ax, cbar=True)
 
@@ -313,14 +306,16 @@ plt.show()
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Only check Response times longer then 10 minutes
 # (According to literature waiting longer ten 10 minutes could be life-threatening)
+ResponseTimeFilterd = gdf_interventions_with_both_count[gdf_interventions_with_both_count['T3-T0_min'] > 10]
+ResponseTimeFilterd_sorted = ResponseTimeFilterd.sort_values(by='T3-T0_min', ascending=True)
 
 fig, ax = plt.subplots(figsize=(12, 8))
 scatter = sns.scatterplot(
-    data=gdf_interventions_with_both_count[gdf_interventions_with_both_count['T3-T0_min'] > 10],
+    data=ResponseTimeFilterd_sorted,
     x='Longitude', y='Latitude',
-    hue='distance_to_aed', palette='YlOrRd', hue_norm=(1500, 6000),
+    hue='T3-T0_min', palette='YlOrRd',
     size='T3-T0_min',
-    sizes=(20, 200), legend='auto', ax=ax)
+    sizes=(20, 200), legend='brief', ax=ax)
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('Response Times by Location')
 ax.set_xlabel('Longitude')
@@ -363,8 +358,8 @@ resources.'
 '''
 # Define high-risk based on response time and incident frequency
 response_time_threshold = 10  # minutes
-incident_density_threshold = 5  # more than one previous intervention on that location area
-aed_density_threshold = 5  # less than 5 aeds on that location area
+incident_density_threshold = 5  # more than five previous interventions on that location area
+aed_density_threshold = 5  # less than 5 aeds in the 3 km³ grid for that location
 # Identify high-risk areas
 high_risk_areas = gdf_interventions_with_both_count[
     (gdf_interventions_with_both_count['T3-T0_min'] > response_time_threshold) &
@@ -372,7 +367,9 @@ high_risk_areas = gdf_interventions_with_both_count[
     (gdf_interventions_with_both_count['aed_count'] < aed_density_threshold)
     ]
 
-print(f'Number of high risk areas in Belgium according to chosen thresholds: {len(high_risk_areas)}')
+print(
+    'Number of high risk areas in Belgium according to chosen thresholds: ',
+    len(high_risk_areas[['Latitude', 'Longitude']].drop_duplicates()))  # 457
 
 # Visualise high-risk areas
 fig, ax = plt.subplots(figsize=(12, 8))
@@ -384,7 +381,8 @@ belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('High-Risk Areas based on Response Time and Incident Frequency')
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
-plt.show()  # You can see a lot of cardiac arrests in Antwerp, Brussels and Luik (and also on the lin Bergen, Charleroi, Namen)
+plt.show()
+# You can see a lot of cardiac arrests in Antwerp, Brussels and Luik (and also on the lin Bergen, Charleroi, Namen)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # CLUSTERING HIGH RISK AREAS
@@ -394,19 +392,20 @@ plt.show()  # You can see a lot of cardiac arrests in Antwerp, Brussels and Luik
 high_risk_areas = high_risk_areas.dropna(subset=['Latitude', 'Longitude'])
 
 # Calculate the average distance between each point in the data set and its 20 nearest neighbors
-neighbors = NearestNeighbors(n_neighbors=10)
+neighbors = NearestNeighbors(n_neighbors=5)
 neighbors_fit = neighbors.fit(high_risk_areas[['Latitude', 'Longitude']])
 distances, indices = neighbors_fit.kneighbors(high_risk_areas[['Latitude', 'Longitude']])
 # Sort distance values by ascending value and plot
 distances = np.sort(distances, axis=0)
 distances = distances[:, 1]
-plt.title('Distance to 10 nearest neighbours')
+plt.title('Distance to 5 nearest neighbours')
 plt.plot(distances)
 
 # Choose eps based on the k-distance graph
-eps = cell_size_degrees  # See earlier for determining grid size: 0.02463...
-# Choose min_samples based on your understanding of the data density
-min_samples = 10  # See threshold incident density
+eps = cell_size_degrees  # See earlier for determining grid size: eps = 0.02463... this is approximately 3km
+# Choose min_samples based on the data density
+# A point is considered a core point if at least 5 points are within a distance of 3km
+min_samples = 5
 
 # Initialize DBSCAN
 dbscan = DBSCAN(eps=eps, min_samples=min_samples)
@@ -420,6 +419,7 @@ high_risk_areas_filtered = high_risk_areas[high_risk_areas['cluster'] != -1]
 
 # Determine new AED locations (cluster centers)
 cluster_centers = high_risk_areas_filtered.groupby('cluster').mean()[['Latitude', 'Longitude']]
+cluster_sizes = high_risk_areas_filtered['cluster'].value_counts()
 print('New AED Locations: \n', cluster_centers)
 labels = dbscan.labels_
 # Number of clusters in labels, ignoring noise if present.
@@ -430,14 +430,14 @@ print("Estimated number of clusters: %d" % n_clusters_)
 print("Estimated number of noise points: %d" % n_noise_)
 # Plot clusters
 fig, ax = plt.subplots(figsize=(12, 8))
-custom_palette = sns.color_palette("Paired", 12)
+custom_palette = sns.color_palette("Paired", len(cluster_sizes)+1)
 # Plot the high-risk areas and color by cluster
 scatter = sns.scatterplot(
     data=high_risk_areas,
     x='Longitude', y='Latitude',
     hue='cluster', palette=custom_palette,
     size='incident_count',
-    sizes=(20, 200), legend='brief', ax=ax)
+    sizes=(20, 200), legend=False, ax=ax)
 # Overlay the Belgium boundary
 belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 
@@ -453,7 +453,38 @@ ax.legend(bbox_to_anchor=(1, 1))
 plt.tight_layout()
 plt.show()
 
-new_aed_gdf[['Latitude', 'Longitude']].to_csv('DATA/new_aed_locations.csv', index=True)
+# New plot for cluster sizes
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Prepare cluster centers with sizes
+cluster_centers['size'] = cluster_sizes
+
+# Plot cluster centers with sizes
+scatter = sns.scatterplot(data=cluster_centers,
+                          x='Longitude', y='Latitude', size='size', sizes=(20, 200),
+                          hue='size', palette='coolwarm', legend='brief')
+
+# Overlay the Belgium boundary
+belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
+
+ax.set_title('Cluster Centers with Sizes Proportional to Cluster Sizes')
+ax.set_xlabel('Longitude')
+ax.set_ylabel('Latitude')
+plt.tight_layout()
+plt.show()
+
+# Evaluation metrics
+
+sc = silhouette_score(high_risk_areas[['Latitude', 'Longitude']], labels)
+print("Silhouette Coefficient:%0.2f" % sc)
+# For incident_density_threshold = 10: sc = -0.13 and 11 clusters
+# For incident_density_threshold = 5: sc = 0.69  and 82 clusters
+
+'''
+new_aed_gdf[['Latitude', 'Longitude']].to_csv(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/new_aed_locations.csv', index=True)
+'''
+
 
 '''
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
