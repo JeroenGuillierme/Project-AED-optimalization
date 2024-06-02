@@ -9,24 +9,30 @@ from sklearn.ensemble import IsolationForest
 # IMPORTING DATASETS
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
-mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
-pit = pd.read_parquet('DATA/pit_locations.parquet.gzip')
-interventions1 = pd.read_parquet('DATA/interventions1.parquet.gzip')
-interventions2 = pd.read_parquet('DATA/interventions2.parquet.gzip')
-interventions3 = pd.read_parquet('DATA/interventions3.parquet.gzip')
-interventions4 = pd.read_parquet('DATA/interventions_bxl.parquet.gzip')
-interventions5 = pd.read_parquet('DATA/interventions_bxl2.parquet.gzip')
-cad = pd.read_parquet('DATA/cad9.parquet.gzip')
-aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
+ambulance = pd.read_parquet(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/ambulance_locations.parquet.gzip')
+mug = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/mug_locations.parquet.gzip')
+pit = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/pit_locations.parquet.gzip')
+interventions1 = pd.read_parquet(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions1.parquet.gzip')
+interventions2 = pd.read_parquet(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions2.parquet.gzip')
+interventions3 = pd.read_parquet(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions3.parquet.gzip')
+interventions4 = pd.read_parquet(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions_bxl.parquet.gzip')
+interventions5 = pd.read_parquet(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions_bxl2.parquet.gzip')
+cad = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/cad9.parquet.gzip')
+aed = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed_locations.parquet.gzip')
 
-aed_1 = pd.read_csv('DATA/aed1.csv')
-aed_2 = pd.read_csv('DATA/aed2.csv')
-aed_3 = pd.read_csv('DATA/aed3.csv')
-aed_4 = pd.read_csv('DATA/aed4.csv')
-aed_5 = pd.read_csv('DATA/aed5.csv')
+aed_1 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed1.csv')
+aed_2 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed2.csv')
+aed_3 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed3.csv')
+aed_4 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed4.csv')
+aed_5 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed5.csv')
 
-mug1 = pd.read_csv('DATA/mug1.csv')
+mug1 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/mug1.csv')
 
 pd.set_option('display.max_columns', None)
 pd.options.mode.copy_on_write = True
@@ -248,7 +254,6 @@ aed_total = aed_total[
     ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
      'Occasional_Permanence']]
 
-
 # Apply the filter function to the aed_total
 aed_total2 = aed_total[aed_total.apply(lambda row: is_within_belgium(row['Latitude'], row['Longitude']), axis=1)]
 
@@ -377,7 +382,7 @@ max_timedelta = aed_ready['T3-T0_min'].max()
 print('Length of dataset: ', len(aed_ready))
 print('Number of missing values per column: \n', print(aed_ready[['Latitude', 'Longitude', 'Intervention', 'CAD9',
                                                                   'Eventlevel', 'T3-T0_min', 'AED', 'Ambulance', 'Mug',
-                                                                  'Occasional_Permanence']].isna().sum())) # 1210 missing values for latitude from intervention dataset
+                                                                  'Occasional_Permanence']].isna().sum()))  # 1210 missing values for latitude from intervention dataset
 print(f"Minimum latitude of dataset: {min_latitude}")
 print(f"Maximum latitude of dataset: {max_latitude}")
 print(f"Minimum longitude of dataset: {min_longitude}")
@@ -385,4 +390,4 @@ print(f"Maximum longitude of dataset: {max_longitude}")
 print(f"min_timedelta of dataset: {min_timedelta}")  # Minimum outlier value = 44.27 minutes
 print(f"max_timedelta of dataset: {max_timedelta}")  # Maximum outlier value = 80267.83 minutes
 
-#aed_ready.to_csv('DATA/aed_placement_df.csv', index=False)
+# aed_ready.to_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed_placement_df.csv', index=False)
