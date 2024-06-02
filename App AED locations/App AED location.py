@@ -187,7 +187,7 @@ def toggle_instructions(n_clicks, current_message):
             return ''
         return html.P([
             " 1. Check for consciousness and breathing.", html.Br(),
-            " 2. Call 122 emergency services immediately.", html.Br(),
+            " 2. Call 112 emergency services immediately.", html.Br(),
             " 3. Start CPR:", html.Br(),
             "   - Lay the person on a firm, flat surface.", html.Br(),
             "   - Place your hands in the center of the chest, one hand on top of the other.", html.Br(),
