@@ -19,7 +19,7 @@ import joblib
 from sklearn import tree
 
 
-interventions = pd.read_csv("C:/Users/Eigenaar/PycharmProjects/Project-AED-optimalization/DATA/interventions.csv")
+interventions = pd.read_csv("https://raw.githubusercontent.com/JeroenGuillierme/Project-AED-optimalization/main/DATA/interventions.csv")
 pd.set_option('display.max_columns', None)
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observations
 
