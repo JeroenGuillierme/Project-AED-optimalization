@@ -1,7 +1,11 @@
 import pandas as pd
 
-### Dataset "interventions" maken en opslaan als csv file
-#Open data
+### Create dataset "interventions" and save as csv file
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# IMPORTING DATASETS
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
 mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
 pit = pd.read_parquet('DATA/pit_locations.parquet.gzip')
@@ -13,12 +17,16 @@ interventions5 = pd.read_parquet('DATA/interventions_bxl2.parquet.gzip')
 cad = pd.read_parquet('DATA/cad9.parquet.gzip')
 aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# CREATE DATASET "INTERVENTIONS"
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 pd.set_option('display.max_columns', None)
 
-#Ambulance, mug, pit en aed bevatten geen responstijd variabelen dus gebruiken we niet
+## The datasets ambulance_locations, mug_locations, pit_locations and ead_locations don't contain time variables and are not used
 
 
-# interventions1: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
+## interventions1
 interventions1["T0"] = pd.to_datetime(interventions1["T0"], format='%d%b%y:%H:%M:%S')
 interventions1["T3"] = pd.to_datetime(interventions1["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 interventions1["T5"] = pd.to_datetime(interventions1["T5"], format='%Y-%m-%d %H:%M:%S.%f')
@@ -36,7 +44,7 @@ df1["Eventlevel"] = df1["Eventlevel"].str.replace("A","")
 df1["Eventlevel"] = df1["Eventlevel"].str.replace("B","")
 
 
-# interventions2: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
+## interventions2
 interventions2["T0"] = pd.to_datetime(interventions2["T0"], format='%d%b%y:%H:%M:%S')
 interventions2["T3"] = pd.to_datetime(interventions2["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 interventions2["T5"] = pd.to_datetime(interventions2["T5"], format='%Y-%m-%d %H:%M:%S.%f')
@@ -54,7 +62,7 @@ df2["Eventlevel"] = df2["Eventlevel"].str.replace("A","")
 df2["Eventlevel"] = df2["Eventlevel"].str.replace("B","")
 
 
-# interventions3: CityName permanence, CityName intervention, Vector type, EventLevel Firstcall
+## interventions3
 interventions3["T0"] = pd.to_datetime(interventions3["T0"], format='%d%b%y:%H:%M:%S')
 interventions3["T3"] = pd.to_datetime(interventions3["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 interventions3["T5"] = pd.to_datetime(interventions3["T5"], format='%Y-%m-%d %H:%M:%S.%f')
@@ -72,7 +80,7 @@ df3["Eventlevel"] = df3["Eventlevel"].str.replace("A","")
 df3["Eventlevel"] = df3["Eventlevel"].str.replace("B","")
 
 
-# interventions4: cityname_permanence, CityName intervention, vector_type, eventLevel_firstcall
+## interventions4
 interventions4["t0"] = pd.to_datetime(interventions4["t0"], format='%Y-%m-%d %H:%M:%S.%f %z')
 interventions4["t3"] = pd.to_datetime(interventions4["t3"], format='%Y-%m-%d %H:%M:%S.%f %z')
 interventions4["t5"] = pd.to_datetime(interventions4["t5"], format='%Y-%m-%d %H:%M:%S.%f %z')
@@ -90,7 +98,7 @@ df4["City Intervention"] = df4["City Intervention"].str.split(" \(").str[0]
 df4["City Intervention"] = df4["City Intervention"].replace("BRUXELLES", "BRUSSEL")
 
 
-#interventions5
+## interventions5
 interventions5["T0"] = pd.to_datetime(interventions5["T0"], format='%d%b%y:%H:%M:%S')
 interventions5["T3"] = pd.to_datetime(interventions5["T3"], format='%d%b%y:%H:%M:%S')
 interventions5["T5"] = pd.to_datetime(interventions5["T5"], format='%d%b%y:%H:%M:%S')
@@ -113,7 +121,7 @@ df5["Eventlevel"] = df5["Eventlevel"].str.replace("INTERVENTIEPLAN", "")
 df5["Eventlevel"] = df5["Eventlevel"].str.replace("0", "")
 
 
-#cad
+## cad
 cad["T0"] = pd.to_datetime(cad["T0"], format='%Y-%m-%d %H:%M:%S.%f')
 cad["T3"] = pd.to_datetime(cad["T3"], format='%Y-%m-%d %H:%M:%S.%f')
 cad["T5"] = pd.to_datetime(cad["T5"], format='%Y-%m-%d %H:%M:%S.%f')
@@ -129,10 +137,16 @@ df6["City Permanence"] = df6["City Permanence"].str.split(" ").str[1]
 valid_categories = ["N1","N2", "N3", "N4", "N5", "N6", "N7", "N8"]
 df6.loc[~df6['Eventlevel'].isin(valid_categories), 'Eventlevel'] = 'OTHER'
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# CONCATENATE DATAFRAMES
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 frames = [df1, df2, df3, df4, df5, df6]
 data = pd.concat(frames)
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# MATCH NAMES OF CATEGORIES
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 data["Province"] = data["Province"].replace("ANT","ANTWERPEN")
 data["Province"] = data["Province"].replace("OVL","OOST-VLAANDEREN")
@@ -150,5 +164,8 @@ data["Time1"][data["Time1"] < 0] = pd.NaT
 data["Time2"] = data["Time2"].dt.total_seconds().round()
 data["Time2"][data["Time2"] < 0] = pd.NaT
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# SAVE DATASET AS CSV FILE
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 data.to_csv('DATA/interventions.csv', index=False)
