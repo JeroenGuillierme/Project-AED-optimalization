@@ -9,30 +9,26 @@ from sklearn.ensemble import IsolationForest
 # IMPORTING DATASETS
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ambulance = pd.read_parquet(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/ambulance_locations.parquet.gzip')
-mug = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/mug_locations.parquet.gzip')
-pit = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/pit_locations.parquet.gzip')
-interventions1 = pd.read_parquet(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions1.parquet.gzip')
-interventions2 = pd.read_parquet(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions2.parquet.gzip')
-interventions3 = pd.read_parquet(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions3.parquet.gzip')
-interventions4 = pd.read_parquet(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions_bxl.parquet.gzip')
-interventions5 = pd.read_parquet(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/interventions_bxl2.parquet.gzip')
-cad = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/cad9.parquet.gzip')
-aed = pd.read_parquet('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed_locations.parquet.gzip')
+url = 'https://raw.githubusercontent.com/JeroenGuillierme/Project-AED-optimalization/main/DATA/'
 
-aed_1 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed1.csv')
-aed_2 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed2.csv')
-aed_3 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed3.csv')
-aed_4 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed4.csv')
-aed_5 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed5.csv')
+ambulance = pd.read_parquet(f'{url}ambulance_locations.parquet.gzip')
+mug = pd.read_parquet(f'{url}mug_locations.parquet.gzip')
+pit = pd.read_parquet(f'{url}pit_locations.parquet.gzip')
+interventions1 = pd.read_parquet(f'{url}interventions1.parquet.gzip')
+interventions2 = pd.read_parquet(f'{url}interventions2.parquet.gzip')
+interventions3 = pd.read_parquet(f'{url}interventions3.parquet.gzip')
+interventions4 = pd.read_parquet(f'{url}interventions_bxl.parquet.gzip')
+interventions5 = pd.read_parquet(f'{url}interventions_bxl2.parquet.gzip')
+cad = pd.read_parquet(f'{url}cad9.parquet.gzip')
+aed = pd.read_parquet(f'{url}aed_locations.parquet.gzip')
 
-mug1 = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/mug1.csv')
+aed_1 = pd.read_csv(f'{url}aed1.csv')
+aed_2 = pd.read_csv(f'{url}aed2.csv')
+aed_3 = pd.read_csv(f'{url}aed3.csv')
+aed_4 = pd.read_csv(f'{url}aed4.csv')
+aed_5 = pd.read_csv(f'{url}aed5.csv')
+
+mug1 = pd.read_csv(f'{url}mug1.csv')
 
 pd.set_option('display.max_columns', None)
 pd.options.mode.copy_on_write = True

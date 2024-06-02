@@ -4,12 +4,20 @@ import numpy as np
 import folium
 from folium.plugins import MarkerCluster
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# IMPORTING DATASETS
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Load your dataset
-data = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed_placement_df.csv')
+url = 'https://raw.githubusercontent.com/JeroenGuillierme/Project-AED-optimalization/main/DATA/'
+
+data = pd.read_csv(f'{url}aed_placement_df.csv')
 
 pd.set_option('display.max_columns', None)
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# FUNCTIONS
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Haversine formula to calculate distance in meters between two points given in degrees
 def haversine(coord1, coord2):
@@ -62,6 +70,9 @@ def get_min_distance(row, locations, column_name):
     closest_coord = locations.iloc[idx]
     return haversine(location_coord, closest_coord)
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# DISTANCE CALCULATIONS
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Filter AED locations
 aed_locations = data[data['AED'] == 1][['Latitude', 'Longitude']].dropna().reset_index(drop=True)
@@ -92,13 +103,13 @@ data['distance_to_mug'] = data.apply(get_min_distance, args=(mug_locations, 'Mug
 
 features = ['Latitude', 'Longitude', 'Intervention', 'CAD9', 'Eventlevel', 'T3-T0_min', 'AED',
             'Ambulance', 'Mug', 'Occasional_Permanence', 'distance_to_aed', 'distance_to_ambulance', 'distance_to_mug']
-print(list(data.columns))
-print(data[features].isna().sum())
-print(data.head())
-print(data[data['AED'] == 1])
-print(data[data['Ambulance'] == 1])
-print(data[data['Mug'] == 1])
-print(data[data['CAD9'] == 1])
+# print(list(data.columns))
+# print(data[features].isna().sum())
+# print(data.head())
+# print(data[data['AED'] == 1])
+# print(data[data['Ambulance'] == 1])
+# print(data[data['Mug'] == 1])
+# print(data[data['CAD9'] == 1])
 
 
 

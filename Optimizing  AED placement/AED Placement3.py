@@ -23,14 +23,19 @@ print(f"Program started at {start_time}")
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# IMPORTING DATASETS
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+url = 'https://raw.githubusercontent.com/JeroenGuillierme/Project-AED-optimalization/main/DATA/'
+
 aed_data = pd.read_csv(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/updated_aed_df_with_all_distances.csv')
+    f'{url}updated_aed_df_with_all_distances.csv')
 # grid_data = pd.read_csv('DATA/gird_locations.csv')
 # Load Belgium shapefile
-belgium_boundary = gpd.read_file('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/België.json')
+belgium_boundary = gpd.read_file(f'{url}Belgi%C3%AB.json')
 # Load Belgium with regions shapefile
-belgium_with_provinces_boundary = gpd.read_file(
-    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/BELGIUM_-_Provinces.geojson')
+belgium_with_provinces_boundary = gpd.read_file(f'{url}BELGIUM_-_Provinces.geojson')
 
 aed_locations = aed_data[aed_data['AED'] == 1]
 print(f'There are currently {len(aed_locations)} AEDs in Belgium')
@@ -38,6 +43,7 @@ print(f'There are currently {len(aed_locations)} AEDs in Belgium')
 pd.set_option('display.max_columns', None)
 # print(aed_data.head())
 # print(grid_data.head())
+
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # DATA PREPARATION
