@@ -5,7 +5,6 @@ import plotly.express as px
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
-from operator import itemgetter
 import joblib
 import dash_bootstrap_components as dbc
 from dash.exceptions import PreventUpdate
@@ -13,17 +12,6 @@ from dash.exceptions import PreventUpdate
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # IMPORTING DATASETS
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-ambulance = pd.read_parquet('DATA/ambulance_locations.parquet.gzip')
-mug = pd.read_parquet('DATA/mug_locations.parquet.gzip')
-pit = pd.read_parquet('DATA/pit_locations.parquet.gzip')
-interventions1 = pd.read_parquet('DATA/interventions1.parquet.gzip')
-interventions2 = pd.read_parquet('DATA/interventions2.parquet.gzip')
-interventions3 = pd.read_parquet('DATA/interventions3.parquet.gzip')
-interventions4 = pd.read_parquet('DATA/interventions_bxl.parquet.gzip')
-interventions5 = pd.read_parquet('DATA/interventions_bxl2.parquet.gzip')
-cad = pd.read_parquet('DATA/cad9.parquet.gzip')
-aed = pd.read_parquet('DATA/aed_locations.parquet.gzip')
 
 OldAEDs = pd.read_csv('data/aed_placement_df.csv')
 NewAEDs = pd.read_csv('data/new_aed_locations.csv')
@@ -33,7 +21,7 @@ NewAEDs = pd.read_csv('data/new_aed_locations.csv')
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Import ResponseTimeModel (see part I)
-model = joblib.load('ResponseTimeModel.joblib')
+model = joblib.load('Response Time Analysis/ResponseTimeModel.joblib')
 
 # Making dataset with new AEDs (see part II)
 Old = OldAEDs[OldAEDs['AED'] == 1][['Longitude', 'Latitude']]
@@ -42,7 +30,9 @@ AllAEDs['hover'] = "AED"
 
 # Needed for determination provinces
 provinces_gdf = gpd.read_file('data/georef-belgium-province-millesime.geojson')
+provinces_gdf['prov_name_nl'].head()
 provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].apply(lambda x: x[0] if isinstance(x, list) else x)
+provinces_gdf['prov_name_nl'].unique()
 provinces_gdf['prov_name_nl'] = provinces_gdf['prov_name_nl'].str.replace('Provincie ', '')
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,7 +48,7 @@ initial_map_figure.update_layout(mapbox_style='open-street-map')
 
 # Define Dash layout
 app.layout = html.Div(style={'backgroundColor': 'green'}, children=[
-    html.H1("AED localization app"),
+    html.H1("AED localization app", style={'color': 'white'}),
     dcc.Input(id='lat-input', type='number', placeholder='Enter the latitude'),
     dcc.Input(id='lon-input', type='number', placeholder='Enter the longitude'),
     html.Button(id='submit-button', n_clicks=0, children='Search'),
@@ -76,15 +66,15 @@ app.layout = html.Div(style={'backgroundColor': 'green'}, children=[
                 {'label': 'Other', 'value': 'Other'}], placeholder='Select Event Level')]),
     html.Div([dcc.Dropdown(id='vector-dropdown', options=[
                 {'label': 'Ambulance', 'value': 'Ambulance'},
-                {'label': 'Fire ambulance', 'value': 'Brandziekenwagen'},
-                {'label': 'Decontamination vehicle', 'value': 'Decontaminatiewagen'},
+                {'label': 'Fire ambulance', 'value': 'Fire ambulance'},
+                {'label': 'Decontamination vehicle', 'value': 'Decontamination vehicle'},
                 {'label': 'Mug', 'value': 'Mug'},
                 {'label': 'Pit', 'value': 'Pit'}], placeholder='Select Vector')]),
-    html.Div(id='popup-message'),
+    html.Div(id='popup-message', style={'color': 'white'}),
     html.Button(id='instructions-button', n_clicks=0, children='Instructions'),
-    html.Div(id='instructions-message'),
+    html.Div(id='instructions-message', style={'color': 'white'}),
     dcc.Graph(id='map', figure=initial_map_figure),
-    html.Div(id='error-message', style={'color': 'red'})
+    html.Div(id='error-message', style={'color': 'white'})
 ])
 
 # Functions needed in app to determine the response time
@@ -104,7 +94,7 @@ def event_level_to_matrix(event_level):
     return matrix
 
 def vector_to_matrix(vector):
-    vector_list = ['Ambulance', 'Brandziekenwagen', 'Decontaminatiewagen', 'Mug', 'Pit']
+    vector_list = ['Ambulance', 'Fire ambulance', 'Decontamination vehicle', 'Mug', 'Pit']
     matrix = [0] * len(vector_list)
     if vector in vector_list:
         index = vector_list.index(vector)
@@ -156,10 +146,10 @@ def update_or_reset_map(submit_clicks, reset_clicks, lat, lon, event_level, vect
                 user_location = pd.DataFrame({
                     'latitude': [lat],
                     'longitude': [lon],
-                    'hover': "Your location"
+                    'hover': 'Your location'
                 })
 
-                map_figure = px.scatter_mapbox(AllAEDs, lat='Latitude', lon='Longitude', zoom=10, hover_name="hover")
+                map_figure = px.scatter_mapbox(AllAEDs, lat='Latitude', lon='Longitude', zoom=10, hover_name='hover')
                 map_figure.update_traces(marker=dict(size=10, color='red'))
 
                 user_trace = px.scatter_mapbox(user_location, lat='latitude', lon='longitude', hover_name='hover')
@@ -168,10 +158,7 @@ def update_or_reset_map(submit_clicks, reset_clicks, lat, lon, event_level, vect
                 for trace in user_trace.data:
                     map_figure.add_trace(trace)
 
-                map_figure.update_layout(
-                    mapbox_style='open-street-map',
-                    mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14)
-                )
+                map_figure.update_layout(mapbox_style='open-street-map',mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14))
 
                 province = get_province_from_coordinates(lat, lon)
                 event_level_matrix = event_level_to_matrix(event_level)
@@ -182,8 +169,7 @@ def update_or_reset_map(submit_clicks, reset_clicks, lat, lon, event_level, vect
                 indices = [0, 8, 11, 14, 20, 21]
                 respons_matrix = [combined_matrix[i] if i < len(combined_matrix) else 0 for i in indices]
 
-
-                popup_message = f'Predicted response time for in {province} for event level {event_level} and vector {vector} is {give_predicted_response_time(respons_matrix)[0]} minutes and {give_predicted_response_time(respons_matrix)[1]} seconds.'
+                popup_message = f'Predicted response time in {province} for event level {event_level} and vector {vector} is {give_predicted_response_time(respons_matrix)[0]} minutes and {give_predicted_response_time(respons_matrix)[1]} seconds.'
             except Exception as e:
                 error_message = f'Error while processing coordinates: {e}'
 
@@ -243,11 +229,11 @@ session = boto3.Session(
 
 client = boto3.client('location')
 
-def get_coordinates(adress):
+def get_coordinates(address):
     try:
         response = client.search_place_index_for_text(
             IndexName='explore.place.Esri',
-            Text=adress)
+            Text=address)
             MaxResults=1
         )
         if response['Results']:
@@ -261,7 +247,7 @@ def get_coordinates(adress):
 
 # Define Dash layout
 app.layout = html.Div(style={'backgroundColor': 'green'}, children=[
-    html.H1("AED localization app"),
+    html.H1("AED localization app", style={'color': 'white'}),
     dcc.Input(id='address-input', type='text', placeholder='Enter the address'),
     html.Button(id='submit-button', n_clicks=0, children='Search'),
     html.Button(id='reset-button', n_clicks=0, children='Reset'),
@@ -278,15 +264,15 @@ app.layout = html.Div(style={'backgroundColor': 'green'}, children=[
                 {'label': 'Other', 'value': 'Other'}], placeholder='Select Event Level')]),
     html.Div([dcc.Dropdown(id='vector-dropdown', options=[
                 {'label': 'Ambulance', 'value': 'Ambulance'},
-                {'label': 'Fire ambulance', 'value': 'Brandziekenwagen'},
-                {'label': 'Decontamination vehicle', 'value': 'Decontaminatiewagen'},
+                {'label': 'Fire ambulance', 'value': 'Fire ambulance'},
+                {'label': 'Decontamination vehicle', 'value': 'Decontamination vehicle'},
                 {'label': 'Mug', 'value': 'Mug'},
                 {'label': 'Pit', 'value': 'Pit'}], placeholder='Select Vector')]),
     html.Div(id='popup-message'),
     html.Button(id='instructions-button', n_clicks=0, children='Instructions'),
     html.Div(id='instructions-message'),
     dcc.Graph(id='map', figure=initial_map_figure),
-    html.Div(id='error-message', style={'color': 'red'})
+    html.Div(id='error-message', style={'color': 'white'})
 ])
 
 # Functions needed in app to determine the response time
@@ -306,7 +292,7 @@ def event_level_to_matrix(event_level):
     return matrix
 
 def vector_to_matrix(vector):
-    vector_list = ['Ambulance', 'Brandziekenwagen', 'Decontaminatiewagen', 'Mug', 'Pit']
+    vector_list = ['Ambulance', 'Fire ambulance', 'Decontamination vehicle', 'Mug', 'Pit']
     matrix = [0] * len(vector_list)
     if vector in vector_list:
         index = vector_list.index(vector)
@@ -374,10 +360,7 @@ def update_or_reset_map(submit_clicks, reset_clicks, address, event_level, vecto
                     for trace in user_trace.data:
                         map_figure.add_trace(trace)
 
-                    map_figure.update_layout(
-                        mapbox_style='open-street-map',
-                        mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14)
-                    )
+                    map_figure.update_layout(mapbox_style='open-street-map',mapbox=dict(center=dict(lat=lat, lon=lon), zoom=14))
 
                     province = get_province_from_coordinates(lat, lon)
                     event_level_matrix = event_level_to_matrix(event_level)
