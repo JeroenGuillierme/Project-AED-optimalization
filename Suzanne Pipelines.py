@@ -30,24 +30,33 @@ class IsolationForestTransformer(BaseEstimator, TransformerMixin):
 interventions = pd.read_csv("DATA/interventions.csv")
 pd.set_option('display.max_columns', None)
 
-# Select relevant columns
+# Select relevant feature variables
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]]
 
-# Remove rows with missing values
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PREPROCESSING
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Check how much data is missing
+#print(data.isna().sum().sort_values()/len(data))
+
+## Remove rows with missing values
 data = data.dropna(subset=['Province', 'Vector', 'Eventlevel', 'Time1', 'Time2'])
 
-# Split data into train and test sets
+## Split data into train and test sets
 train, test = train_test_split(data, random_state=21)
 
-# Separate features and targets
-X_train = train[['Province', 'Vector', 'Eventlevel']]
+## Target variable: Time1 (and Time2)
 y1_train = train['Time1']
-y2_train = train['Time2']
-X_test = test[['Province', 'Vector', 'Eventlevel']]
 y1_test = test['Time1']
-y2_test = test['Time2']
+#y2_train = train['Time2']
+#y2_test = test['Time2']
 
-# Define preprocessing pipeline for categorical features
+## Feature variables: Province, Vector, Eventlevel
+X_train = train[['Province', 'Vector', 'Eventlevel']]
+X_test = test[['Province', 'Vector', 'Eventlevel']]
+
+## Define preprocessing pipeline for categorical features
 categorical_features = ['Province', 'Vector', 'Eventlevel']
 categorical_transformer = Pipeline(steps=[
     ('onehot', OneHotEncoder(handle_unknown='ignore'))

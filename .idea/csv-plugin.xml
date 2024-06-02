@@ -31,6 +31,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/DATA/aed_locations_extended.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/DATA/aed_placement_df.csv">
           <value>
             <Attribute>
@@ -39,6 +46,34 @@
           </value>
         </entry>
         <entry key="/DATA/aed_samengevoegd.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/DATA/new_aed_locations.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/new_aed_locations.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/venv/lib/python3.9/site-packages/fiona/gdal_data/s57agencies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/venv/lib/python3.9/site-packages/fiona/gdal_data/s57attributes.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
