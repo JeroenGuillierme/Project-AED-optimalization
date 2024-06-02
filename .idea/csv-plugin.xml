@@ -59,13 +59,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/new_aed_locations.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/venv/lib/python3.9/site-packages/fiona/gdal_data/s57agencies.csv">
           <value>
             <Attribute>
