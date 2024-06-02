@@ -16,6 +16,7 @@ from sklearn import metrics
 import statsmodels as sm
 from sklearn.metrics import mean_squared_error
 import joblib
+from sklearn import tree
 
 
 interventions = pd.read_csv("C:/Users/Eigenaar/PycharmProjects/Project-AED-optimalization/DATA/interventions.csv")
@@ -232,6 +233,10 @@ Xtest_important = X_test[:,[21,20,14,11,8,0]]
 ## Train a new Random Forest Regressor model using only important categories
 new_model = RandomForestRegressor(**params)
 new_model.fit(Xtrain_important, y1_train_filtered)
+
+## Visualize new model
+tree.plot_tree(new_model.estimators_[0])
+plt.show()
 
 ## Evaluate the new model
 y_test_pred = new_model.predict(Xtest_important)
