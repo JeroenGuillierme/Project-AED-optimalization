@@ -6,7 +6,7 @@ from folium.plugins import MarkerCluster
 
 
 # Load your dataset
-data = pd.read_csv('DATA/aed_placement_df.csv')
+data = pd.read_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/aed_placement_df.csv')
 
 pd.set_option('display.max_columns', None)
 
@@ -192,4 +192,4 @@ map_.save('aed_interventions_map.html')
 map_
 
 # Save the updated dataset
-# data.to_csv('DATA/updated_aed_df_with_all_distances.csv', index=False)
+# data.to_csv('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/updated_aed_df_with_all_distances.csv', index=False)
