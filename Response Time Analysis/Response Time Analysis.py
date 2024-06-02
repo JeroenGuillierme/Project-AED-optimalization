@@ -18,7 +18,7 @@ from sklearn.metrics import mean_squared_error
 import joblib
 
 
-interventions = pd.read_csv("DATA/interventions.csv")
+interventions = pd.read_csv("C:/Users/Eigenaar/PycharmProjects/Project-AED-optimalization/DATA/interventions.csv")
 pd.set_option('display.max_columns', None)
 data = interventions[["Province", "Vector", "Eventlevel", "Time1", "Time2"]] # 1045549 observations
 
@@ -166,6 +166,7 @@ y1_pred = rf.predict(X_test)
 #print("Mean Absolute Error:", metrics.mean_absolute_error(y1_test, y1_pred)) #Mean Absolute Error: 150195.8634726495
 #print("Mean Squared Error:", metrics.mean_squared_error(y1_test, y1_pred)) #Mean Squared Error: 412718371777.74756
 #print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y1_test, y1_pred))) #Root Mean Squared Error: 642431.6086384197
+#print("R-squared: ", metrics.r2_score(y1_test, y1_pred)) #R2: -0.057642596943559
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # VISUALISATION RESULT RANDOM FOREST
@@ -222,7 +223,7 @@ threshold = 0.025
 ## Select categories with importance > threshold
 important_categories = [feature for feature, importances_sorted in zip(sorted_feature_names, sorted_importances) if importances_sorted >= threshold]
 
-print("Important categories:", important_categories) # ['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
+#print("Important categories:", important_categories) # ['Eventlevel_5', 'Eventlevel_4', 'Vector_3', 'Vector_0', 'Province_8', 'Province_0']
 
 ## Only keep important categories in dataset
 Xtrain_important = X1_train_filtered[:,[21,20,14,11,8,0]]
@@ -234,8 +235,10 @@ new_model.fit(Xtrain_important, y1_train_filtered)
 
 ## Evaluate the new model
 y_test_pred = new_model.predict(Xtest_important)
-test_mse = mean_squared_error(y1_test, y_test_pred)
-print("Mean Squared Error of new model:", test_mse)
+#print("Mean Absolute Error of new model:", metrics.mean_absolute_error(y1_test, y_test_pred)) #Mean Absolute Error: 150194.99276823396
+#print("Mean Squared Error of new model:", metrics.mean_squared_error(y1_test, y_test_pred)) #Mean Squared Error: 412701430073.8727
+#print("Root Mean Squared Error of new model:", np.sqrt(metrics.mean_squared_error(y1_test, y_test_pred))) #Root Mean Squared Error: 642418.4228942011
+#print("R-squared of new model: ", metrics.r2_score(y1_test, y_test_pred)) #R2: -0.05759918170229961
 
 ## Predict Time1 using the new model
 predicted_response_time = new_model.predict([[0,0,0,0,0,0]])
@@ -260,6 +263,6 @@ def give_predicted_response_time(vectorWithLengthSix):
     return [minutes, seconds]
 
 vector = [0,0,0,0,0,0]
-print(give_predicted_response_time(vector))
+#print(give_predicted_response_time(vector))
 print("Predicted response time: ",give_predicted_response_time(vector)[0], " minutes and ",give_predicted_response_time(vector)[1], " seconds")
 
