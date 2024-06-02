@@ -18,8 +18,10 @@ start_time = time.ctime(int(time.time()))
 print(f"Program started at {start_time}")
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+url = 'https://raw.githubusercontent.com/JeroenGuillierme/Project-AED-optimalization/main/DATA/'
+
 # Load the Belgium boundary shapefile
-belgium_boundary = gpd.read_file('DATA/België.json')
+belgium_boundary = gpd.read_file(f'{url}Belgi%C3%AB.json')
 
 # Generate a grid of potential new locations within the Belgium boundary
 minx, miny, maxx, maxy = belgium_boundary.total_bounds
