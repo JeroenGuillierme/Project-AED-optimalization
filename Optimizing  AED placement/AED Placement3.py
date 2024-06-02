@@ -28,6 +28,9 @@ aed_data = pd.read_csv(
 # grid_data = pd.read_csv('DATA/gird_locations.csv')
 # Load Belgium shapefile
 belgium_boundary = gpd.read_file('C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/België.json')
+# Load Belgium with regions shapefile
+belgium_with_regions_boundary = gpd.read_file(
+    'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/belgium-with-regions_.geojson')
 
 aed_locations = aed_data[aed_data['AED'] == 1]
 print(f'There are currently {len(aed_locations)} AEDs in Belgium')
@@ -102,7 +105,6 @@ plt.tight_layout()
 
 # Show the plot
 plt.show()
-
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # REPLACING MISSING RESPONSE TIMES FROM GRID LOCATIONS WITH (KNN) IMPUTED VALUES BASED ON LOCATION AND DISTANCES
@@ -373,11 +375,11 @@ print(
 
 # Visualise high-risk areas
 fig, ax = plt.subplots(figsize=(12, 8))
+belgium_with_regions_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 scatter = sns.scatterplot(data=high_risk_areas,
                           x='Longitude', y='Latitude',
                           size='incident_count', hue='T3-T0_min', palette='coolwarm',
                           sizes=(20, 200), legend='auto', ax=ax)
-belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 ax.set_title('High-Risk Areas based on Response Time and Incident Frequency')
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
@@ -430,7 +432,7 @@ print("Estimated number of clusters: %d" % n_clusters_)
 print("Estimated number of noise points: %d" % n_noise_)
 # Plot clusters
 fig, ax = plt.subplots(figsize=(12, 8))
-custom_palette = sns.color_palette("Paired", len(cluster_sizes)+1)
+custom_palette = sns.color_palette("Paired", len(cluster_sizes) + 1)
 # Plot the high-risk areas and color by cluster
 scatter = sns.scatterplot(
     data=high_risk_areas,
@@ -459,14 +461,11 @@ fig, ax = plt.subplots(figsize=(12, 8))
 # Prepare cluster centers with sizes
 cluster_centers['size'] = cluster_sizes
 
-# Plot cluster centers with sizes
+# Plot only cluster centers with sizes and colors depending on cluster size to determine most 'problematic' clusters
+belgium_with_regions_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
 scatter = sns.scatterplot(data=cluster_centers,
                           x='Longitude', y='Latitude', size='size', sizes=(20, 200),
                           hue='size', palette='coolwarm', legend='brief')
-
-# Overlay the Belgium boundary
-belgium_boundary.plot(ax=ax, facecolor='none', edgecolor='black')
-
 ax.set_title('Cluster Centers with Sizes Proportional to Cluster Sizes')
 ax.set_xlabel('Longitude')
 ax.set_ylabel('Latitude')
@@ -484,7 +483,6 @@ print("Silhouette Coefficient:%0.2f" % sc)
 new_aed_gdf[['Latitude', 'Longitude']].to_csv(
     'C:/Users/Admin/Documents/GitHub/Project-AED-optimalization/DATA/new_aed_locations.csv', index=True)
 '''
-
 
 '''
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
